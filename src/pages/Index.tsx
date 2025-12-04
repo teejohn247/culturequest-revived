@@ -3,7 +3,9 @@ import HeroSection from "@/components/HeroSection";
 import LogoMarquee from "@/components/LogoMarquee";
 import ValueSection from "@/components/ValueSection";
 import SolutionSection from "@/components/SolutionSection";
+import DashboardShowcase from "@/components/DashboardShowcase";
 import FeaturesSection from "@/components/FeaturesSection";
+import TestimonialsSection from "@/components/TestimonialsSection";
 import ConsultingSection from "@/components/ConsultingSection";
 import Footer from "@/components/Footer";
 
@@ -16,7 +18,9 @@ const Index = () => {
         <LogoMarquee />
         <ValueSection />
         <SolutionSection />
+        <DashboardShowcase />
         <FeaturesSection />
+        <TestimonialsSection />
         <ConsultingSection />
       </main>
       <Footer />
