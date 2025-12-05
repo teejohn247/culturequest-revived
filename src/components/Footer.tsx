@@ -14,14 +14,15 @@ const Footer = () => {
             className="md:col-span-2"
           >
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 rounded-lg bg-gradient-primary flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-lg">C</span>
-              </div>
-              <span className="font-semibold text-lg">culturequest</span>
+              <img 
+                src="/Silo-White-logo.png" 
+                alt="SILO Logo" 
+                className="h-8 w-auto"
+              />
             </div>
             <p className="text-background/70 max-w-sm">
-              A data-driven software solution that enables leaders to measure, 
-              understand, and optimize company culture.
+              SILO - The All-In-One ERP platform 
+              that transforms raw data into valuable insights for small & medium businesses.
             </p>
           </motion.div>
 
@@ -66,7 +67,7 @@ const Footer = () => {
           className="pt-8 border-t border-background/10 flex flex-col md:flex-row justify-between items-center gap-4"
         >
           <p className="text-background/50 text-sm">
-            © 2024 CultureQuest. All rights reserved.
+            © 2025 SILO Solutions Ltd. All rights reserved. www.silo-inc.com
           </p>
           <div className="flex gap-6">
             <a href="#" className="text-background/50 hover:text-background text-sm transition-colors">Privacy Policy</a>

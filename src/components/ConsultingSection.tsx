@@ -13,11 +13,11 @@ const ConsultingSection = () => {
           className="text-center mb-16"
         >
           <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
-            You don't have to do it alone
+            Implementation Services & Support
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Whether you need strategic guidance or hands-on help, our consultants 
-            and trusted partners are here to support you—so you get the right expertise at the right time.
+            From system integration to team training, our expert consultants help you get maximum value 
+            from SILO. Custom configuration, data migration, and ongoing support—all tailored to your needs.
           </p>
         </motion.div>
 
@@ -30,30 +30,30 @@ const ConsultingSection = () => {
             viewport={{ once: true }}
             className="bg-card border border-border rounded-3xl p-8 relative overflow-hidden group hover:shadow-card transition-all duration-300"
           >
-            <span className="text-xs font-medium text-primary mb-2 block">Culturequest consultants</span>
-            <h3 className="text-xl font-bold text-foreground mb-4">Consultant Support</h3>
+            <span className="text-xs font-medium text-primary mb-2 block">SILO Implementation Services</span>
+            <h3 className="text-xl font-bold text-foreground mb-4">System Integration & Setup</h3>
             
             <div className="flex items-center gap-4 mb-4">
               <motion.div
                 whileHover={{ scale: 1.05 }}
-                className="w-16 h-16 rounded-full bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center"
+                className="w-16 h-16 rounded-full bg-gradient-to-br from-purple-500/20 to-purple-500/5 flex items-center justify-center"
               >
                 <div className="w-12 h-12 rounded-full bg-card shadow-sm flex items-center justify-center">
-                  <span className="text-lg font-semibold text-primary">CQ</span>
+                  <span className="text-lg font-semibold bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent">SI</span>
                 </div>
               </motion.div>
               <motion.div
                 whileHover={{ scale: 1.05 }}
-                className="w-16 h-16 rounded-full bg-gradient-to-br from-teal/20 to-teal/5 flex items-center justify-center -ml-4"
+                className="w-16 h-16 rounded-full bg-gradient-to-br from-pink-500/20 to-pink-500/5 flex items-center justify-center -ml-4"
               >
                 <div className="w-12 h-12 rounded-full bg-card shadow-sm flex items-center justify-center">
-                  <span className="text-lg font-semibold text-teal">HR</span>
+                  <span className="text-lg font-semibold bg-gradient-to-r from-pink-500 to-blue-500 bg-clip-text text-transparent">DM</span>
                 </div>
               </motion.div>
             </div>
             
             <p className="text-muted-foreground">
-              Work with our experts to translate insights into action.
+              System Integration, Data Migration, Custom Configuration, and Training services to get you started.
             </p>
 
             {/* Decorative element */}
@@ -67,30 +67,30 @@ const ConsultingSection = () => {
             viewport={{ once: true }}
             className="bg-card border border-border rounded-3xl p-8 relative overflow-hidden group hover:shadow-card transition-all duration-300"
           >
-            <span className="text-xs font-medium text-teal mb-2 block">Freelance consultants</span>
-            <h3 className="text-xl font-bold text-foreground mb-4">Find the Right Solutions</h3>
+            <span className="text-xs font-medium bg-gradient-to-r from-pink-500 to-blue-500 bg-clip-text text-transparent mb-2 block">Custom Solutions</span>
+            <h3 className="text-xl font-bold text-foreground mb-4">Tailored to Your Business</h3>
             
             <div className="flex items-center gap-4 mb-4">
               <motion.div
                 whileHover={{ scale: 1.05 }}
-                className="w-16 h-16 rounded-full bg-gradient-to-br from-coral/20 to-coral/5 flex items-center justify-center"
+                className="w-16 h-16 rounded-full bg-gradient-to-br from-blue-500/20 to-blue-500/5 flex items-center justify-center"
               >
                 <div className="w-12 h-12 rounded-full bg-card shadow-sm flex items-center justify-center">
-                  <span className="text-lg font-semibold text-coral">FL</span>
+                  <span className="text-lg font-semibold bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">AI</span>
                 </div>
               </motion.div>
               <motion.div
                 whileHover={{ scale: 1.05 }}
-                className="w-16 h-16 rounded-full bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center -ml-4"
+                className="w-16 h-16 rounded-full bg-gradient-to-br from-purple-500/20 to-purple-500/5 flex items-center justify-center -ml-4"
               >
                 <div className="w-12 h-12 rounded-full bg-card shadow-sm flex items-center justify-center">
-                  <span className="text-lg font-semibold text-primary">EX</span>
+                  <span className="text-lg font-semibold bg-gradient-to-r from-purple-500 via-pink-500 to-blue-500 bg-clip-text text-transparent">CC</span>
                 </div>
               </motion.div>
             </div>
             
             <p className="text-muted-foreground">
-              If needed, we connect you with specialized expertise to address specific challenges.
+              Custom dashboards, analytics specific to your needs, and AI-powered insights tailored to your industry.
             </p>
 
             {/* Decorative element */}
@@ -120,9 +120,9 @@ const ConsultingSection = () => {
             />
             
             <div className="bg-card border border-border rounded-2xl p-8 shadow-card">
-              <h3 className="text-xl font-bold text-foreground mb-2">Curious about more?</h3>
+              <h3 className="text-xl font-bold text-foreground mb-2">Ready to Transform Your Operations?</h3>
               <p className="text-muted-foreground mb-6">
-                Book a short meeting and see how we can support your culture.
+                Book a consultation and discover how SILO can streamline your business processes.
               </p>
               <Button variant="default" size="lg">
                 Book a Meeting

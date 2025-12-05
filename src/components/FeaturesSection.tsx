@@ -1,42 +1,42 @@
 import { motion } from "framer-motion";
-import { MessageSquare, Users, BarChart3, Layers, Shield, Zap } from "lucide-react";
+import { Users, Briefcase, Brain, BarChart3, Zap, Shield, Database, TrendingUp, Sparkles } from "lucide-react";
 
 const features = [
   {
-    icon: MessageSquare,
-    title: "Qualitative insights",
-    description: "Understand the \"why\" behind the numbers with anonymous comments and free-text feedback.",
-    color: "primary",
+    icon: Users,
+    title: "Human Resources Management",
+    description: "Automated Recruitment, Leave Management, Data Processing and Payroll, etc. Streamline your HR operations with intelligent automation.",
+    color: "purple",
   },
   {
-    icon: Users,
-    title: "Manager access",
-    description: "Give leaders direct access to relevant data for their own teams—secure and easy to use.",
-    color: "teal",
+    icon: Briefcase,
+    title: "Customer Relationship Management",
+    description: "Sales & Marketing Platform, Call-logging, Contact Management, Lead Generation, etc. Build stronger customer relationships.",
+    color: "pink",
+  },
+  {
+    icon: Brain,
+    title: "Artificial Intelligence",
+    description: "AI-powered predictive and suggestive analytics, Automated Reporting, Dashboard with Metrics, etc. Get intelligent insights.",
+    color: "blue",
   },
   {
     icon: BarChart3,
-    title: "Unlimited surveys",
-    description: "Run as many surveys as you need, whenever you need them—no limits.",
-    color: "coral",
-  },
-  {
-    icon: Layers,
-    title: "Segment teams",
-    description: "Filter data by team, location, or department to spot patterns and tailor your actions.",
-    color: "primary",
-  },
-  {
-    icon: Shield,
-    title: "Enterprise security",
-    description: "Bank-level security with GDPR compliance and data encryption at rest and in transit.",
-    color: "teal",
+    title: "Accounting and Finance",
+    description: "Real-time Financial Reporting, Payroll, Financial Statement, Expense Management, etc. Complete financial control.",
+    color: "purple",
   },
   {
     icon: Zap,
-    title: "AI-powered insights",
-    description: "Get intelligent recommendations and predictions based on your culture data.",
-    color: "coral",
+    title: "Instant Data Processing",
+    description: "90% increase in productivity and efficiency. Automated data management & standardization for faster operations.",
+    color: "pink",
+  },
+  {
+    icon: Sparkles,
+    title: "Natural Language Interface",
+    description: "Zero learning curve, accessible to all skill levels. Interact with your data using simple, natural language commands.",
+    color: "blue",
   },
 ];
 
@@ -52,12 +52,12 @@ const FeaturesSection = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <span className="text-sm font-medium text-primary mb-4 block">Features</span>
+          <span className="text-sm font-medium text-primary mb-4 block">Features & Benefits</span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground">
-            Elevate Your Company Culture
+            All-In-One ERP Platform
           </h2>
           <p className="text-muted-foreground mt-4 max-w-xl mx-auto">
-            Explore some of the features in Culturequest.
+            Discover how SILO transforms raw data into valuable insights for your business.
           </p>
         </motion.div>
 
@@ -74,18 +74,18 @@ const FeaturesSection = () => {
               className="group"
             >
               <div className="h-full bg-card border border-border rounded-2xl p-6 hover:shadow-card transition-all duration-300">
-                <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-4 ${
-                  feature.color === 'primary' ? 'bg-primary/10' :
-                  feature.color === 'teal' ? 'bg-teal/10' :
-                  'bg-coral/10'
+                <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-4 bg-gradient-to-br ${
+                  feature.color === 'purple' ? 'from-purple-500/20 to-purple-500/5' :
+                  feature.color === 'pink' ? 'from-pink-500/20 to-pink-500/5' :
+                  'from-blue-500/20 to-blue-500/5'
                 }`}>
                   <feature.icon className={`w-6 h-6 ${
-                    feature.color === 'primary' ? 'text-primary' :
-                    feature.color === 'teal' ? 'text-teal' :
-                    'text-coral'
+                    feature.color === 'purple' ? 'text-purple-500' :
+                    feature.color === 'pink' ? 'text-pink-500' :
+                    'text-blue-500'
                   }`} />
                 </div>
-                <h3 className="font-semibold text-lg text-foreground mb-2 group-hover:text-primary transition-colors">
+                <h3 className="font-semibold text-lg text-foreground mb-2 group-hover:bg-gradient-to-r group-hover:from-purple-500 group-hover:via-pink-500 group-hover:to-blue-500 group-hover:bg-clip-text group-hover:text-transparent transition-all">
                   {feature.title}
                 </h3>
                 <p className="text-muted-foreground">

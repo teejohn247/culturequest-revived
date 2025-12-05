@@ -12,7 +12,7 @@ const HeroSection = () => {
       {/* Floating decorative shapes */}
       <FloatingShapes />
 
-      <div className="relative z-10 max-w-4xl mx-auto px-4 text-center">
+      <div className="relative z-10 max-w-4xl mx-auto px-4 text-center" style={{marginTop: '100px'}}>
         {/* Demo badge */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -31,9 +31,9 @@ const HeroSection = () => {
           transition={{ duration: 0.6, delay: 0.1 }}
           className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6"
         >
-          <span className="text-gradient">Culture Is Strategy.</span>
+          <span className="text-gradient">SILO</span>
           <br />
-          <span className="text-foreground">Treat It Like One.</span>
+          <span className="text-foreground">The Future of Data</span>
         </motion.h1>
 
         {/* Subtitle */}
@@ -43,8 +43,9 @@ const HeroSection = () => {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10"
         >
-          A data-driven software solution that enables leaders to measure, understand, 
-          and optimize company culture. Make teams thrive and companies grow.
+           The All-In-One ERP platform that transforms 
+          raw data into valuable insights for small & medium businesses. Designed to streamline your 
+          internal processes and build improved operational capacity.
         </motion.p>
 
         {/* CTA Button */}
@@ -70,23 +71,30 @@ const HeroSection = () => {
             <motion.div
               animate={{ y: [0, -10, 0] }}
               transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-              className="bg-card rounded-2xl shadow-card p-4 max-w-[200px]"
+              className="bg-card rounded-2xl shadow-card p-4 max-w-[200px] border border-purple-200/50 dark:border-purple-800/50"
             >
-              <div className="text-xs text-muted-foreground mb-2">Summary</div>
-              <div className="font-semibold text-sm text-foreground">Good Mental Health</div>
+              <div className="text-xs text-muted-foreground mb-2">Platform Performance</div>
+              <div className="font-semibold text-sm bg-gradient-to-r from-purple-500 via-pink-500 to-blue-500 bg-clip-text text-transparent">77% Efficiency</div>
               <p className="text-xs text-muted-foreground mt-1">
-                The survey highlights accessible mental health support...
+                AI-powered analytics enabling 90% productivity increase...
               </p>
             </motion.div>
 
             <motion.div
               animate={{ y: [0, -15, 0] }}
               transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-              className="bg-card rounded-2xl shadow-card p-4 max-w-[180px]"
+              className="bg-card rounded-2xl shadow-card p-4 max-w-[180px] border border-purple-200/50 dark:border-purple-800/50"
             >
-              <div className="text-xs text-primary mb-2">Analyze</div>
-              <div className="h-16 bg-gradient-to-br from-primary/10 to-primary/5 rounded-lg flex items-center justify-center">
-                <svg className="w-8 h-8 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <div className="text-xs bg-gradient-to-r from-purple-500 via-pink-500 to-blue-500 bg-clip-text text-transparent mb-2">AI Analytics</div>
+              <div className="h-16 bg-gradient-to-br from-purple-500/10 via-pink-500/10 to-blue-500/10 rounded-lg flex items-center justify-center">
+                <svg className="w-8 h-8 bg-gradient-to-r from-purple-500 via-pink-500 to-blue-500 bg-clip-text text-transparent" viewBox="0 0 24 24" fill="none" stroke="url(#gradient)" strokeWidth="2">
+                  <defs>
+                    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                      <stop offset="0%" stopColor="#A855F7" />
+                      <stop offset="50%" stopColor="#EC4899" />
+                      <stop offset="100%" stopColor="#3B82F6" />
+                    </linearGradient>
+                  </defs>
                   <path d="M12 20V10M18 20V4M6 20v-4" />
                 </svg>
               </div>

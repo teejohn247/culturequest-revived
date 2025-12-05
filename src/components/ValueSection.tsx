@@ -2,22 +2,22 @@ import { motion } from "framer-motion";
 
 const values = [
   {
-    tag: "Simplifies work for HR and leaders",
-    title: "User-friendly software that delivers clear insights",
-    description: "AI-driven recommendations – saving time and helping HR and leaders act faster and smarter.",
-    color: "primary",
+    tag: "Streamline Operations",
+    title: "Automated processes that save time and reduce errors",
+    description: "AI-driven automation handles data processing, payroll, and reporting – freeing your team to focus on strategic initiatives. 90% increase in productivity and efficiency.",
+    color: "purple",
   },
   {
-    tag: "Make culture insights financially relevant",
-    title: "Identify cultural blind spots that impact productivity",
-    description: "With data-driven actions, leaders can reduce costly inefficiencies and build a culture that supports long-term business growth.",
-    color: "teal",
+    tag: "Real-time Business Intelligence",
+    title: "Transform raw data into actionable insights",
+    description: "Get instant access to critical business metrics with predictive analytics and automated reporting. Make data-driven decisions that drive growth.",
+    color: "pink",
   },
   {
-    tag: "Predict and prevent employee loss",
-    title: "AI to spot early signs of disengagement",
-    description: "Helping HR and leaders act in time to retain talent and reduce costly turnover.",
-    color: "coral",
+    tag: "Unified Platform",
+    title: "All-in-one solution for HR, CRM, AI, and Accounting",
+    description: "No more juggling multiple systems. SILO integrates everything you need in one platform – from recruitment to financial reporting, all seamlessly connected.",
+    color: "blue",
   },
 ];
 
@@ -33,14 +33,14 @@ const ValueSection = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <span className="text-sm font-medium text-primary mb-4 block">How we create value</span>
+          <span className="text-sm font-medium text-primary mb-4 block">How SILO creates value</span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground">
-            From insight to impact with
+            From data to decisions with
             <br />
-            measurable returns
+            measurable business impact
           </h2>
           <p className="text-muted-foreground mt-4 max-w-xl mx-auto">
-            Culturequest consists of a software and consulting services.
+            SILO combines powerful software with expert consulting to help SMEs transform their operations.
           </p>
         </motion.div>
 
@@ -61,9 +61,9 @@ const ValueSection = () => {
                 {/* Content */}
                 <div className="flex-1 space-y-4">
                   <span className={`inline-block text-sm font-medium px-4 py-1.5 rounded-full ${
-                    value.color === 'primary' ? 'bg-primary/10 text-primary' :
-                    value.color === 'teal' ? 'bg-teal/10 text-teal' :
-                    'bg-coral/10 text-coral'
+                    value.color === 'purple' ? 'bg-purple-500/10 text-purple-500' :
+                    value.color === 'pink' ? 'bg-pink-500/10 text-pink-500' :
+                    'bg-blue-500/10 text-blue-500'
                   }`}>
                     {value.tag}
                   </span>
@@ -78,9 +78,9 @@ const ValueSection = () => {
                 {/* Decorative illustration */}
                 <div className="flex-1 flex justify-center">
                   <div className={`w-64 h-64 rounded-2xl bg-gradient-to-br ${
-                    value.color === 'primary' ? 'from-primary/20 to-primary/5' :
-                    value.color === 'teal' ? 'from-teal/20 to-teal/5' :
-                    'from-coral/20 to-coral/5'
+                    value.color === 'purple' ? 'from-purple-500/20 via-pink-500/10 to-blue-500/5' :
+                    value.color === 'pink' ? 'from-pink-500/20 via-purple-500/10 to-blue-500/5' :
+                    'from-blue-500/20 via-purple-500/10 to-pink-500/5'
                   } flex items-center justify-center`}>
                     <motion.div
                       animate={{ 
@@ -91,36 +91,36 @@ const ValueSection = () => {
                       className="w-48 h-48 rounded-xl bg-card shadow-lg flex items-center justify-center"
                     >
                       <div className="space-y-3 w-36">
-                        <div className={`h-3 rounded-full ${
-                          value.color === 'primary' ? 'bg-primary/40' :
-                          value.color === 'teal' ? 'bg-teal/40' :
-                          'bg-coral/40'
+                        <div className={`h-3 rounded-full bg-gradient-to-r ${
+                          value.color === 'purple' ? 'from-purple-500/40 to-pink-500/40' :
+                          value.color === 'pink' ? 'from-pink-500/40 to-blue-500/40' :
+                          'from-blue-500/40 to-purple-500/40'
                         } w-full`} />
-                        <div className={`h-3 rounded-full ${
-                          value.color === 'primary' ? 'bg-primary/30' :
-                          value.color === 'teal' ? 'bg-teal/30' :
-                          'bg-coral/30'
+                        <div className={`h-3 rounded-full bg-gradient-to-r ${
+                          value.color === 'purple' ? 'from-purple-500/30 to-pink-500/30' :
+                          value.color === 'pink' ? 'from-pink-500/30 to-blue-500/30' :
+                          'from-blue-500/30 to-purple-500/30'
                         } w-3/4`} />
-                        <div className={`h-3 rounded-full ${
-                          value.color === 'primary' ? 'bg-primary/20' :
-                          value.color === 'teal' ? 'bg-teal/20' :
-                          'bg-coral/20'
+                        <div className={`h-3 rounded-full bg-gradient-to-r ${
+                          value.color === 'purple' ? 'from-purple-500/20 to-pink-500/20' :
+                          value.color === 'pink' ? 'from-pink-500/20 to-blue-500/20' :
+                          'from-blue-500/20 to-purple-500/20'
                         } w-1/2`} />
                         <div className="flex gap-2 pt-2">
-                          <div className={`h-8 w-8 rounded-lg ${
-                            value.color === 'primary' ? 'bg-primary/20' :
-                            value.color === 'teal' ? 'bg-teal/20' :
-                            'bg-coral/20'
+                          <div className={`h-8 w-8 rounded-lg bg-gradient-to-br ${
+                            value.color === 'purple' ? 'from-purple-500/20 to-pink-500/20' :
+                            value.color === 'pink' ? 'from-pink-500/20 to-blue-500/20' :
+                            'from-blue-500/20 to-purple-500/20'
                           }`} />
-                          <div className={`h-8 w-8 rounded-lg ${
-                            value.color === 'primary' ? 'bg-primary/30' :
-                            value.color === 'teal' ? 'bg-teal/30' :
-                            'bg-coral/30'
+                          <div className={`h-8 w-8 rounded-lg bg-gradient-to-br ${
+                            value.color === 'purple' ? 'from-purple-500/30 to-pink-500/30' :
+                            value.color === 'pink' ? 'from-pink-500/30 to-blue-500/30' :
+                            'from-blue-500/30 to-purple-500/30'
                           }`} />
-                          <div className={`h-8 w-8 rounded-lg ${
-                            value.color === 'primary' ? 'bg-primary/40' :
-                            value.color === 'teal' ? 'bg-teal/40' :
-                            'bg-coral/40'
+                          <div className={`h-8 w-8 rounded-lg bg-gradient-to-br ${
+                            value.color === 'purple' ? 'from-purple-500/40 to-pink-500/40' :
+                            value.color === 'pink' ? 'from-pink-500/40 to-blue-500/40' :
+                            'from-blue-500/40 to-purple-500/40'
                           }`} />
                         </div>
                       </div>

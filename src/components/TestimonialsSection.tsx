@@ -54,7 +54,7 @@ const column2 = [testimonials[1], testimonials[4]];
 const column3 = [testimonials[2], testimonials[5]];
 
 const TestimonialCard = ({ testimonial, index }: { testimonial: Testimonial; index: number }) => (
-  <div className="bg-card rounded-2xl p-6 shadow-card border border-border mb-6">
+  <div className="bg-card rounded-2xl p-6 shadow-card border border-border">
     <div className="flex items-center gap-2 mb-4">
       {testimonial.company === "CamVision" ? (
         <span className="text-teal font-semibold text-sm">⚙ CamVision</span>
@@ -104,7 +104,7 @@ const AnimatedColumn = ({
           repeat: Infinity,
           ease: "linear",
         }}
-        className="space-y-0"
+        className="space-y-6"
       >
         {/* Duplicate testimonials for seamless loop */}
         {[...testimonials, ...testimonials].map((testimonial, index) => (
@@ -118,8 +118,8 @@ const AnimatedColumn = ({
 const TestimonialsSection = () => {
   return (
     <section className="relative py-20 lg:py-32 overflow-hidden">
-      {/* Purple gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-primary via-primary to-primary/90" />
+      {/* Purple/Pink/Blue gradient background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-purple-500 via-pink-500 to-blue-500" />
       
       {/* Diagonal edge at top - slanted from top-left to right */}
       <div className="absolute top-0 left-0 right-0 h-32">
@@ -128,7 +128,7 @@ const TestimonialsSection = () => {
         </svg>
       </div>
 
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container mx-auto px-4 relative z-10" style={{marginTop: '100px'}}>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

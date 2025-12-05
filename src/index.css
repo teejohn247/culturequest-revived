@@ -15,9 +15,9 @@
     --popover: 0 0% 100%;
     --popover-foreground: 220 20% 20%;
 
-    --primary: 252 85% 60%;
+    --primary: 270 91% 65%;
     --primary-foreground: 0 0% 100%;
-    --primary-light: 252 85% 95%;
+    --primary-light: 270 50% 95%;
 
     --secondary: 220 14% 96%;
     --secondary-foreground: 220 20% 20%;
@@ -25,7 +25,7 @@
     --muted: 220 14% 96%;
     --muted-foreground: 220 10% 50%;
 
-    --accent: 252 85% 60%;
+    --accent: 330 81% 60%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
@@ -33,16 +33,21 @@
 
     --border: 220 13% 91%;
     --input: 220 13% 91%;
-    --ring: 252 85% 60%;
+    --ring: 270 91% 65%;
 
     --radius: 0.75rem;
 
-    /* Custom colors */
-    --purple-gradient-start: 252 85% 60%;
-    --purple-gradient-end: 280 75% 55%;
+    /* Custom colors - Purple/Pink/Blue gradient theme */
+    --purple-gradient-start: 270 91% 65%;
+    --purple-gradient-mid: 330 81% 60%;
+    --purple-gradient-end: 217 91% 60%;
+    --pink-gradient: 330 81% 60%;
+    --blue-gradient: 217 91% 60%;
     --teal: 175 70% 45%;
     --coral: 15 85% 60%;
-    --soft-purple: 252 30% 95%;
+    --soft-purple: 270 50% 96%;
+    --soft-pink: 330 50% 96%;
+    --soft-blue: 217 50% 96%;
     
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -64,7 +69,7 @@
     --popover: 220 20% 12%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 252 85% 65%;
+    --primary: 270 91% 70%;
     --primary-foreground: 220 20% 10%;
 
     --secondary: 220 20% 18%;
@@ -73,7 +78,7 @@
     --muted: 220 20% 18%;
     --muted-foreground: 215 20.2% 65.1%;
 
-    --accent: 252 85% 65%;
+    --accent: 330 81% 65%;
     --accent-foreground: 220 20% 10%;
 
     --destructive: 0 62.8% 30.6%;
@@ -81,7 +86,7 @@
 
     --border: 220 20% 20%;
     --input: 220 20% 20%;
-    --ring: 252 85% 65%;
+    --ring: 270 91% 70%;
     
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
@@ -112,15 +117,19 @@
 @layer utilities {
   .text-gradient {
     @apply bg-clip-text text-transparent;
-    background-image: linear-gradient(135deg, hsl(var(--purple-gradient-start)) 0%, hsl(var(--purple-gradient-end)) 100%);
+    background-image: linear-gradient(135deg, hsl(var(--purple-gradient-start)) 0%, hsl(var(--purple-gradient-mid)) 50%, hsl(var(--purple-gradient-end)) 100%);
   }
 
   .bg-gradient-primary {
-    background: linear-gradient(135deg, hsl(var(--purple-gradient-start)) 0%, hsl(var(--purple-gradient-end)) 100%);
+    background: linear-gradient(135deg, hsl(var(--purple-gradient-start)) 0%, hsl(var(--purple-gradient-mid)) 50%, hsl(var(--purple-gradient-end)) 100%);
+  }
+
+  .bg-gradient-iridescent {
+    background: linear-gradient(135deg, hsl(var(--purple-gradient-start)) 0%, hsl(var(--purple-gradient-mid)) 50%, hsl(var(--purple-gradient-end)) 100%);
   }
 
   .bg-soft-gradient {
-    background: linear-gradient(180deg, hsl(var(--soft-purple)) 0%, hsl(var(--background)) 100%);
+    background: linear-gradient(180deg, hsl(var(--soft-purple)) 0%, hsl(var(--soft-pink)) 50%, hsl(var(--background)) 100%);
   }
 
   .shadow-glow {

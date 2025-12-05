@@ -4,18 +4,18 @@ import { motion, AnimatePresence } from "framer-motion";
 const steps = [
   {
     step: 1,
-    title: "Create survey & collect data",
-    description: "Choose from 10 different categories tailored to your workplace. Engage employees and collect honest feedback.",
+    title: "System Integration & Setup",
+    description: "Connect AI-driven solutions with existing company databases and tools. Our team handles seamless integration and custom configuration.",
   },
   {
     step: 2,
-    title: "Get insights about the culture",
-    description: "Our system processes the data to uncover key patterns. Gather comprehensive insights into organizational culture.",
+    title: "Data Migration & Processing",
+    description: "Move your data to the platform with automated processing. Get instant access to critical business metrics and insights.",
   },
   {
     step: 3,
-    title: "Take action and improve",
-    description: "With Culturequest, companies don't just measure culture—they create meaningful change.",
+    title: "AI Analytics & Optimization",
+    description: "Leverage predictive analytics and automated reporting. Transform raw data into actionable insights that drive business growth.",
   },
 ];
 
@@ -33,15 +33,15 @@ const SolutionSection = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <span className="text-sm font-medium text-primary mb-4 block">Our solution</span>
+          <span className="text-sm font-medium text-primary mb-4 block">How it works</span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground">
-            Measure what matters.
+            From setup to success.
             <br />
-            Act where it counts.
+            Streamlined implementation.
           </h2>
           <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
-            Our platform helps you understand your people through surveys, personality insights, 
-            and data-driven tools—so you can build a healthier culture, one decision at a time.
+            SILO's implementation services help businesses connect AI-driven solutions, migrate data, 
+            configure dashboards, and train teams—so you get maximum value from day one.
           </p>
         </motion.div>
 
@@ -143,16 +143,20 @@ const SolutionSection = () => {
                   {activeStep === 0 && (
                     <div className="space-y-3">
                       <div className="h-10 bg-secondary rounded-lg flex items-center px-3 gap-2">
-                        <div className="w-4 h-4 rounded border-2 border-primary" />
-                        <span className="text-sm text-muted-foreground">Employee satisfaction</span>
+                        <div className="w-4 h-4 rounded border-2 border-purple-500" />
+                        <span className="text-sm text-muted-foreground">HR Management System</span>
                       </div>
                       <div className="h-10 bg-secondary rounded-lg flex items-center px-3 gap-2">
-                        <div className="w-4 h-4 rounded border-2 border-primary bg-primary" />
-                        <span className="text-sm text-muted-foreground">Team collaboration</span>
+                        <div className="w-4 h-4 rounded border-2 border-pink-500 bg-pink-500" />
+                        <span className="text-sm text-muted-foreground">CRM Integration</span>
+                      </div>
+                      <div className="h-10 bg-secondary rounded-lg flex items-center px-3 gap-2">
+                        <div className="w-4 h-4 rounded border-2 border-blue-500 bg-blue-500" />
+                        <span className="text-sm text-muted-foreground">AI Analytics Setup</span>
                       </div>
                       <div className="h-10 bg-secondary rounded-lg flex items-center px-3 gap-2">
                         <div className="w-4 h-4 rounded border-2 border-border" />
-                        <span className="text-sm text-muted-foreground">Leadership feedback</span>
+                        <span className="text-sm text-muted-foreground">Accounting Module</span>
                       </div>
                     </div>
                   )}
@@ -164,34 +168,34 @@ const SolutionSection = () => {
                           initial={{ height: 0 }}
                           animate={{ height: "60%" }}
                           transition={{ duration: 0.5, delay: 0.1 }}
-                          className="w-8 bg-primary/30 rounded-t"
+                          className="w-8 bg-gradient-to-t from-purple-500/30 to-purple-500/10 rounded-t"
                         />
                         <motion.div 
                           initial={{ height: 0 }}
                           animate={{ height: "80%" }}
                           transition={{ duration: 0.5, delay: 0.2 }}
-                          className="w-8 bg-primary/50 rounded-t"
+                          className="w-8 bg-gradient-to-t from-pink-500/50 to-pink-500/20 rounded-t"
                         />
                         <motion.div 
                           initial={{ height: 0 }}
                           animate={{ height: "45%" }}
                           transition={{ duration: 0.5, delay: 0.3 }}
-                          className="w-8 bg-primary/40 rounded-t"
+                          className="w-8 bg-gradient-to-t from-blue-500/40 to-blue-500/15 rounded-t"
                         />
                         <motion.div 
                           initial={{ height: 0 }}
                           animate={{ height: "90%" }}
                           transition={{ duration: 0.5, delay: 0.4 }}
-                          className="w-8 bg-gradient-primary rounded-t"
+                          className="w-8 bg-gradient-to-t from-purple-500 via-pink-500 to-blue-500 rounded-t"
                         />
                         <motion.div 
                           initial={{ height: 0 }}
                           animate={{ height: "70%" }}
                           transition={{ duration: 0.5, delay: 0.5 }}
-                          className="w-8 bg-primary/60 rounded-t"
+                          className="w-8 bg-gradient-to-t from-pink-500/60 to-pink-500/30 rounded-t"
                         />
                       </div>
-                      <p className="text-xs text-muted-foreground">Culture score trend</p>
+                      <p className="text-xs text-muted-foreground">Data processing efficiency</p>
                     </div>
                   )}
                   
@@ -201,28 +205,28 @@ const SolutionSection = () => {
                         initial={{ opacity: 0, x: -10 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: 0.1 }}
-                        className="flex items-center gap-3 p-3 bg-teal/10 rounded-lg"
+                        className="flex items-center gap-3 p-3 bg-gradient-to-r from-purple-500/10 to-pink-500/10 rounded-lg"
                       >
-                        <div className="w-2 h-2 rounded-full bg-teal" />
-                        <span className="text-sm text-foreground">Improve team meetings</span>
+                        <div className="w-2 h-2 rounded-full bg-gradient-to-r from-purple-500 to-pink-500" />
+                        <span className="text-sm text-foreground">Automated Payroll Processing</span>
                       </motion.div>
                       <motion.div
                         initial={{ opacity: 0, x: -10 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: 0.2 }}
-                        className="flex items-center gap-3 p-3 bg-primary/10 rounded-lg"
+                        className="flex items-center gap-3 p-3 bg-gradient-to-r from-pink-500/10 to-blue-500/10 rounded-lg"
                       >
-                        <div className="w-2 h-2 rounded-full bg-primary" />
-                        <span className="text-sm text-foreground">Launch recognition program</span>
+                        <div className="w-2 h-2 rounded-full bg-gradient-to-r from-pink-500 to-blue-500" />
+                        <span className="text-sm text-foreground">Predictive Analytics Dashboard</span>
                       </motion.div>
                       <motion.div
                         initial={{ opacity: 0, x: -10 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: 0.3 }}
-                        className="flex items-center gap-3 p-3 bg-coral/10 rounded-lg"
+                        className="flex items-center gap-3 p-3 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-lg"
                       >
-                        <div className="w-2 h-2 rounded-full bg-coral" />
-                        <span className="text-sm text-foreground">Schedule 1-on-1 reviews</span>
+                        <div className="w-2 h-2 rounded-full bg-gradient-to-r from-blue-500 to-purple-500" />
+                        <span className="text-sm text-foreground">Real-time Financial Reports</span>
                       </motion.div>
                     </div>
                   )}
