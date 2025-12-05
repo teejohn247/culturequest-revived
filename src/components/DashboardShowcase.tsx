@@ -49,8 +49,20 @@ const DashboardShowcase = () => {
   const rightX = useTransform(scrollYProgress, [0, 0.3, 0.5, 0.7, 1], [100, 50, 0, 50, 100]);
 
   return (
-    <section ref={sectionRef} className="py-20 lg:py-32 bg-background overflow-hidden">
-      <div className="container mx-auto px-4">
+    <section ref={sectionRef} className="py-20 lg:py-32 bg-background overflow-hidden relative">
+      {/* Dotted background pattern */}
+      <div className="absolute inset-0 overflow-hidden">
+        <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <pattern id="dotPattern" x="0" y="0" width="24" height="24" patternUnits="userSpaceOnUse">
+              <circle cx="2" cy="2" r="1.5" fill="hsl(var(--muted-foreground) / 0.15)" />
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#dotPattern)" />
+        </svg>
+      </div>
+
+      <div className="container mx-auto px-4 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -68,7 +80,7 @@ const DashboardShowcase = () => {
 
         <div className="relative max-w-6xl mx-auto">
           {/* Main dashboard layout */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
             {/* Left column - Category + Survey */}
             <motion.div 
               className="lg:col-span-4 space-y-6"
@@ -148,89 +160,157 @@ const DashboardShowcase = () => {
               </motion.div>
             </motion.div>
 
-            {/* Center - Analyze Circle */}
+            {/* Center - Analyze Circle with curved lines */}
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="lg:col-span-3 flex items-center justify-center py-8 lg:py-0 lg:min-h-[600px]"
+              className="lg:col-span-4 flex items-center justify-center py-8 lg:py-0 lg:min-h-[600px] relative"
             >
-              <div className="relative">
-                {/* Connecting lines/arrows from left */}
-                <svg className="absolute -left-20 top-1/2 -translate-y-1/2 w-20 h-40" viewBox="0 0 80 160">
-                  <motion.path
-                    d="M0,40 Q40,40 60,80"
-                    fill="none"
-                    stroke="hsl(var(--border))"
-                    strokeWidth="2"
-                    initial={{ pathLength: 0 }}
-                    whileInView={{ pathLength: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 1, delay: 0.5 }}
-                  />
-                  <motion.path
-                    d="M0,120 Q40,120 60,80"
-                    fill="none"
-                    stroke="hsl(var(--border))"
-                    strokeWidth="2"
-                    initial={{ pathLength: 0 }}
-                    whileInView={{ pathLength: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 1, delay: 0.6 }}
-                  />
-                </svg>
-
-                {/* Connecting lines/arrows to right */}
-                <svg className="absolute -right-20 top-1/2 -translate-y-1/2 w-20 h-40" viewBox="0 0 80 160">
-                  <motion.path
-                    d="M20,80 Q40,40 80,40"
-                    fill="none"
-                    stroke="hsl(var(--border))"
-                    strokeWidth="2"
-                    initial={{ pathLength: 0 }}
-                    whileInView={{ pathLength: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 1, delay: 0.5 }}
-                  />
-                  <motion.path
-                    d="M20,80 Q40,120 80,120"
-                    fill="none"
-                    stroke="hsl(var(--border))"
-                    strokeWidth="2"
-                    initial={{ pathLength: 0 }}
-                    whileInView={{ pathLength: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 1, delay: 0.6 }}
-                  />
-                </svg>
-
-                {/* Connecting dots */}
-                <motion.div
-                  animate={{ y: [-5, 5, -5] }}
-                  transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-                  className="absolute -left-16 top-1/4 w-3 h-3 rounded-full bg-emerald-400"
+              {/* SVG for curved connecting lines */}
+              <svg className="absolute inset-0 w-full h-full" viewBox="0 0 400 600" preserveAspectRatio="xMidYMid meet">
+                {/* Left curves - green dots */}
+                {/* Upper left curve */}
+                <motion.path
+                  d="M 40 220 Q 120 220 170 300"
+                  fill="none"
+                  stroke="hsl(var(--border))"
+                  strokeWidth="1.5"
+                  initial={{ pathLength: 0 }}
+                  whileInView={{ pathLength: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 1, delay: 0.5 }}
                 />
-                <motion.div
-                  animate={{ y: [5, -5, 5] }}
-                  transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-                  className="absolute -left-8 bottom-1/4 w-3 h-3 rounded-full bg-emerald-400"
+                {/* Lower left curve */}
+                <motion.path
+                  d="M 80 420 Q 130 400 170 340"
+                  fill="none"
+                  stroke="hsl(var(--border))"
+                  strokeWidth="1.5"
+                  initial={{ pathLength: 0 }}
+                  whileInView={{ pathLength: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 1, delay: 0.6 }}
                 />
-                <motion.div
-                  animate={{ y: [-5, 5, -5] }}
-                  transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                  className="absolute -right-16 top-1/3 w-3 h-3 rounded-full bg-blue-400"
+                
+                {/* Right curves - blue dots */}
+                {/* Upper right curve going up */}
+                <motion.path
+                  d="M 230 280 Q 280 200 360 120"
+                  fill="none"
+                  stroke="hsl(var(--border))"
+                  strokeWidth="1.5"
+                  initial={{ pathLength: 0 }}
+                  whileInView={{ pathLength: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 1, delay: 0.5 }}
                 />
-                <motion.div
-                  animate={{ y: [5, -5, 5] }}
-                  transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
-                  className="absolute -right-8 bottom-1/3 w-3 h-3 rounded-full bg-blue-400"
+                {/* Middle right curve */}
+                <motion.path
+                  d="M 230 300 Q 280 300 340 260"
+                  fill="none"
+                  stroke="hsl(var(--border))"
+                  strokeWidth="1.5"
+                  initial={{ pathLength: 0 }}
+                  whileInView={{ pathLength: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 1, delay: 0.55 }}
+                />
+                {/* Lower right curve going down */}
+                <motion.path
+                  d="M 230 320 Q 280 400 340 480"
+                  fill="none"
+                  stroke="hsl(var(--border))"
+                  strokeWidth="1.5"
+                  initial={{ pathLength: 0 }}
+                  whileInView={{ pathLength: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 1, delay: 0.6 }}
                 />
 
-                {/* Main circle */}
-                <div className="w-40 h-40 rounded-2xl bg-card border-2 border-border flex items-center justify-center shadow-card">
-                  <div className="w-24 h-24 rounded-full bg-gradient-to-br from-purple-200 via-purple-100 to-teal-100 flex items-center justify-center">
-                    <span className="text-foreground font-medium">Analyze</span>
+                {/* Green dots on left */}
+                <motion.circle
+                  cx="40"
+                  cy="220"
+                  r="6"
+                  fill="#4ADE80"
+                  initial={{ scale: 0 }}
+                  whileInView={{ scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.3, delay: 0.8 }}
+                />
+                <motion.circle
+                  cx="80"
+                  cy="420"
+                  r="6"
+                  fill="#4ADE80"
+                  initial={{ scale: 0 }}
+                  whileInView={{ scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.3, delay: 0.9 }}
+                />
+                {/* Green dot near center left */}
+                <motion.circle
+                  cx="170"
+                  cy="320"
+                  r="6"
+                  fill="#4ADE80"
+                  initial={{ scale: 0 }}
+                  whileInView={{ scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.3, delay: 0.85 }}
+                />
+
+                {/* Blue dots on right */}
+                <motion.circle
+                  cx="360"
+                  cy="120"
+                  r="6"
+                  fill="#60A5FA"
+                  initial={{ scale: 0 }}
+                  whileInView={{ scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.3, delay: 0.8 }}
+                />
+                <motion.circle
+                  cx="340"
+                  cy="260"
+                  r="6"
+                  fill="#60A5FA"
+                  initial={{ scale: 0 }}
+                  whileInView={{ scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.3, delay: 0.85 }}
+                />
+                {/* Blue dot near center right */}
+                <motion.circle
+                  cx="230"
+                  cy="300"
+                  r="6"
+                  fill="#60A5FA"
+                  initial={{ scale: 0 }}
+                  whileInView={{ scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.3, delay: 0.9 }}
+                />
+                <motion.circle
+                  cx="340"
+                  cy="480"
+                  r="6"
+                  fill="#60A5FA"
+                  initial={{ scale: 0 }}
+                  whileInView={{ scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.3, delay: 0.95 }}
+                />
+              </svg>
+
+              {/* Main analyze box */}
+              <div className="relative z-10">
+                <div className="w-40 h-40 rounded-3xl bg-card border-2 border-border flex items-center justify-center shadow-card">
+                  <div className="w-28 h-28 rounded-full bg-gradient-to-br from-purple-300 via-purple-200 to-pink-200 flex items-center justify-center shadow-lg">
+                    <span className="text-foreground font-semibold text-lg">Analyze</span>
                   </div>
                 </div>
               </div>
@@ -238,7 +318,7 @@ const DashboardShowcase = () => {
 
             {/* Right column - Score + Progress */}
             <motion.div 
-              className="lg:col-span-5 space-y-6"
+              className="lg:col-span-4 space-y-6"
               style={{ x: rightX }}
             >
               {/* Culture Score Card */}
