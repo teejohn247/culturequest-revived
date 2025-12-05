@@ -121,10 +121,10 @@ const TestimonialsSection = () => {
       {/* Purple gradient background */}
       <div className="absolute inset-0 bg-gradient-to-b from-primary via-primary to-primary/90" />
       
-      {/* Decorative wave at top */}
-      <div className="absolute top-0 left-0 right-0">
-        <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full">
-          <path d="M0 120V0C240 80 480 120 720 100C960 80 1200 40 1440 60V120H0Z" fill="hsl(var(--background))" />
+      {/* Diagonal edge at top - slanted from top-left to right */}
+      <div className="absolute top-0 left-0 right-0 h-32">
+        <svg viewBox="0 0 1440 128" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full" preserveAspectRatio="none">
+          <path d="M0 0H1440V0L0 128V0Z" fill="hsl(var(--background))" />
         </svg>
       </div>
 
