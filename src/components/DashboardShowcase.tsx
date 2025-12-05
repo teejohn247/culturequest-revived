@@ -1,5 +1,6 @@
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { MessageSquare, Shirt, Brain, PersonStanding, Home, Maximize2, Smile, Heart, CircleDot } from "lucide-react";
+import { useRef } from "react";
 
 const categoryIcons = [
   { icon: MessageSquare, color: "bg-amber-400" },
@@ -35,8 +36,20 @@ const questions = [
 ];
 
 const DashboardShowcase = () => {
+  const sectionRef = useRef<HTMLDivElement>(null);
+  
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start end", "end start"]
+  });
+
+  // Left cards: start from -100px, come to 0, then go to -100px
+  const leftX = useTransform(scrollYProgress, [0, 0.3, 0.5, 0.7, 1], [-100, -50, 0, -50, -100]);
+  // Right cards: start from 100px, come to 0, then go to 100px
+  const rightX = useTransform(scrollYProgress, [0, 0.3, 0.5, 0.7, 1], [100, 50, 0, 50, 100]);
+
   return (
-    <section className="py-20 lg:py-32 bg-background overflow-hidden">
+    <section ref={sectionRef} className="py-20 lg:py-32 bg-background overflow-hidden">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -57,11 +70,14 @@ const DashboardShowcase = () => {
           {/* Main dashboard layout */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
             {/* Left column - Category + Survey */}
-            <div className="lg:col-span-4 space-y-6">
+            <motion.div 
+              className="lg:col-span-4 space-y-6"
+              style={{ x: leftX }}
+            >
               {/* Category Card */}
               <motion.div
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.1 }}
                 className="bg-card rounded-2xl p-6 shadow-card border border-border"
@@ -85,8 +101,8 @@ const DashboardShowcase = () => {
 
               {/* Survey Card */}
               <motion.div
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.2 }}
                 className="bg-card rounded-2xl p-6 shadow-card border border-border"
@@ -130,7 +146,7 @@ const DashboardShowcase = () => {
                   Send
                 </button>
               </motion.div>
-            </div>
+            </motion.div>
 
             {/* Center - Analyze Circle */}
             <motion.div
@@ -138,9 +154,57 @@ const DashboardShowcase = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="lg:col-span-3 flex items-center justify-center py-8 lg:py-0"
+              className="lg:col-span-3 flex items-center justify-center py-8 lg:py-0 lg:min-h-[600px]"
             >
               <div className="relative">
+                {/* Connecting lines/arrows from left */}
+                <svg className="absolute -left-20 top-1/2 -translate-y-1/2 w-20 h-40" viewBox="0 0 80 160">
+                  <motion.path
+                    d="M0,40 Q40,40 60,80"
+                    fill="none"
+                    stroke="hsl(var(--border))"
+                    strokeWidth="2"
+                    initial={{ pathLength: 0 }}
+                    whileInView={{ pathLength: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 1, delay: 0.5 }}
+                  />
+                  <motion.path
+                    d="M0,120 Q40,120 60,80"
+                    fill="none"
+                    stroke="hsl(var(--border))"
+                    strokeWidth="2"
+                    initial={{ pathLength: 0 }}
+                    whileInView={{ pathLength: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 1, delay: 0.6 }}
+                  />
+                </svg>
+
+                {/* Connecting lines/arrows to right */}
+                <svg className="absolute -right-20 top-1/2 -translate-y-1/2 w-20 h-40" viewBox="0 0 80 160">
+                  <motion.path
+                    d="M20,80 Q40,40 80,40"
+                    fill="none"
+                    stroke="hsl(var(--border))"
+                    strokeWidth="2"
+                    initial={{ pathLength: 0 }}
+                    whileInView={{ pathLength: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 1, delay: 0.5 }}
+                  />
+                  <motion.path
+                    d="M20,80 Q40,120 80,120"
+                    fill="none"
+                    stroke="hsl(var(--border))"
+                    strokeWidth="2"
+                    initial={{ pathLength: 0 }}
+                    whileInView={{ pathLength: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 1, delay: 0.6 }}
+                  />
+                </svg>
+
                 {/* Connecting dots */}
                 <motion.div
                   animate={{ y: [-5, 5, -5] }}
@@ -173,11 +237,14 @@ const DashboardShowcase = () => {
             </motion.div>
 
             {/* Right column - Score + Progress */}
-            <div className="lg:col-span-5 space-y-6">
+            <motion.div 
+              className="lg:col-span-5 space-y-6"
+              style={{ x: rightX }}
+            >
               {/* Culture Score Card */}
               <motion.div
-                initial={{ opacity: 0, x: 30 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.2 }}
                 className="bg-card rounded-2xl p-6 shadow-card border border-border"
@@ -246,8 +313,8 @@ const DashboardShowcase = () => {
 
               {/* Progress Card */}
               <motion.div
-                initial={{ opacity: 0, x: 30 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.3 }}
                 className="bg-card rounded-2xl p-6 shadow-card border border-border"
@@ -320,7 +387,7 @@ const DashboardShowcase = () => {
                   ))}
                 </div>
               </motion.div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>
