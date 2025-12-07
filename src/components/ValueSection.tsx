@@ -1,23 +1,27 @@
 import { motion } from "framer-motion";
 
 const values = [
-  {
-    tag: "Streamline Operations",
-    title: "Automated processes that save time and reduce errors",
-    description: "AI-driven automation handles data processing, payroll, and reporting – freeing your team to focus on strategic initiatives. 90% increase in productivity and efficiency.",
-    color: "purple",
-  },
+
   {
     tag: "Real-time Business Intelligence",
     title: "Transform raw data into actionable insights",
     description: "Get instant access to critical business metrics with predictive analytics and automated reporting. Make data-driven decisions that drive growth.",
     color: "pink",
+    image: "/mockup4.png",
+  },
+  {
+    tag: "Streamline Operations",
+    title: "Automated processes that save time and reduce errors",
+    description: "AI-driven automation handles data processing, payroll, and reporting – freeing your team to focus on strategic initiatives. 90% increase in productivity and efficiency.",
+    color: "purple",
+    image: "/Mockup 1.png",
   },
   {
     tag: "Unified Platform",
     title: "All-in-one solution for HR, CRM, AI, and Accounting",
     description: "No more juggling multiple systems. SILO integrates everything you need in one platform – from recruitment to financial reporting, all seamlessly connected.",
     color: "blue",
+    image: "/mockup 3.png",
   },
 ];
 
@@ -75,57 +79,21 @@ const ValueSection = () => {
                   </p>
                 </div>
 
-                {/* Decorative illustration */}
+                {/* Mockup Image */}
                 <div className="flex-1 flex justify-center">
-                  <div className={`w-64 h-64 rounded-2xl bg-gradient-to-br ${
-                    value.color === 'purple' ? 'from-purple-500/20 via-pink-500/10 to-blue-500/5' :
-                    value.color === 'pink' ? 'from-pink-500/20 via-purple-500/10 to-blue-500/5' :
-                    'from-blue-500/20 via-purple-500/10 to-pink-500/5'
-                  } flex items-center justify-center`}>
-                    <motion.div
-                      animate={{ 
-                        scale: [1, 1.05, 1],
-                        rotate: [0, 2, 0]
-                      }}
-                      transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                      className="w-48 h-48 rounded-xl bg-card shadow-lg flex items-center justify-center"
-                    >
-                      <div className="space-y-3 w-36">
-                        <div className={`h-3 rounded-full bg-gradient-to-r ${
-                          value.color === 'purple' ? 'from-purple-500/40 to-pink-500/40' :
-                          value.color === 'pink' ? 'from-pink-500/40 to-blue-500/40' :
-                          'from-blue-500/40 to-purple-500/40'
-                        } w-full`} />
-                        <div className={`h-3 rounded-full bg-gradient-to-r ${
-                          value.color === 'purple' ? 'from-purple-500/30 to-pink-500/30' :
-                          value.color === 'pink' ? 'from-pink-500/30 to-blue-500/30' :
-                          'from-blue-500/30 to-purple-500/30'
-                        } w-3/4`} />
-                        <div className={`h-3 rounded-full bg-gradient-to-r ${
-                          value.color === 'purple' ? 'from-purple-500/20 to-pink-500/20' :
-                          value.color === 'pink' ? 'from-pink-500/20 to-blue-500/20' :
-                          'from-blue-500/20 to-purple-500/20'
-                        } w-1/2`} />
-                        <div className="flex gap-2 pt-2">
-                          <div className={`h-8 w-8 rounded-lg bg-gradient-to-br ${
-                            value.color === 'purple' ? 'from-purple-500/20 to-pink-500/20' :
-                            value.color === 'pink' ? 'from-pink-500/20 to-blue-500/20' :
-                            'from-blue-500/20 to-purple-500/20'
-                          }`} />
-                          <div className={`h-8 w-8 rounded-lg bg-gradient-to-br ${
-                            value.color === 'purple' ? 'from-purple-500/30 to-pink-500/30' :
-                            value.color === 'pink' ? 'from-pink-500/30 to-blue-500/30' :
-                            'from-blue-500/30 to-purple-500/30'
-                          }`} />
-                          <div className={`h-8 w-8 rounded-lg bg-gradient-to-br ${
-                            value.color === 'purple' ? 'from-purple-500/40 to-pink-500/40' :
-                            value.color === 'pink' ? 'from-pink-500/40 to-blue-500/40' :
-                            'from-blue-500/40 to-purple-500/40'
-                          }`} />
-                        </div>
-                      </div>
-                    </motion.div>
-                  </div>
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    whileInView={{ opacity: 1, scale: 1.3 }}
+                    transition={{ duration: 0.5, delay: index * 0.1 + 0.2 }}
+                    viewport={{ once: true }}
+                    className="w-full max-w-lg"
+                  >
+                    <img 
+                      src={value.image} 
+                      alt={value.title}
+                      className="w-full h-auto rounded-2xl object-contain"
+                    />
+                  </motion.div>
                 </div>
               </div>
             </motion.div>

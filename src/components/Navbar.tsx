@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ChevronDown, Menu, X } from "lucide-react";
 
@@ -16,29 +17,29 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <div className="flex items-center gap-2">
+          <Link to="/" className="flex items-center gap-2">
             <img 
               src="/silo-logo.svg" 
               alt="SILO Logo" 
               className="h-8 w-auto"
             />
-          </div>
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
-            <button className="flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground transition-colors">
+            <Link to="/features" className="flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground transition-colors">
               Features
               <ChevronDown className="w-4 h-4" />
-            </button>
-            <a href="#pricing" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+            </Link>
+            <Link to="/pricing" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
               Pricing
-            </a>
+            </Link>
             <a href="#resources" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
               Resources
             </a>
-            <a href="#about" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+            <Link to="/about" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
               About us
-            </a>
+            </Link>
           </div>
 
           {/* CTA Buttons */}
@@ -70,18 +71,18 @@ const Navbar = () => {
           className="md:hidden border-t border-border bg-background"
         >
           <div className="px-4 py-6 space-y-4">
-            <a href="#features" className="block text-muted-foreground hover:text-foreground">
+            <Link to="/features" className="block text-muted-foreground hover:text-foreground" onClick={() => setIsOpen(false)}>
               Features
-            </a>
-            <a href="#pricing" className="block text-muted-foreground hover:text-foreground">
+            </Link>
+            <Link to="/pricing" className="block text-muted-foreground hover:text-foreground" onClick={() => setIsOpen(false)}>
               Pricing
-            </a>
+            </Link>
             <a href="#resources" className="block text-muted-foreground hover:text-foreground">
               Resources
             </a>
-            <a href="#about" className="block text-muted-foreground hover:text-foreground">
+            <Link to="/about" className="block text-muted-foreground hover:text-foreground" onClick={() => setIsOpen(false)}>
               About us
-            </a>
+            </Link>
             <div className="pt-4 flex flex-col gap-3">
               <Button variant="outline" className="w-full">Login</Button>
               <Button variant="default" className="w-full">Try for free</Button>

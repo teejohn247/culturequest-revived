@@ -201,3 +201,7 @@
 .animate-pulse-glow {
   animation: pulse-glow 3s ease-in-out infinite;
 }
+
+.w-full.max-w-sm.aspect-square.rounded-xl.bg-gradient-to-br.from-pink-500.via-purple-500.to-blue-500.p-6.flex.items-center.justify-center{
+  max-width: 100% !important;
+}
