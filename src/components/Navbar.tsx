@@ -76,9 +76,9 @@ const Navbar = () => {
             <Link to="/pricing" className="block text-muted-foreground hover:text-foreground" onClick={() => setIsOpen(false)}>
               Pricing
             </Link>
-            <a href="#resources" className="block text-muted-foreground hover:text-foreground">
+            {/* <a href="#resources" className="block text-muted-foreground hover:text-foreground">
               Resources
-            </a>
+            </a> */}
             <Link to="/about" className="block text-muted-foreground hover:text-foreground" onClick={() => setIsOpen(false)}>
               About us
             </Link>
