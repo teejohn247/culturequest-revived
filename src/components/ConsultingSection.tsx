@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import { openCalendly } from "@/lib/calendly";
 
 const ConsultingSection = () => {
   return (
@@ -36,18 +37,18 @@ const ConsultingSection = () => {
             <div className="flex items-center gap-4 mb-4">
               <motion.div
                 whileHover={{ scale: 1.05 }}
-                className="w-16 h-16 rounded-full bg-gradient-to-br from-purple-500/20 to-purple-500/5 flex items-center justify-center"
+                className="w-16 h-16 rounded-full bg-gradient-to-br from-[#001305]/20 to-[#001305]/5 flex items-center justify-center"
               >
                 <div className="w-12 h-12 rounded-full bg-card shadow-sm flex items-center justify-center">
-                  <span className="text-lg font-semibold bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent">SI</span>
+                  <span className="text-lg font-semibold bg-gradient-to-r from-[#001305] to-[#007C21] bg-clip-text text-transparent">SI</span>
                 </div>
               </motion.div>
               <motion.div
                 whileHover={{ scale: 1.05 }}
-                className="w-16 h-16 rounded-full bg-gradient-to-br from-pink-500/20 to-pink-500/5 flex items-center justify-center -ml-4"
+                className="w-16 h-16 rounded-full bg-gradient-to-br from-[#007C21]/20 to-[#007C21]/5 flex items-center justify-center -ml-4"
               >
                 <div className="w-12 h-12 rounded-full bg-card shadow-sm flex items-center justify-center">
-                  <span className="text-lg font-semibold bg-gradient-to-r from-pink-500 to-blue-500 bg-clip-text text-transparent">DM</span>
+                  <span className="text-lg font-semibold bg-gradient-to-r from-[#007C21] to-[#89F335] bg-clip-text text-transparent">DM</span>
                 </div>
               </motion.div>
             </div>
@@ -67,24 +68,24 @@ const ConsultingSection = () => {
             viewport={{ once: true }}
             className="bg-card border border-border rounded-3xl p-8 relative overflow-hidden group hover:shadow-card transition-all duration-300"
           >
-            <span className="text-xs font-medium bg-gradient-to-r from-pink-500 to-blue-500 bg-clip-text text-transparent mb-2 block">Custom Solutions</span>
+            <span className="text-xs font-medium bg-gradient-to-r from-[#007C21] to-[#89F335] bg-clip-text text-transparent mb-2 block">Custom Solutions</span>
             <h3 className="text-xl font-bold text-foreground mb-4">Tailored to Your Business</h3>
             
             <div className="flex items-center gap-4 mb-4">
               <motion.div
                 whileHover={{ scale: 1.05 }}
-                className="w-16 h-16 rounded-full bg-gradient-to-br from-blue-500/20 to-blue-500/5 flex items-center justify-center"
+                className="w-16 h-16 rounded-full bg-gradient-to-br from-[#89F335]/20 to-[#89F335]/5 flex items-center justify-center"
               >
                 <div className="w-12 h-12 rounded-full bg-card shadow-sm flex items-center justify-center">
-                  <span className="text-lg font-semibold bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">AI</span>
+                  <span className="text-lg font-semibold bg-gradient-to-r from-[#89F335] to-[#001305] bg-clip-text text-transparent">AI</span>
                 </div>
               </motion.div>
               <motion.div
                 whileHover={{ scale: 1.05 }}
-                className="w-16 h-16 rounded-full bg-gradient-to-br from-purple-500/20 to-purple-500/5 flex items-center justify-center -ml-4"
+                className="w-16 h-16 rounded-full bg-gradient-to-br from-[#001305]/20 to-[#001305]/5 flex items-center justify-center -ml-4"
               >
                 <div className="w-12 h-12 rounded-full bg-card shadow-sm flex items-center justify-center">
-                  <span className="text-lg font-semibold bg-gradient-to-r from-purple-500 via-pink-500 to-blue-500 bg-clip-text text-transparent">CC</span>
+                  <span className="text-lg font-semibold bg-gradient-to-r from-[#001305] via-[#007C21] to-[#89F335] bg-clip-text text-transparent">CC</span>
                 </div>
               </motion.div>
             </div>
@@ -124,7 +125,7 @@ const ConsultingSection = () => {
               <p className="text-muted-foreground mb-6">
                 Book a consultation and discover how SILO can streamline your business processes.
               </p>
-              <Button variant="default" size="lg">
+              <Button variant="default" size="lg" onClick={() => openCalendly()}>
                 Book a Meeting
               </Button>
             </div>

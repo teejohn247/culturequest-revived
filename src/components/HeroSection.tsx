@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import FloatingShapes from "./FloatingShapes";
+import { openCalendly } from "@/lib/calendly";
 
 const HeroSection = () => {
   return (
@@ -54,7 +55,7 @@ const HeroSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
         >
-          <Button variant="hero" size="xl">
+          <Button variant="hero" size="xl" onClick={() => openCalendly()}>
             Book a Meeting
           </Button>
         </motion.div>
@@ -71,10 +72,10 @@ const HeroSection = () => {
             <motion.div
               animate={{ y: [0, -10, 0] }}
               transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-              className="bg-card rounded-2xl shadow-card p-4 max-w-[200px] border border-purple-200/50 dark:border-purple-800/50"
+              className="bg-card rounded-2xl shadow-card p-4 max-w-[200px] border border-[#89F335]/30 dark:border-[#89F335]/50"
             >
               <div className="text-xs text-muted-foreground mb-2">Platform Performance</div>
-              <div className="font-semibold text-sm bg-gradient-to-r from-purple-500 via-pink-500 to-blue-500 bg-clip-text text-transparent">77% Efficiency</div>
+              <div className="font-semibold text-sm bg-gradient-to-r from-[#001305] via-[#007C21] to-[#89F335] bg-clip-text text-transparent">77% Efficiency</div>
               <p className="text-xs text-muted-foreground mt-1">
                 AI-powered analytics enabling 90% productivity increase...
               </p>
@@ -83,16 +84,16 @@ const HeroSection = () => {
             <motion.div
               animate={{ y: [0, -15, 0] }}
               transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-              className="bg-card rounded-2xl shadow-card p-4 max-w-[180px] border border-purple-200/50 dark:border-purple-800/50"
+              className="bg-card rounded-2xl shadow-card p-4 max-w-[180px] border border-[#007C21]/30 dark:border-[#007C21]/50"
             >
-              <div className="text-xs bg-gradient-to-r from-purple-500 via-pink-500 to-blue-500 bg-clip-text text-transparent mb-2">AI Analytics</div>
-              <div className="h-16 bg-gradient-to-br from-purple-500/10 via-pink-500/10 to-blue-500/10 rounded-lg flex items-center justify-center">
-                <svg className="w-8 h-8 bg-gradient-to-r from-purple-500 via-pink-500 to-blue-500 bg-clip-text text-transparent" viewBox="0 0 24 24" fill="none" stroke="url(#gradient)" strokeWidth="2">
+              <div className="text-xs bg-gradient-to-r from-[#001305] via-[#007C21] to-[#89F335] bg-clip-text text-transparent mb-2">AI Analytics</div>
+              <div className="h-16 bg-gradient-to-br from-[#001305]/10 via-[#007C21]/10 to-[#89F335]/10 rounded-lg flex items-center justify-center">
+                <svg className="w-8 h-8 bg-gradient-to-r from-[#001305] via-[#007C21] to-[#89F335] bg-clip-text text-transparent" viewBox="0 0 24 24" fill="none" stroke="url(#gradient)" strokeWidth="2">
                   <defs>
                     <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                      <stop offset="0%" stopColor="#A855F7" />
-                      <stop offset="50%" stopColor="#EC4899" />
-                      <stop offset="100%" stopColor="#3B82F6" />
+                      <stop offset="0%" stopColor="#001305" />
+                      <stop offset="50%" stopColor="#007C21" />
+                      <stop offset="100%" stopColor="#89F335" />
                     </linearGradient>
                   </defs>
                   <path d="M12 20V10M18 20V4M6 20v-4" />

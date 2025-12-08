@@ -143,15 +143,15 @@ const SolutionSection = () => {
                   {activeStep === 0 && (
                     <div className="space-y-3">
                       <div className="h-10 bg-secondary rounded-lg flex items-center px-3 gap-2">
-                        <div className="w-4 h-4 rounded border-2 border-purple-500" />
+                        <div className="w-4 h-4 rounded border-2 border-[#001305]" />
                         <span className="text-sm text-muted-foreground">HR Management System</span>
                       </div>
                       <div className="h-10 bg-secondary rounded-lg flex items-center px-3 gap-2">
-                        <div className="w-4 h-4 rounded border-2 border-pink-500 bg-pink-500" />
+                        <div className="w-4 h-4 rounded border-2 border-[#007C21] bg-[#007C21]" />
                         <span className="text-sm text-muted-foreground">CRM Integration</span>
                       </div>
                       <div className="h-10 bg-secondary rounded-lg flex items-center px-3 gap-2">
-                        <div className="w-4 h-4 rounded border-2 border-blue-500 bg-blue-500" />
+                        <div className="w-4 h-4 rounded border-2 border-[#89F335] bg-[#89F335]" />
                         <span className="text-sm text-muted-foreground">AI Analytics Setup</span>
                       </div>
                       <div className="h-10 bg-secondary rounded-lg flex items-center px-3 gap-2">
@@ -168,31 +168,31 @@ const SolutionSection = () => {
                           initial={{ height: 0 }}
                           animate={{ height: "60%" }}
                           transition={{ duration: 0.5, delay: 0.1 }}
-                          className="w-8 bg-gradient-to-t from-purple-500/30 to-purple-500/10 rounded-t"
+                          className="w-8 bg-gradient-to-t from-[#001305]/30 to-[#001305]/10 rounded-t"
                         />
                         <motion.div 
                           initial={{ height: 0 }}
                           animate={{ height: "80%" }}
                           transition={{ duration: 0.5, delay: 0.2 }}
-                          className="w-8 bg-gradient-to-t from-pink-500/50 to-pink-500/20 rounded-t"
+                          className="w-8 bg-gradient-to-t from-[#007C21]/50 to-[#007C21]/20 rounded-t"
                         />
                         <motion.div 
                           initial={{ height: 0 }}
                           animate={{ height: "45%" }}
                           transition={{ duration: 0.5, delay: 0.3 }}
-                          className="w-8 bg-gradient-to-t from-blue-500/40 to-blue-500/15 rounded-t"
+                          className="w-8 bg-gradient-to-t from-[#89F335]/40 to-[#89F335]/15 rounded-t"
                         />
                         <motion.div 
                           initial={{ height: 0 }}
                           animate={{ height: "90%" }}
                           transition={{ duration: 0.5, delay: 0.4 }}
-                          className="w-8 bg-gradient-to-t from-purple-500 via-pink-500 to-blue-500 rounded-t"
+                          className="w-8 bg-gradient-to-t from-[#001305] via-[#007C21] to-[#89F335] rounded-t"
                         />
                         <motion.div 
                           initial={{ height: 0 }}
                           animate={{ height: "70%" }}
                           transition={{ duration: 0.5, delay: 0.5 }}
-                          className="w-8 bg-gradient-to-t from-pink-500/60 to-pink-500/30 rounded-t"
+                          className="w-8 bg-gradient-to-t from-[#007C21]/60 to-[#007C21]/30 rounded-t"
                         />
                       </div>
                       <p className="text-xs text-muted-foreground">Data processing efficiency</p>
@@ -205,27 +205,27 @@ const SolutionSection = () => {
                         initial={{ opacity: 0, x: -10 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: 0.1 }}
-                        className="flex items-center gap-3 p-3 bg-gradient-to-r from-purple-500/10 to-pink-500/10 rounded-lg"
+                        className="flex items-center gap-3 p-3 bg-gradient-to-r from-[#001305]/10 to-[#007C21]/10 rounded-lg"
                       >
-                        <div className="w-2 h-2 rounded-full bg-gradient-to-r from-purple-500 to-pink-500" />
+                        <div className="w-2 h-2 rounded-full bg-gradient-to-r from-[#001305] to-[#007C21]" />
                         <span className="text-sm text-foreground">Automated Payroll Processing</span>
                       </motion.div>
                       <motion.div
                         initial={{ opacity: 0, x: -10 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: 0.2 }}
-                        className="flex items-center gap-3 p-3 bg-gradient-to-r from-pink-500/10 to-blue-500/10 rounded-lg"
+                        className="flex items-center gap-3 p-3 bg-gradient-to-r from-[#007C21]/10 to-[#89F335]/10 rounded-lg"
                       >
-                        <div className="w-2 h-2 rounded-full bg-gradient-to-r from-pink-500 to-blue-500" />
+                        <div className="w-2 h-2 rounded-full bg-gradient-to-r from-[#007C21] to-[#89F335]" />
                         <span className="text-sm text-foreground">Predictive Analytics Dashboard</span>
                       </motion.div>
                       <motion.div
                         initial={{ opacity: 0, x: -10 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: 0.3 }}
-                        className="flex items-center gap-3 p-3 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-lg"
+                        className="flex items-center gap-3 p-3 bg-gradient-to-r from-[#89F335]/10 to-[#001305]/10 rounded-lg"
                       >
-                        <div className="w-2 h-2 rounded-full bg-gradient-to-r from-blue-500 to-purple-500" />
+                        <div className="w-2 h-2 rounded-full bg-gradient-to-r from-[#89F335] to-[#001305]" />
                         <span className="text-sm text-foreground">Real-time Financial Reports</span>
                       </motion.div>
                     </div>

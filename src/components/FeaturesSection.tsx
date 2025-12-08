@@ -75,17 +75,17 @@ const FeaturesSection = () => {
             >
               <div className="h-full bg-card border border-border rounded-2xl p-6 hover:shadow-card transition-all duration-300">
                 <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-4 bg-gradient-to-br ${
-                  feature.color === 'purple' ? 'from-purple-500/20 to-purple-500/5' :
-                  feature.color === 'pink' ? 'from-pink-500/20 to-pink-500/5' :
-                  'from-blue-500/20 to-blue-500/5'
+                  feature.color === 'purple' ? 'from-[#001305]/20 to-[#001305]/5' :
+                  feature.color === 'pink' ? 'from-[#007C21]/20 to-[#007C21]/5' :
+                  'from-[#89F335]/20 to-[#89F335]/5'
                 }`}>
                   <feature.icon className={`w-6 h-6 ${
-                    feature.color === 'purple' ? 'text-purple-500' :
-                    feature.color === 'pink' ? 'text-pink-500' :
-                    'text-blue-500'
+                    feature.color === 'purple' ? 'text-[#001305]' :
+                    feature.color === 'pink' ? 'text-[#007C21]' :
+                    'text-[#89F335]'
                   }`} />
                 </div>
-                <h3 className="font-semibold text-lg text-foreground mb-2 group-hover:bg-gradient-to-r group-hover:from-purple-500 group-hover:via-pink-500 group-hover:to-blue-500 group-hover:bg-clip-text group-hover:text-transparent transition-all">
+                <h3 className="font-semibold text-lg text-foreground mb-2 group-hover:bg-gradient-to-r group-hover:from-[#001305] group-hover:via-[#007C21] group-hover:to-[#89F335] group-hover:bg-clip-text group-hover:text-transparent transition-all">
                   {feature.title}
                 </h3>
                 <p className="text-muted-foreground">

@@ -29,14 +29,13 @@ const Navbar = () => {
           <div className="hidden md:flex items-center gap-8">
             <Link to="/features" className="flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground transition-colors">
               Features
-              <ChevronDown className="w-4 h-4" />
             </Link>
             <Link to="/pricing" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
               Pricing
             </Link>
-            <a href="#resources" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+            {/* <a href="#resources" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
               Resources
-            </a>
+            </a> */}
             <Link to="/about" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
               About us
             </Link>

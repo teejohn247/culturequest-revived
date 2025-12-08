@@ -3,15 +3,15 @@ import { Users, Briefcase, Brain, BarChart3, TrendingUp, Zap, Shield, Database, 
 import { useRef } from "react";
 
 const siloModules = [
-  { icon: Users, color: "bg-gradient-to-br from-purple-500 to-purple-600", label: "HR Management" },
-  { icon: Briefcase, color: "bg-gradient-to-br from-pink-500 to-pink-600", label: "CRM" },
-  { icon: Brain, color: "bg-gradient-to-br from-blue-500 to-blue-600", label: "AI Analytics" },
-  { icon: BarChart3, color: "bg-gradient-to-br from-purple-400 to-pink-500", label: "Accounting" },
-  { icon: TrendingUp, color: "bg-gradient-to-br from-pink-400 to-purple-500", label: "Reporting" },
-  { icon: Zap, color: "bg-gradient-to-br from-blue-400 to-purple-500", label: "Automation" },
-  { icon: Shield, color: "bg-gradient-to-br from-purple-500 to-blue-500", label: "Security" },
-  { icon: Database, color: "bg-gradient-to-br from-pink-500 to-blue-500", label: "Data Management" },
-  { icon: Sparkles, color: "bg-gradient-to-br from-purple-400 to-pink-400", label: "Insights" },
+  { icon: Users, color: "bg-gradient-to-br from-[#001305] to-[#007C21]", label: "HR Management" },
+  { icon: Briefcase, color: "bg-gradient-to-br from-[#007C21] to-[#89F335]", label: "CRM" },
+  { icon: Brain, color: "bg-gradient-to-br from-[#89F335] to-[#007C21]", label: "AI Analytics" },
+  { icon: BarChart3, color: "bg-gradient-to-br from-[#001305] to-[#007C21]", label: "Accounting" },
+  { icon: TrendingUp, color: "bg-gradient-to-br from-[#007C21] to-[#89F335]", label: "Reporting" },
+  { icon: Zap, color: "bg-gradient-to-br from-[#89F335] to-[#001305]", label: "Automation" },
+  { icon: Shield, color: "bg-gradient-to-br from-[#001305] to-[#89F335]", label: "Security" },
+  { icon: Database, color: "bg-gradient-to-br from-[#007C21] to-[#89F335]", label: "Data Management" },
+  { icon: Sparkles, color: "bg-gradient-to-br from-[#001305] to-[#007C21]", label: "Insights" },
 ];
 
 const features = [
@@ -19,19 +19,19 @@ const features = [
     title: "Instant Data Processing",
     description: "90% increase in productivity and efficiency",
     metric: "90%",
-    color: "from-purple-500 to-pink-500",
+    color: "from-[#001305] to-[#007C21]",
   },
   {
     title: "Natural Language Interface",
     description: "Zero learning curve, accessible to all skill levels",
     metric: "100%",
-    color: "from-pink-500 to-blue-500",
+    color: "from-[#007C21] to-[#89F335]",
   },
   {
     title: "Predictive Analytics",
     description: "Future trend forecasting and risk assessment",
     metric: "85%",
-    color: "from-blue-500 to-purple-500",
+    color: "from-[#89F335] to-[#001305]",
   },
 ];
 
@@ -44,9 +44,11 @@ const DashboardShowcase = () => {
   });
 
   // Left cards: start from -100px, come to 0, then go to -100px
-  const leftX = useTransform(scrollYProgress, [0, 0.3, 0.5, 0.7, 1], [-100, -50, 0, -50, -100]);
+  const leftX = useTransform(scrollYProgress, [0, 0.3, 0.5, 0.7, 1], [-200, -520, 0, -100, -250]);
   // Right cards: start from 100px, come to 0, then go to 100px
-  const rightX = useTransform(scrollYProgress, [0, 0.3, 0.5, 0.7, 1], [100, 50, 0, 50, 100]);
+  // const rightX = useTransform(scrollYProgress, [0, 0.3, 0.5, 0.7, 1], [100, 50, 0, 50, 100]);
+  const rightX = useTransform(scrollYProgress,  [0, 0.3, 0.5, 0.7, 1], [-200, 520, 0, 100, 250]);
+
 
   return (
     <section ref={sectionRef} className="py-20 lg:py-32 bg-background overflow-hidden relative">
@@ -58,8 +60,8 @@ const DashboardShowcase = () => {
               <circle cx="2" cy="2" r="1.5" fill="hsl(var(--muted-foreground) / 0.15)" />
             </pattern>
             <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="hsl(var(--soft-purple))" stopOpacity="0.3" />
-              <stop offset="50%" stopColor="hsl(var(--soft-pink))" stopOpacity="0.2" />
+              <stop offset="0%" stopColor="hsl(var(--soft-green))" stopOpacity="0.3" />
+              <stop offset="50%" stopColor="hsl(var(--soft-green))" stopOpacity="0.2" />
               <stop offset="100%" stopColor="hsl(var(--soft-blue))" stopOpacity="0.3" />
             </linearGradient>
           </defs>
@@ -130,7 +132,7 @@ const DashboardShowcase = () => {
                 className="bg-card rounded-2xl p-6 shadow-card border border-border"
               >
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="bg-gradient-to-br from-purple-500 via-pink-500 to-blue-500 rounded-xl p-3">
+                  <div className="bg-gradient-to-br from-[#001305] via-[#007C21] to-[#89F335] rounded-xl p-3">
                     <Sparkles className="w-6 h-6 text-white" strokeWidth={1.5} />
                   </div>
                   <h3 className="text-lg font-semibold text-foreground">
@@ -158,7 +160,7 @@ const DashboardShowcase = () => {
                   </div>
                 ))}
 
-                <button className="w-full bg-gradient-to-r from-purple-500 via-pink-500 to-blue-500 text-white py-3 rounded-xl font-medium mt-2 hover:opacity-90 transition-opacity shadow-lg">
+                <button className="w-full bg-gradient-to-r from-[#001305] via-[#007C21] to-[#89F335] text-white py-3 rounded-xl font-medium mt-2 hover:opacity-90 transition-opacity shadow-lg">
                   Explore Platform
                 </button>
               </motion.div>
@@ -179,7 +181,7 @@ const DashboardShowcase = () => {
                 style={{ scale: 1.2 }}
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}
+                  viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.3 }}
               />
             </motion.div>
@@ -213,9 +215,9 @@ const DashboardShowcase = () => {
                     />
                     <defs>
                       <linearGradient id="performanceGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" stopColor="#A855F7" />
-                        <stop offset="50%" stopColor="#EC4899" />
-                        <stop offset="100%" stopColor="#3B82F6" />
+                        <stop offset="0%" stopColor="#001305" />
+                        <stop offset="50%" stopColor="#007C21" />
+                        <stop offset="100%" stopColor="#89F335" />
                       </linearGradient>
                     </defs>
                     <motion.circle
@@ -239,7 +241,7 @@ const DashboardShowcase = () => {
                       whileInView={{ opacity: 1 }}
                       viewport={{ once: true }}
                       transition={{ duration: 0.5, delay: 1 }}
-                      className="text-5xl font-bold bg-gradient-to-r from-purple-500 via-pink-500 to-blue-500 bg-clip-text text-transparent"
+                      className="text-5xl font-bold bg-gradient-to-r from-[#001305] via-[#007C21] to-[#89F335] bg-clip-text text-transparent"
                     >
                       77
                     </motion.span>
@@ -253,10 +255,10 @@ const DashboardShowcase = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: 0.8 }}
-                  className="mt-6 bg-gradient-to-br from-purple-50 via-pink-50 to-blue-50 dark:from-purple-950/20 dark:via-pink-950/20 dark:to-blue-950/20 rounded-xl p-4 border border-purple-200/50 dark:border-purple-800/50"
+                  className="mt-6 bg-gradient-to-br from-[#001305]/10 via-[#007C21]/10 to-[#89F335]/10 dark:from-[#001305]/20 dark:via-[#007C21]/20 dark:to-[#89F335]/20 rounded-xl p-4 border border-[#007C21]/30 dark:border-[#007C21]/50"
                 >
                   <div className="flex items-center gap-2 mb-2">
-                    <span className="text-purple-500">✦</span>
+                    <span className="text-[#007C21]">✦</span>
                     <span className="text-sm font-medium text-muted-foreground">Key Insight</span>
                   </div>
                   <h4 className="font-semibold text-foreground mb-1">Optimized Operations</h4>
@@ -281,7 +283,7 @@ const DashboardShowcase = () => {
                   </button>
                 </div>
                 <div className="flex items-center gap-2 mb-6">
-                  <span className="text-sm font-medium bg-gradient-to-r from-purple-500 via-pink-500 to-blue-500 bg-clip-text text-transparent">↗ +13.8% CAGR</span>
+                  <span className="text-sm font-medium bg-gradient-to-r from-[#001305] via-[#007C21] to-[#89F335] bg-clip-text text-transparent">↗ +13.8% CAGR</span>
                   <span className="text-muted-foreground text-sm">projected growth</span>
                 </div>
 
@@ -290,14 +292,14 @@ const DashboardShowcase = () => {
                   <svg className="w-full h-full" viewBox="0 0 400 100" preserveAspectRatio="none">
                     <defs>
                       <linearGradient id="chartGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                        <stop offset="0%" stopColor="#A855F7" stopOpacity="0.2" />
-                        <stop offset="50%" stopColor="#EC4899" stopOpacity="0.15" />
-                        <stop offset="100%" stopColor="#3B82F6" stopOpacity="0.1" />
+                        <stop offset="0%" stopColor="#001305" stopOpacity="0.2" />
+                        <stop offset="50%" stopColor="#007C21" stopOpacity="0.15" />
+                        <stop offset="100%" stopColor="#89F335" stopOpacity="0.1" />
                       </linearGradient>
                       <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                        <stop offset="0%" stopColor="#A855F7" />
-                        <stop offset="50%" stopColor="#EC4899" />
-                        <stop offset="100%" stopColor="#3B82F6" />
+                        <stop offset="0%" stopColor="#001305" />
+                        <stop offset="50%" stopColor="#007C21" />
+                        <stop offset="100%" stopColor="#89F335" />
                       </linearGradient>
                     </defs>
                     {/* Grid lines */}

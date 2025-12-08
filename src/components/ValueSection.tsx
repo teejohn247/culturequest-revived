@@ -65,9 +65,9 @@ const ValueSection = () => {
                 {/* Content */}
                 <div className="flex-1 space-y-4">
                   <span className={`inline-block text-sm font-medium px-4 py-1.5 rounded-full ${
-                    value.color === 'purple' ? 'bg-purple-500/10 text-purple-500' :
-                    value.color === 'pink' ? 'bg-pink-500/10 text-pink-500' :
-                    'bg-blue-500/10 text-blue-500'
+                    value.color === 'purple' ? 'bg-[#001305]/10 text-[#001305]' :
+                    value.color === 'pink' ? 'bg-[#007C21]/10 text-[#007C21]' :
+                    'bg-[#89F335]/10 text-[#89F335]'
                   }`}>
                     {value.tag}
                   </span>

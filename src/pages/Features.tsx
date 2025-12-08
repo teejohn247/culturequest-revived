@@ -3,6 +3,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Users, Briefcase, Brain, BarChart3, Globe, Target, Star, Puzzle, MessageSquare, TrendingUp, Shield, BookOpen } from "lucide-react";
+import { openCalendly } from "@/lib/calendly";
 
 const secondaryNavItems = [
   { icon: Users, label: "HR Management" },
@@ -21,7 +22,7 @@ const mainFeatures = [
       "Payroll processing automation",
       "Employee data management"
     ],
-    visualType: "chat"
+    visualType: "HR"
   },
   {
     title: "CRM",
@@ -32,7 +33,7 @@ const mainFeatures = [
       "Marketing campaign automation",
       "Customer interaction logging"
     ],
-    visualType: "chat"
+    visualType: "CRM"
   },
   {
     title: "AI Analytics",
@@ -43,7 +44,7 @@ const mainFeatures = [
       "Automated reporting",
       "Intelligent recommendations"
     ],
-    visualType: "dashboard"
+    visualType: "AI"
   },
   {
     title: "Accounting",
@@ -54,7 +55,7 @@ const mainFeatures = [
       "Expense management",
       "Financial statement generation"
     ],
-    visualType: "dashboard"
+    visualType: "Accounting"
   },
 ];
 
@@ -103,7 +104,7 @@ const Features = () => {
               >
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight">
                   Unite Teams Through the Power of{" "}
-                  <span className="bg-gradient-to-r from-purple-500 via-pink-500 to-blue-500 bg-clip-text text-transparent">
+                  <span className="bg-gradient-to-r from-[#001305] via-[#007C21] to-[#89F335] bg-clip-text text-transparent">
                     Data Intelligence
                   </span>
                 </h1>
@@ -111,7 +112,7 @@ const Features = () => {
                   Empower your workforce with intelligent, automated solutions designed to foster efficiency, 
                   collaboration, and data-driven decision-making across all business functions.
                 </p>
-                <Button size="lg" className="bg-gradient-to-r from-purple-500 via-pink-500 to-blue-500 text-white hover:opacity-90">
+                <Button size="lg" className="bg-gradient-to-r from-[#001305] via-[#007C21] to-[#89F335] text-white hover:opacity-90" onClick={() => openCalendly()}>
                   Book a Meeting
                 </Button>
               </motion.div>
@@ -140,7 +141,7 @@ const Features = () => {
 
         {/* Feature Showcase - Full Rows */}
         <section className="py-24 bg-background">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" >
             <div>
               {mainFeatures.map((feature, index) => {
                 const isEven = index % 2 === 0;
@@ -152,54 +153,22 @@ const Features = () => {
                     transition={{ duration: 0.5, delay: index * 0.1 }}
                     viewport={{ once: true }}
                     className="flex flex-col md:flex-row gap-8 md:gap-12 items-center"
+                    style={{marginBottom: '80px'}}
                   >
-                    {/* Visual Icon - Alternates sides */}
+                    {/* Visual Image - Alternates sides */}
                     <div className={`w-full md:w-1/2 flex justify-center md:justify-start ${isEven ? 'md:order-2' : 'md:order-1'}`}>
-                      <div className="w-full max-w-sm aspect-square rounded-xl bg-gradient-to-br from-pink-500 via-purple-500 to-blue-500 p-6 flex items-center justify-center">
-                        {feature.visualType === "chat" ? (
-                          <div className="space-y-3 w-full">
-                            <div className="bg-white rounded-lg p-3 relative">
-                              <div className="h-3 bg-purple-200 rounded w-3/4"></div>
-                              <div className="absolute -right-2 -top-2 w-4 h-4 bg-blue-300 rounded-full flex items-center justify-center">
-                                <span className="text-[8px] text-white">★</span>
-                              </div>
-                              <div className="absolute -left-1.5 -top-1.5 w-3 h-3 bg-blue-300 rounded-full"></div>
-                            </div>
-                            <div className="bg-white rounded-lg p-3 relative">
-                              <div className="h-3 bg-purple-200 rounded w-2/3"></div>
-                              <div className="absolute -left-2 -top-2 w-4 h-4 bg-blue-300 rounded-full flex items-center justify-center">
-                                <span className="text-[8px] text-white">★</span>
-                              </div>
-                            </div>
-                            <div className="bg-white rounded-lg p-3 relative">
-                              <div className="h-3 bg-purple-200 rounded w-4/5"></div>
-                              <div className="absolute -right-2 -top-2 w-4 h-4 bg-blue-300 rounded-full flex items-center justify-center">
-                                <span className="text-[8px] text-white">★</span>
-                              </div>
-                            </div>
-                          </div>
-                        ) : (
-                          <div className="bg-white rounded-lg p-4 w-full h-full flex flex-col">
-                            <div className="text-xs font-semibold text-gray-700 mb-2">Culture score</div>
-                            <div className="flex items-center justify-center gap-3 mb-3 flex-1">
-                              <div className="relative w-20 h-20">
-                                <svg className="w-20 h-20 transform -rotate-90" viewBox="0 0 40 40">
-                                  <circle cx="20" cy="20" r="16" fill="none" stroke="#E5E7EB" strokeWidth="3"/>
-                                  <circle cx="20" cy="20" r="16" fill="none" stroke="#A855F7" strokeWidth="3" 
-                                    strokeDasharray={`${2 * Math.PI * 16}`} 
-                                    strokeDashoffset={`${2 * Math.PI * 16 * 0.3}`}
-                                    strokeLinecap="round"/>
-                                </svg>
-                                <span className="absolute inset-0 flex items-center justify-center text-xs font-bold text-purple-600">70</span>
-                              </div>
-                            </div>
-                            <div className="space-y-2 w-full">
-                              <div className="h-2 bg-purple-200 rounded w-full"></div>
-                              <div className="h-2 bg-purple-200 rounded w-3/4"></div>
-                              <div className="h-2 bg-purple-200 rounded w-1/2"></div>
-                            </div>
-                          </div>
-                        )}
+                      <div className="w-full max-w-sm aspect-square rounded-xl overflow-hidden" style={{maxWidth: '100%'}}>
+                        <img 
+                          src={
+                            feature.visualType === "HR" ? "/HR 2.jpg" :
+                            feature.visualType === "CRM" ? "/CRM.jpg" :
+                            feature.visualType === "AI" ? "/Ai Analytics.jpg" :
+                            "/Accounting.jpg"
+                          }
+                          alt={feature.title}
+                          className="w-full h-full object-cover rounded-xl"
+                          style={{width: '100%'}}
+                        />
                       </div>
                     </div>
                     
@@ -231,7 +200,7 @@ const Features = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
               viewport={{ once: true }}
-              className="text-center mb-16"
+              className="text-center"
             >
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
                 Why Teams Love SILO
@@ -251,8 +220,8 @@ const Features = () => {
                   viewport={{ once: true }}
                   className="bg-card border border-border rounded-2xl p-8"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500/20 via-pink-500/20 to-blue-500/20 flex items-center justify-center mb-4">
-                    <item.icon className="w-6 h-6 text-purple-500" />
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#001305]/20 via-[#007C21]/20 to-[#89F335]/20 flex items-center justify-center mb-4">
+                    <item.icon className="w-6 h-6 text-[#007C21]" />
                   </div>
                   <h3 className="font-semibold text-xl text-foreground mb-3">
                     {item.title}
@@ -267,7 +236,7 @@ const Features = () => {
         </section>
 
         {/* CTA Section */}
-        <section className="py-24 bg-gradient-to-br from-purple-600 via-pink-600 to-blue-600">
+        <section className="py-24" style={{backgroundColor: '#001305'}}>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <motion.div
@@ -282,7 +251,7 @@ const Features = () => {
                 <p className="text-white/90 text-lg mb-8">
                   Book a short meeting and see how we can support your business operations.
                 </p>
-                <Button size="lg" className="bg-white text-purple-600 hover:bg-white/90">
+                <Button size="lg" className="bg-white text-[#000000] hover:bg-white/90" onClick={() => openCalendly()}>
                   Book a Meeting
                 </Button>
               </motion.div>
@@ -293,9 +262,13 @@ const Features = () => {
                 viewport={{ once: true }}
                 className="relative"
               >
-                {/* Placeholder for image */}
-                <div className="aspect-[4/3] rounded-2xl bg-gradient-to-br from-purple-500/20 via-pink-500/20 to-blue-500/20 flex items-center justify-center">
-                  <div className="text-white/50 text-sm">Image placeholder</div>
+                {/* Image */}
+                <div className="aspect-[4/3] rounded-2xl overflow-hidden">
+                  <img 
+                    src="/HR.jpg" 
+                    alt="SILO Platform"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
               </motion.div>
             </div>
@@ -306,5 +279,4 @@ const Features = () => {
     </div>
   );
 };
-
 export default Features;

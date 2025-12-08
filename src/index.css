@@ -15,9 +15,9 @@
     --popover: 0 0% 100%;
     --popover-foreground: 220 20% 20%;
 
-    --primary: 270 91% 65%;
+    --primary: 135 100% 24.3%;
     --primary-foreground: 0 0% 100%;
-    --primary-light: 270 50% 95%;
+    --primary-light: 135 50% 95%;
 
     --secondary: 220 14% 96%;
     --secondary-foreground: 220 20% 20%;
@@ -25,7 +25,7 @@
     --muted: 220 14% 96%;
     --muted-foreground: 220 10% 50%;
 
-    --accent: 330 81% 60%;
+    --accent: 90 88% 58%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
@@ -33,21 +33,18 @@
 
     --border: 220 13% 91%;
     --input: 220 13% 91%;
-    --ring: 270 91% 65%;
+    --ring: 135 100% 24.3%;
 
     --radius: 0.75rem;
 
-    /* Custom colors - Purple/Pink/Blue gradient theme */
-    --purple-gradient-start: 270 91% 65%;
-    --purple-gradient-mid: 330 81% 60%;
-    --purple-gradient-end: 217 91% 60%;
-    --pink-gradient: 330 81% 60%;
-    --blue-gradient: 217 91% 60%;
-    --teal: 175 70% 45%;
-    --coral: 15 85% 60%;
-    --soft-purple: 270 50% 96%;
-    --soft-pink: 330 50% 96%;
-    --soft-blue: 217 50% 96%;
+    /* Custom colors - Green theme (#001305, #007C21, #89F335) */
+    --green-dark: 135 100% 3.7%; /* #001305 */
+    --green-medium: 135 100% 24.3%; /* #007C21 */
+    --green-bright: 90 88% 58%; /* #89F335 */
+    --green-gradient-start: 135 100% 3.7%;
+    --green-gradient-mid: 135 100% 24.3%;
+    --green-gradient-end: 90 88% 58%;
+    --soft-green: 135 50% 96%;
     
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -69,8 +66,8 @@
     --popover: 220 20% 12%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 270 91% 70%;
-    --primary-foreground: 220 20% 10%;
+    --primary: 135 100% 30%;
+    --primary-foreground: 0 0% 100%;
 
     --secondary: 220 20% 18%;
     --secondary-foreground: 210 40% 98%;
@@ -78,7 +75,7 @@
     --muted: 220 20% 18%;
     --muted-foreground: 215 20.2% 65.1%;
 
-    --accent: 330 81% 65%;
+    --accent: 90 88% 65%;
     --accent-foreground: 220 20% 10%;
 
     --destructive: 0 62.8% 30.6%;
@@ -86,7 +83,7 @@
 
     --border: 220 20% 20%;
     --input: 220 20% 20%;
-    --ring: 270 91% 70%;
+    --ring: 135 100% 30%;
     
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
@@ -104,32 +101,33 @@
     @apply border-border;
   }
 
-  body {
-    @apply bg-background text-foreground font-sans antialiased;
-    font-family: 'Inter', sans-serif;
-  }
-
   html {
     scroll-behavior: smooth;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
   }
 }
 
 @layer utilities {
   .text-gradient {
     @apply bg-clip-text text-transparent;
-    background-image: linear-gradient(135deg, hsl(var(--purple-gradient-start)) 0%, hsl(var(--purple-gradient-mid)) 50%, hsl(var(--purple-gradient-end)) 100%);
+    background-image: linear-gradient(135deg, hsl(var(--green-gradient-start)) 0%, hsl(var(--green-gradient-mid)) 50%, hsl(var(--green-gradient-end)) 100%);
   }
 
   .bg-gradient-primary {
-    background: linear-gradient(135deg, hsl(var(--purple-gradient-start)) 0%, hsl(var(--purple-gradient-mid)) 50%, hsl(var(--purple-gradient-end)) 100%);
+    background: linear-gradient(135deg, hsl(var(--green-gradient-start)) 0%, hsl(var(--green-gradient-mid)) 50%, hsl(var(--green-gradient-end)) 100%);
   }
 
   .bg-gradient-iridescent {
-    background: linear-gradient(135deg, hsl(var(--purple-gradient-start)) 0%, hsl(var(--purple-gradient-mid)) 50%, hsl(var(--purple-gradient-end)) 100%);
+    background: linear-gradient(135deg, hsl(var(--green-gradient-start)) 0%, hsl(var(--green-gradient-mid)) 50%, hsl(var(--green-gradient-end)) 100%);
   }
 
   .bg-soft-gradient {
-    background: linear-gradient(180deg, hsl(var(--soft-purple)) 0%, hsl(var(--soft-pink)) 50%, hsl(var(--background)) 100%);
+    background: linear-gradient(180deg, hsl(var(--soft-green)) 0%, hsl(var(--soft-green)) 50%, hsl(var(--background)) 100%);
   }
 
   .shadow-glow {
@@ -202,6 +200,7 @@
   animation: pulse-glow 3s ease-in-out infinite;
 }
 
-.w-full.max-w-sm.aspect-square.rounded-xl.bg-gradient-to-br.from-pink-500.via-purple-500.to-blue-500.p-6.flex.items-center.justify-center{
+/* Utility override for feature showcase visuals */
+.w-full.max-w-sm.aspect-square.rounded-xl.p-6.flex.items-center.justify-center{
   max-width: 100% !important;
 }

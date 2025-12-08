@@ -118,8 +118,8 @@ const AnimatedColumn = ({
 const TestimonialsSection = () => {
   return (
     <section className="relative py-20 lg:py-32 overflow-hidden">
-      {/* Purple/Pink/Blue gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-purple-500 via-pink-500 to-blue-500" />
+      {/* Green gradient background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[#001305] via-[#007C21] to-[#89F335]" />
       
       {/* Diagonal edge at top - slanted from top-left to right */}
       <div className="absolute top-0 left-0 right-0 h-32">
