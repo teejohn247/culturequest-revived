@@ -15,9 +15,9 @@
     --popover: 0 0% 100%;
     --popover-foreground: 220 20% 20%;
 
-    --primary: 135 100% 24.3%;
+    --primary: 238 86% 67%; /* #6366F1 */
     --primary-foreground: 0 0% 100%;
-    --primary-light: 135 50% 95%;
+    --primary-light: 238 50% 95%;
 
     --secondary: 220 14% 96%;
     --secondary-foreground: 220 20% 20%;
@@ -25,7 +25,7 @@
     --muted: 220 14% 96%;
     --muted-foreground: 220 10% 50%;
 
-    --accent: 90 88% 58%;
+    --accent: 283 55% 55%; /* #AB4FCB */
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
@@ -33,18 +33,15 @@
 
     --border: 220 13% 91%;
     --input: 220 13% 91%;
-    --ring: 135 100% 24.3%;
+    --ring: 238 86% 67%;
 
     --radius: 0.75rem;
 
-    /* Custom colors - Green theme (#001305, #007C21, #89F335) */
-    --green-dark: 135 100% 3.7%; /* #001305 */
-    --green-medium: 135 100% 24.3%; /* #007C21 */
-    --green-bright: 90 88% 58%; /* #89F335 */
-    --green-gradient-start: 135 100% 3.7%;
-    --green-gradient-mid: 135 100% 24.3%;
-    --green-gradient-end: 90 88% 58%;
-    --soft-green: 135 50% 96%;
+    /* Custom colors - Indigo/Purple theme (#6366F1, #383DA0, #AB4FCB) */
+    --indigo-primary: 238 86% 67%; /* #6366F1 */
+    --indigo-dark: 237 48% 42%; /* #383DA0 */
+    --purple-accent: 283 55% 55%; /* #AB4FCB */
+    --soft-indigo: 238 50% 96%;
     
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -66,7 +63,7 @@
     --popover: 220 20% 12%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 135 100% 30%;
+    --primary: 238 86% 70%;
     --primary-foreground: 0 0% 100%;
 
     --secondary: 220 20% 18%;
@@ -75,15 +72,15 @@
     --muted: 220 20% 18%;
     --muted-foreground: 215 20.2% 65.1%;
 
-    --accent: 90 88% 65%;
-    --accent-foreground: 220 20% 10%;
+    --accent: 283 55% 60%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
 
     --border: 220 20% 20%;
     --input: 220 20% 20%;
-    --ring: 135 100% 30%;
+    --ring: 238 86% 70%;
     
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
@@ -115,19 +112,19 @@
 @layer utilities {
   .text-gradient {
     @apply bg-clip-text text-transparent;
-    background-image: linear-gradient(135deg, hsl(var(--green-gradient-start)) 0%, hsl(var(--green-gradient-mid)) 50%, hsl(var(--green-gradient-end)) 100%);
+    background-image: linear-gradient(77.82deg, #6366F1 26.36%, #6366F1 40.12%, #383DA0 53.89%, #AB4FCB 68.38%, #AB4FCB 82.88%);
   }
 
-  .bg-gradient-primary {
-    background: linear-gradient(135deg, hsl(var(--green-gradient-start)) 0%, hsl(var(--green-gradient-mid)) 50%, hsl(var(--green-gradient-end)) 100%);
-  }
+  /* .bg-gradient-primary {
+    background: linear-gradient(77.82deg, #6366F1 26.36%, #6366F1 40.12%, #383DA0 53.89%, #AB4FCB 68.38%, #AB4FCB 82.88%);
+  } */
 
   .bg-gradient-iridescent {
-    background: linear-gradient(135deg, hsl(var(--green-gradient-start)) 0%, hsl(var(--green-gradient-mid)) 50%, hsl(var(--green-gradient-end)) 100%);
+    background: linear-gradient(77.82deg, #6366F1 26.36%, #6366F1 40.12%, #383DA0 53.89%, #AB4FCB 68.38%, #AB4FCB 82.88%);
   }
 
   .bg-soft-gradient {
-    background: linear-gradient(180deg, hsl(var(--soft-green)) 0%, hsl(var(--soft-green)) 50%, hsl(var(--background)) 100%);
+    background: linear-gradient(180deg, hsl(var(--soft-indigo)) 0%, hsl(var(--soft-indigo)) 50%, hsl(var(--background)) 100%);
   }
 
   .shadow-glow {
@@ -203,4 +200,8 @@
 /* Utility override for feature showcase visuals */
 .w-full.max-w-sm.aspect-square.rounded-xl.p-6.flex.items-center.justify-center{
   max-width: 100% !important;
+}
+
+.h-1\.5 {
+  height: 0.175rem;
 }

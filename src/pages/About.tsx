@@ -58,7 +58,7 @@ const About = () => {
                 Our platform provides continuous data processing, AI-driven analytics, and actionable insights 
                 to translate raw data into practical business actions.
               </p>
-              <Button size="lg" className="bg-gradient-to-r from-[#001305] via-[#007C21] to-[#89F335] text-white hover:opacity-90" onClick={() => openCalendly()}>
+              <Button size="lg" className="bg-gradient-to-r from-[#6366F1] via-[#383DA0] to-[#AB4FCB] text-white hover:opacity-90" onClick={() => openCalendly()}>
                 Book a Meeting
               </Button>
             </motion.div>
@@ -160,8 +160,8 @@ const About = () => {
                   viewport={{ once: true }}
                   className="bg-card border border-border rounded-2xl p-8 text-center"
                 >
-                  <div className="w-32 h-32 rounded-full bg-gradient-to-br from-[#001305]/20 via-[#007C21]/20 to-[#89F335]/20 mx-auto mb-6 flex items-center justify-center">
-                    <span className="text-4xl font-bold bg-gradient-to-r from-[#001305] via-[#007C21] to-[#89F335] bg-clip-text text-transparent">
+                  <div className="w-32 h-32 rounded-full bg-gradient-to-br from-[#6366F1]/20 via-[#383DA0]/20 to-[#AB4FCB]/20 mx-auto mb-6 flex items-center justify-center">
+                    <span className="text-4xl font-bold bg-gradient-to-r from-[#6366F1] via-[#383DA0] to-[#AB4FCB] bg-clip-text text-transparent">
                       {member.name.split(' ').map(n => n[0]).join('')}
                     </span>
                   </div>
@@ -218,7 +218,7 @@ const About = () => {
         </section>
 
         {/* CTA Section */}
-        <section className="py-24 bg-gradient-to-br from-[#001305] via-[#007C21] to-[#89F335]">
+        <section className="py-24 bg-gradient-to-br from-[#6366F1] via-[#383DA0] to-[#AB4FCB]">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -232,7 +232,7 @@ const About = () => {
               <p className="text-white/90 text-lg mb-8">
                 Book a short meeting and see how we can support your business operations.
               </p>
-              <Button size="lg" variant="secondary" className="bg-white text-[#89F335] hover:bg-white/90" onClick={() => openCalendly()}>
+              <Button size="lg" variant="secondary" className="bg-white text-[#6366F1] hover:bg-white/90" onClick={() => openCalendly()}>
                 Book a Meeting
               </Button>
             </motion.div>

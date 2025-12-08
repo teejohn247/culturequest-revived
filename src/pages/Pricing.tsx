@@ -113,7 +113,7 @@ const Pricing = () => {
                 <button
                   onClick={() => setIsAnnual(!isAnnual)}
                   className={`relative inline-flex h-8 w-14 items-center rounded-full transition-colors ${
-                    isAnnual ? 'bg-gradient-to-r from-[#001305] via-[#007C21] to-[#89F335]' : 'bg-muted'
+                    isAnnual ? 'bg-gradient-to-r from-[#6366F1] via-[#383DA0] to-[#AB4FCB]' : 'bg-muted'
                   }`}
                 >
                   <span
@@ -143,12 +143,12 @@ const Pricing = () => {
                   viewport={{ once: true }}
                   className={`relative rounded-3xl p-8 ${
                     plan.popular
-                      ? 'bg-gradient-to-br from-[#001305] via-[#007C21] to-[#89F335] text-white border-2 border-transparent'
+                      ? 'bg-gradient-to-br from-[#6366F1] via-[#383DA0] to-[#AB4FCB] text-white border-2 border-transparent'
                       : 'bg-card border border-border'
                   }`}
                 >
                   {plan.popular && (
-                    <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-white text-[#89F335] px-4 py-1 rounded-full text-sm font-semibold">
+                    <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-white text-[#6366F1] px-4 py-1 rounded-full text-sm font-semibold">
                       Most Popular
                     </div>
                   )}
@@ -179,8 +179,8 @@ const Pricing = () => {
                   <Button
                     className={`w-full ${
                       plan.popular
-                        ? 'bg-white text-[#007C21] hover:bg-white/90'
-                        : 'bg-gradient-to-r from-[#001305] via-[#007C21] to-[#89F335] text-white hover:opacity-90'
+                        ? 'bg-white text-[#6366F1] hover:bg-white/90'
+                        : 'bg-gradient-to-r from-[#6366F1] via-[#383DA0] to-[#AB4FCB] text-white hover:opacity-90'
                     }`}
                     size="lg"
                   >
@@ -234,7 +234,7 @@ const Pricing = () => {
         </section>
 
         {/* CTA Section */}
-        <section className="py-24 bg-gradient-to-br from-[#001305] via-[#000000] to-[#000000]">
+        <section className="py-24 bg-gradient-to-br from-[#6366F1] via-[#383DA0] to-[#AB4FCB]">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}

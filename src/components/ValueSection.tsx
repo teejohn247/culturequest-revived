@@ -38,10 +38,10 @@ const ValueSection = () => {
           className="text-center mb-16"
         >
           <span className="text-sm font-medium text-primary mb-4 block">How SILO creates value</span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground">
-            From data to decisions with
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground " style={{fontSize:'68px', lineHeight:'88px', fontWeight:'600'}}>
+            From setup to<br /> success with
             <br />
-            measurable business impact
+            <span className="text-gradient">Streamlined returns.</span>
           </h2>
           <p className="text-muted-foreground mt-4 max-w-xl mx-auto">
             SILO combines powerful software with expert consulting to help SMEs transform their operations.
@@ -59,19 +59,19 @@ const ValueSection = () => {
               viewport={{ once: true }}
               className="group"
             >
-              <div className={`relative bg-card rounded-3xl p-8 md:p-12 border border-border overflow-hidden hover:shadow-card transition-all duration-500 ${
+              <div className={`relative bg-card rounded-3xl p-8 md:p-12  overflow-hidden hover:shadow-card transition-all duration-500 ${
                 index === 0 ? 'md:flex-row' : index === 1 ? 'md:flex-row-reverse' : 'md:flex-row'
               } flex flex-col md:flex-row items-center gap-8`}>
                 {/* Content */}
                 <div className="flex-1 space-y-4">
-                  <span className={`inline-block text-sm font-medium px-4 py-1.5 rounded-full ${
-                    value.color === 'purple' ? 'bg-[#001305]/10 text-[#001305]' :
-                    value.color === 'pink' ? 'bg-[#007C21]/10 text-[#007C21]' :
-                    'bg-[#89F335]/10 text-[#89F335]'
+                  {/* <span className={`inline-block text-sm font-medium px-4 py-1.5 rounded-full ${
+                    value.color === 'purple' ? 'bg-[#6366F1]/10 text-[#6366F1]' :
+                    value.color === 'pink' ? 'bg-[#383DA0]/10 text-[#383DA0]' :
+                    'bg-[#AB4FCB]/10 text-[#AB4FCB]'
                   }`}>
                     {value.tag}
-                  </span>
-                  <h3 className="text-2xl md:text-3xl font-bold text-foreground">
+                  </span> */}
+                  <h3 className="text-2xl md:text-3xl font-bold text-foreground" style={{fontSize:'50px', lineHeight:'56px', fontWeight:'600', color: '#000000'}}>
                     {value.title}
                   </h3>
                   <p className="text-muted-foreground text-lg">

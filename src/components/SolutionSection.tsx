@@ -23,8 +23,13 @@ const SolutionSection = () => {
   const [activeStep, setActiveStep] = useState(0);
 
   return (
-    <section className="py-24 bg-secondary/30">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="relative py-24 overflow-hidden" style={{backgroundColor: '#252865'}}>
+      {/* Decorative arc in top right corner */}
+      <div className="absolute top-0 right-0" style={{width: '500px', height: '200px', zIndex: 1}}>
+        <img src="/arc.png" alt="" className="w-full h-full" style={{objectFit: 'contain', objectPosition: 'top right', opacity: 1}} />
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -33,15 +38,12 @@ const SolutionSection = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <span className="text-sm font-medium text-primary mb-4 block">How it works</span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground">
-            From setup to success.
-            <br />
-            Streamlined implementation.
+          <span className="text-sm font-medium text-white/80 mb-4 block" style={{fontSize:'16px'}}>Our solution</span>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white" style={{fontSize:'68px', lineHeight:'88px', fontWeight:'600'}}>
+            Measure what matters.<br />Act where it counts.
           </h2>
-          <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
-            SILO's implementation services help businesses connect AI-driven solutions, migrate data, 
-            configure dashboards, and train teams—so you get maximum value from day one.
+          <p className="text-white/80 mt-4 max-w-2xl mx-auto" style={{fontSize:'18px', lineHeight:'28px'}}>
+            Our platform helps you understand your people through surveys, personality insights, and data-driven tools—so you can build a healthier culture, one decision at a time.
           </p>
         </motion.div>
 
@@ -61,8 +63,8 @@ const SolutionSection = () => {
                 onClick={() => setActiveStep(index)}
                 className={`w-full text-left p-6 rounded-2xl border transition-all duration-300 ${
                   activeStep === index
-                    ? 'bg-card border-primary/30 shadow-card'
-                    : 'bg-background/50 border-border hover:bg-card'
+                    ? 'bg-white border-white/30 shadow-lg'
+                    : 'bg-white/10 border-white/20 hover:bg-white/20'
                 }`}
                 whileHover={{ scale: 1.01 }}
                 whileTap={{ scale: 0.99 }}
@@ -71,13 +73,13 @@ const SolutionSection = () => {
                   <span className={`flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center text-sm font-semibold ${
                     activeStep === index
                       ? 'bg-gradient-primary text-primary-foreground'
-                      : 'bg-secondary text-muted-foreground'
+                      : 'bg-white/20 text-white'
                   }`}>
                     {step.step}
                   </span>
                   <div>
                     <h3 className={`font-semibold text-lg mb-2 ${
-                      activeStep === index ? 'text-foreground' : 'text-muted-foreground'
+                      activeStep === index ? 'text-black' : 'text-white/80'
                     }`}>
                       {step.title}
                     </h3>
@@ -87,7 +89,7 @@ const SolutionSection = () => {
                           initial={{ opacity: 0, height: 0 }}
                           animate={{ opacity: 1, height: "auto" }}
                           exit={{ opacity: 0, height: 0 }}
-                          className="text-muted-foreground"
+                          // className="text-white/70"
                         >
                           {step.description}
                         </motion.p>
@@ -107,7 +109,7 @@ const SolutionSection = () => {
             viewport={{ once: true }}
             className="relative"
           >
-            <div className="relative bg-gradient-to-br from-primary/10 to-primary/5 rounded-3xl p-8 min-h-[400px] flex items-center justify-center overflow-hidden">
+            <div className="relative bg-white rounded-3xl p-8 min-h-[400px] flex items-center justify-center overflow-hidden shadow-lg">
               {/* Decorative shapes */}
               <motion.div
                 animate={{ 
@@ -143,15 +145,15 @@ const SolutionSection = () => {
                   {activeStep === 0 && (
                     <div className="space-y-3">
                       <div className="h-10 bg-secondary rounded-lg flex items-center px-3 gap-2">
-                        <div className="w-4 h-4 rounded border-2 border-[#001305]" />
+                        <div className="w-4 h-4 rounded border-2 border-[#6366F1]" />
                         <span className="text-sm text-muted-foreground">HR Management System</span>
                       </div>
                       <div className="h-10 bg-secondary rounded-lg flex items-center px-3 gap-2">
-                        <div className="w-4 h-4 rounded border-2 border-[#007C21] bg-[#007C21]" />
+                        <div className="w-4 h-4 rounded border-2 border-[#383DA0] bg-[#383DA0]" />
                         <span className="text-sm text-muted-foreground">CRM Integration</span>
                       </div>
                       <div className="h-10 bg-secondary rounded-lg flex items-center px-3 gap-2">
-                        <div className="w-4 h-4 rounded border-2 border-[#89F335] bg-[#89F335]" />
+                        <div className="w-4 h-4 rounded border-2 border-[#AB4FCB] bg-[#AB4FCB]" />
                         <span className="text-sm text-muted-foreground">AI Analytics Setup</span>
                       </div>
                       <div className="h-10 bg-secondary rounded-lg flex items-center px-3 gap-2">
@@ -168,31 +170,31 @@ const SolutionSection = () => {
                           initial={{ height: 0 }}
                           animate={{ height: "60%" }}
                           transition={{ duration: 0.5, delay: 0.1 }}
-                          className="w-8 bg-gradient-to-t from-[#001305]/30 to-[#001305]/10 rounded-t"
+                          className="w-8 bg-gradient-to-t from-[#6366F1]/30 to-[#6366F1]/10 rounded-t"
                         />
                         <motion.div 
                           initial={{ height: 0 }}
                           animate={{ height: "80%" }}
                           transition={{ duration: 0.5, delay: 0.2 }}
-                          className="w-8 bg-gradient-to-t from-[#007C21]/50 to-[#007C21]/20 rounded-t"
+                          className="w-8 bg-gradient-to-t from-[#383DA0]/50 to-[#383DA0]/20 rounded-t"
                         />
                         <motion.div 
                           initial={{ height: 0 }}
                           animate={{ height: "45%" }}
                           transition={{ duration: 0.5, delay: 0.3 }}
-                          className="w-8 bg-gradient-to-t from-[#89F335]/40 to-[#89F335]/15 rounded-t"
+                          className="w-8 bg-gradient-to-t from-[#AB4FCB]/40 to-[#AB4FCB]/15 rounded-t"
                         />
                         <motion.div 
                           initial={{ height: 0 }}
                           animate={{ height: "90%" }}
                           transition={{ duration: 0.5, delay: 0.4 }}
-                          className="w-8 bg-gradient-to-t from-[#001305] via-[#007C21] to-[#89F335] rounded-t"
+                          className="w-8 bg-gradient-to-t from-[#6366F1] via-[#383DA0] to-[#AB4FCB] rounded-t"
                         />
                         <motion.div 
                           initial={{ height: 0 }}
                           animate={{ height: "70%" }}
                           transition={{ duration: 0.5, delay: 0.5 }}
-                          className="w-8 bg-gradient-to-t from-[#007C21]/60 to-[#007C21]/30 rounded-t"
+                          className="w-8 bg-gradient-to-t from-[#383DA0]/60 to-[#383DA0]/30 rounded-t"
                         />
                       </div>
                       <p className="text-xs text-muted-foreground">Data processing efficiency</p>
@@ -205,27 +207,27 @@ const SolutionSection = () => {
                         initial={{ opacity: 0, x: -10 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: 0.1 }}
-                        className="flex items-center gap-3 p-3 bg-gradient-to-r from-[#001305]/10 to-[#007C21]/10 rounded-lg"
+                        className="flex items-center gap-3 p-3 bg-gradient-to-r from-[#6366F1]/10 to-[#383DA0]/10 rounded-lg"
                       >
-                        <div className="w-2 h-2 rounded-full bg-gradient-to-r from-[#001305] to-[#007C21]" />
+                        <div className="w-2 h-2 rounded-full bg-gradient-to-r from-[#6366F1] to-[#383DA0]" />
                         <span className="text-sm text-foreground">Automated Payroll Processing</span>
                       </motion.div>
                       <motion.div
                         initial={{ opacity: 0, x: -10 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: 0.2 }}
-                        className="flex items-center gap-3 p-3 bg-gradient-to-r from-[#007C21]/10 to-[#89F335]/10 rounded-lg"
+                        className="flex items-center gap-3 p-3 bg-gradient-to-r from-[#383DA0]/10 to-[#AB4FCB]/10 rounded-lg"
                       >
-                        <div className="w-2 h-2 rounded-full bg-gradient-to-r from-[#007C21] to-[#89F335]" />
+                        <div className="w-2 h-2 rounded-full bg-gradient-to-r from-[#383DA0] to-[#AB4FCB]" />
                         <span className="text-sm text-foreground">Predictive Analytics Dashboard</span>
                       </motion.div>
                       <motion.div
                         initial={{ opacity: 0, x: -10 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: 0.3 }}
-                        className="flex items-center gap-3 p-3 bg-gradient-to-r from-[#89F335]/10 to-[#001305]/10 rounded-lg"
+                        className="flex items-center gap-3 p-3 bg-gradient-to-r from-[#AB4FCB]/10 to-[#6366F1]/10 rounded-lg"
                       >
-                        <div className="w-2 h-2 rounded-full bg-gradient-to-r from-[#89F335] to-[#001305]" />
+                        <div className="w-2 h-2 rounded-full bg-gradient-to-r from-[#AB4FCB] to-[#6366F1]" />
                         <span className="text-sm text-foreground">Real-time Financial Reports</span>
                       </motion.div>
                     </div>

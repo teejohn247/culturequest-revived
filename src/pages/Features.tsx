@@ -104,7 +104,7 @@ const Features = () => {
               >
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight">
                   Unite Teams Through the Power of{" "}
-                  <span className="bg-gradient-to-r from-[#001305] via-[#007C21] to-[#89F335] bg-clip-text text-transparent">
+                  <span className="bg-gradient-to-r from-[#6366F1] via-[#383DA0] to-[#AB4FCB] bg-clip-text text-transparent">
                     Data Intelligence
                   </span>
                 </h1>
@@ -112,7 +112,7 @@ const Features = () => {
                   Empower your workforce with intelligent, automated solutions designed to foster efficiency, 
                   collaboration, and data-driven decision-making across all business functions.
                 </p>
-                <Button size="lg" className="bg-gradient-to-r from-[#001305] via-[#007C21] to-[#89F335] text-white hover:opacity-90" onClick={() => openCalendly()}>
+                <Button size="lg" className="bg-gradient-to-r from-[#6366F1] via-[#383DA0] to-[#AB4FCB] text-white hover:opacity-90" onClick={() => openCalendly()}>
                   Book a Meeting
                 </Button>
               </motion.div>
@@ -220,8 +220,8 @@ const Features = () => {
                   viewport={{ once: true }}
                   className="bg-card border border-border rounded-2xl p-8"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#001305]/20 via-[#007C21]/20 to-[#89F335]/20 flex items-center justify-center mb-4">
-                    <item.icon className="w-6 h-6 text-[#007C21]" />
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#6366F1]/20 via-[#383DA0]/20 to-[#AB4FCB]/20 flex items-center justify-center mb-4">
+                    <item.icon className="w-6 h-6 text-[#6366F1]" />
                   </div>
                   <h3 className="font-semibold text-xl text-foreground mb-3">
                     {item.title}
@@ -236,7 +236,7 @@ const Features = () => {
         </section>
 
         {/* CTA Section */}
-        <section className="py-24" style={{backgroundColor: '#001305'}}>
+        <section className="py-24" style={{backgroundColor: '#6366F1'}}>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <motion.div

@@ -20,7 +20,7 @@ const LogoMarquee = () => {
         viewport={{ once: true }}
         className="text-center mb-10"
       >
-        <p className="text-sm text-muted-foreground font-medium">Trusted by</p>
+        <p className="text-sm text-muted-foreground font-medium" style={{color: '#000000', fontSize: '16px'}}>Trusted by</p>
       </motion.div>
 
       <div className="relative">
@@ -33,12 +33,13 @@ const LogoMarquee = () => {
           {[...logos, ...logos].map((logo, index) => (
             <div
               key={index}
+              style={{color: 'black'}}
               className="flex-shrink-0 mx-12 flex items-center gap-3 opacity-60 hover:opacity-100 transition-opacity"
             >
-              <div className="w-10 h-10 rounded-lg bg-secondary flex items-center justify-center">
-                <span className="font-semibold text-sm text-muted-foreground">{logo.initials}</span>
+              <div className="w-10 h-10 rounded-lg bg-secondary flex items-center justify-center" style={{color: 'black', fontSize: '40px'}}>
+                <span className="font-semibold text-lg text-muted-foreground" style={{color: 'black', fontSize: '40px'}}>{logo.initials}</span>
               </div>
-              <span className="font-medium text-muted-foreground whitespace-nowrap">{logo.name}</span>
+              <span className="font-medium text-muted-foreground whitespace-nowrap" style={{color: 'black',  fontSize: '40px'}}>{logo.name}</span>
             </div>
           ))}
         </div>

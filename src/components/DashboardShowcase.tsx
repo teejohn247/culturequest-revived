@@ -3,15 +3,15 @@ import { Users, Briefcase, Brain, BarChart3, TrendingUp, Zap, Shield, Database, 
 import { useRef } from "react";
 
 const siloModules = [
-  { icon: Users, color: "bg-gradient-to-br from-[#001305] to-[#007C21]", label: "HR Management" },
-  { icon: Briefcase, color: "bg-gradient-to-br from-[#007C21] to-[#89F335]", label: "CRM" },
-  { icon: Brain, color: "bg-gradient-to-br from-[#89F335] to-[#007C21]", label: "AI Analytics" },
-  { icon: BarChart3, color: "bg-gradient-to-br from-[#001305] to-[#007C21]", label: "Accounting" },
-  { icon: TrendingUp, color: "bg-gradient-to-br from-[#007C21] to-[#89F335]", label: "Reporting" },
-  { icon: Zap, color: "bg-gradient-to-br from-[#89F335] to-[#001305]", label: "Automation" },
-  { icon: Shield, color: "bg-gradient-to-br from-[#001305] to-[#89F335]", label: "Security" },
-  { icon: Database, color: "bg-gradient-to-br from-[#007C21] to-[#89F335]", label: "Data Management" },
-  { icon: Sparkles, color: "bg-gradient-to-br from-[#001305] to-[#007C21]", label: "Insights" },
+  { icon: Users, color: "bg-gradient-to-br from-[#e3b43e] to-[#e3b43e]", label: "HR Management" },
+  { icon: Briefcase, color: "bg-gradient-to-br from-[#C19AB6] to-[#C19AB6]", label: "CRM" },
+  { icon: Brain, color: "bg-gradient-to-br from-[#578B8A] to-[#578B8A]", label: "AI Analytics" },
+  { icon: BarChart3, color: "bg-gradient-to-br from-[#248CDC] to-[#248CDC]", label: "Accounting" },
+  { icon: TrendingUp, color: "bg-gradient-to-br from-[#0B7189] to-[#0B7189]", label: "Reporting" },
+  { icon: Zap, color: "bg-gradient-to-br from-[#50B4D2] to-[#50B4D2]", label: "Automation" },
+  { icon: Shield, color: "bg-gradient-to-br from-[#9B94DB] to-[#9B94DB]", label: "Security" },
+  { icon: Database, color: "bg-gradient-to-br from-[#6DCD9D] to-[#6DCD9D]", label: "Data Management" },
+  { icon: Sparkles, color: "bg-gradient-to-br from-[#BB4F2A] to-[#BB4F2A]", label: "Insights" },
 ];
 
 const features = [
@@ -19,19 +19,19 @@ const features = [
     title: "Instant Data Processing",
     description: "90% increase in productivity and efficiency",
     metric: "90%",
-    color: "from-[#001305] to-[#007C21]",
+    color: "from-[#6366F1] to-[#383DA0]",
   },
   {
     title: "Natural Language Interface",
     description: "Zero learning curve, accessible to all skill levels",
     metric: "100%",
-    color: "from-[#007C21] to-[#89F335]",
+    color: "from-[#383DA0] to-[#AB4FCB]",
   },
   {
     title: "Predictive Analytics",
     description: "Future trend forecasting and risk assessment",
     metric: "85%",
-    color: "from-[#89F335] to-[#001305]",
+    color: "from-[#AB4FCB] to-[#6366F1]",
   },
 ];
 
@@ -51,27 +51,21 @@ const DashboardShowcase = () => {
 
 
   return (
-    <section ref={sectionRef} className="py-20 lg:py-32 bg-background overflow-hidden relative">
-      {/* Dotted background pattern with gradient overlay */}
+    <section ref={sectionRef} className="py-20 lg:py-32 bg-background overflow-hidden relative" style={{backgroundColor: '#FFFFFF'}}>
+      {/* Dotted background pattern */}
       <div className="absolute inset-0 overflow-hidden">
         <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <pattern id="dotPattern" x="0" y="0" width="24" height="24" patternUnits="userSpaceOnUse">
               <circle cx="2" cy="2" r="1.5" fill="hsl(var(--muted-foreground) / 0.15)" />
             </pattern>
-            <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="hsl(var(--soft-green))" stopOpacity="0.3" />
-              <stop offset="50%" stopColor="hsl(var(--soft-green))" stopOpacity="0.2" />
-              <stop offset="100%" stopColor="hsl(var(--soft-blue))" stopOpacity="0.3" />
-            </linearGradient>
           </defs>
           <rect width="100%" height="100%" fill="url(#dotPattern)" />
-          <rect width="100%" height="100%" fill="url(#bgGradient)" />
         </svg>
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -87,11 +81,11 @@ const DashboardShowcase = () => {
           <p className="text-muted-foreground text-lg mt-4 max-w-2xl mx-auto">
             Transform raw data into valuable insights. Streamline your internal processes and build improved operational capacity.
           </p>
-        </motion.div>
+        </motion.div> */}
 
         <div className="relative max-w-6xl mx-auto">
           {/* Main dashboard layout */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center" >
             {/* Left column - Category + Survey */}
             <motion.div 
               className="lg:col-span-4 space-y-6"
@@ -104,8 +98,9 @@ const DashboardShowcase = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.1 }}
                 className="bg-card rounded-2xl p-6 shadow-card border border-border"
+               
               >
-                <h3 className="text-xl font-semibold text-foreground mb-4">Platform Modules</h3>
+                <h3 className="text-xl font-semibold text-foreground mb-4" >Platform Modules</h3>
                 <div className="grid grid-cols-3 gap-3">
                   {siloModules.map((module, index) => (
                     <motion.div
@@ -132,7 +127,7 @@ const DashboardShowcase = () => {
                 className="bg-card rounded-2xl p-6 shadow-card border border-border"
               >
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="bg-gradient-to-br from-[#001305] via-[#007C21] to-[#89F335] rounded-xl p-3">
+                  <div className="bg-gradient-to-br from-[#6366F1] via-[#383DA0] to-[#AB4FCB] rounded-xl p-3">
                     <Sparkles className="w-6 h-6 text-white" strokeWidth={1.5} />
                   </div>
                   <h3 className="text-lg font-semibold text-foreground">
@@ -156,11 +151,11 @@ const DashboardShowcase = () => {
                     <p className="text-xs text-muted-foreground mb-2">
                       {feature.description}
                     </p>
-                    <div className={`h-1.5 rounded-full bg-gradient-to-r ${feature.color}`} />
+                    <div className={`h-1.5 rounded-full bg-gradient-to-r from-[#6366F1] via-[#DEAA2E] to-[#DEAA2E] ${feature.color}`} style={{lineHeight: '2px !important'}} />
                   </div>
                 ))}
 
-                <button className="w-full bg-gradient-to-r from-[#001305] via-[#007C21] to-[#89F335] text-white py-3 rounded-xl font-medium mt-2 hover:opacity-90 transition-opacity shadow-lg">
+                <button className="w-full bg-gradient-to-r from-[#000000] via-[#000000] to-[#020202] text-white py-3 rounded-xl font-medium mt-2 hover:opacity-90 transition-opacity shadow-lg">
                   Explore Platform
                 </button>
               </motion.div>
@@ -215,9 +210,9 @@ const DashboardShowcase = () => {
                     />
                     <defs>
                       <linearGradient id="performanceGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" stopColor="#001305" />
-                        <stop offset="50%" stopColor="#007C21" />
-                        <stop offset="100%" stopColor="#89F335" />
+                        <stop offset="0%" stopColor="#6366F1" />
+                        <stop offset="50%" stopColor="#383DA0" />
+                        <stop offset="100%" stopColor="#AB4FCB" />
                       </linearGradient>
                     </defs>
                     <motion.circle
@@ -241,7 +236,7 @@ const DashboardShowcase = () => {
                       whileInView={{ opacity: 1 }}
                       viewport={{ once: true }}
                       transition={{ duration: 0.5, delay: 1 }}
-                      className="text-5xl font-bold bg-gradient-to-r from-[#001305] via-[#007C21] to-[#89F335] bg-clip-text text-transparent"
+                      className="text-5xl font-bold bg-gradient-to-r from-[#6366F1] via-[#383DA0] to-[#AB4FCB] bg-clip-text text-transparent"
                     >
                       77
                     </motion.span>
@@ -255,10 +250,10 @@ const DashboardShowcase = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: 0.8 }}
-                  className="mt-6 bg-gradient-to-br from-[#001305]/10 via-[#007C21]/10 to-[#89F335]/10 dark:from-[#001305]/20 dark:via-[#007C21]/20 dark:to-[#89F335]/20 rounded-xl p-4 border border-[#007C21]/30 dark:border-[#007C21]/50"
+                  className="mt-6 bg-gradient-to-br from-[#6366F1]/10 via-[#383DA0]/10 to-[#AB4FCB]/10 dark:from-[#6366F1]/20 dark:via-[#383DA0]/20 dark:to-[#AB4FCB]/20 rounded-xl p-4 border border-[#6366F1]/30 dark:border-[#6366F1]/50"
                 >
                   <div className="flex items-center gap-2 mb-2">
-                    <span className="text-[#007C21]">✦</span>
+                    <span className="text-[#6366F1]">✦</span>
                     <span className="text-sm font-medium text-muted-foreground">Key Insight</span>
                   </div>
                   <h4 className="font-semibold text-foreground mb-1">Optimized Operations</h4>
@@ -283,7 +278,7 @@ const DashboardShowcase = () => {
                   </button>
                 </div>
                 <div className="flex items-center gap-2 mb-6">
-                  <span className="text-sm font-medium bg-gradient-to-r from-[#001305] via-[#007C21] to-[#89F335] bg-clip-text text-transparent">↗ +13.8% CAGR</span>
+                  <span className="text-sm font-medium bg-gradient-to-r from-[#6366F1] via-[#383DA0] to-[#AB4FCB] bg-clip-text text-transparent">↗ +13.8% CAGR</span>
                   <span className="text-muted-foreground text-sm">projected growth</span>
                 </div>
 
@@ -292,14 +287,14 @@ const DashboardShowcase = () => {
                   <svg className="w-full h-full" viewBox="0 0 400 100" preserveAspectRatio="none">
                     <defs>
                       <linearGradient id="chartGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                        <stop offset="0%" stopColor="#001305" stopOpacity="0.2" />
-                        <stop offset="50%" stopColor="#007C21" stopOpacity="0.15" />
-                        <stop offset="100%" stopColor="#89F335" stopOpacity="0.1" />
+                        <stop offset="0%" stopColor="#6366F1" stopOpacity="0.2" />
+                        <stop offset="50%" stopColor="#383DA0" stopOpacity="0.15" />
+                        <stop offset="100%" stopColor="#AB4FCB" stopOpacity="0.1" />
                       </linearGradient>
                       <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                        <stop offset="0%" stopColor="#001305" />
-                        <stop offset="50%" stopColor="#007C21" />
-                        <stop offset="100%" stopColor="#89F335" />
+                        <stop offset="0%" stopColor="#6366F1" />
+                        <stop offset="50%" stopColor="#383DA0" />
+                        <stop offset="100%" stopColor="#AB4FCB" />
                       </linearGradient>
                     </defs>
                     {/* Grid lines */}

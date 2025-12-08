@@ -118,17 +118,18 @@ const AnimatedColumn = ({
 const TestimonialsSection = () => {
   return (
     <section className="relative py-20 lg:py-32 overflow-hidden">
-      {/* Green gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#001305] via-[#007C21] to-[#89F335]" />
+      {/* Gradient background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[#6366F1] via-[#383DA0] to-[#AB4FCB]" />
       
-      {/* Diagonal edge at top - slanted from top-left to right */}
-      <div className="absolute top-0 left-0 right-0 h-32">
-        <svg viewBox="0 0 1440 128" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full" preserveAspectRatio="none">
-          <path d="M0 0H1440V0L0 128V0Z" fill="hsl(var(--background))" />
-        </svg>
+      {/* Decorative arc in top right corner */}
+      <div className="absolute top-0 right-0" style={{width: '500px', height: '200px', zIndex: 1}}>
+        <img src="/arc.png" alt="" className="w-full h-full" style={{objectFit: 'contain', objectPosition: 'top right', opacity: 1}} />
       </div>
+      
+      {/* Fading effect at bottom */}
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent pointer-events-none z-20" />
 
-      <div className="container mx-auto px-4 relative z-10" style={{marginTop: '100px'}}>
+      <div className="container mx-auto px-4 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
