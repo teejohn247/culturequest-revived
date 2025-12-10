@@ -127,7 +127,13 @@ const TestimonialsSection = () => {
       </div>
       
       {/* Fading effect at bottom */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent pointer-events-none z-20" />
+      <div 
+        className="absolute bottom-0 left-0 right-0 pointer-events-none z-20"
+        style={{
+          height: '200px',
+          background: 'linear-gradient(to top, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.8) 30%, rgba(255, 255, 255, 0.3) 60%, transparent 100%)'
+        }}
+      />
 
       <div className="container mx-auto px-4 relative z-10">
         <motion.div

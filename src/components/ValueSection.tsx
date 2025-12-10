@@ -7,14 +7,14 @@ const values = [
     title: "Transform raw data into actionable insights",
     description: "Get instant access to critical business metrics with predictive analytics and automated reporting. Make data-driven decisions that drive growth.",
     color: "pink",
-    image: "/mockup4.png",
+    image: "/Mockup 2.png",
   },
   {
     tag: "Streamline Operations",
     title: "Automated processes that save time and reduce errors",
     description: "AI-driven automation handles data processing, payroll, and reporting – freeing your team to focus on strategic initiatives. 90% increase in productivity and efficiency.",
     color: "purple",
-    image: "/Mockup 1.png",
+    image: "/mockup 1.jpeg",
   },
   {
     tag: "Unified Platform",
@@ -38,7 +38,7 @@ const ValueSection = () => {
           className="text-center mb-16"
         >
           <span className="text-sm font-medium text-primary mb-4 block">How SILO creates value</span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground " style={{fontSize:'68px', lineHeight:'88px', fontWeight:'600'}}>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground " style={{fontSize:'68px', lineHeight:'58px', fontWeight:'600'}}>
             From setup to<br /> success with
             <br />
             <span className="text-gradient">Streamlined returns.</span>
@@ -83,7 +83,7 @@ const ValueSection = () => {
                 <div className="flex-1 flex justify-center">
                   <motion.div
                     initial={{ opacity: 0, scale: 0.9 }}
-                    whileInView={{ opacity: 1, scale: 1.3 }}
+                    whileInView={{ opacity: 1, scale: 1.10 }}
                     transition={{ duration: 0.5, delay: index * 0.1 + 0.2 }}
                     viewport={{ once: true }}
                     className="w-full max-w-lg"

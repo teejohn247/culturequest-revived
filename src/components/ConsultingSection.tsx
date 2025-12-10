@@ -42,7 +42,7 @@ const ConsultingSection = () => {
               >
                 <Button 
                   size="lg" 
-                  style={{height: '60px'}}
+                  style={{height: '50px'}}
                   className="bg-gradient-to-r from-[#6366F1] via-[#6366F1] to-[#6366F1] text-white hover:opacity-90 border-0"
                   onClick={() => openCalendly()}
                 >

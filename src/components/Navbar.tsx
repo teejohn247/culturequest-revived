@@ -17,11 +17,12 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 md:h-20" >
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2">
+          <Link to="/" className="flex items-center gap-2" >
             <img 
               src="/silo-logo.svg" 
               alt="SILO Logo" 
               className="h-8 w-auto"
+              style={{width:150, height:150}}
             />
           </Link>
 
@@ -39,7 +40,7 @@ const Navbar = () => {
               </Link>
             </div>
             <div className="flex items-center gap-3">
-              <Button variant="ghost" size="sm" style={{border: '1px solid lightgray', color: '#6366F1'}}>
+              <Button  size="lg" style={{border: '1px solid lightgray', color: '#6366F1'}}>
                 Login
               </Button>
               <Button size="lg" style={{backgroundColor: '#6366F1', color: '#FFFFFF'}}>

@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Mail, Phone, Linkedin, Facebook } from "lucide-react";
 import { openCalendly } from "@/lib/calendly";
+import ConsultingSection from "@/components/ConsultingSection";
 
 const teamMembers = [
   {
@@ -58,8 +59,8 @@ const About = () => {
                 Our platform provides continuous data processing, AI-driven analytics, and actionable insights 
                 to translate raw data into practical business actions.
               </p>
-              <Button size="lg" className="bg-gradient-to-r from-[#6366F1] via-[#383DA0] to-[#AB4FCB] text-white hover:opacity-90" onClick={() => openCalendly()}>
-                Book a Meeting
+              <Button size="lg" style={{height:'60px'}} className="bg-gradient-to-r from-[#7074F2] via-[#7074F2] to-[#7074F2] text-white hover:opacity-90" onClick={() => openCalendly()}>
+                <span style={{fontSize:'18px',  display:'flex', alignItems:'center', justifyContent:'center'}}>Book a Meeting</span>
               </Button>
             </motion.div>
           </div>
@@ -185,7 +186,7 @@ const About = () => {
         </section>
 
         {/* Company Info Section */}
-        <section className="py-24 bg-background">
+        <section className=" bg-background">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -218,7 +219,7 @@ const About = () => {
         </section>
 
         {/* CTA Section */}
-        <section className="py-24 bg-gradient-to-br from-[#6366F1] via-[#383DA0] to-[#AB4FCB]">
+        {/* <section className="py-24 bg-gradient-to-br from-[#6063EB] via-[#6063EB] to-[#6063EB]">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -232,12 +233,14 @@ const About = () => {
               <p className="text-white/90 text-lg mb-8">
                 Book a short meeting and see how we can support your business operations.
               </p>
-              <Button size="lg" variant="secondary" className="bg-white text-[#6366F1] hover:bg-white/90" onClick={() => openCalendly()}>
-                Book a Meeting
+              <Button size="lg" style={{height:'60px'}} variant="secondary" className="bg-white text-[#6366F1] hover:bg-white/90" onClick={() => openCalendly()}>
+                <span style={{fontSize:'18px',  display:'flex', alignItems:'center', justifyContent:'center'}}>Book a Meeting</span>
               </Button>
             </motion.div>
           </div>
-        </section>
+        </section> */}
+        <ConsultingSection />
+
       </main>
       <Footer />
     </div>

@@ -18,6 +18,7 @@ const Footer = () => {
                 src="/silo-logo.svg" 
                 alt="SILO Logo" 
                 className="h-8 w-auto"
+                style={{width: 150, height: 90}}
               />
             </div>
             <p className="text-black max-w-sm">

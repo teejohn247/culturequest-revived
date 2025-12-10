@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Users, Briefcase, Brain, BarChart3, Globe, Target, Star, Puzzle, MessageSquare, TrendingUp, Shield, BookOpen } from "lucide-react";
 import { openCalendly } from "@/lib/calendly";
+import ConsultingSection from "@/components/ConsultingSection";
 
 const secondaryNavItems = [
   { icon: Users, label: "HR Management" },
@@ -94,7 +95,7 @@ const Features = () => {
         {/* Hero Section */}
         <section className="relative py-16 lg:py-24 overflow-hidden">
           <div className="absolute inset-0 bg-soft-gradient" />
-          <div className="container mx-auto px-4 relative z-10" style={{marginTop: '100px'}}>
+          <div className="container mx-auto px-4 relative z-10" style={{marginTop: '100px', marginLeft: '100px'}}>
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               {/* Left Content */}
               <motion.div
@@ -102,7 +103,7 @@ const Features = () => {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6 }}
               >
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight">
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight" style={{fontSize:'68px', lineHeight:'78px', fontWeight:'600'}}>
                   Unite Teams Through the Power of{" "}
                   <span className="bg-gradient-to-r from-[#6366F1] via-[#383DA0] to-[#AB4FCB] bg-clip-text text-transparent">
                     Data Intelligence
@@ -112,8 +113,8 @@ const Features = () => {
                   Empower your workforce with intelligent, automated solutions designed to foster efficiency, 
                   collaboration, and data-driven decision-making across all business functions.
                 </p>
-                <Button size="lg" className="bg-gradient-to-r from-[#6366F1] via-[#383DA0] to-[#AB4FCB] text-white hover:opacity-90" onClick={() => openCalendly()}>
-                  Book a Meeting
+                <Button size="lg" style={{backgroundColor: '#6366F1', height:'60px'}} className="bg-gradient-to-r" onClick={() => openCalendly()}>
+                  <span style={{fontSize:'18px',  display:'flex', alignItems:'center', justifyContent:'center', fontWeight:'600'}}>Book a Meeting</span>
                 </Button>
               </motion.div>
 
@@ -140,7 +141,7 @@ const Features = () => {
         </section>
 
         {/* Feature Showcase - Full Rows */}
-        <section className="py-24 bg-background">
+        <section className="py-24 bg-background" style={{backgroundColor: '#F7F8FF'}}>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" >
             <div>
               {mainFeatures.map((feature, index) => {
@@ -153,7 +154,7 @@ const Features = () => {
                     transition={{ duration: 0.5, delay: index * 0.1 }}
                     viewport={{ once: true }}
                     className="flex flex-col md:flex-row gap-8 md:gap-12 items-center"
-                    style={{marginBottom: '80px'}}
+                    style={{marginBottom: '0px'}}
                   >
                     {/* Visual Image - Alternates sides */}
                     <div className={`w-full md:w-1/2 flex justify-center md:justify-start ${isEven ? 'md:order-2' : 'md:order-1'}`}>
@@ -167,20 +168,20 @@ const Features = () => {
                           }
                           alt={feature.title}
                           className="w-full h-full object-cover rounded-xl"
-                          style={{width: '100%'}}
+                          style={{width: '100%', height: '70%', objectFit: 'cover', objectPosition: 'center'}}
                         />
                       </div>
                     </div>
                     
                     {/* Content - Alternates sides */}
-                    <div className={`w-full md:w-1/2 ${isEven ? 'md:order-1' : 'md:order-2'}`}>
-                      <h3 className="text-3xl md:text-4xl font-bold text-foreground mb-4">{feature.title}</h3>
-                      <p className="text-lg text-muted-foreground mb-6 leading-relaxed">{feature.description}</p>
+                    <div className={`w-full md:w-1/2 ${isEven ? 'md:order-1' : 'md:order-2'}`} style={{marginTop: '-180px'}}>
+                      <h3 className="text-3xl md:text-4xl font-bold text-foreground mb-4" style={{fontSize:'56px', fontWeight:'600', lineHeight:'67px'}}>{feature.title}</h3>
+                      <p className="text-lg text-muted-foreground mb-6 leading-relaxed" style={{fontSize:'18px', fontWeight:'400', lineHeight:'30px', color: '#000000'}}>{feature.description}</p>
                       <ul className="space-y-3">
                         {feature.bullets.map((bullet, i) => (
                           <li key={i} className="flex items-start gap-3 text-base text-muted-foreground">
-                            <span className="text-primary mt-1">•</span>
-                            <span>{bullet}</span>
+                            <span className="text-primary " style={{fontSize:'48px', fontWeight:'400'}}>•</span>
+                            <span style={{fontSize:'20px', color: '#000000', lineHeight:'30px'}}>{bullet}</span>
                           </li>
                         ))}
                       </ul>
@@ -210,7 +211,7 @@ const Features = () => {
               </p>
             </motion.div>
 
-            <div className="grid md:grid-cols-2 gap-8">
+            <div className="grid md:grid-cols-2 gap-8" style={{marginTop: '50px'}}> 
               {whyLoveSilo.map((item, index) => (
                 <motion.div
                   key={index}
@@ -236,7 +237,7 @@ const Features = () => {
         </section>
 
         {/* CTA Section */}
-        <section className="py-24" style={{backgroundColor: '#6366F1'}}>
+        {/* <section className="py-24" style={{backgroundColor: '#6366F1'}}>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <motion.div
@@ -251,8 +252,8 @@ const Features = () => {
                 <p className="text-white/90 text-lg mb-8">
                   Book a short meeting and see how we can support your business operations.
                 </p>
-                <Button size="lg" className="bg-white text-[#000000] hover:bg-white/90" onClick={() => openCalendly()}>
-                  Book a Meeting
+                <Button size="lg" style={{height:'60px'}} className="bg-white text-[#000000] hover:bg-white/90" onClick={() => openCalendly()}>
+                  <span style={{fontSize:'18px',  display:'flex', alignItems:'center', justifyContent:'center'}}>Book a Meeting</span>
                 </Button>
               </motion.div>
               <motion.div
@@ -262,10 +263,10 @@ const Features = () => {
                 viewport={{ once: true }}
                 className="relative"
               >
-                {/* Image */}
+               
                 <div className="aspect-[4/3] rounded-2xl overflow-hidden">
                   <img 
-                    src="/HR.jpg" 
+                    src="/mockup 1.jpeg" 
                     alt="SILO Platform"
                     className="w-full h-full object-cover"
                   />
@@ -273,7 +274,9 @@ const Features = () => {
               </motion.div>
             </div>
           </div>
-        </section>
+        </section> */}
+        <ConsultingSection />
+
       </main>
       <Footer />
     </div>
