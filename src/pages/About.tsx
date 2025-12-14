@@ -51,16 +51,16 @@ const About = () => {
               <span className="text-primary font-medium text-sm uppercase tracking-wider mb-4 block">
                 About Us
               </span>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 px-4">
                 Learn More About SILO
               </h1>
-              <p className="text-lg md:text-xl text-muted-foreground mb-8">
+              <p className="text-base sm:text-lg md:text-xl text-muted-foreground mb-8 px-4">
                 We are a team of founders who believe that operational efficiency is a strategy. 
                 Our platform provides continuous data processing, AI-driven analytics, and actionable insights 
                 to translate raw data into practical business actions.
               </p>
-              <Button size="lg" style={{height:'60px'}} className="bg-gradient-to-r from-[#7074F2] via-[#7074F2] to-[#7074F2] text-white hover:opacity-90" onClick={() => openCalendly()}>
-                <span style={{fontSize:'18px',  display:'flex', alignItems:'center', justifyContent:'center'}}>Book a Demo</span>
+              <Button size="lg" style={{height:'clamp(48px, 8vw, 60px)'}} className="bg-gradient-to-r from-[#7074F2] via-[#7074F2] to-[#7074F2] text-white hover:opacity-90" onClick={() => openCalendly()}>
+                <span style={{fontSize:'clamp(14px, 3vw, 18px)',  display:'flex', alignItems:'center', justifyContent:'center'}}>Book a Demo</span>
               </Button>
             </motion.div>
           </div>
@@ -75,10 +75,10 @@ const About = () => {
               transition={{ duration: 0.5 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-6">
                 What We Do in SILO
               </h2>
-              <p className="text-lg text-muted-foreground leading-relaxed">
+              <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
                 SILO provides clarity to businesses and leaders, enabling them to act on insights from 
                 automated data processing, AI-powered analytics, and comprehensive reporting. Our platform 
                 transforms raw data into valuable business intelligence, helping companies streamline operations, 
@@ -97,10 +97,10 @@ const About = () => {
               transition={{ duration: 0.5 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-6">
                 Mission
               </h2>
-              <p className="text-lg text-muted-foreground leading-relaxed">
+              <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
                 Our mission is to deliver innovative digital analytics and services for business operations 
                 and efficiency. We foster sustainable change and long-term success by providing SMEs with 
                 accessible, powerful tools that transform how they manage HR, CRM, accounting, and data analytics. 
@@ -120,10 +120,10 @@ const About = () => {
               transition={{ duration: 0.5 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-6">
                 Vision
               </h2>
-              <p className="text-lg text-muted-foreground leading-relaxed">
+              <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
                 We envision a world where companies prioritize operational excellence and data-driven decision-making 
                 as key strategies for success. By making enterprise-grade ERP solutions accessible to small and 
                 medium businesses, we empower organizations to compete effectively, scale efficiently, and build 
@@ -143,15 +143,15 @@ const About = () => {
               viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 px-4">
                 Our Team
               </h2>
-              <p className="text-muted-foreground max-w-2xl mx-auto">
+              <p className="text-muted-foreground max-w-2xl mx-auto text-sm sm:text-base px-4">
                 Meet the founders and leaders behind SILO, dedicated to transforming how businesses operate.
               </p>
             </motion.div>
 
-            <div className="grid md:grid-cols-3 gap-8">
+            <div className="grid md:grid-cols-3 gap-6 md:gap-8">
               {teamMembers.map((member, index) => (
                 <motion.div
                   key={index}
@@ -159,7 +159,7 @@ const About = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="bg-card border border-border rounded-2xl p-8 text-center"
+                  className="bg-card border border-border rounded-2xl p-6 md:p-8 text-center"
                 >
                   <div className="w-32 h-32 rounded-full bg-gradient-to-br from-[#6366F1]/20 via-[#383DA0]/20 to-[#AB4FCB]/20 mx-auto mb-6 flex items-center justify-center">
                     <span className="text-4xl font-bold bg-gradient-to-r from-[#6366F1] via-[#383DA0] to-[#AB4FCB] bg-clip-text text-transparent">
@@ -195,10 +195,10 @@ const About = () => {
               viewport={{ once: true }}
               className="bg-card border border-border rounded-2xl p-8 md:p-12"
             >
-              <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-6">
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-foreground mb-6">
                 About SILO Solutions Ltd.
               </h2>
-              <div className="space-y-4 text-muted-foreground">
+              <div className="space-y-4 text-muted-foreground text-sm sm:text-base">
                 <p>
                   Incorporated in 2023, SILO Solutions Ltd. is an innovative software development and consulting 
                   firm trusted by SMEs to create custom IT solutions for daily business functions.

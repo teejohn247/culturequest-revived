@@ -21,8 +21,8 @@ const Navbar = () => {
             <img 
               src="/silo-logo.svg" 
               alt="SILO Logo" 
-              className="h-8 w-auto"
-              style={{width:180, height:180}}
+              className="h-8 w-auto md:h-12 lg:h-16"
+              style={{maxWidth: 'clamp(80px, 15vw, 180px)', maxHeight: 'clamp(80px, 15vw, 180px)'}}
             />
           </Link>
 

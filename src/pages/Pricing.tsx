@@ -98,10 +98,10 @@ const Pricing = () => {
               <span className="text-primary font-medium text-sm uppercase tracking-wider mb-4 block">
                 Pricing
               </span>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
                 Simple and Transparent Pricing
               </h1>
-              <p className="text-lg md:text-xl text-muted-foreground mb-8">
+              <p className="text-base sm:text-lg md:text-xl text-muted-foreground mb-8 px-4">
                 Select the best plan for you, ensuring a perfect match for your business needs.
               </p>
 
@@ -133,7 +133,7 @@ const Pricing = () => {
         {/* Pricing Cards */}
         <section className="py-16 bg-background">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid md:grid-cols-3 gap-8">
+            <div className="grid md:grid-cols-3 gap-6 md:gap-8">
               {pricingPlans.map((plan, index) => (
                 <motion.div
                   key={index}
@@ -141,7 +141,7 @@ const Pricing = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className={`relative rounded-3xl p-8 ${
+                  className={`relative rounded-3xl p-6 md:p-8 ${
                     plan.popular
                       ? 'bg-gradient-to-br from-[#6366F1] via-[#383DA0] to-[#AB4FCB] text-white border-2 border-transparent'
                       : 'bg-card border border-border'
@@ -153,13 +153,13 @@ const Pricing = () => {
                     </div>
                   )}
                   <div className="mb-6">
-                    <h3 className="text-2xl font-bold mb-2">{plan.name}</h3>
-                    <p className={`text-sm mb-4 ${plan.popular ? 'text-white/80' : 'text-muted-foreground'}`}>
+                    <h3 className="text-xl md:text-2xl font-bold mb-2">{plan.name}</h3>
+                    <p className={`text-xs md:text-sm mb-4 ${plan.popular ? 'text-white/80' : 'text-muted-foreground'}`}>
                       {plan.description}
                     </p>
                     <div className="flex items-baseline gap-1">
-                      <span className="text-4xl font-bold">{plan.price}</span>
-                      <span className={`text-sm ${plan.popular ? 'text-white/80' : 'text-muted-foreground'}`}>
+                      <span className="text-3xl md:text-4xl font-bold">{plan.price}</span>
+                      <span className={`text-xs md:text-sm ${plan.popular ? 'text-white/80' : 'text-muted-foreground'}`}>
                         {plan.period}
                       </span>
                     </div>
@@ -206,19 +206,19 @@ const Pricing = () => {
                 <table className="w-full">
                   <thead>
                     <tr className="border-b border-border">
-                      <th className="text-left p-4 font-semibold text-foreground">Features</th>
-                      <th className="text-center p-4 font-semibold text-foreground">Basic</th>
-                      <th className="text-center p-4 font-semibold text-foreground">Pro</th>
-                      <th className="text-center p-4 font-semibold text-foreground">Enterprise</th>
+                      <th className="text-left p-3 md:p-4 font-semibold text-foreground text-sm md:text-base">Features</th>
+                      <th className="text-center p-3 md:p-4 font-semibold text-foreground text-sm md:text-base">Basic</th>
+                      <th className="text-center p-3 md:p-4 font-semibold text-foreground text-sm md:text-base">Pro</th>
+                      <th className="text-center p-3 md:p-4 font-semibold text-foreground text-sm md:text-base">Enterprise</th>
                     </tr>
                   </thead>
                   <tbody>
                     {featureComparison.map((row, index) => (
                       <tr key={index} className="border-b border-border last:border-0">
-                        <td className="p-4 text-foreground">{row.feature}</td>
-                        <td className="p-4 text-center text-muted-foreground">{row.basic}</td>
-                        <td className="p-4 text-center text-muted-foreground">{row.pro}</td>
-                        <td className="p-4 text-center text-muted-foreground">{row.enterprise}</td>
+                        <td className="p-3 md:p-4 text-foreground text-sm md:text-base">{row.feature}</td>
+                        <td className="p-3 md:p-4 text-center text-muted-foreground text-sm md:text-base">{row.basic}</td>
+                        <td className="p-3 md:p-4 text-center text-muted-foreground text-sm md:text-base">{row.pro}</td>
+                        <td className="p-3 md:p-4 text-center text-muted-foreground text-sm md:text-base">{row.enterprise}</td>
                       </tr>
                     ))}
                   </tbody>
@@ -242,10 +242,10 @@ const Pricing = () => {
               transition={{ duration: 0.5 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4 px-4">
                 Ready to Transform Your Operations?
               </h2>
-              <p className="text-white/90 text-lg mb-8">
+              <p className="text-white/90 text-base sm:text-lg mb-8 px-4">
                 Book a short meeting and see how SILO can streamline your business processes.
               </p>
               <Button size="lg" variant="secondary" className="bg-white text-[#000000] hover:bg-white/90" onClick={() => openCalendly()}>

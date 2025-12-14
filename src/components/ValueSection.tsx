@@ -38,7 +38,7 @@ const ValueSection = () => {
           className="text-center mb-16"
         >
           <span className="text-sm font-medium text-primary mb-4 block">How SILO creates value</span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground " style={{fontSize:'78px', lineHeight:'73px', fontWeight:'600'}}>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground" style={{fontSize:'clamp(32px, 8vw, 78px)', lineHeight:'clamp(36px, 8vw, 73px)', fontWeight:'600'}}>
             From setup to<br /> success with
             <br />
             <span className="text-gradient">Streamlined returns.</span>
@@ -71,10 +71,10 @@ const ValueSection = () => {
                   }`}>
                     {value.tag}
                   </span> */}
-                  <h3 className="text-2xl md:text-3xl font-bold text-foreground" style={{fontSize:'56px', lineHeight:'56px', fontWeight:'600', color: '#000000'}}>
+                  <h3 className="text-2xl md:text-3xl font-bold text-foreground" style={{fontSize:'clamp(24px, 6vw, 56px)', lineHeight:'clamp(28px, 6vw, 56px)', fontWeight:'600', color: '#000000'}}>
                     {value.title}
                   </h3>
-                  <p className="text-muted-foreground text-lg">
+                  <p className="text-muted-foreground text-base sm:text-lg">
                     {value.description}
                   </p>
                 </div>

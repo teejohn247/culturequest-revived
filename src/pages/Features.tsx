@@ -95,27 +95,30 @@ const Features = () => {
         {/* Hero Section */}
         <section className="relative py-16 lg:py-24 overflow-hidden">
           <div className="absolute inset-0 bg-soft-gradient" />
-          <div className="container mx-auto px-4 relative z-10" style={{marginTop: '100px', marginLeft: '100px'}}>
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="container mx-auto px-4 relative z-10 md:ml-[clamp(0px,10vw,100px)]" style={{marginTop: 'clamp(40px, 10vw, 100px)'}}>
+            <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
               {/* Left Content */}
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6 }}
+                className="text-center md:text-left"
               >
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight" style={{fontSize:'68px', lineHeight:'78px', fontWeight:'600'}}>
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight" style={{fontSize:'clamp(32px, 8vw, 68px)', lineHeight:'clamp(36px, 8vw, 78px)', fontWeight:'600'}}>
                   Unite Teams Through the Power of{" "}
                   <span className="bg-gradient-to-r from-[#6366F1] via-[#383DA0] to-[#AB4FCB] bg-clip-text text-transparent">
                     Data Intelligence
                   </span>
                 </h1>
-                <p className="text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed">
+                <p className="text-base sm:text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed">
                   Empower your workforce with intelligent, automated solutions designed to foster efficiency, 
                   collaboration, and data-driven decision-making across all business functions.
                 </p>
-                <Button size="lg" style={{backgroundColor: '#6366F1', height:'60px'}} className="bg-gradient-to-r" onClick={() => openCalendly()}>
-                  <span style={{fontSize:'18px',  display:'flex', alignItems:'center', justifyContent:'center', fontWeight:'600'}}>Book a Demo</span>
-                </Button>
+                <div className="flex justify-center md:justify-start">
+                  <Button size="lg" style={{backgroundColor: '#6366F1', height:'clamp(48px, 8vw, 60px)'}} className="bg-gradient-to-r" onClick={() => openCalendly()}>
+                    <span style={{fontSize:'clamp(14px, 3vw, 18px)',  display:'flex', alignItems:'center', justifyContent:'center', fontWeight:'600'}}>Book a Demo</span>
+                  </Button>
+                </div>
               </motion.div>
 
               {/* Right Visual */}
@@ -123,15 +126,15 @@ const Features = () => {
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="relative"
+                className="relative hidden md:block"
               >
                 <div className="relative rounded-3xl overflow-hidden">
                   <motion.img
                     src="/mockup 3.png"
                     alt="SILO Platform Mockup"
-                    className="w-full h-auto rounded-3xl shadow-2xl object-contain"
-                    initial={{ opacity: 0, scale: 4.95 }}
-                    animate={{ opacity: 1, scale: 1.3 }}
+                    className="w-full h-auto rounded-3xl shadow-2xl object-contain md:scale-125"
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.6, delay: 0.3 }}
                   />
                 </div>
@@ -153,12 +156,11 @@ const Features = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
                     viewport={{ once: true }}
-                    className="flex flex-col md:flex-row gap-8 md:gap-12 items-center"
-                    style={{marginBottom: '0px'}}
+                    className="flex flex-col md:flex-row gap-6 md:gap-12 items-center mb-16 md:mb-24 last:mb-0"
                   >
                     {/* Visual Image - Alternates sides */}
                     <div className={`w-full md:w-1/2 flex justify-center md:justify-start ${isEven ? 'md:order-2' : 'md:order-1'}`}>
-                      <div className="w-full max-w-sm aspect-square rounded-xl overflow-hidden" style={{maxWidth: '100%'}}>
+                      <div className="w-full max-w-sm aspect-square rounded-xl overflow-hidden">
                         <img 
                           src={
                             feature.visualType === "HR" ? "/HR 2.jpg" :
@@ -168,20 +170,19 @@ const Features = () => {
                           }
                           alt={feature.title}
                           className="w-full h-full object-cover rounded-xl"
-                          style={{width: '100%', height: '70%', objectFit: 'cover', objectPosition: 'center'}}
                         />
                       </div>
                     </div>
                     
                     {/* Content - Alternates sides */}
-                    <div className={`w-full md:w-1/2 ${isEven ? 'md:order-1' : 'md:order-2'}`} style={{marginTop: '-180px'}}>
-                      <h3 className="text-3xl md:text-4xl font-bold text-foreground mb-4" style={{fontSize:'56px', fontWeight:'600', lineHeight:'67px'}}>{feature.title}</h3>
-                      <p className="text-lg text-muted-foreground mb-6 leading-relaxed" style={{fontSize:'18px', fontWeight:'400', lineHeight:'30px', color: '#000000'}}>{feature.description}</p>
+                    <div className={`w-full md:w-1/2 ${isEven ? 'md:order-1' : 'md:order-2'}`}>
+                      <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-4" style={{fontSize:'clamp(28px, 6vw, 56px)', fontWeight:'600', lineHeight:'clamp(32px, 6vw, 67px)'}}>{feature.title}</h3>
+                      <p className="text-base sm:text-lg text-muted-foreground mb-6 leading-relaxed" style={{fontWeight:'400', lineHeight:'clamp(24px, 4vw, 30px)', color: '#000000'}}>{feature.description}</p>
                       <ul className="space-y-3">
                         {feature.bullets.map((bullet, i) => (
-                          <li key={i} className="flex items-start gap-3 text-base text-muted-foreground">
-                            <span className="text-primary " style={{fontSize:'48px', fontWeight:'400'}}>•</span>
-                            <span style={{fontSize:'20px', color: '#000000', lineHeight:'30px'}}>{bullet}</span>
+                          <li key={i} className="flex items-start gap-2 md:gap-3 text-base text-muted-foreground">
+                            <span className="text-primary flex-shrink-0" style={{fontSize:'clamp(20px, 4vw, 48px)', fontWeight:'400'}}>•</span>
+                            <span style={{fontSize:'clamp(16px, 3vw, 20px)', color: '#000000', lineHeight:'clamp(24px, 4vw, 30px)'}}>{bullet}</span>
                           </li>
                         ))}
                       </ul>
@@ -203,10 +204,10 @@ const Features = () => {
               viewport={{ once: true }}
               className="text-center"
             >
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 px-4">
                 Why Teams Love SILO
               </h2>
-              <p className="text-muted-foreground max-w-2xl mx-auto">
+              <p className="text-muted-foreground max-w-2xl mx-auto text-sm sm:text-base px-4">
                 Built for modern teams who value efficiency, data-driven decisions, and operational excellence.
               </p>
             </motion.div>

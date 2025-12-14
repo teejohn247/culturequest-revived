@@ -12,18 +12,18 @@ const ConsultingSection = () => {
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
           className="bg-white rounded-3xl overflow-hidden shadow-lg"
-          style={{height: '350px'}}
+          style={{minHeight: '350px'}}
         >
-          <div className="grid lg:grid-cols-2 gap-0 h-full">
+          <div className="grid lg:grid-cols-2 gap-0 lg:h-[350px]">
             {/* Left section - Dark blue with text (2/3 width) */}
             <div className="lg:col-span-1 bg-[#252865] p-8 lg:p-12 flex flex-col justify-center
-            h-full" style={{textAlign: 'left'}}>
+            min-h-[350px] lg:h-full" style={{textAlign: 'left'}}>
               <motion.h2
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.1 }}
                 viewport={{ once: true }}
-                className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4"
+                className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4"
               >
                 Curious about more?
               </motion.h2>
@@ -32,7 +32,7 @@ const ConsultingSection = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
                 viewport={{ once: true }}
-                className="text-white/90 text-lg mb-8"
+                className="text-white/90 text-base sm:text-lg mb-8"
               >
                 Book a short meeting and see how we can support your culture.
               </motion.p>
@@ -53,8 +53,8 @@ const ConsultingSection = () => {
               </motion.div>
             </div>
 
-            {/* Right section - Image (1/3 width) */}
-            <div className="lg:col-span-1 relative h-full overflow-hidden">
+            {/* Right section - Image (1/3 width) - Hidden on mobile */}
+            <div className="hidden lg:block lg:col-span-1 relative h-full overflow-hidden">
               <img 
                 src="/foot.png" 
                 alt="Support your culture" 

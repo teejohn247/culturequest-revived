@@ -39,10 +39,10 @@ const SolutionSection = () => {
           className="text-center mb-16"
         >
           <span className="text-sm font-medium text-white/80 mb-4 block" style={{fontSize:'16px'}}>Our solution</span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white" style={{fontSize:'68px', lineHeight:'58px', fontWeight:'600'}}>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white" style={{fontSize:'clamp(32px, 8vw, 68px)', lineHeight:'clamp(36px, 8vw, 58px)', fontWeight:'600'}}>
             Measure what matters.<br />Act where it counts.
           </h2>
-          <p className="text-white/80 mt-4 max-w-2xl mx-auto" style={{fontSize:'18px', lineHeight:'28px'}}>
+          <p className="text-white/80 mt-4 max-w-2xl mx-auto text-base sm:text-lg" style={{lineHeight:'28px'}}>
             Our platform helps you understand your people through surveys, personality insights, and data-driven tools—so you can build a healthier culture, one decision at a time.
           </p>
         </motion.div>
@@ -208,18 +208,18 @@ const SolutionSection = () => {
                           transition={{ duration: 0.5, delay: 0.1 }}
                           className="w-8 bg-gradient-to-t from-[#6366F1]/30 to-[#6366F1]/10 rounded-t"
                         />
-                        <motion.div 
+                        {/* <motion.div 
                           initial={{ height: 0 }}
                           animate={{ height: "45%" }}
                           transition={{ duration: 0.5, delay: 0.3 }}
                           className="w-8 bg-gradient-to-t from-[#AB4FCB]/40 to-[#AB4FCB]/15 rounded-t"
-                        />
-                         <motion.div 
+                        /> */}
+                         {/* <motion.div 
                           initial={{ height: 0 }}
                           animate={{ height: "90%" }}
                           transition={{ duration: 0.5, delay: 0.4 }}
                           className="w-8 bg-gradient-to-t from-[#6366F1] via-[#383DA0] to-[#AB4FCB] rounded-t"
-                        />
+                        /> */}
                       </div>
                       <p className="text-xs text-muted-foreground" style={{textAlign: 'center'}}>Data processing efficiency</p>
                     </div>
