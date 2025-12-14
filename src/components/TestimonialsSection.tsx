@@ -12,31 +12,61 @@ interface Testimonial {
 const testimonials: Testimonial[] = [
   {
     company: "VICA DANMARK",
-    quote: "Culturequest has given us the insights and tools to actively improve employee well-being. It has strengthened our focus, created more open dialogue, and made our initiatives far more effective.",
+    quote: "Previously, our homemade surveys were subjective and time-consuming – Culturequest has made the process both easier and more professional.",
     author: "Lone Spangsberg",
     role: "CFO - VICA Danmark A/S",
   },
   {
     company: "Concens",
-    quote: "Previously, our homemade surveys were subjective and time-consuming – Culturequest has made the process both easier and more professional. We now have a solid platform to build on – and surveys developed by professionals give us a more accurate picture of the temperature in our organization.",
+    quote: "Previously, our homemade surveys were subjective and time-consuming – Culturequest has made the process both easier and more professional. ",
     author: "René Lynge",
     role: "CEO - Concens",
   },
   {
     company: "CamVision",
-    quote: "We've been very pleased with CultureQuest. They guided us safely through our APV (workplace assessment) and delivered valuable insights into our culture. Open, constructive conversations gave us fresh perspectives that challenged and inspired action. The software is intuitive, making data collection and follow-up simple. Overall, CultureQuest helped us uncover insights we wouldn't have reached on our own.",
+    quote: "Previously, our homemade surveys were subjective and time-consuming – Culturequest has made the process both easier and more professional.",
     author: "Joy Kolby",
     role: "Head of Administration - Camvision",
   },
   {
     company: "MARIA BLACK",
-    quote: "A user-friendly, accessible tool that could be tailored to our specific needs. Their wide range of categories and questions made it much easier for us to focus on the areas that mattered most, such as general well-being, motivation, leadership feedback, and skill development. The insights and comments we received have given us a strong foundation to implement new initiatives that support both individual and collective growth.",
+    quote: "Previously, our homemade surveys were subjective and time-consuming – Culturequest has made the process both easier and more professional.",
     author: "Team Lead",
     role: "MARIA BLACK",
   },
   {
     company: "VICA DANMARK",
-    quote: "Culturequest has given us the insights and tools to actively improve employee well-being. It has strengthened our focus, created more open dialogue, and made our initiatives far more effective.",
+    quote: "Previously, our homemade surveys were subjective and time-consuming – Culturequest has made the process both easier and more professional.",
+    author: "Lone Spangsberg",
+    role: "CFO - VICA Danmark A/S",
+  },
+  {
+    company: "Concens",
+    quote: "Previously, our homemade surveys were subjective and time-consuming – Culturequest has made the process both easier and more professional.",
+    author: "René Lynge",
+    role: "CEO - Concens",
+  },
+  {
+    company: "Concens",
+    quote: "Previously, our homemade surveys were subjective and time-consuming – Culturequest has made the process both easier and more professional. ",
+    author: "René Lynge",
+    role: "CEO - Concens",
+  },
+  {
+    company: "CamVision",
+    quote: "We've been very pleased with CultureQuest. They guided us safely through our APV (workplace assessment) and delivered valuable insights into our culture. ",
+    author: "Joy Kolby",
+    role: "Head of Administration - Camvision",
+  },
+  {
+    company: "MARIA BLACK",
+    quote: "Previously, our homemade surveys were subjective and time-consuming – Culturequest has made the process both easier and more professional.",
+    author: "Team Lead",
+    role: "MARIA BLACK",
+  },
+  {
+    company: "VICA DANMARK",
+    quote: "Previously, our homemade surveys were subjective and time-consuming – Culturequest has made the process both easier and more professional.",
     author: "Lone Spangsberg",
     role: "CFO - VICA Danmark A/S",
   },
@@ -66,7 +96,7 @@ const TestimonialCard = ({ testimonial, index }: { testimonial: Testimonial; ind
         </span>
       )}
     </div>
-    <p className="text-foreground text-sm leading-relaxed mb-6">
+    <p className="text-foreground text-md text-bold leading-relaxed mb-6">
       "{testimonial.quote}"
     </p>
     <div className="flex items-center justify-between">

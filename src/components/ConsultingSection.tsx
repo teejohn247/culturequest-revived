@@ -46,9 +46,9 @@ const ConsultingSection = () => {
                   size="lg" 
                   className="bg-[#6366F1] text-white hover:bg-[#6366F1]/90 rounded-lg"
                   onClick={() => openCalendly()}
-                  style={{fontSize: '18px', fontWeight: '600', height: '65px'}}
+                  style={{fontSize: '18px', fontWeight: '600', height: '65px', borderRadius: '.4rem'}}
                 >
-                  Book a Meeting
+                  Book a Demo
                 </Button>
               </motion.div>
             </div>

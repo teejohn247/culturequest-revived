@@ -22,7 +22,7 @@ const Navbar = () => {
               src="/silo-logo.svg" 
               alt="SILO Logo" 
               className="h-8 w-auto"
-              style={{width:150, height:150}}
+              style={{width:180, height:180}}
             />
           </Link>
 
@@ -40,10 +40,10 @@ const Navbar = () => {
               </Link>
             </div>
             <div className="flex items-center gap-3">
-              <Button  size="lg" style={{border: '1px solid lightgray', color: '#6366F1'}}>
+              <Button  size="lg"  style={{border: '1px solid lightgray', borderRadius: '.4rem', color: '#6366F1'}}>
                 Login
               </Button>
-              <Button size="lg" style={{backgroundColor: '#6366F1', color: '#FFFFFF'}}>
+              <Button size="lg" style={{backgroundColor: '#6366F1', borderRadius: '.4rem', color: '#FFFFFF'}}>
                 Try for free
               </Button>
             </div>

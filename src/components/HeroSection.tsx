@@ -64,8 +64,8 @@ const HeroSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
         >
-          <Button variant="hero" style={{backgroundColor: '#6366F1'}} size="xl" onClick={() => openCalendly()}>
-            Book a Meeting
+          <Button variant="hero" style={{backgroundColor: '#6366F1', borderRadius: '.4rem'}} size="xl" onClick={() => openCalendly()}>
+            Book a Demo
           </Button>
         </motion.div>
 
@@ -76,12 +76,13 @@ const HeroSection = () => {
           transition={{ duration: 0.8, delay: 0.5 }}
           className="mt-20 relative"
         >
-          <div className="flex justify-center gap-4 flex-wrap">
+          <div className="flex justify-center gap-4 flex-wrap" >
             {/* Preview cards */}
             <motion.div
               animate={{ y: [0, -10, 0] }}
               transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
               className="bg-card rounded-2xl shadow-card p-4 max-w-[200px] border border-[#6366F1]/30 dark:border-[#6366F1]/50"
+              style={{borderRadius: '.5rem'}}
             >
               <div className="text-xs text-muted-foreground mb-2">Platform Performance</div>
               <div className="font-semibold text-sm bg-gradient-to-r from-[#6366F1] via-[#383DA0] to-[#AB4FCB] bg-clip-text text-transparent">77% Efficiency</div>
@@ -94,6 +95,7 @@ const HeroSection = () => {
               animate={{ y: [0, -15, 0] }}
               transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
               className="bg-card rounded-2xl shadow-card p-4 max-w-[180px] border border-[#6366F1]/30 dark:border-[#6366F1]/50"
+              style={{borderRadius: '.5rem'}}
             >
               <div className="text-xs bg-gradient-to-r from-[#6366F1] via-[#383DA0] to-[#AB4FCB] bg-clip-text text-transparent mb-2">AI Analytics</div>
               <div className="h-16 bg-gradient-to-br from-[#6366F1]/10 via-[#383DA0]/10 to-[#AB4FCB]/10 rounded-lg flex items-center justify-center">

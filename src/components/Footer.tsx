@@ -2,9 +2,9 @@ import { motion } from "framer-motion";
 
 const Footer = () => {
   return (
-    <footer className="bg-white text-background py-16">
+    <footer className="bg-white text-background  ">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid md:grid-cols-4 gap-12 mb-12">
+        <div className="grid md:grid-cols-4 gap-12 mb-12 border-t border-gray p-6">
           {/* Logo & Description */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -65,7 +65,7 @@ const Footer = () => {
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.3 }}
           viewport={{ once: true }}
-          className="pt-8 border-t border-gray flex flex-col md:flex-row justify-between items-center gap-4"
+          className="pt-8 pb-8 border-t border-gray flex flex-col md:flex-row justify-between items-center gap-4"
         >
           <p className="text-black text-sm">
             © 2025 SILO Solutions Ltd. All rights reserved. www.silo-inc.com

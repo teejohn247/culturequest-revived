@@ -7,21 +7,21 @@ const values = [
     title: "Transform raw data into actionable insights",
     description: "Get instant access to critical business metrics with predictive analytics and automated reporting. Make data-driven decisions that drive growth.",
     color: "pink",
-    image: "/Mockup 2.png",
+    image: "/Frame 15.png",
   },
   {
     tag: "Streamline Operations",
     title: "Automated processes that save time and reduce errors",
     description: "AI-driven automation handles data processing, payroll, and reporting – freeing your team to focus on strategic initiatives. 90% increase in productivity and efficiency.",
     color: "purple",
-    image: "/mockup 1.jpeg",
+    image: "/Frame 19.png",
   },
   {
     tag: "Unified Platform",
     title: "All-in-one solution for HR, CRM, AI, and Accounting",
     description: "No more juggling multiple systems. SILO integrates everything you need in one platform – from recruitment to financial reporting, all seamlessly connected.",
     color: "blue",
-    image: "/mockup 3.png",
+    image: "/Frame 18.png",
   },
 ];
 
@@ -38,7 +38,7 @@ const ValueSection = () => {
           className="text-center mb-16"
         >
           <span className="text-sm font-medium text-primary mb-4 block">How SILO creates value</span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground " style={{fontSize:'68px', lineHeight:'58px', fontWeight:'600'}}>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground " style={{fontSize:'78px', lineHeight:'73px', fontWeight:'600'}}>
             From setup to<br /> success with
             <br />
             <span className="text-gradient">Streamlined returns.</span>
@@ -59,11 +59,11 @@ const ValueSection = () => {
               viewport={{ once: true }}
               className="group"
             >
-              <div className={`relative bg-card rounded-3xl p-8 md:p-12  overflow-hidden hover:shadow-card transition-all duration-500 ${
-                index === 0 ? 'md:flex-row' : index === 1 ? 'md:flex-row-reverse' : 'md:flex-row'
-              } flex flex-col md:flex-row items-center gap-8`}>
+              <div className={`relative bg-card rounded-3xl p-8 md:p-8  overflow-hidden  transition-all duration-500 ${
+                index === 0 ? 'md:flex-row' : index === 1 ? 'md:flex-row-reverse' : 'md:flex-row' 
+              } flex flex-col md:flex-row items-center gap-8`} >
                 {/* Content */}
-                <div className="flex-1 space-y-4">
+                <div className="flex-1 space-y-4 justify-start" >
                   {/* <span className={`inline-block text-sm font-medium px-4 py-1.5 rounded-full ${
                     value.color === 'purple' ? 'bg-[#6366F1]/10 text-[#6366F1]' :
                     value.color === 'pink' ? 'bg-[#383DA0]/10 text-[#383DA0]' :
@@ -71,7 +71,7 @@ const ValueSection = () => {
                   }`}>
                     {value.tag}
                   </span> */}
-                  <h3 className="text-2xl md:text-3xl font-bold text-foreground" style={{fontSize:'50px', lineHeight:'56px', fontWeight:'600', color: '#000000'}}>
+                  <h3 className="text-2xl md:text-3xl font-bold text-foreground" style={{fontSize:'56px', lineHeight:'56px', fontWeight:'600', color: '#000000'}}>
                     {value.title}
                   </h3>
                   <p className="text-muted-foreground text-lg">
@@ -91,7 +91,7 @@ const ValueSection = () => {
                     <img 
                       src={value.image} 
                       alt={value.title}
-                      className="w-full h-auto rounded-2xl object-contain"
+                      className="w-full h-auto object-contain"
                     />
                   </motion.div>
                 </div>

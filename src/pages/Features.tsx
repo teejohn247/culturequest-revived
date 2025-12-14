@@ -114,7 +114,7 @@ const Features = () => {
                   collaboration, and data-driven decision-making across all business functions.
                 </p>
                 <Button size="lg" style={{backgroundColor: '#6366F1', height:'60px'}} className="bg-gradient-to-r" onClick={() => openCalendly()}>
-                  <span style={{fontSize:'18px',  display:'flex', alignItems:'center', justifyContent:'center', fontWeight:'600'}}>Book a Meeting</span>
+                  <span style={{fontSize:'18px',  display:'flex', alignItems:'center', justifyContent:'center', fontWeight:'600'}}>Book a Demo</span>
                 </Button>
               </motion.div>
 

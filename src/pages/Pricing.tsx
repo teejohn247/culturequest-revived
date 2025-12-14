@@ -249,7 +249,7 @@ const Pricing = () => {
                 Book a short meeting and see how SILO can streamline your business processes.
               </p>
               <Button size="lg" variant="secondary" className="bg-white text-[#000000] hover:bg-white/90" onClick={() => openCalendly()}>
-                Book a Meeting
+                Book a Demo
               </Button>
             </motion.div>
           </div>

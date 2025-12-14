@@ -60,7 +60,7 @@ const About = () => {
                 to translate raw data into practical business actions.
               </p>
               <Button size="lg" style={{height:'60px'}} className="bg-gradient-to-r from-[#7074F2] via-[#7074F2] to-[#7074F2] text-white hover:opacity-90" onClick={() => openCalendly()}>
-                <span style={{fontSize:'18px',  display:'flex', alignItems:'center', justifyContent:'center'}}>Book a Meeting</span>
+                <span style={{fontSize:'18px',  display:'flex', alignItems:'center', justifyContent:'center'}}>Book a Demo</span>
               </Button>
             </motion.div>
           </div>
