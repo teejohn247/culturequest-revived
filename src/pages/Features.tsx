@@ -95,7 +95,7 @@ const Features = () => {
         {/* Hero Section */}
         <section className="relative py-16 lg:py-24 overflow-hidden">
           <div className="absolute inset-0 bg-soft-gradient" />
-          <div className="container mx-auto px-4 relative z-10 md:ml-[clamp(0px,10vw,100px)]" style={{marginTop: 'clamp(40px, 10vw, 100px)'}}>
+          <div className="container mx-auto px-4 relative z-10" style={{marginTop: 'clamp(40px, 10vw, 100px)'}}>
             <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
               {/* Left Content */}
               <motion.div
@@ -175,14 +175,14 @@ const Features = () => {
                     </div>
                     
                     {/* Content - Alternates sides */}
-                    <div className={`w-full md:w-1/2 ${isEven ? 'md:order-1' : 'md:order-2'}`}>
-                      <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-4" style={{fontSize:'clamp(28px, 6vw, 56px)', fontWeight:'600', lineHeight:'clamp(32px, 6vw, 67px)'}}>{feature.title}</h3>
-                      <p className="text-base sm:text-lg text-muted-foreground mb-6 leading-relaxed" style={{fontWeight:'400', lineHeight:'clamp(24px, 4vw, 30px)', color: '#000000'}}>{feature.description}</p>
-                      <ul className="space-y-3">
+                    <div className={`w-full md:w-1/2 ${isEven ? 'md:order-1' : 'md:order-2'} text-center md:text-left`}>
+                      <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-4 px-4 md:px-0" style={{fontSize:'clamp(28px, 6vw, 56px)', fontWeight:'600', lineHeight:'clamp(32px, 6vw, 67px)'}}>{feature.title}</h3>
+                      <p className="text-base sm:text-lg text-muted-foreground mb-6 leading-relaxed px-4 md:px-0" style={{fontWeight:'400', lineHeight:'clamp(24px, 4vw, 30px)', color: '#000000'}}>{feature.description}</p>
+                      <ul className="space-y-3 px-4 md:px-0">
                         {feature.bullets.map((bullet, i) => (
-                          <li key={i} className="flex items-start gap-2 md:gap-3 text-base text-muted-foreground">
+                          <li key={i} className="flex items-start gap-2 md:gap-3 text-base text-muted-foreground justify-center md:justify-start">
                             <span className="text-primary flex-shrink-0" style={{fontSize:'clamp(20px, 4vw, 48px)', fontWeight:'400'}}>•</span>
-                            <span style={{fontSize:'clamp(16px, 3vw, 20px)', color: '#000000', lineHeight:'clamp(24px, 4vw, 30px)'}}>{bullet}</span>
+                            <span className="text-left" style={{fontSize:'clamp(16px, 3vw, 20px)', color: '#000000', lineHeight:'clamp(24px, 4vw, 30px)'}}>{bullet}</span>
                           </li>
                         ))}
                       </ul>
@@ -212,7 +212,7 @@ const Features = () => {
               </p>
             </motion.div>
 
-            <div className="grid md:grid-cols-2 gap-8" style={{marginTop: '50px'}}> 
+            <div className="grid md:grid-cols-2 gap-6 md:gap-8 max-w-5xl mx-auto" style={{marginTop: '50px'}}> 
               {whyLoveSilo.map((item, index) => (
                 <motion.div
                   key={index}
@@ -220,15 +220,15 @@ const Features = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="bg-card border border-border rounded-2xl p-8"
+                  className="bg-card border border-border rounded-2xl p-6 md:p-8 text-center md:text-left"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#6366F1]/20 via-[#383DA0]/20 to-[#AB4FCB]/20 flex items-center justify-center mb-4">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#6366F1]/20 via-[#383DA0]/20 to-[#AB4FCB]/20 flex items-center justify-center mb-4 mx-auto md:mx-0">
                     <item.icon className="w-6 h-6 text-[#6366F1]" />
                   </div>
-                  <h3 className="font-semibold text-xl text-foreground mb-3">
+                  <h3 className="font-semibold text-lg md:text-xl text-foreground mb-3">
                     {item.title}
                   </h3>
-                  <p className="text-muted-foreground">
+                  <p className="text-muted-foreground text-sm md:text-base">
                     {item.description}
                   </p>
                 </motion.div>

@@ -8,6 +8,11 @@ import FeaturesSection from "@/components/FeaturesSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import ConsultingSection from "@/components/ConsultingSection";
 import Footer from "@/components/Footer";
+import SuccessStoriesSection from "@/components/SuccessStoriesSection";
+import FeatureCardsSection from "@/components/FeatureCardsSection";
+import AnimatedBannerSection from "@/components/AnimatedBannerSection";
+import IntelligentFeaturesSection from "@/components/IntelligentFeaturesSection";
+import SkillsSection from "@/components/SkillsSection";
 
 const Index = () => {
   return (
@@ -16,13 +21,19 @@ const Index = () => {
       <main>
         <HeroSection />
         <div className="hidden md:block">
-          <DashboardShowcase />
+          {/* <DashboardShowcase /> */}
         </div>
         <LogoMarquee />
+        <SkillsSection />
         <ValueSection />
+
+        <IntelligentFeaturesSection /> 
+        {/* <AnimatedBannerSection /> */}
+        {/* <FeatureCardsSection /> */}
         <SolutionSection />
         <FeaturesSection />
-        <TestimonialsSection />
+        {/* <TestimonialsSection /> */}
+        <SuccessStoriesSection />
         <LogoMarquee/>
 
         <ConsultingSection />

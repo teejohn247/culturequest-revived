@@ -52,17 +52,17 @@ const FeaturesSection = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <span className="text-sm font-medium text-primary mb-4 block">Features & Benefits</span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground">
+          <span className="text-md font-medium text-primary mb-4 block">Features & Benefits</span>
+          <h2 className="text-2xl md:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground px-4">
             All-In-One ERP Platform
           </h2>
-          <p className="text-muted-foreground mt-4 max-w-xl mx-auto">
+          <p className="text-muted-foreground mt-4 max-w-xl mx-auto text- md:text-base px-4">
             Discover how SILO transforms raw data into valuable insights for your business.
           </p>
         </motion.div>
 
         {/* Features grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto justify-items-left">
           {features.map((feature, index) => (
             <motion.div
               key={index}
@@ -71,10 +71,10 @@ const FeaturesSection = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
               whileHover={{ y: -5, transition: { duration: 0.2 } }}
-              className="group"
+              className="group w-full flex justify-left"
             >
-              <div className="h-full bg-card border border-border rounded-2xl p-6 hover:shadow-card transition-all duration-300">
-                <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-4 bg-gradient-to-br ${
+              <div className="h-full w-full max-w-sm bg-card border border-border rounded-2xl p-6 hover:shadow-card transition-all duration-300 text-left">
+                <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-4 mx-left bg-gradient-to-br ${
                   feature.color === 'purple' ? 'from-[#6366F1]/20 to-[#6366F1]/5' :
                   feature.color === 'pink' ? 'from-[#383DA0]/20 to-[#383DA0]/5' :
                   'from-[#AB4FCB]/20 to-[#AB4FCB]/5'
@@ -85,10 +85,10 @@ const FeaturesSection = () => {
                     'text-[#AB4FCB]'
                   }`} />
                 </div>
-                <h3 className="font-semibold text-lg text-foreground mb-2 group-hover:bg-gradient-to-r group-hover:from-[#6366F1] group-hover:via-[#383DA0] group-hover:to-[#AB4FCB] group-hover:bg-clip-text group-hover:text-transparent transition-all">
+                <h3 className="font-semibold text-lg text-foreground mb-2 group-hover:bg-gradient-to-r group-hover:from-[#6366F1] group-hover:via-[#383DA0] group-hover:to-[#AB4FCB] group-hover:bg-clip-text group-hover:text-transparent transition-all text-left   ">
                   {feature.title}
                 </h3>
-                <p className="text-muted-foreground">
+                <p className="text-muted-foreground text-md leading-relaxed text-left">
                   {feature.description}
                 </p>
               </div>

@@ -5,29 +5,29 @@ const values = [
   {
     tag: "Real-time Business Intelligence",
     title: "Transform raw data into actionable insights",
-    description: "Get instant access to critical business metrics with predictive analytics and automated reporting. Make data-driven decisions that drive growth.",
+    description: "Get instant access to critical business metrics with predictive analytics and automated reporting.",
     color: "pink",
-    image: "/Frame 15.png",
+    image: "Homepage/Transform.png",
   },
   {
     tag: "Streamline Operations",
     title: "Automated processes that save time and reduce errors",
-    description: "AI-driven automation handles data processing, payroll, and reporting – freeing your team to focus on strategic initiatives. 90% increase in productivity and efficiency.",
+    description: "AI-driven automation handles data processing, payroll, and reporting – freeing your team to focus on strategic initiatives.",
     color: "purple",
-    image: "/Frame 19.png",
+    image: "Homepage/Automated.png",
   },
   {
     tag: "Unified Platform",
     title: "All-in-one solution for HR, CRM, AI, and Accounting",
     description: "No more juggling multiple systems. SILO integrates everything you need in one platform – from recruitment to financial reporting, all seamlessly connected.",
     color: "blue",
-    image: "/Frame 18.png",
+    image: "Homepage/All-in-one.png",
   },
 ];
 
 const ValueSection = () => {
   return (
-    <section className="py-24 bg-background">
+    <section className="py-16 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section header */}
         <motion.div
@@ -35,9 +35,9 @@ const ValueSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-8"
         >
-          <span className="text-sm font-medium text-primary mb-4 block">How SILO creates value</span>
+          <span className="text-md font-medium text-primary mb-4 block">How SILO creates value</span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground" style={{fontSize:'clamp(32px, 8vw, 78px)', lineHeight:'clamp(36px, 8vw, 73px)', fontWeight:'600'}}>
             From setup to<br /> success with
             <br />
@@ -49,7 +49,7 @@ const ValueSection = () => {
         </motion.div>
 
         {/* Value cards */}
-        <div className="space-y-8">
+        <div className="space-y-2">
           {values.map((value, index) => (
             <motion.div
               key={index}

@@ -48,20 +48,20 @@ const SolutionSection = () => {
         </motion.div>
 
         {/* Steps */}
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 items-center ">
           {/* Step tabs */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
-            className="space-y-4"
+            className="space-y-4 min-h-[400px] flex flex-col justify-center"
           >
             {steps.map((step, index) => (
               <motion.button
                 key={index}
                 onClick={() => setActiveStep(index)}
-                className={`w-full text-left p-6 rounded-2xl border transition-all duration-300 ${
+                className={`w-full  text-left p-6 rounded-2xl border transition-all duration-300 ${
                   activeStep === index
                     ? 'bg-white border-white/30 shadow-lg'
                     : 'bg-white/10 border-white/20 hover:bg-white/20'
@@ -69,7 +69,7 @@ const SolutionSection = () => {
                 whileHover={{ scale: 1.01 }}
                 whileTap={{ scale: 0.99 }}
               >
-                <div className="flex items-start gap-4">
+                <div className="flex items-start gap-4 ">
                   <span className={`flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center text-sm font-semibold ${
                     activeStep === index
                       ? 'bg-gradient-primary text-primary-foreground'
@@ -109,7 +109,7 @@ const SolutionSection = () => {
             viewport={{ once: true }}
             className="relative"
           >
-            <div className="relative bg-white rounded-3xl p-8 min-h-[400px] flex items-center justify-center overflow-hidden shadow-lg">
+            <div className="relative bg-white rounded-3xl p-8 min-h-[300px] flex items-center justify-center overflow-hidden shadow-lg">
               {/* Decorative shapes */}
               <motion.div
                 animate={{ 
