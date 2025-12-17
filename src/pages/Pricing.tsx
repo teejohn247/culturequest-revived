@@ -113,7 +113,7 @@ const Pricing = () => {
                 <button
                   onClick={() => setIsAnnual(!isAnnual)}
                   className={`relative inline-flex h-8 w-14 items-center rounded-full transition-colors ${
-                    isAnnual ? 'bg-gradient-to-r from-[#6366F1] via-[#383DA0] to-[#AB4FCB]' : 'bg-muted'
+                    isAnnual ? 'bg-primary' : 'bg-muted'
                   }`}
                 >
                   <span
@@ -143,12 +143,12 @@ const Pricing = () => {
                   viewport={{ once: true }}
                   className={`relative rounded-3xl p-6 md:p-8 ${
                     plan.popular
-                      ? 'bg-gradient-to-br from-[#6366F1] via-[#383DA0] to-[#AB4FCB] text-white border-2 border-transparent'
+                      ? 'bg-primary text-primary-foreground border-2 border-transparent'
                       : 'bg-card border border-border'
                   }`}
                 >
                   {plan.popular && (
-                    <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-white text-[#6366F1] px-4 py-1 rounded-full text-sm font-semibold">
+                    <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-background text-primary px-4 py-1 rounded-full text-sm font-semibold">
                       Most Popular
                     </div>
                   )}
@@ -179,8 +179,8 @@ const Pricing = () => {
                   <Button
                     className={`w-full ${
                       plan.popular
-                        ? 'bg-white text-[#6366F1] hover:bg-white/90'
-                        : 'bg-gradient-to-r from-[#6366F1] via-[#383DA0] to-[#AB4FCB] text-white hover:opacity-90'
+                        ? 'bg-background text-primary hover:bg-background/90'
+                        : 'bg-primary text-primary-foreground hover:bg-primary/90'
                     }`}
                     size="lg"
                   >
@@ -234,7 +234,7 @@ const Pricing = () => {
         </section>
 
         {/* CTA Section */}
-        <section className="py-24 bg-gradient-to-br from-[#6366F1] via-[#383DA0] to-[#AB4FCB]">
+        <section className="py-24 bg-primary">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -248,7 +248,7 @@ const Pricing = () => {
               <p className="text-white/90 text-base sm:text-lg mb-8 px-4">
                 Book a short meeting and see how SILO can streamline your business processes.
               </p>
-              <Button size="lg" variant="secondary" className="bg-white text-[#000000] hover:bg-white/90" onClick={() => openCalendly()}>
+              <Button size="lg" variant="secondary" className="bg-background text-foreground hover:bg-background/90" onClick={() => openCalendly()}>
                 Book a Demo
               </Button>
             </motion.div>
