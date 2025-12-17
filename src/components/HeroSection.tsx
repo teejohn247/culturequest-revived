@@ -41,7 +41,7 @@ const HeroSection = () => {
           transition={{ duration: 0.6, delay: 0.1 }}
           className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6"
         >
-          <span className="text-gradient text-3xl sm:text-4xl md:text-5xl lg:text-7xl" style={{fontSize: 'clamp(32px, 8vw, 88px)', lineHeight: 'clamp(36px, 8vw, 88px)', fontWeight: '600'}}>One Platform</span>
+          <span className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl" style={{fontSize: 'clamp(32px, 8vw, 88px)', lineHeight: 'clamp(36px, 8vw, 88px)', fontWeight: '600', background: 'linear-gradient(135deg, #57D6D3, #7CF5CD)', backgroundClip: 'text', color: 'transparent'}}>One Platform</span>
           <br />
           <span className="text-foreground text-3xl sm:text-4xl md:text-5xl lg:text-7xl" style={{fontSize: 'clamp(32px, 8vw, 78px)', lineHeight: 'clamp(36px, 8vw, 88px)', fontWeight: '600'}}>Limitless Possibilities.</span>
         </motion.h1>

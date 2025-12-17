@@ -140,7 +140,7 @@ const ValueSection = () => {
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground" style={{fontSize:'clamp(32px, 8vw, 78px)', lineHeight:'clamp(36px, 8vw, 73px)', fontWeight:'600'}}>
             From setup to<br /> success with
             <br />
-            <span className="text-gradient">Streamlined returns.</span>
+            <span className="" style={{background: 'linear-gradient(135deg, #57D6D3, #7CF5CD)', backgroundClip: 'text', color: 'transparent'}}>Streamlined returns.</span>
           </h2>
           <p className="text-muted-foreground mt-4 max-w-xl mx-auto">
             SILO combines powerful software with expert consulting to help SMEs transform their operations.

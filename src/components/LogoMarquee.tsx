@@ -1,18 +1,16 @@
 import { motion } from "framer-motion";
 
 const logos = [
-  { name: "TechCorp", initials: "TC" },
-  { name: "Innovate", initials: "IN" },
-  { name: "GrowthHub", initials: "GH" },
-  { name: "TeamFlow", initials: "TF" },
-  { name: "ScaleUp", initials: "SU" },
-  { name: "Catalyst", initials: "CA" },
-  { name: "Momentum", initials: "MM" },
+  { name: "Meta", image: "/sponsors/Meta-Logo.png" },
+  { name: "UNICEF", image: "/sponsors/UNICEF_Logo.png" },
+  { name: "Google Play", image: "/sponsors/Google-Play-Logo.png" },
+  // { name: "App Store", image: "/sponsors/google-play-and-apple-app-store-logos-22.png" },
+  { name: "Canada", image: "/sponsors/Flag_of_Canada.png" },
 ];
 
 const LogoMarquee = () => {
   return (
-    <section className="py-16 overflow-hidden  border-y border-border/50" style={{backgroundColor: '#fff'}}>
+    <section className="py-16 overflow-hidden " style={{backgroundColor: '#fff'}}>
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
@@ -33,13 +31,14 @@ const LogoMarquee = () => {
           {[...logos, ...logos].map((logo, index) => (
             <div
               key={index}
-              style={{color: 'black'}}
-              className="flex-shrink-0 mx-12 flex items-center gap-3 opacity-60 hover:opacity-100 transition-opacity"
+              className="flex-shrink-0 mx-12 flex items-center justify-center  transition-opacity"
             >
-              <div className="w-10 h-10 rounded-lg bg-secondary flex items-center justify-center" style={{color: 'black', fontSize: '40px'}}>
-                <span className="font-semibold text-lg text-muted-foreground" style={{color: 'black', fontSize: '40px'}}>{logo.initials}</span>
-              </div>
-              <span className="font-medium text-muted-foreground whitespace-nowrap" style={{color: 'black',  fontSize: '40px'}}>{logo.name}</span>
+              <img
+                src={logo.image}
+                alt={logo.name}
+                className="h-12 w-auto object-contain"
+                style={{ maxHeight: '60px' }}
+              />
             </div>
           ))}
         </div>

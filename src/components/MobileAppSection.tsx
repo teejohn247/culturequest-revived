@@ -3,7 +3,7 @@ import { Smartphone, Download, PlayCircle } from "lucide-react";
 
 const MobileAppSection = () => {
   return (
-    <section className="py-24" style={{ backgroundColor: "#E4F8F7" }}>
+    <section className="py-24" style={{ backgroundColor: "#fff" }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12 items-center">
         {/* Left content */}
         <motion.div
@@ -31,6 +31,8 @@ const MobileAppSection = () => {
           </p>
 
           <div className="flex flex-wrap items-center gap-4">
+          <img style={{width: '50%', height: 'auto'}} src="/Homepage/google-play-and-apple-app-store-logos-22.png" alt="App Store" className="w-4 h-4" />
+{/* 
             <button className="inline-flex items-center gap-3 px-5 py-3 rounded-full bg-black text-white text-sm font-medium">
               <Download className="w-4 h-4" />
               <span>Get it on App Store</span>
@@ -38,7 +40,7 @@ const MobileAppSection = () => {
             <button className="inline-flex items-center gap-3 px-5 py-3 rounded-full bg-white text-foreground border border-border text-sm font-medium">
               <PlayCircle className="w-4 h-4" />
               <span>Get it on Google Play</span>
-            </button>
+            </button> */}
           </div>
         </motion.div>
 

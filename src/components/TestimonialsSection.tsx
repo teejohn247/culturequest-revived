@@ -55,7 +55,7 @@ const testimonials: Testimonial[] = [
 ];
 
 const TestimonialCard = ({ testimonial }: { testimonial: Testimonial }) => (
-  <div className="bg-white rounded-2xl p-6 shadow-sm border border-border min-w-[320px] max-w-[380px] flex-shrink-0">
+  <div className=" rounded-2xl p-6 shadow-sm border border-border min-w-[320px] max-w-[380px] flex-shrink-0" style={{background: 'linear-gradient(135deg, #57D6D3, #7CF5CD)'}}>
     <p className="text-foreground text-sm leading-relaxed mb-6">
       "{testimonial.quote}"
     </p>
@@ -82,7 +82,7 @@ const TestimonialCard = ({ testimonial }: { testimonial: Testimonial }) => (
 
 const TestimonialsSection = () => {
   return (
-    <section className="py-20 lg:py-32 bg-[#F8FAFC] relative overflow-hidden">
+    <section className="py-20 lg:py-32 bg-[#FFF] relative overflow-hidden">
       <div className="container mx-auto px-4">
         {/* Header */}
         <motion.div

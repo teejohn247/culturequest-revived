@@ -3,7 +3,7 @@ import { Zap, Users, MessageSquare, Database, BarChart3, RefreshCw, FolderSync }
 
 const BentoFeaturesSection = () => {
   return (
-    <section className="py-20 bg-[#F5F5F5] relative overflow-hidden">
+    <section className="py-20 bg-background relative overflow-hidden">
       {/* Dotted background pattern */}
       <div 
         className="absolute inset-0 opacity-30"

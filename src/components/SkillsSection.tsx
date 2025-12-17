@@ -27,7 +27,7 @@ const skills = [
 
 const SkillsSection = () => {
   return (
-    <section className="py-14 bg-background">
+    <section className="py-14" style={{backgroundColor: '#fff'}}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 items-start">
           {/* Left Section */}
