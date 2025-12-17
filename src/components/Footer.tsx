@@ -1,10 +1,36 @@
 import { motion } from "framer-motion";
+import { Button } from "@/components/ui/button";
+import { openCalendly } from "@/lib/calendly";
 
 const Footer = () => {
   return (
-    <footer className="bg-white text-background  ">
+    <footer className="bg-foreground text-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid md:grid-cols-4 gap-12 mb-12 border-t border-gray p-6">
+        {/* Curious Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
+          className="py-16 border-b border-background/20"
+        >
+          <div className="max-w-2xl">
+            <h3 className="text-3xl md:text-4xl font-bold text-background mb-4">
+              Curious about more?
+            </h3>
+            <p className="text-background/70 text-lg mb-6">
+              Book a short meeting and see how we can support your culture.
+            </p>
+            <Button 
+              onClick={() => openCalendly()}
+              className="bg-primary text-primary-foreground hover:bg-primary/90 px-8 py-3 rounded-full font-semibold"
+            >
+              Book a Demo
+            </Button>
+          </div>
+        </motion.div>
+
+        <div className="grid md:grid-cols-4 gap-12 py-12">
           {/* Logo & Description */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -15,13 +41,13 @@ const Footer = () => {
           >
             <div className="flex items-center gap-2 mb-4">
               <img 
-                src="/silo-logo.svg" 
+                src="/Silo-White-logo.png" 
                 alt="SILO Logo" 
                 className="h-8 w-auto"
                 style={{width: 150, height: 90}}
               />
             </div>
-            <p className="text-black max-w-sm">
+            <p className="text-background/70 max-w-sm">
               SILO - The All-In-One ERP platform 
               that transforms raw data into valuable insights for small & medium businesses.
             </p>
@@ -34,12 +60,12 @@ const Footer = () => {
             transition={{ duration: 0.5, delay: 0.1 }}
             viewport={{ once: true }}
           >
-            <h4 className="font-semibold mb-4">Product</h4>
+            <h4 className="font-semibold mb-4 text-background">Product</h4>
             <ul className="space-y-3">
-              <li><a href="#" className="text-black hover:text-background transition-colors">Features</a></li>
-              <li><a href="#" className="text-black hover:text-background transition-colors">Pricing</a></li>
-              <li><a href="#" className="text-black hover:text-background transition-colors">Security</a></li>
-              <li><a href="#" className="text-black hover:text-background transition-colors">Integrations</a></li>
+              <li><a href="#" className="text-background/70 hover:text-background transition-colors">Features</a></li>
+              <li><a href="#" className="text-background/70 hover:text-background transition-colors">Pricing</a></li>
+              <li><a href="#" className="text-background/70 hover:text-background transition-colors">Security</a></li>
+              <li><a href="#" className="text-background/70 hover:text-background transition-colors">Integrations</a></li>
             </ul>
           </motion.div>
 
@@ -49,12 +75,12 @@ const Footer = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            <h4 className="font-semibold mb-4">Company</h4>
+            <h4 className="font-semibold mb-4 text-background">Company</h4>
             <ul className="space-y-3">
-              <li><a href="#" className="text-black hover:text-background transition-colors">About us</a></li>
-              <li><a href="#" className="text-black hover:text-background transition-colors">Blog</a></li>
-              <li><a href="#" className="text-black hover:text-background transition-colors">Careers</a></li>
-              <li><a href="#" className="text-black hover:text-background transition-colors">Contact</a></li>
+              <li><a href="#" className="text-background/70 hover:text-background transition-colors">About us</a></li>
+              <li><a href="#" className="text-background/70 hover:text-background transition-colors">Blog</a></li>
+              <li><a href="#" className="text-background/70 hover:text-background transition-colors">Careers</a></li>
+              <li><a href="#" className="text-background/70 hover:text-background transition-colors">Contact</a></li>
             </ul>
           </motion.div>
         </div>
@@ -65,15 +91,15 @@ const Footer = () => {
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.3 }}
           viewport={{ once: true }}
-          className="pt-8 pb-8 border-t border-gray flex flex-col md:flex-row justify-between items-center gap-4"
+          className="pt-8 pb-8 border-t border-background/20 flex flex-col md:flex-row justify-between items-center gap-4"
         >
-          <p className="text-black text-sm">
+          <p className="text-background/70 text-sm">
             © 2025 SILO Solutions Ltd. All rights reserved. www.silo-inc.com
           </p>
           <div className="flex gap-6">
-            <a href="#" className="text-black hover:text-background text-sm transition-colors">Privacy Policy</a>
-            <a href="#" className="text-black hover:text-background text-sm transition-colors">Terms of Service</a>
-            <a href="#" className="text-black hover:text-background text-sm transition-colors">Cookie Policy</a>
+            <a href="#" className="text-background/70 hover:text-background text-sm transition-colors">Privacy Policy</a>
+            <a href="#" className="text-background/70 hover:text-background text-sm transition-colors">Terms of Service</a>
+            <a href="#" className="text-background/70 hover:text-background text-sm transition-colors">Cookie Policy</a>
           </div>
         </motion.div>
       </div>

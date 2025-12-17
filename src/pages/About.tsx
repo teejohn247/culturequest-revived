@@ -158,13 +158,60 @@ const About = () => {
     <div className="min-h-screen bg-background">
       <Navbar />
       <main>
-        {/* Decorative Top Waves */}
-        <div className="relative pt-24 md:pt-32">
-          <div className="absolute top-0 left-0 right-0 h-48 overflow-hidden">
-            <div className="absolute top-0 left-0 right-0 h-24 bg-[#E0F7FA] rounded-b-[50%] transform scale-x-150" />
-            <div className="absolute top-12 left-0 right-0 h-24 bg-[#FCE4EC] rounded-b-[50%] transform scale-x-125" />
+        {/* Hero Section */}
+        <section className="relative pt-32 pb-20 bg-gradient-to-b from-primary/30 to-background overflow-hidden">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="text-center mb-12"
+            >
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6" style={{ lineHeight: '1.2' }}>
+                Streamline your business<br />operations with SILO
+              </h1>
+              <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+                We specialize in building scalable, user-centric SaaS solutions that help startups and businesses transform ideas
+              </p>
+            </motion.div>
+
+            {/* Image with Quote Card */}
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.2 }}
+              className="relative max-w-4xl mx-auto"
+            >
+              <div className="relative rounded-2xl overflow-hidden">
+                <img
+                  src="/testi-1.png"
+                  alt="Team collaboration"
+                  className="w-full h-[400px] md:h-[500px] object-cover"
+                />
+                
+                {/* Quote Card Overlay */}
+                <div className="absolute bottom-8 right-4 md:right-8 bg-foreground text-background p-6 rounded-2xl max-w-sm shadow-xl">
+                  <p className="text-sm md:text-base mb-4 leading-relaxed">
+                    "We don't build products, we build partnerships. Our mission is to empower businesses with solutions that are agile and ambitious as they are."
+                  </p>
+                  <div className="flex items-center gap-3">
+                    <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-primary">
+                      <img
+                        src="/testi-1.png"
+                        alt="Mr Bola Badmus"
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <div>
+                      <p className="font-semibold text-sm">Mr Bola Badmus</p>
+                      <p className="text-xs text-muted-foreground">CEO & Founder</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
           </div>
-        </div>
+        </section>
 
         {/* Stacking Story Cards Section */}
         <section className="py-8 bg-background">
