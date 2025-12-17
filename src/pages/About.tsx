@@ -2,9 +2,7 @@ import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { Button } from "@/components/ui/button";
 import { Mail, Linkedin } from "lucide-react";
-import { openCalendly } from "@/lib/calendly";
 import ConsultingSection from "@/components/ConsultingSection";
 
 const storySections = [
@@ -89,11 +87,75 @@ const teamMembers = [
   }
 ];
 
-const About = () => {
-  const containerRef = useRef<HTMLDivElement>(null);
+const StoryCard = ({ section, index }: { section: typeof storySections[0]; index: number }) => {
+  const cardRef = useRef<HTMLDivElement>(null);
+  
+  const { scrollYProgress } = useScroll({
+    target: cardRef,
+    offset: ["start end", "end start"]
+  });
+
+  // Each card slides up from below and covers the previous one
+  const y = useTransform(
+    scrollYProgress,
+    [0, 0.3, 0.5, 0.7, 1],
+    [300, 100, 0, 0, -100]
+  );
+
+  const opacity = useTransform(
+    scrollYProgress,
+    [0, 0.2, 0.5, 0.8, 1],
+    [0, 1, 1, 1, 0]
+  );
 
   return (
-    <div className="min-h-screen bg-background" ref={containerRef}>
+    <motion.div
+      ref={cardRef}
+      style={{ y, opacity }}
+      className="sticky top-32"
+    >
+      <div className={`relative ${section.bgColor} rounded-3xl p-8 md:p-12 overflow-hidden flex flex-col md:flex-row items-center gap-8`}>
+        {/* Content */}
+        <div className="flex-1 space-y-4 text-center md:text-left">
+          <div className="text-foreground/80 flex justify-center md:justify-start">
+            {section.icon}
+          </div>
+          <h3 className="text-2xl md:text-4xl font-bold text-foreground" style={{ lineHeight: '1.2' }}>
+            {section.title}
+          </h3>
+          {section.content.map((paragraph, i) => (
+            <p key={i} className="text-foreground/80 text-base sm:text-lg max-w-md">
+              {paragraph}
+            </p>
+          ))}
+        </div>
+
+        {/* Image */}
+        <div className="flex-1 flex justify-center">
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="w-full max-w-lg relative"
+          >
+            <div className="aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl border-4 border-white">
+              <img
+                src={section.image}
+                alt={section.title}
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </motion.div>
+        </div>
+      </div>
+    </motion.div>
+  );
+};
+
+const About = () => {
+  return (
+    <div className="min-h-screen bg-background">
       <Navbar />
       <main>
         {/* Decorative Top Waves */}
@@ -104,10 +166,32 @@ const About = () => {
           </div>
         </div>
 
-        {/* Story Sections with Scroll Animation */}
-        {storySections.map((section, index) => (
-          <StorySection key={section.id} section={section} index={index} />
-        ))}
+        {/* Stacking Story Cards Section */}
+        <section className="py-8 bg-background">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            {/* Section header */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
+              className="text-center mb-12"
+            >
+              <span className="text-md font-medium text-primary mb-4 block">About SILO</span>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground" style={{fontSize:'clamp(32px, 8vw, 58px)', lineHeight:'clamp(36px, 8vw, 63px)', fontWeight:'600'}}>
+                Learn more about<br />
+                <span className="text-primary">who we are</span>
+              </h2>
+            </motion.div>
+
+            {/* Stacking cards */}
+            <div className="space-y-8">
+              {storySections.map((section, index) => (
+                <StoryCard key={section.id} section={section} index={index} />
+              ))}
+            </div>
+          </div>
+        </section>
 
         {/* Team Section */}
         <section className="py-24 bg-background">
@@ -186,66 +270,6 @@ const About = () => {
       </main>
       <Footer />
     </div>
-  );
-};
-
-interface StorySectionProps {
-  section: typeof storySections[0];
-  index: number;
-}
-
-const StorySection = ({ section, index }: StorySectionProps) => {
-  const sectionRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ["start end", "end start"]
-  });
-
-  const imageY = useTransform(scrollYProgress, [0, 0.5, 1], [100, 0, -50]);
-  const contentY = useTransform(scrollYProgress, [0, 0.5, 1], [50, 0, -30]);
-  const opacity = useTransform(scrollYProgress, [0, 0.3, 0.7, 1], [0, 1, 1, 0.5]);
-
-  return (
-    <section
-      ref={sectionRef}
-      className={`relative min-h-screen ${section.bgColor} overflow-hidden`}
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
-        <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[70vh]">
-          {/* Left Content */}
-          <motion.div
-            style={{ y: contentY, opacity }}
-            className="text-center lg:text-left"
-          >
-            <div className="text-foreground/80 mb-8">
-              {section.icon}
-            </div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-6">
-              {section.title}
-            </h2>
-            {section.content.map((paragraph, i) => (
-              <p key={i} className="text-lg text-foreground/80 mb-4 leading-relaxed">
-                {paragraph}
-              </p>
-            ))}
-          </motion.div>
-
-          {/* Right Image */}
-          <motion.div
-            style={{ y: imageY }}
-            className="relative"
-          >
-            <div className="aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl border-4 border-white">
-              <img
-                src={section.image}
-                alt={section.title}
-                className="w-full h-full object-cover"
-              />
-            </div>
-          </motion.div>
-        </div>
-      </div>
-    </section>
   );
 };
 
