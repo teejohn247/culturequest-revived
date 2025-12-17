@@ -110,19 +110,19 @@ const SkillsSection = () => {
             <div
               className="rounded-lg p-6 flex items-center gap-6"
               style={{
-                background: "linear-gradient(135deg, #6366F1 0%, #383DA0 50%, #AB4FCB 100%)",
+                background: "linear-gradient(270deg,#0000,#6bf4c7 48%,#0000)",
               }}
             >
               {/* Left Stat */}
               <div className="flex-1 text-center border-r border-white/30 pr-6">
-                <div className="text-4xl md:text-5xl font-bold text-white mb-1">90%</div>
-                <div className="text-sm text-white/90 uppercase tracking-wider">PRODUCTIVITY INCREASE</div>
+                <div className="text-4xl md:text-5xl font-bold text-black mb-1">90%</div>
+                <div className="text-sm text-black/90 uppercase tracking-wider">PRODUCTIVITY INCREASE</div>
               </div>
 
               {/* Right Stat */}
               <div className="flex-1 text-center pl-6">
-                <div className="text-4xl md:text-5xl font-bold text-white mb-1">9</div>
-                <div className="text-sm text-white/90 uppercase tracking-wider">INTEGRATED MODULES</div>
+                <div className="text-4xl md:text-5xl font-bold text-black mb-1">9</div>
+                <div className="text-sm text-black/90 uppercase tracking-wider">INTEGRATED MODULES</div>
               </div>
             </div>
 

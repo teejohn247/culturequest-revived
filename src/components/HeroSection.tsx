@@ -31,7 +31,7 @@ const HeroSection = () => {
           }}
         >
           <span className="text-sm text-muted-foreground">Do you want to get a demo?</span>
-          <ArrowRight className="w-4 h-4 text-primary" />
+          <ArrowRight className="w-4 h-4 text-[#057C78]" />
         </motion.div>
 
         {/* Main heading */}
@@ -64,7 +64,17 @@ const HeroSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
         >
-          <Button variant="hero" style={{backgroundColor: '#6366F1', borderRadius: '.4rem'}} size="xl" onClick={() => openCalendly()}>
+          <Button
+            variant="hero"
+            size="xl"
+            style={{
+              borderRadius: ".4rem",
+              background: "linear-gradient(135deg, #57D6D3, #7CF5CD)",
+              color: "#03312F",
+              boxShadow: "0 12px 30px rgba(87, 214, 211, 0.35)",
+            }}
+            onClick={() => openCalendly()}
+          >
             Book a Demo
           </Button>
         </motion.div>
@@ -81,11 +91,13 @@ const HeroSection = () => {
             <motion.div
               animate={{ y: [0, -10, 0] }}
               transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-              className="bg-card rounded-2xl shadow-card p-4 max-w-[200px] border border-[#6366F1]/30 dark:border-[#6366F1]/50"
+              className="bg-card rounded-2xl shadow-card p-4 max-w-[200px] border border-[#57D6D3]/40 dark:border-[#57D6D3]/60"
               style={{borderRadius: '.5rem'}}
             >
               <div className="text-xs text-muted-foreground mb-2">Platform Performance</div>
-              <div className="font-semibold text-sm bg-gradient-to-r from-[#6366F1] via-[#383DA0] to-[#AB4FCB] bg-clip-text text-transparent">77% Efficiency</div>
+              <div className="font-semibold text-sm bg-gradient-to-r from-[#57D6D3] via-[#7CF5CD] to-[#E0FFF7] bg-clip-text text-transparent">
+                77% Efficiency
+              </div>
               <p className="text-xs text-muted-foreground mt-1">
                 AI-powered analytics enabling 90% productivity increase...
               </p>
@@ -94,17 +106,25 @@ const HeroSection = () => {
             <motion.div
               animate={{ y: [0, -15, 0] }}
               transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-              className="bg-card rounded-2xl shadow-card p-4 max-w-[180px] border border-[#6366F1]/30 dark:border-[#6366F1]/50"
+              className="bg-card rounded-2xl shadow-card p-4 max-w-[180px] border border-[#57D6D3]/40 dark:border-[#57D6D3]/60"
               style={{borderRadius: '.5rem'}}
             >
-              <div className="text-xs bg-gradient-to-r from-[#6366F1] via-[#383DA0] to-[#AB4FCB] bg-clip-text text-transparent mb-2">AI Analytics</div>
-              <div className="h-16 bg-gradient-to-br from-[#6366F1]/10 via-[#383DA0]/10 to-[#AB4FCB]/10 rounded-lg flex items-center justify-center">
-                <svg className="w-8 h-8 bg-gradient-to-r from-[#6366F1] via-[#383DA0] to-[#AB4FCB] bg-clip-text text-transparent" viewBox="0 0 24 24" fill="none" stroke="url(#gradient)" strokeWidth="2">
+              <div className="text-xs bg-gradient-to-r from-[#57D6D3] via-[#7CF5CD] to-[#E0FFF7] bg-clip-text text-transparent mb-2">
+                AI Analytics
+              </div>
+              <div className="h-16 bg-gradient-to-br from-[#57D6D3]/10 via-[#7CF5CD]/10 to-[#E0FFF7]/10 rounded-lg flex items-center justify-center">
+                <svg
+                  className="w-8 h-8 bg-gradient-to-r from-[#57D6D3] via-[#7CF5CD] to-[#E0FFF7] bg-clip-text text-transparent"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="url(#hero-analytics-gradient)"
+                  strokeWidth="2"
+                >
                   <defs>
-                    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                      <stop offset="0%" stopColor="#6366F1" />
-                      <stop offset="50%" stopColor="#383DA0" />
-                      <stop offset="100%" stopColor="#AB4FCB" />
+                    <linearGradient id="hero-analytics-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                      <stop offset="0%" stopColor="#57D6D3" />
+                      <stop offset="50%" stopColor="#7CF5CD" />
+                      <stop offset="100%" stopColor="#E0FFF7" />
                     </linearGradient>
                   </defs>
                   <path d="M12 20V10M18 20V4M6 20v-4" />

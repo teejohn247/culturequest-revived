@@ -12,7 +12,7 @@ const logos = [
 
 const LogoMarquee = () => {
   return (
-    <section className="py-16 overflow-hidden bg-background border-y border-border/50">
+    <section className="py-16 overflow-hidden  border-y border-border/50" style={{backgroundColor: '#fff'}}>
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}

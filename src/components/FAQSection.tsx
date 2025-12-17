@@ -1,99 +1,122 @@
-import { motion } from "framer-motion";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { ChevronRight } from "lucide-react";
 
 const faqs = [
   {
-    question: "What is SILO and how does it work?",
-    answer: "SILO is an all-in-one business management platform that combines HR, CRM, AI analytics, and accounting tools. It works by integrating all your business operations into a single dashboard, allowing you to manage employees, customers, finances, and data insights from one place."
+    question: "What service does SILO offer?",
+    answer:
+      "SILO is an all-in-one ERP platform that unifies HR, CRM, AI analytics and accounting so you can manage your operations from a single source of truth.",
   },
   {
-    question: "How long does it take to set up SILO for my business?",
-    answer: "Most businesses are up and running within 24-48 hours. Our onboarding team provides personalized setup assistance, data migration support, and training to ensure a smooth transition. Complex enterprise setups may take 1-2 weeks."
+    question: "How much does SILO ERP system cost?",
+    answer:
+      "Pricing depends on your team size, modules and implementation needs. Talk to our team for a tailored quote that fits your budget and growth plans.",
   },
   {
-    question: "Is my data secure with SILO?",
-    answer: "Absolutely. We use enterprise-grade encryption, SOC 2 Type II compliance, and regular security audits. Your data is stored in secure cloud infrastructure with automatic backups and disaster recovery protocols."
+    question: "Is my data safe with your platform?",
+    answer:
+      "Yes. SILO uses bank-level encryption, role-based access control and audited infrastructure to keep your data secure and compliant.",
   },
   {
-    question: "Can I integrate SILO with my existing tools?",
-    answer: "Yes! SILO offers 100+ native integrations with popular tools like Slack, Google Workspace, Microsoft 365, Salesforce, QuickBooks, and more. We also provide API access for custom integrations."
+    question: "Can I migrate from another system?",
+    answer:
+      "Our implementation team helps you migrate from spreadsheets or legacy ERPs with minimal downtime and clear data mapping.",
   },
   {
-    question: "What kind of support do you offer?",
-    answer: "We provide 24/7 customer support via chat, email, and phone. Enterprise customers get a dedicated account manager. We also offer extensive documentation, video tutorials, and a community forum."
-  },
-  {
-    question: "Do you offer a free trial?",
-    answer: "Yes, we offer a 14-day free trial with full access to all features. No credit card required. You can also request a personalized demo from our sales team."
+    question: "Do you offer training?",
+    answer:
+      "We provide onboarding sessions, documentation and ongoing support so your team can get value from SILO quickly.",
   },
 ];
 
 const FAQSection = () => {
+  const [activeIndex, setActiveIndex] = useState<number | null>(0);
+
   return (
-    <section className="py-20 lg:py-32 bg-background">
-      <div className="container mx-auto px-4">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-12"
-        >
-          <span className="text-primary font-medium text-sm mb-4 block">FAQ</span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground">
-            Frequently Asked Questions
-          </h2>
-          <p className="text-muted-foreground mt-4 max-w-xl mx-auto">
-            Everything you need to know about SILO. Can't find what you're looking for? Contact our support team.
-          </p>
-        </motion.div>
+    <section className="py-24 bg-background">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1.4fr)] gap-12 items-start">
+        {/* Left column */}
+        <div className="space-y-8 max-w-xl">
+          <div className="inline-flex items-center px-5 py-2 rounded-full bg-foreground text-background text-sm font-semibold">
+            FAQs
+          </div>
+          <div>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-4">
+              Frequently Asked
+              <br /> Questions
+            </h2>
+            <p className="text-muted-foreground text-base sm:text-lg">
+              We know choosing the right ERP software can raise a lot of questions. That&apos;s why we&apos;ve put together
+              answers to the most common ones.
+            </p>
+          </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-          className="max-w-3xl mx-auto"
-        >
-          <Accordion type="single" collapsible className="space-y-4">
-            {faqs.map((faq, index) => (
-              <AccordionItem 
-                key={index} 
-                value={`item-${index}`}
-                className="bg-card border border-border rounded-2xl px-6 overflow-hidden"
-              >
-                <AccordionTrigger className="text-left font-medium text-foreground hover:no-underline py-5">
-                  {faq.question}
-                </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground pb-5">
-                  {faq.answer}
-                </AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
-        </motion.div>
+          {/* CTA card */}
+          <div className="inline-flex items-center justify-between gap-4 rounded-full bg-foreground text-background pr-3 pl-6 py-3 max-w-xs">
+            <div>
+              <div className="text-sm font-medium">Need something specific?</div>
+              <div className="text-xs opacity-80">Get a tailored quote for your team.</div>
+            </div>
+            <button
+              className="shrink-0 w-12 h-12 rounded-full flex items-center justify-center"
+              style={{
+                background: "linear-gradient(135deg, #57D6D3, #7CF5CD)",
+                color: "#03312F",
+              }}
+            >
+              <ChevronRight className="w-5 h-5" />
+            </button>
+          </div>
+        </div>
 
-        {/* CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.3 }}
-          className="text-center mt-12"
-        >
-          <p className="text-muted-foreground mb-4">Still have questions?</p>
-          <button className="px-8 py-3 bg-primary text-primary-foreground rounded-full font-medium hover:bg-primary/90 transition-colors">
-            Contact Support
-          </button>
-        </motion.div>
+        {/* Right column - FAQ list */}
+        <div className="bg-card border border-border rounded-3xl divide-y divide-border overflow-hidden shadow-sm">
+          {faqs.map((faq, index) => {
+            const isActive = activeIndex === index;
+            return (
+              <div key={faq.question}>
+                <button
+                  className="w-full flex items-center justify-between gap-4 px-6 py-5 text-left"
+                  onClick={() => setActiveIndex(isActive ? null : index)}
+                >
+                  <span className="text-sm sm:text-base md:text-lg font-medium text-foreground">
+                    {index + 1}. {faq.question}
+                  </span>
+                  <span
+                    className="shrink-0 w-9 h-9 rounded-full flex items-center justify-center text-sm font-semibold"
+                    style={{
+                      background: "linear-gradient(135deg, #57D6D3, #7CF5CD)",
+                      color: "#03312F",
+                    }}
+                  >
+                    <ChevronRight
+                      className={`w-4 h-4 transition-transform duration-200 ${isActive ? "rotate-90" : ""}`}
+                    />
+                  </span>
+                </button>
+                <AnimatePresence initial={false}>
+                  {isActive && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.2 }}
+                      className="px-6 pb-5 text-sm text-muted-foreground"
+                    >
+                      {faq.answer}
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+            );
+          })}
+        </div>
       </div>
     </section>
   );
 };
 
 export default FAQSection;
+
+ 

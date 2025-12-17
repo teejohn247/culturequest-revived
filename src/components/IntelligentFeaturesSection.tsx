@@ -42,13 +42,16 @@ const features: Feature[] = [
 
 const IntelligentFeaturesSection = () => {
   return (
-    <section className="py-24 bg-gradient-to-br from-[#6366F1]/5 via-[#383DA0]/5 to-[#AB4FCB]/5 relative overflow-hidden">
+    <section className="py-24 relative overflow-hidden" style={{backgroundColor: '#fff'}}>
       {/* Subtle background pattern */}
       <div className="absolute inset-0 opacity-5">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `radial-gradient(circle at 2px 2px, #6366F1 1px, transparent 0)`,
-          backgroundSize: '40px 40px'
-        }} />
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage: `radial-gradient(circle at 2px 2px, #57D6D3 1px, transparent 0)`,
+            backgroundSize: "40px 40px",
+          }}
+        />
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">

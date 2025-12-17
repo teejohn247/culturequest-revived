@@ -100,7 +100,10 @@ const SuccessStoriesSection = () => {
   ];
 
   return (
-    <section className="relative py-20 lg:py-32 overflow-hidden bg-gradient-to-br from-[#6366F1] via-[#383DA0] to-[#AB4FCB]">
+    <section
+      className="relative py-20 lg:py-32 overflow-hidden"
+      style={{ background: "linear-gradient(135deg, #57D6D3, #7CF5CD)" }}
+    >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
         <motion.div
@@ -171,7 +174,12 @@ const SuccessStoriesSection = () => {
                   >
                     {/* Profile Picture and Info */}
                     <div className="flex items-center gap-4 mb-4">
-                      <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#6366F1] via-[#383DA0] to-[#AB4FCB] flex items-center justify-center text-white font-bold text-sm">
+                      <div
+                        className="w-12 h-12 rounded-full flex items-center justify-center text-white font-bold text-sm"
+                        style={{
+                          background: "linear-gradient(135deg, #57D6D3, #7CF5CD)",
+                        }}
+                      >
                         {story.name
                           .split(" ")
                           .map((n) => n[0])
@@ -212,7 +220,12 @@ const SuccessStoriesSection = () => {
                       {story.tags.map((tag, tagIndex) => (
                         <span
                           key={tagIndex}
-                          className="px-3 py-1 rounded-full bg-gradient-to-r from-[#6366F1]/10 via-[#383DA0]/10 to-[#AB4FCB]/10 text-xs font-medium text-foreground border border-[#6366F1]/20"
+                          className="px-3 py-1 rounded-full text-xs font-medium text-foreground border"
+                          style={{
+                            background:
+                              "linear-gradient(135deg, rgba(87, 214, 211, 0.12), rgba(124, 245, 205, 0.12))",
+                            borderColor: "rgba(87, 214, 211, 0.5)",
+                          }}
                         >
                           {tag}
                         </span>

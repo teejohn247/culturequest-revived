@@ -15,36 +15,42 @@ const testimonials: Testimonial[] = [
     author: "William Ashford",
     role: "Product Manager",
     company: "Google",
+    avatar: "/testi-1.png",
   },
   {
     quote: "The security features offered give us peace of mind knowing that our customer data is protected.",
     author: "Scarlett Palmer",
     role: "Marketing Director",
     company: "Adobe",
+    avatar: "/testi-2.png",
   },
   {
     quote: "The integration process was seamless and we were up and running in no time.",
     author: "Ruby Hayes",
     role: "IT Director",
     company: "Mailchimp",
+    avatar: "/testi-3.png",
   },
   {
     quote: "The customer support has been outstanding. Whenever we have questions or need assistance, their team is quick to respond and incredibly helpful.",
     author: "Leila Smith",
     role: "Account Executive",
     company: "Notion",
+    avatar: "/testi-4.png",
   },
   {
     quote: "We've seen a significant improvement in our compliance management since the switch.",
     author: "Marlon Wright",
     role: "Product Manager",
     company: "Slack",
+    avatar: "/testi-5.png",
   },
   {
     quote: "I can't recommend SILO enough! Their lending solutions have made it easier for us to manage customer applications and approvals, resulting in faster turnaround times and happier clients.",
     author: "Samuel Kingsley",
     role: "Financial Analyst",
     company: "Squarespace",
+    avatar: "/testi-6.png",
   },
 ];
 
@@ -112,7 +118,7 @@ const TestimonialsSection = () => {
         </motion.div>
 
         {/* Single Row Testimonials - Row 2 */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, x: 50 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
@@ -123,7 +129,7 @@ const TestimonialsSection = () => {
           {testimonials.slice(2, 6).map((testimonial, index) => (
             <TestimonialCard key={index} testimonial={testimonial} />
           ))}
-        </motion.div>
+        </motion.div> */}
 
         {/* CTA Button */}
         <motion.div
