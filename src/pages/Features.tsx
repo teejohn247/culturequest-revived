@@ -1,5 +1,5 @@
-import { motion, AnimatePresence } from "framer-motion";
-import { useState } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -85,9 +85,81 @@ const whyLoveSilo = [
   },
 ];
 
-const Features = () => {
-  const [activeFeature, setActiveFeature] = useState(0);
+const FeatureCard = ({ feature, index }: { feature: typeof mainFeatures[0]; index: number }) => {
+  const cardRef = useRef<HTMLDivElement>(null);
+  const Icon = feature.icon;
+  
+  const { scrollYProgress } = useScroll({
+    target: cardRef,
+    offset: ["start end", "end start"]
+  });
 
+  const y = useTransform(
+    scrollYProgress,
+    [0, 0.3, 0.5, 0.7, 1],
+    [300, 100, 0, 0, -100]
+  );
+
+  const opacity = useTransform(
+    scrollYProgress,
+    [0, 0.2, 0.5, 0.8, 1],
+    [0, 1, 1, 1, 0]
+  );
+
+  const bgColors = ['bg-primary/10', 'bg-[#BFDBFE]', 'bg-[#D1FAE5]', 'bg-[#FDE68A]'];
+
+  return (
+    <motion.div
+      ref={cardRef}
+      style={{ y, opacity }}
+      className="sticky top-32"
+    >
+      <div className="relative bg-card rounded-3xl p-8 md:p-12 overflow-hidden flex flex-col md:flex-row items-center gap-8">
+        {/* Content */}
+        <div className="flex-1 space-y-4">
+          <span className={`inline-flex items-center gap-2 text-sm font-medium px-4 py-1.5 rounded-full ${bgColors[index % bgColors.length]}`}>
+            <Icon className="w-4 h-4" />
+            {feature.title}
+          </span>
+          <h3 className="text-2xl md:text-4xl font-bold text-foreground" style={{ lineHeight: '1.2' }}>
+            {feature.title}
+          </h3>
+          <p className="text-muted-foreground text-base sm:text-lg max-w-md">
+            {feature.description}
+          </p>
+          <ul className="space-y-2 pt-2">
+            {feature.bullets.map((bullet, i) => (
+              <li key={i} className="flex items-center gap-3">
+                <span className="w-2 h-2 rounded-full bg-primary flex-shrink-0" />
+                <span className="text-foreground text-sm md:text-base">{bullet}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Image */}
+        <div className="flex-1 flex justify-center">
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="w-full max-w-lg relative"
+          >
+            <div className={`absolute -inset-4 rounded-3xl ${bgColors[index % bgColors.length]}`} />
+            <img 
+              src={feature.image} 
+              alt={feature.title}
+              className="w-full h-auto object-cover relative z-10 rounded-2xl"
+            />
+          </motion.div>
+        </div>
+      </div>
+    </motion.div>
+  );
+};
+
+const Features = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
@@ -98,7 +170,6 @@ const Features = () => {
           <div className="absolute inset-0 bg-soft-gradient" />
           <div className="container mx-auto px-4 relative z-10" style={{marginTop: 'clamp(40px, 10vw, 100px)'}}>
             <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
-              {/* Left Content */}
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
@@ -117,12 +188,11 @@ const Features = () => {
                 </p>
                 <div className="flex justify-center md:justify-start">
                   <Button size="lg" style={{height:'clamp(48px, 8vw, 60px)'}} className="bg-primary text-primary-foreground hover:bg-primary/90" onClick={() => openCalendly()}>
-                    <span style={{fontSize:'clamp(14px, 3vw, 18px)',  display:'flex', alignItems:'center', justifyContent:'center', fontWeight:'600'}}>Book a Demo</span>
+                    <span style={{fontSize:'clamp(14px, 3vw, 18px)', display:'flex', alignItems:'center', justifyContent:'center', fontWeight:'600'}}>Book a Demo</span>
                   </Button>
                 </div>
               </motion.div>
 
-              {/* Right Visual */}
               <motion.div
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
@@ -144,10 +214,9 @@ const Features = () => {
           </div>
         </section>
 
-        {/* Feature Showcase - Tabbed Design */}
+        {/* Feature Showcase - Scroll Stacking Cards */}
         <section className="py-16 md:py-24 bg-primary/10">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            {/* Section Header */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -163,89 +232,12 @@ const Features = () => {
               </p>
             </motion.div>
 
-            {/* Feature Tabs */}
-            <div className="flex flex-wrap justify-center gap-3 md:gap-4 mb-12">
-              {mainFeatures.map((feature, index) => {
-                const Icon = feature.icon;
-                return (
-                  <motion.button
-                    key={feature.id}
-                    onClick={() => setActiveFeature(index)}
-                    className={`flex items-center gap-2 md:gap-3 px-4 md:px-6 py-3 md:py-4 rounded-full transition-all duration-300 font-medium text-sm md:text-base ${
-                      activeFeature === index
-                        ? 'bg-primary text-primary-foreground shadow-lg'
-                        : 'bg-card border border-border text-foreground hover:border-primary/50'
-                    }`}
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                  >
-                    <Icon className="w-4 h-4 md:w-5 md:h-5" />
-                    <span className="hidden sm:inline">{feature.title}</span>
-                  </motion.button>
-                );
-              })}
+            {/* Stacking feature cards */}
+            <div className="space-y-8">
+              {mainFeatures.map((feature, index) => (
+                <FeatureCard key={feature.id} feature={feature} index={index} />
+              ))}
             </div>
-
-            {/* Feature Content */}
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={activeFeature}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -20 }}
-                transition={{ duration: 0.4 }}
-                className="bg-card rounded-3xl border border-border overflow-hidden shadow-xl"
-              >
-                <div className="grid lg:grid-cols-2 min-h-[500px]">
-                  {/* Content Side */}
-                  <div className="p-8 md:p-12 lg:p-16 flex flex-col justify-center">
-                    <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full mb-6 w-fit">
-                      {(() => {
-                        const Icon = mainFeatures[activeFeature].icon;
-                        return <Icon className="w-5 h-5" />;
-                      })()}
-                      <span className="font-medium">{mainFeatures[activeFeature].title}</span>
-                    </div>
-                    
-                    <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-4" style={{lineHeight: '1.2'}}>
-                      {mainFeatures[activeFeature].title}
-                    </h3>
-                    
-                    <p className="text-muted-foreground text-base md:text-lg mb-8 leading-relaxed">
-                      {mainFeatures[activeFeature].description}
-                    </p>
-                    
-                    <ul className="space-y-4">
-                      {mainFeatures[activeFeature].bullets.map((bullet, i) => (
-                        <motion.li
-                          key={i}
-                          initial={{ opacity: 0, x: -10 }}
-                          animate={{ opacity: 1, x: 0 }}
-                          transition={{ duration: 0.3, delay: i * 0.1 }}
-                          className="flex items-center gap-3"
-                        >
-                          <span className="w-2 h-2 rounded-full bg-primary flex-shrink-0" />
-                          <span className="text-foreground text-base md:text-lg">{bullet}</span>
-                        </motion.li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  {/* Image Side */}
-                  <div className="relative bg-primary/5 flex items-center justify-center p-8 lg:p-12">
-                    <motion.img
-                      key={mainFeatures[activeFeature].image}
-                      src={mainFeatures[activeFeature].image}
-                      alt={mainFeatures[activeFeature].title}
-                      className="w-full max-w-md h-auto rounded-2xl shadow-2xl object-cover"
-                      initial={{ opacity: 0, scale: 0.9 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      transition={{ duration: 0.4 }}
-                    />
-                  </div>
-                </div>
-              </motion.div>
-            </AnimatePresence>
           </div>
         </section>
 
