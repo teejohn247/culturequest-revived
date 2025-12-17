@@ -1,213 +1,178 @@
-import { motion } from "framer-motion";
-import { Zap, Users, MessageSquare, Database, BarChart3, RefreshCw, FolderSync } from "lucide-react";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
+import { Zap, Users, BarChart3, Shield, Clock, Sparkles, ArrowRight } from "lucide-react";
+
+const features = [
+  {
+    icon: Zap,
+    title: "Lightning Fast",
+    description: "Process data in milliseconds with our optimized infrastructure",
+    delay: 0,
+  },
+  {
+    icon: Users,
+    title: "Team Collaboration",
+    description: "Work together seamlessly across departments",
+    delay: 0.1,
+  },
+  {
+    icon: BarChart3,
+    title: "Real-time Analytics",
+    description: "Get insights the moment they happen",
+    delay: 0.2,
+  },
+  {
+    icon: Shield,
+    title: "Enterprise Security",
+    description: "Bank-grade encryption for all your data",
+    delay: 0.3,
+  },
+  {
+    icon: Clock,
+    title: "24/7 Automation",
+    description: "Set it and forget it with smart workflows",
+    delay: 0.4,
+  },
+  {
+    icon: Sparkles,
+    title: "AI-Powered",
+    description: "Machine learning that adapts to your needs",
+    delay: 0.5,
+  },
+];
+
+const FeatureCard = ({ feature, index }: { feature: typeof features[0]; index: number }) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-50px" });
+
+  return (
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 40, scale: 0.95 }}
+      animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
+      transition={{ 
+        duration: 0.6, 
+        delay: feature.delay,
+        ease: [0.21, 0.47, 0.32, 0.98]
+      }}
+      whileHover={{ 
+        y: -8,
+        transition: { duration: 0.3 }
+      }}
+      className="group relative bg-white rounded-2xl p-6 border border-border overflow-hidden cursor-pointer"
+    >
+      {/* Gradient overlay on hover */}
+      <motion.div
+        className="absolute inset-0 bg-gradient-to-br from-primary/5 to-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+      />
+      
+      {/* Icon with animation */}
+      <motion.div
+        initial={{ scale: 1 }}
+        whileHover={{ scale: 1.1, rotate: 5 }}
+        transition={{ type: "spring", stiffness: 400 }}
+        className="relative z-10 w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors"
+      >
+        <feature.icon className="w-6 h-6 text-primary" />
+      </motion.div>
+
+      {/* Content */}
+      <div className="relative z-10">
+        <h3 className="font-bold text-foreground text-lg mb-2 group-hover:text-primary transition-colors">
+          {feature.title}
+        </h3>
+        <p className="text-muted-foreground text-sm">
+          {feature.description}
+        </p>
+      </div>
+
+      {/* Arrow indicator */}
+      <motion.div
+        initial={{ opacity: 0, x: -10 }}
+        whileHover={{ opacity: 1, x: 0 }}
+        className="absolute bottom-6 right-6 opacity-0 group-hover:opacity-100 transition-opacity"
+      >
+        <ArrowRight className="w-5 h-5 text-primary" />
+      </motion.div>
+
+      {/* Decorative corner accent */}
+      <div className="absolute -top-10 -right-10 w-20 h-20 bg-primary/5 rounded-full group-hover:scale-150 transition-transform duration-500" />
+    </motion.div>
+  );
+};
 
 const BentoFeaturesSection = () => {
+  const sectionRef = useRef(null);
+  const isInView = useInView(sectionRef, { once: true, margin: "-100px" });
+
   return (
-    <section className="py-20 bg-[#F5F5F5] relative overflow-hidden">
-      {/* Dotted background pattern */}
-      <div 
-        className="absolute inset-0 opacity-30"
-        style={{
-          backgroundImage: `radial-gradient(circle, #ccc 1px, transparent 1px)`,
-          backgroundSize: '24px 24px'
+    <section ref={sectionRef} className="py-20 bg-[#EFFEF9] relative overflow-hidden">
+      {/* Animated background elements */}
+      <motion.div
+        animate={{ 
+          scale: [1, 1.2, 1],
+          opacity: [0.1, 0.2, 0.1]
         }}
+        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute top-20 left-10 w-96 h-96 bg-primary/10 rounded-full blur-3xl"
+      />
+      <motion.div
+        animate={{ 
+          scale: [1.2, 1, 1.2],
+          opacity: [0.1, 0.2, 0.1]
+        }}
+        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut", delay: 4 }}
+        className="absolute bottom-20 right-10 w-96 h-96 bg-primary/10 rounded-full blur-3xl"
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Bento Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        {/* Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16"
+        >
+          <motion.span
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={isInView ? { opacity: 1, scale: 1 } : {}}
+            transition={{ duration: 0.4, delay: 0.2 }}
+            className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full text-primary text-sm font-medium mb-4"
+          >
+            <Sparkles className="w-4 h-4" />
+            Powerful Features
+          </motion.span>
           
-          {/* AI Automation Card */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="bg-white rounded-2xl p-6 shadow-sm"
-          >
-            <div className="flex gap-3 mb-4">
-              <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
-                <Zap className="w-5 h-5 text-primary" />
-              </div>
-              <div className="w-10 h-10 rounded-lg bg-red-100 flex items-center justify-center">
-                <BarChart3 className="w-5 h-5 text-red-500" />
-              </div>
-              <div className="w-10 h-10 rounded-lg bg-blue-100 flex items-center justify-center">
-                <Users className="w-5 h-5 text-blue-500" />
-              </div>
-            </div>
-            <h3 className="font-bold text-foreground text-lg">AI-Powered Automation</h3>
-            <p className="text-muted-foreground text-sm mt-1">boost productivity with AI</p>
-          </motion.div>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
+            Everything you need to
+            <br />
+            <span className="text-gradient">scale your business</span>
+          </h2>
+          
+          <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
+            Built for modern teams who demand speed, security, and seamless integration.
+          </p>
+        </motion.div>
 
-          {/* Analytics Chart - Large Card */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="bg-white rounded-2xl p-6 shadow-sm md:col-span-2 lg:row-span-2"
-          >
-            <div className="text-center mb-4">
-              <h3 className="text-3xl font-bold text-foreground">2h 20m <span className="text-sm text-muted-foreground">↓</span></h3>
-              <p className="text-muted-foreground text-sm">Average time you spent per day</p>
-            </div>
-            
-            {/* Bar Chart */}
-            <div className="flex items-end justify-center gap-2 h-32 mt-6">
-              <div className="flex flex-col items-center gap-1">
-                <div className="w-8 bg-[#BFFF00] rounded-t" style={{height: '40px'}} />
-                <span className="text-xs text-muted-foreground">M</span>
-              </div>
-              <div className="flex flex-col items-center gap-1">
-                <div className="w-8 bg-foreground rounded-t" style={{height: '70px'}} />
-                <span className="text-xs text-muted-foreground">T</span>
-              </div>
-              <div className="flex flex-col items-center gap-1">
-                <div className="w-8 bg-[#BFFF00] rounded-t" style={{height: '30px'}} />
-                <span className="text-xs text-muted-foreground">W</span>
-              </div>
-              <div className="flex flex-col items-center gap-1">
-                <div className="w-8 bg-foreground rounded-t" style={{height: '90px'}} />
-                <span className="text-xs text-muted-foreground">T</span>
-              </div>
-              <div className="flex flex-col items-center gap-1">
-                <div className="w-8 bg-foreground rounded-t" style={{height: '60px'}} />
-                <span className="text-xs text-muted-foreground">F</span>
-              </div>
-              <div className="flex flex-col items-center gap-1">
-                <div className="w-8 bg-[#BFFF00] rounded-t" style={{height: '45px'}} />
-                <span className="text-xs text-muted-foreground">S</span>
-              </div>
-              <div className="flex flex-col items-center gap-1">
-                <div className="w-8 bg-[#BFFF00] rounded-t" style={{height: '25px'}} />
-                <span className="text-xs text-muted-foreground">Today</span>
-              </div>
-            </div>
-
-            {/* Side labels */}
-            <div className="flex justify-between mt-4">
-              <div className="flex items-center gap-2 bg-white border border-border rounded-lg px-3 py-2">
-                <svg className="w-6 h-6 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M3 17l4-4 4 4 7-7 3 3" />
-                </svg>
-                <div>
-                  <p className="text-sm font-medium">Monthly</p>
-                  <p className="text-xs text-muted-foreground">Increment</p>
-                </div>
-              </div>
-              <div className="flex items-center gap-2 bg-white border border-border rounded-lg px-3 py-2">
-                <svg className="w-6 h-6 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M3 8l7 7 4-4 7 7" />
-                </svg>
-                <div>
-                  <p className="text-sm font-medium">Yearly</p>
-                  <p className="text-xs text-muted-foreground">Increment</p>
-                </div>
-              </div>
-            </div>
-
-            {/* Center Text */}
-            <div className="text-center mt-6 pt-4 border-t border-border">
-              <h4 className="font-bold text-foreground">Human Resources Management</h4>
-              <p className="text-muted-foreground text-sm mt-1">Manage your workforce effortlessly.</p>
-              <p className="text-muted-foreground text-xs mt-2">Boost productivity, reduce complexity, and empower your teams to achieve more.</p>
-              
-              <h4 className="font-bold text-foreground mt-4">Relationship Management</h4>
-              <p className="text-muted-foreground text-sm">Build lasting relationships and close more deals</p>
-            </div>
-          </motion.div>
-
-          {/* AI Chatbot Card */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="bg-white rounded-2xl p-6 shadow-sm"
-          >
-            <div className="space-y-3">
-              <div className="flex items-start gap-2">
-                <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center">
-                  <MessageSquare className="w-4 h-4 text-primary-foreground" />
-                </div>
-                <div className="bg-muted rounded-lg px-3 py-2">
-                  <p className="text-sm">Hello, how are you?</p>
-                </div>
-              </div>
-              <div className="flex items-start gap-2 justify-end">
-                <div className="bg-muted rounded-lg px-3 py-2">
-                  <p className="text-sm">Fine, i need helps</p>
-                </div>
-                <div className="w-8 h-8 rounded-full bg-orange-200 overflow-hidden">
-                  <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100" alt="" className="w-full h-full object-cover" />
-                </div>
-              </div>
-              <div className="flex items-start gap-2">
-                <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center">
-                  <MessageSquare className="w-4 h-4 text-primary-foreground" />
-                </div>
-                <div className="bg-muted rounded-lg px-3 py-2">
-                  <p className="text-sm">Sure, can i do?</p>
-                </div>
-              </div>
-            </div>
-            <h3 className="font-bold text-foreground mt-4">Customers AI-powered to chatbots — free forever.</h3>
-          </motion.div>
-
-          {/* Cutting-edge AI Card */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.3 }}
-            className="bg-white rounded-2xl p-6 shadow-sm"
-          >
-            <div className="relative h-32 flex items-center justify-center">
-              {/* Center icon */}
-              <div className="w-16 h-16 rounded-full bg-foreground flex items-center justify-center z-10">
-                <div className="flex gap-0.5">
-                  <div className="w-4 h-4 rounded-full bg-background" />
-                  <div className="w-4 h-4 rounded-full bg-background" />
-                </div>
-              </div>
-              
-              {/* Orbiting icons */}
-              <div className="absolute top-0 left-1/4 w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center">
-                <Zap className="w-5 h-5 text-blue-500" />
-              </div>
-              <div className="absolute top-1/4 right-0 w-10 h-10 rounded-full bg-purple-50 flex items-center justify-center">
-                <Database className="w-5 h-5 text-purple-500" />
-              </div>
-              <div className="absolute bottom-0 left-1/3 w-10 h-10 rounded-full bg-cyan-50 flex items-center justify-center">
-                <RefreshCw className="w-5 h-5 text-cyan-500" />
-              </div>
-              <div className="absolute bottom-1/4 right-1/4 w-10 h-10 rounded-full bg-orange-50 flex items-center justify-center">
-                <BarChart3 className="w-5 h-5 text-orange-500" />
-              </div>
-            </div>
-            <h3 className="font-bold text-foreground text-center mt-4">Cutting-edge AI features for grow business</h3>
-          </motion.div>
-
-          {/* Auto Backup Card */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.4 }}
-            className="bg-white rounded-2xl p-6 shadow-sm"
-          >
-            <div className="flex justify-center gap-8 h-28">
-              <div className="w-16 h-16 rounded-full border-2 border-border flex items-center justify-center">
-                <Database className="w-8 h-8 text-muted-foreground" />
-              </div>
-              <div className="w-16 h-16 rounded-full border-2 border-border flex items-center justify-center">
-                <FolderSync className="w-8 h-8 text-muted-foreground" />
-              </div>
-            </div>
-            <h3 className="font-bold text-foreground text-center">Auto backup and recovery automated backups</h3>
-          </motion.div>
-
+        {/* Features Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {features.map((feature, index) => (
+            <FeatureCard key={index} feature={feature} index={index} />
+          ))}
         </div>
+
+        {/* Bottom CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.8 }}
+          className="text-center mt-12"
+        >
+          <button className="inline-flex items-center gap-2 px-8 py-4 bg-foreground text-background rounded-full font-medium hover:bg-foreground/90 transition-colors group">
+            Explore all features
+            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+          </button>
+        </motion.div>
       </div>
     </section>
   );
