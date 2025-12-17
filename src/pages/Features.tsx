@@ -106,7 +106,7 @@ const Features = () => {
               >
                 <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight" style={{fontSize:'clamp(32px, 8vw, 68px)', lineHeight:'clamp(36px, 8vw, 78px)', fontWeight:'600'}}>
                   Unite Teams Through the Power of{" "}
-                  <span className="bg-gradient-to-r from-[#6366F1] via-[#383DA0] to-[#AB4FCB] bg-clip-text text-transparent">
+                  <span className="text-primary">
                     Data Intelligence
                   </span>
                 </h1>
@@ -115,7 +115,7 @@ const Features = () => {
                   collaboration, and data-driven decision-making across all business functions.
                 </p>
                 <div className="flex justify-center md:justify-start">
-                  <Button size="lg" style={{backgroundColor: '#6366F1', height:'clamp(48px, 8vw, 60px)'}} className="bg-gradient-to-r" onClick={() => openCalendly()}>
+                  <Button size="lg" style={{height:'clamp(48px, 8vw, 60px)'}} className="bg-primary text-primary-foreground hover:bg-primary/90" onClick={() => openCalendly()}>
                     <span style={{fontSize:'clamp(14px, 3vw, 18px)',  display:'flex', alignItems:'center', justifyContent:'center', fontWeight:'600'}}>Book a Demo</span>
                   </Button>
                 </div>
@@ -144,7 +144,7 @@ const Features = () => {
         </section>
 
         {/* Feature Showcase - Full Rows */}
-        <section className="py-24 bg-background" style={{backgroundColor: '#F7F8FF'}}>
+        <section className="py-24 bg-secondary/30">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" >
             <div>
               {mainFeatures.map((feature, index) => {
@@ -222,8 +222,8 @@ const Features = () => {
                   viewport={{ once: true }}
                   className="bg-card border border-border rounded-2xl p-6 md:p-8 text-center md:text-left"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#6366F1]/20 via-[#383DA0]/20 to-[#AB4FCB]/20 flex items-center justify-center mb-4 mx-auto md:mx-0">
-                    <item.icon className="w-6 h-6 text-[#6366F1]" />
+                  <div className="w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center mb-4 mx-auto md:mx-0">
+                    <item.icon className="w-6 h-6 text-primary" />
                   </div>
                   <h3 className="font-semibold text-lg md:text-xl text-foreground mb-3">
                     {item.title}
