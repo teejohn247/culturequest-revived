@@ -106,7 +106,7 @@ const FeatureCard = ({ feature, index }: { feature: typeof mainFeatures[0]; inde
     [0, 1, 1, 1, 0]
   );
 
-  const bgColors = ['bg-primary/10', 'bg-[#BFDBFE]', 'bg-[#D1FAE5]', 'bg-[#FDE68A]'];
+  const bgColors = ['bg-primary/10', 'bg-[#BFDBFE]', 'bg-[#D1FAE5]', 'bg-[#eaeaea]'];
 
   return (
     <motion.div
@@ -215,7 +215,7 @@ const Features = () => {
         </section>
 
         {/* Feature Showcase - Scroll Stacking Cards */}
-        <section className="py-16 md:py-24 bg-primary/10">
+        <section className="py-16 md:py-24 bg-primary/10" style={{background: 'linear-gradient(270deg, rgba(0, 0, 0, 0), rgb(107, 244, 199) 48%, rgba(0, 0, 0, 0))'}}>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -284,7 +284,7 @@ const Features = () => {
           </div>
         </section>
 
-        <ConsultingSection />
+        {/* <ConsultingSection /> */}
 
       </main>
       <Footer />

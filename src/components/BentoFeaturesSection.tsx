@@ -172,16 +172,16 @@ const BentoFeaturesSection = () => {
               </div>
               
               {/* Orbiting icons */}
-              <div className="absolute top-0 left-1/4 w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center">
+              <div className="absolute top-0 left-1 w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center">
                 <Zap className="w-5 h-5 text-blue-500" />
               </div>
-              <div className="absolute top-1/4 right-0 w-10 h-10 rounded-full bg-purple-50 flex items-center justify-center">
+              <div className="absolute top-0 right-1 w-10 h-10 rounded-full bg-purple-50 flex items-center justify-center">
                 <Database className="w-5 h-5 text-purple-500" />
               </div>
-              <div className="absolute bottom-0 left-1/3 w-10 h-10 rounded-full bg-cyan-50 flex items-center justify-center">
+              <div className="absolute bottom-0 left-1 w-10 h-10 rounded-full bg-cyan-50 flex items-center justify-center">
                 <RefreshCw className="w-5 h-5 text-cyan-500" />
               </div>
-              <div className="absolute bottom-1/4 right-1/4 w-10 h-10 rounded-full bg-orange-50 flex items-center justify-center">
+              <div className="absolute bottom-0 right-1 w-10 h-10 rounded-full bg-orange-50 flex items-center justify-center">
                 <BarChart3 className="w-5 h-5 text-orange-500" />
               </div>
             </div>

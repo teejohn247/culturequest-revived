@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Mail, Linkedin } from "lucide-react";
 import ConsultingSection from "@/components/ConsultingSection";
+import LogoMarquee from "@/components/LogoMarquee";
 
 const storySections = [
   {
@@ -24,7 +25,7 @@ const storySections = [
       "As our crew grew, we kept the idea of a platform that's easy to use, effective, and full of useful features. Fast forward, and here we are, helping tons of businesses and agencies to crush it on operational efficiency."
     ],
     bgColor: "bg-[#FFF5E0]",
-    image: "/testi-1.png"
+    image: "/story.png"
   },
   {
     id: "mission",
@@ -44,7 +45,7 @@ const storySections = [
       "With our platform, we transform scattered chaos into streamlined productivity, ensuring every team member stays connected, informed, and empowered to deliver their best work."
     ],
     bgColor: "bg-[#E0F7FA]",
-    image: "/testi-2.png"
+    image: "/mission.png"
   },
   {
     id: "vision",
@@ -65,25 +66,25 @@ const storySections = [
       "We envision a world where every business has access to enterprise-grade tools, enabling them to compete effectively and achieve sustainable growth."
     ],
     bgColor: "bg-[#FCE4EC]",
-    image: "/testi-3.png"
+    image: "/vision.jpg"
   }
 ];
 
 const teamMembers = [
   {
-    name: "Bola Badmus",
+    name: "Mr. Bola Badmus",
     role: "CEO",
-    image: "/testi-1.png"
+    image: "/mr-bola.png"
   },
   {
     name: "Sarah Johnson",
     role: "CTO",
-    image: "/testi-2.png"
+    image: "/sarah.png"
   },
   {
     name: "Michael Chen",
     role: "Director of Operations",
-    image: "/testi-3.png"
+    image: "/mike.png"
   }
 ];
 
@@ -112,7 +113,7 @@ const StoryCard = ({ section, index }: { section: typeof storySections[0]; index
     <motion.div
       ref={cardRef}
       style={{ y, opacity }}
-      className="sticky top-32"
+      className="sticky top-8"
     >
       <div className={`relative ${section.bgColor} rounded-3xl p-8 md:p-12 overflow-hidden flex flex-col md:flex-row items-center gap-8`}>
         {/* Content */}
@@ -159,7 +160,9 @@ const About = () => {
       <Navbar />
       <main>
         {/* Hero Section */}
-        <section className="relative pt-32 pb-20 bg-gradient-to-b from-primary/30 to-background overflow-hidden">
+        <section className="relative pt-32 pb-20 bg-gradient-to-b from-primary/30 to-background overflow-hidden"
+        style={{background: 'linear-gradient(270deg, rgba(0, 0, 0, 0), rgb(107, 244, 199) 48%, rgba(0, 0, 0, 0))'}}
+        >
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -170,7 +173,7 @@ const About = () => {
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6" style={{ lineHeight: '1.2' }}>
                 Streamline your business<br />operations with SILO
               </h1>
-              <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+              <p className="text-muted-foreground text-lg max-w-2xl mx-auto" style={{color: '#000'}}>
                 We specialize in building scalable, user-centric SaaS solutions that help startups and businesses transform ideas
               </p>
             </motion.div>
@@ -184,7 +187,7 @@ const About = () => {
             >
               <div className="relative rounded-2xl overflow-hidden">
                 <img
-                  src="/testi-1.png"
+                  src="/image.png"
                   alt="Team collaboration"
                   className="w-full h-[400px] md:h-[500px] object-cover"
                 />
@@ -197,7 +200,7 @@ const About = () => {
                   <div className="flex items-center gap-3">
                     <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-primary">
                       <img
-                        src="/testi-1.png"
+                        src="/mr-bola.png"
                         alt="Mr Bola Badmus"
                         className="w-full h-full object-cover"
                       />
@@ -214,7 +217,8 @@ const About = () => {
         </section>
 
         {/* Stacking Story Cards Section */}
-        <section className="py-8 bg-background">
+        <LogoMarquee />
+        <section className=" bg-background" style={{paddingTop: '100px'}}>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             {/* Section header */}
             <motion.div
@@ -222,9 +226,9 @@ const About = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
               viewport={{ once: true }}
-              className="text-center mb-12"
+              className="text-center"
             >
-              <span className="text-md font-medium text-primary mb-4 block">About SILO</span>
+              <span className="inline-block px-4 py-2 bg-primary text-primary-foreground rounded-lg font-bold" style={{fontSize: '16px'}}>#AboutSilo</span>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground" style={{fontSize:'clamp(32px, 8vw, 58px)', lineHeight:'clamp(36px, 8vw, 63px)', fontWeight:'600'}}>
                 Learn more about<br />
                 <span className="text-primary">who we are</span>
@@ -232,11 +236,33 @@ const About = () => {
             </motion.div>
 
             {/* Stacking cards */}
-            <div className="space-y-8">
+            <div className="">
               {storySections.map((section, index) => (
                 <StoryCard key={section.id} section={section} index={index} />
               ))}
             </div>
+          </div>
+        </section>
+
+            {/* Vision Statement */}
+            <section className="py-32 bg-[#1a1a2e] text-white">
+          <div className="max-w-4xl mx-auto px-4 text-center">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+            >
+              <div className="w-16 h-16 mx-auto mb-8 rounded-lg border-2 border-primary flex items-center justify-center">
+                <svg viewBox="0 0 24 24" className="w-8 h-8 text-primary" fill="none" stroke="currentColor" strokeWidth="2">
+                  <rect x="3" y="3" width="18" height="18" rx="2"/>
+                  <path d="M9 12l2 2 4-4"/>
+                </svg>
+              </div>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6">
+                We are <span className="text-primary">SILO</span>, and the vision is to make business operations work for everyone.
+              </h2>
+            </motion.div>
           </div>
         </section>
 
@@ -291,29 +317,9 @@ const About = () => {
           </div>
         </section>
 
-        {/* Vision Statement */}
-        <section className="py-32 bg-[#1a1a2e] text-white">
-          <div className="max-w-4xl mx-auto px-4 text-center">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-            >
-              <div className="w-16 h-16 mx-auto mb-8 rounded-lg border-2 border-primary flex items-center justify-center">
-                <svg viewBox="0 0 24 24" className="w-8 h-8 text-primary" fill="none" stroke="currentColor" strokeWidth="2">
-                  <rect x="3" y="3" width="18" height="18" rx="2"/>
-                  <path d="M9 12l2 2 4-4"/>
-                </svg>
-              </div>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6">
-                We are <span className="text-primary">SILO</span>, and the vision is to make business operations work for everyone.
-              </h2>
-            </motion.div>
-          </div>
-        </section>
+    
 
-        <ConsultingSection />
+        {/* <ConsultingSection /> */}
       </main>
       <Footer />
     </div>

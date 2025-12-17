@@ -4,7 +4,7 @@ import { openCalendly } from "@/lib/calendly";
 
 const Footer = () => {
   return (
-    <footer className="bg-foreground text-background">
+    <footer className="bg-foreground text-background" style={{backgroundColor: '#1A1A2E'}}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Curious Section */}
         <motion.div
@@ -14,19 +14,27 @@ const Footer = () => {
           viewport={{ once: true }}
           className="py-16 border-b border-background/20"
         >
-          <div className="max-w-2xl">
-            <h3 className="text-3xl md:text-4xl font-bold text-background mb-4">
-              Curious about more?
-            </h3>
-            <p className="text-background/70 text-lg mb-6">
-              Book a short meeting and see how we can support your culture.
-            </p>
-            <Button 
-              onClick={() => openCalendly()}
-              className="bg-primary text-primary-foreground hover:bg-primary/90 px-8 py-3 rounded-full font-semibold"
-            >
-              Book a Demo
-            </Button>
+          <div className="grid md:grid-cols-[minmax(0,1.6fr)_auto] gap-8 items-center">
+            <div>
+              <h3 className="text-3xl md:text-4xl font-bold text-background mb-3">
+                Curious about more?
+              </h3>
+              <p className="text-background/70 text-lg">
+                Book a short meeting and see how we can support your culture.
+              </p>
+            </div>
+            <div className="flex justify-end md:justify-end ml-auto">
+              <Button
+                onClick={() => openCalendly()}
+                className="px-8 py-3 rounded-full font-semibold"
+                style={{
+                  background: "linear-gradient(135deg, #57D6D3, #7CF5CD)",
+                  color: "#03312F"
+                }}
+              >
+                Book a Demo
+              </Button>
+            </div>
           </div>
         </motion.div>
 
@@ -44,7 +52,7 @@ const Footer = () => {
                 src="/Silo-White-logo.png" 
                 alt="SILO Logo" 
                 className="h-8 w-auto"
-                style={{width: 150, height: 90}}
+                style={{width: 150, height: 'auto'}}
               />
             </div>
             <p className="text-background/70 max-w-sm">
@@ -83,7 +91,11 @@ const Footer = () => {
               <li><a href="#" className="text-background/70 hover:text-background transition-colors">Contact</a></li>
             </ul>
           </motion.div>
+
+          
         </div>
+
+        
 
         {/* Bottom bar */}
         <motion.div

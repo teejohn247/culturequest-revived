@@ -63,22 +63,20 @@ const FeatureCardsSection = () => {
     };
 
     switch (visualType) {
-      case "automation":
-        return (
-          <div className="relative h-36 flex flex-col items-center justify-center">
-            {/* Light green overlapping circles */}
-            <div className="absolute top-2 left-1/2 -translate-x-1/2 w-28 h-28">
-              <div className="absolute top-0 left-0 w-20 h-20 rounded-full bg-[#86EFAC] opacity-40" />
-              <div className="absolute top-4 left-4 w-20 h-20 rounded-full bg-[#86EFAC] opacity-30" />
-            </div>
-            {/* Icons below */}
-            <div className="flex gap-3 mt-20 relative z-10">
-              <Brain className="w-5 h-5 text-foreground" />
-              <div className="w-5 h-5 rounded-full border-2 border-foreground" />
-              <Bot className="w-5 h-5 text-foreground" />
-            </div>
-          </div>
-        );
+      // case "automation":
+      //   return (
+      //     <div className="relative h-36 flex flex-col items-center justify-center">
+      //       <div className="absolute top-2 left-1/2 -translate-x-1/2 w-28 h-28">
+      //         <div className="absolute top-0 left-0 w-20 h-20 rounded-full bg-[#86EFAC] opacity-40" />
+      //         <div className="absolute top-4 left-4 w-20 h-20 rounded-full bg-[#86EFAC] opacity-30" />
+      //       </div>
+      //       <div className="flex gap-3 mt-20 relative z-10">
+      //         <Brain className="w-5 h-5 text-foreground" />
+      //         <div className="w-5 h-5 rounded-full border-2 border-foreground" />
+      //         <Bot className="w-5 h-5 text-foreground" />
+      //       </div>
+      //     </div>
+      //   );
       case "hr":
         return (
           <div className="relative h-36 bg-white rounded-lg p-3 border border-border">
@@ -155,12 +153,10 @@ const FeatureCardsSection = () => {
       case "ai":
         return (
           <div className="relative h-36 flex items-center justify-center">
-            {/* Central black overlapping circles */}
             <div className="absolute w-14 h-14 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
               <div className="absolute top-0 left-0 w-11 h-11 rounded-full bg-foreground opacity-80" />
               <div className="absolute top-1.5 left-1.5 w-11 h-11 rounded-full bg-foreground opacity-60" />
             </div>
-            {/* Four circular icons around */}
             <div className="relative z-10 grid grid-cols-2 gap-3">
               <div className="w-9 h-9 rounded-full bg-[#3B82F6] flex items-center justify-center">
                 <Zap className="w-4 h-4 text-white" />

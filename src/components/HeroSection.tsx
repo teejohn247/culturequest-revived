@@ -54,8 +54,7 @@ const HeroSection = () => {
           className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 px-4" style={{fontWeight: '500', color: '#4B5563'}}
         >
            The All-In-One ERP platform that transforms 
-          raw data into valuable insights for small & medium businesses. Designed to streamline your 
-          internal processes and build improved operational capacity.
+          raw data into valuable insights for small & medium businesses.
         </motion.p>
 
         {/* CTA Button */}
