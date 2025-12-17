@@ -13,6 +13,8 @@ import FeatureCardsSection from "@/components/FeatureCardsSection";
 import AnimatedBannerSection from "@/components/AnimatedBannerSection";
 import IntelligentFeaturesSection from "@/components/IntelligentFeaturesSection";
 import SkillsSection from "@/components/SkillsSection";
+import BentoFeaturesSection from "@/components/BentoFeaturesSection";
+import FAQSection from "@/components/FAQSection";
 
 const Index = () => {
   return (
@@ -26,16 +28,14 @@ const Index = () => {
         <LogoMarquee />
         <SkillsSection />
         <ValueSection />
-
+        <BentoFeaturesSection />
         <IntelligentFeaturesSection /> 
-        {/* <AnimatedBannerSection /> */}
-        {/* <FeatureCardsSection /> */}
         <SolutionSection />
         <FeaturesSection />
-        {/* <TestimonialsSection /> */}
+        <TestimonialsSection />
         <SuccessStoriesSection />
         <LogoMarquee/>
-
+        <FAQSection />
         <ConsultingSection />
       </main>
       <Footer />
