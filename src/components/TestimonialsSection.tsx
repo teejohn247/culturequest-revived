@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { Star, ChevronRight } from "lucide-react";
-import { useEffect, useRef } from "react";
 
 interface Testimonial {
   quote: string;
@@ -50,7 +49,7 @@ const testimonials: Testimonial[] = [
 ];
 
 const TestimonialCard = ({ testimonial }: { testimonial: Testimonial }) => (
-  <div className="bg-white rounded-2xl p-6 border border-border min-w-[320px] max-w-[380px] flex-shrink-0">
+  <div className="bg-white rounded-2xl p-6 shadow-sm border border-border min-w-[320px] max-w-[380px] flex-shrink-0">
     <p className="text-foreground text-sm leading-relaxed mb-6">
       "{testimonial.quote}"
     </p>
@@ -77,7 +76,7 @@ const TestimonialCard = ({ testimonial }: { testimonial: Testimonial }) => (
 
 const TestimonialsSection = () => {
   return (
-    <section className="py-20 lg:py-32 bg-[#EFFEF9] relative overflow-hidden">
+    <section className="py-20 lg:py-32 bg-[#F8FAFC] relative overflow-hidden">
       <div className="container mx-auto px-4">
         {/* Header */}
         <motion.div
@@ -98,23 +97,33 @@ const TestimonialsSection = () => {
           </p>
         </motion.div>
 
-        {/* Carousel Row 1 - Left to Right */}
-        <div className="relative overflow-hidden mb-4">
-          <div className="flex gap-4 animate-scroll-left" style={{ width: 'max-content' }}>
-            {[...testimonials, ...testimonials].map((testimonial, index) => (
-              <TestimonialCard key={`row1-${index}`} testimonial={testimonial} />
-            ))}
-          </div>
-        </div>
+        {/* Single Row Testimonials - Row 1 */}
+        <motion.div
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="flex gap-4 overflow-x-auto pb-4 scrollbar-hide mb-4"
+          style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+        >
+          {testimonials.slice(0, 4).map((testimonial, index) => (
+            <TestimonialCard key={index} testimonial={testimonial} />
+          ))}
+        </motion.div>
 
-        {/* Carousel Row 2 - Right to Left */}
-        <div className="relative overflow-hidden">
-          <div className="flex gap-4 animate-scroll-right" style={{ width: 'max-content' }}>
-            {[...testimonials.slice(3), ...testimonials.slice(0, 3), ...testimonials.slice(3), ...testimonials.slice(0, 3)].map((testimonial, index) => (
-              <TestimonialCard key={`row2-${index}`} testimonial={testimonial} />
-            ))}
-          </div>
-        </div>
+        {/* Single Row Testimonials - Row 2 */}
+        <motion.div
+          initial={{ opacity: 0, x: 50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="flex gap-4 overflow-x-auto pb-4 scrollbar-hide justify-center"
+          style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+        >
+          {testimonials.slice(2, 6).map((testimonial, index) => (
+            <TestimonialCard key={index} testimonial={testimonial} />
+          ))}
+        </motion.div>
 
         {/* CTA Button */}
         <motion.div

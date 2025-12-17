@@ -47,7 +47,7 @@
 
 @layer base {
   :root {
-    --background: 156 60% 97%; /* Very light mint #EFFEF9 */
+    --background: 150 60% 97%; /* Light mint background */
     --foreground: 220 20% 15%;
 
     --card: 0 0% 100%;
@@ -56,42 +56,42 @@
     --popover: 0 0% 100%;
     --popover-foreground: 220 20% 15%;
 
-    --primary: 156 85% 70%; /* Mint green #6FF4C8 */
-    --primary-foreground: 220 20% 15%;
-    --primary-light: 156 60% 95%;
+    --primary: 160 84% 39%; /* Mint/Teal green #10B981 */
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 160 50% 95%;
 
-    --secondary: 156 30% 96%;
+    --secondary: 150 30% 96%;
     --secondary-foreground: 220 20% 15%;
 
-    --muted: 156 20% 96%;
+    --muted: 150 20% 96%;
     --muted-foreground: 220 10% 45%;
 
-    --accent: 156 70% 60%; /* Slightly darker mint accent */
-    --accent-foreground: 220 20% 15%;
+    --accent: 160 70% 45%; /* Lighter teal accent */
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 156 20% 90%;
-    --input: 156 20% 90%;
-    --ring: 156 85% 70%;
+    --border: 150 20% 90%;
+    --input: 150 20% 90%;
+    --ring: 160 84% 39%;
 
     --radius: 0.75rem;
 
-    /* Custom colors - Mint theme #6FF4C8 */
-    --mint-primary: 156 85% 70%; /* #6FF4C8 */
-    --mint-light: 156 60% 97%; /* #EFFEF9 */
-    --mint-dark: 156 70% 40%; /* Dark mint */
-    --soft-mint: 156 60% 97%;
+    /* Custom colors - Mint/Teal theme */
+    --mint-primary: 160 84% 39%; /* #10B981 */
+    --mint-light: 160 70% 85%; /* Light mint */
+    --mint-dark: 160 84% 30%; /* Dark teal */
+    --soft-mint: 150 50% 96%;
     
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 156 85% 70%;
-    --sidebar-primary-foreground: 220 20% 15%;
-    --sidebar-accent: 156 30% 95%;
+    --sidebar-primary: 160 84% 39%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 150 30% 95%;
     --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 156 20% 90%;
-    --sidebar-ring: 156 85% 70%;
+    --sidebar-border: 150 20% 90%;
+    --sidebar-ring: 160 84% 39%;
   }
 
   .dark {
@@ -104,8 +104,8 @@
     --popover: 220 20% 12%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 156 85% 70%;
-    --primary-foreground: 220 20% 15%;
+    --primary: 238 86% 70%;
+    --primary-foreground: 0 0% 100%;
 
     --secondary: 220 20% 18%;
     --secondary-foreground: 210 40% 98%;
@@ -113,24 +113,24 @@
     --muted: 220 20% 18%;
     --muted-foreground: 215 20.2% 65.1%;
 
-    --accent: 156 70% 60%;
-    --accent-foreground: 220 20% 15%;
+    --accent: 283 55% 60%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
 
     --border: 220 20% 20%;
     --input: 220 20% 20%;
-    --ring: 156 85% 70%;
+    --ring: 238 86% 70%;
     
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 156 85% 70%;
-    --sidebar-primary-foreground: 220 20% 15%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
     --sidebar-accent: 240 3.7% 15.9%;
     --sidebar-accent-foreground: 240 4.8% 95.9%;
     --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 156 85% 70%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
   }
 }
 
@@ -153,15 +153,15 @@
 @layer utilities {
   .text-gradient {
     @apply bg-clip-text text-transparent;
-    background-image: linear-gradient(77.82deg, #6FF4C8 26.36%, #4ECCA3 40.12%, #3DB88B 53.89%, #6FF4C8 68.38%, #8BFFDA 82.88%);
+    background-image: linear-gradient(77.82deg, #10B981 26.36%, #10B981 40.12%, #059669 53.89%, #34D399 68.38%, #34D399 82.88%);
   }
 
   .bg-gradient-primary {
-    background: linear-gradient(180deg, #6FF4C8 0%, #EFFEF9 100%);
+    background: linear-gradient(180deg, hsl(150 60% 97%) 0%, hsl(160 50% 90%) 100%);
   }
 
   .bg-gradient-iridescent {
-    background: linear-gradient(77.82deg, #6FF4C8 26.36%, #4ECCA3 40.12%, #3DB88B 53.89%, #6FF4C8 68.38%, #8BFFDA 82.88%);
+    background: linear-gradient(77.82deg, #10B981 26.36%, #10B981 40.12%, #059669 53.89%, #34D399 68.38%, #34D399 82.88%);
   }
 
   .bg-soft-gradient {
@@ -196,14 +196,6 @@
   .animate-marquee-reverse {
     animation: marquee-reverse 30s linear infinite;
   }
-
-  .animate-scroll-left {
-    animation: scroll-left 40s linear infinite;
-  }
-
-  .animate-scroll-right {
-    animation: scroll-right 40s linear infinite;
-  }
 }
 
 @keyframes float {
@@ -225,24 +217,6 @@
 }
 
 @keyframes marquee-reverse {
-  0% {
-    transform: translateX(-50%);
-  }
-  100% {
-    transform: translateX(0);
-  }
-}
-
-@keyframes scroll-left {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
-
-@keyframes scroll-right {
   0% {
     transform: translateX(-50%);
   }

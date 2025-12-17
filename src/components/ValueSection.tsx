@@ -49,8 +49,12 @@ const ValueCard = ({ value, index }: { value: typeof values[0]; index: number })
       style={{ y, opacity }}
       className="sticky top-32"
     >
-      <div className="relative bg-card rounded-3xl p-8 md:p-12 overflow-hidden border border-border flex flex-col md:flex-row items-center gap-8">
-        {/* Content - Always on Left */}
+      <div 
+        className={`relative bg-card rounded-3xl p-8 md:p-12 overflow-hidden shadow-lg border border-border
+          ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} 
+          flex flex-col md:flex-row items-center gap-8`}
+      >
+        {/* Content */}
         <div className="flex-1 space-y-4">
           <span className="inline-block text-sm font-medium px-4 py-1.5 rounded-full bg-primary/10 text-primary">
             #{value.tag}
@@ -69,8 +73,8 @@ const ValueCard = ({ value, index }: { value: typeof values[0]; index: number })
           </button>
         </div>
 
-        {/* Image - Always on Right */}
-        <div className="flex-1 flex justify-end">
+        {/* Image */}
+        <div className="flex-1 flex justify-center">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -78,8 +82,14 @@ const ValueCard = ({ value, index }: { value: typeof values[0]; index: number })
             viewport={{ once: true }}
             className="w-full max-w-lg relative"
           >
-            {/* Colored background behind image - mint themed */}
-            <div className="absolute -inset-4 rounded-3xl bg-primary/20" />
+            {/* Colored background behind image */}
+            <div 
+              className={`absolute -inset-4 rounded-3xl ${
+                index === 0 ? 'bg-[#E9D5FF]' : 
+                index === 1 ? 'bg-[#BFDBFE]' : 
+                'bg-[#D1FAE5]'
+              }`}
+            />
             <img 
               src={value.image} 
               alt={value.title}
