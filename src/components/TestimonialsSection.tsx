@@ -1,204 +1,143 @@
 import { motion } from "framer-motion";
+import { Star, ChevronRight } from "lucide-react";
 
 interface Testimonial {
-  company: string;
-  companyLogo?: string;
   quote: string;
   author: string;
   role: string;
+  company: string;
   avatar?: string;
 }
 
 const testimonials: Testimonial[] = [
   {
-    company: "VICA DANMARK",
-    quote: "Previously, our homemade surveys were subjective and time-consuming – Culturequest has made the process both easier and more professional.",
-    author: "Lone Spangsberg",
-    role: "CFO - VICA Danmark A/S",
+    quote: "Switching to SILO was a game-changer for us. Their platform streamlined our financial processes, saving us countless hours each month.",
+    author: "William Ashford",
+    role: "Product Manager",
+    company: "Google",
   },
   {
-    company: "Concens",
-    quote: "Previously, our homemade surveys were subjective and time-consuming – Culturequest has made the process both easier and more professional. ",
-    author: "René Lynge",
-    role: "CEO - Concens",
+    quote: "The security features offered give us peace of mind knowing that our customer data is protected.",
+    author: "Scarlett Palmer",
+    role: "Marketing Director",
+    company: "Adobe",
   },
   {
-    company: "CamVision",
-    quote: "Previously, our homemade surveys were subjective and time-consuming – Culturequest has made the process both easier and more professional.",
-    author: "Joy Kolby",
-    role: "Head of Administration - Camvision",
+    quote: "The integration process was seamless and we were up and running in no time.",
+    author: "Ruby Hayes",
+    role: "IT Director",
+    company: "Mailchimp",
   },
   {
-    company: "MARIA BLACK",
-    quote: "Previously, our homemade surveys were subjective and time-consuming – Culturequest has made the process both easier and more professional.",
-    author: "Team Lead",
-    role: "MARIA BLACK",
+    quote: "The customer support has been outstanding. Whenever we have questions or need assistance, their team is quick to respond and incredibly helpful.",
+    author: "Leila Smith",
+    role: "Account Executive",
+    company: "Notion",
   },
   {
-    company: "VICA DANMARK",
-    quote: "Previously, our homemade surveys were subjective and time-consuming – Culturequest has made the process both easier and more professional.",
-    author: "Lone Spangsberg",
-    role: "CFO - VICA Danmark A/S",
+    quote: "We've seen a significant improvement in our compliance management since the switch.",
+    author: "Marlon Wright",
+    role: "Product Manager",
+    company: "Slack",
   },
   {
-    company: "Concens",
-    quote: "Previously, our homemade surveys were subjective and time-consuming – Culturequest has made the process both easier and more professional.",
-    author: "René Lynge",
-    role: "CEO - Concens",
-  },
-  {
-    company: "Concens",
-    quote: "Previously, our homemade surveys were subjective and time-consuming – Culturequest has made the process both easier and more professional. ",
-    author: "René Lynge",
-    role: "CEO - Concens",
-  },
-  {
-    company: "CamVision",
-    quote: "We've been very pleased with CultureQuest. They guided us safely through our APV (workplace assessment) and delivered valuable insights into our culture. ",
-    author: "Joy Kolby",
-    role: "Head of Administration - Camvision",
-  },
-  {
-    company: "MARIA BLACK",
-    quote: "Previously, our homemade surveys were subjective and time-consuming – Culturequest has made the process both easier and more professional.",
-    author: "Team Lead",
-    role: "MARIA BLACK",
-  },
-  {
-    company: "VICA DANMARK",
-    quote: "Previously, our homemade surveys were subjective and time-consuming – Culturequest has made the process both easier and more professional.",
-    author: "Lone Spangsberg",
-    role: "CFO - VICA Danmark A/S",
-  },
-  {
-    company: "Concens",
-    quote: "Previously, our homemade surveys were subjective and time-consuming – Culturequest has made the process both easier and more professional.",
-    author: "René Lynge",
-    role: "CEO - Concens",
+    quote: "I can't recommend SILO enough! Their lending solutions have made it easier for us to manage customer applications and approvals, resulting in faster turnaround times and happier clients.",
+    author: "Samuel Kingsley",
+    role: "Financial Analyst",
+    company: "Squarespace",
   },
 ];
 
-// Split testimonials into 3 columns
-const column1 = [testimonials[0], testimonials[3]];
-const column2 = [testimonials[1], testimonials[4]];
-const column3 = [testimonials[2], testimonials[5]];
-
-const TestimonialCard = ({ testimonial, index }: { testimonial: Testimonial; index: number }) => (
-  <div className="bg-card rounded-2xl p-6 shadow-card border border-border">
-    <div className="flex items-center gap-2 mb-4">
-      {testimonial.company === "CamVision" ? (
-        <span className="text-teal font-semibold text-sm">⚙ CamVision</span>
-      ) : testimonial.company === "Concens" ? (
-        <span className="font-semibold text-sm text-foreground">concens⊙</span>
-      ) : (
-        <span className="text-xs font-semibold tracking-wider text-muted-foreground">
-          {testimonial.company}
-        </span>
-      )}
-    </div>
-    <p className="text-foreground text-md text-bold leading-relaxed mb-6">
+const TestimonialCard = ({ testimonial }: { testimonial: Testimonial }) => (
+  <div className="bg-white rounded-2xl p-6 shadow-sm border border-border min-w-[320px] max-w-[380px] flex-shrink-0">
+    <p className="text-foreground text-sm leading-relaxed mb-6">
       "{testimonial.quote}"
     </p>
-    <div className="flex items-center justify-between">
-      <div>
-        <p className="font-medium text-foreground text-sm">{testimonial.author}</p>
-        <p className="text-muted-foreground text-xs">{testimonial.role}</p>
+    <div className="flex items-center gap-3">
+      <div className="w-10 h-10 rounded-full bg-muted flex items-center justify-center overflow-hidden">
+        {testimonial.avatar ? (
+          <img src={testimonial.avatar} alt={testimonial.author} className="w-full h-full object-cover" />
+        ) : (
+          <span className="text-muted-foreground text-xs font-medium">
+            {testimonial.author.split(" ").map(n => n[0]).join("")}
+          </span>
+        )}
       </div>
-      <div className="w-10 h-10 rounded-full bg-muted flex items-center justify-center">
-        <span className="text-muted-foreground text-xs">
-          {testimonial.author.split(" ").map(n => n[0]).join("")}
-        </span>
+      <div className="flex-1">
+        <p className="font-medium text-foreground text-sm">{testimonial.author}</p>
+        <p className="text-muted-foreground text-xs">{testimonial.role}, {testimonial.company}</p>
+      </div>
+      <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
+        <Star className="w-4 h-4 text-primary" />
       </div>
     </div>
   </div>
 );
 
-const AnimatedColumn = ({ 
-  testimonials, 
-  direction, 
-  duration 
-}: { 
-  testimonials: Testimonial[]; 
-  direction: "up" | "down"; 
-  duration: number;
-}) => {
-  const yFrom = direction === "up" ? 0 : -100;
-  const yTo = direction === "up" ? -100 : 0;
-
-  return (
-    <div className="relative overflow-hidden h-[600px]">
-      <motion.div
-        animate={{ y: [`${yFrom}%`, `${yTo}%`] }}
-        transition={{
-          duration,
-          repeat: Infinity,
-          ease: "linear",
-        }}
-        className="space-y-6"
-      >
-        {/* Duplicate testimonials for seamless loop */}
-        {[...testimonials, ...testimonials].map((testimonial, index) => (
-          <TestimonialCard key={index} testimonial={testimonial} index={index} />
-        ))}
-      </motion.div>
-    </div>
-  );
-};
-
 const TestimonialsSection = () => {
   return (
-    <section className="relative py-20 lg:py-32 overflow-hidden">
-      {/* Gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#6366F1] via-[#383DA0] to-[#AB4FCB]" />
-      
-      {/* Decorative arc in top right corner */}
-      <div className="absolute top-0 right-0" style={{width: '500px', height: '200px', zIndex: 1}}>
-        <img src="/arc.png" alt="" className="w-full h-full" style={{objectFit: 'contain', objectPosition: 'top right', opacity: 1}} />
-      </div>
-      
-      {/* Fading effect at bottom */}
-      <div 
-        className="absolute bottom-0 left-0 right-0 pointer-events-none z-20"
-        style={{
-          height: '200px',
-          background: 'linear-gradient(to top, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.8) 30%, rgba(255, 255, 255, 0.3) 60%, transparent 100%)'
-        }}
-      />
-
-      <div className="container mx-auto px-4 relative z-10">
+    <section className="py-20 lg:py-32 bg-[#F8FAFC] relative overflow-hidden">
+      <div className="container mx-auto px-4">
+        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="mb-12"
+          className="text-center mb-12"
         >
-          <span className="text-primary-foreground/80 font-medium text-sm uppercase tracking-wider">
-            Testimonials
+          <span className="inline-flex items-center gap-2 text-muted-foreground font-medium text-sm mb-4">
+            <Star className="w-4 h-4" /> Testimonials
           </span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary-foreground mt-4 max-w-2xl">
-            What other users are saying
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground">
+            What Our Clients Are Saying
           </h2>
-          <p className="text-primary-foreground/70 mt-4 max-w-xl">
-            Join the growing number of users and start measuring your company culture.
+          <p className="text-muted-foreground mt-4 max-w-xl mx-auto">
+            We take pride in delivering exceptional solutions that deliver great results. But don't just take our word for it.
           </p>
         </motion.div>
 
-        {/* Testimonials columns with vertical animation */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {/* Column 1 - moves up */}
-          <AnimatedColumn testimonials={column1} direction="up" duration={25} />
-          
-          {/* Column 2 - moves down */}
-          <div className="hidden md:block">
-            <AnimatedColumn testimonials={column2} direction="down" duration={30} />
-          </div>
-          
-          {/* Column 3 - moves up */}
-          <div className="hidden lg:block">
-            <AnimatedColumn testimonials={column3} direction="up" duration={28} />
-          </div>
-        </div>
+        {/* Single Row Testimonials - Row 1 */}
+        <motion.div
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="flex gap-4 overflow-x-auto pb-4 scrollbar-hide mb-4"
+          style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+        >
+          {testimonials.slice(0, 4).map((testimonial, index) => (
+            <TestimonialCard key={index} testimonial={testimonial} />
+          ))}
+        </motion.div>
+
+        {/* Single Row Testimonials - Row 2 */}
+        <motion.div
+          initial={{ opacity: 0, x: 50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="flex gap-4 overflow-x-auto pb-4 scrollbar-hide justify-center"
+          style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+        >
+          {testimonials.slice(2, 6).map((testimonial, index) => (
+            <TestimonialCard key={index} testimonial={testimonial} />
+          ))}
+        </motion.div>
+
+        {/* CTA Button */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.3 }}
+          className="text-center mt-8"
+        >
+          <button className="inline-flex items-center gap-2 px-6 py-3 border border-foreground rounded-full text-foreground font-medium hover:bg-foreground hover:text-background transition-colors">
+            See all Reviews
+            <ChevronRight className="w-4 h-4" />
+          </button>
+        </motion.div>
       </div>
     </section>
   );

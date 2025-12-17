@@ -47,51 +47,51 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 220 20% 20%;
+    --background: 150 60% 97%; /* Light mint background */
+    --foreground: 220 20% 15%;
 
     --card: 0 0% 100%;
-    --card-foreground: 220 20% 20%;
+    --card-foreground: 220 20% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 220 20% 20%;
+    --popover-foreground: 220 20% 15%;
 
-    --primary: 238 86% 67%; /* #6366F1 */
+    --primary: 160 84% 39%; /* Mint/Teal green #10B981 */
     --primary-foreground: 0 0% 100%;
-    --primary-light: 238 50% 95%;
+    --primary-light: 160 50% 95%;
 
-    --secondary: 220 14% 96%;
-    --secondary-foreground: 220 20% 20%;
+    --secondary: 150 30% 96%;
+    --secondary-foreground: 220 20% 15%;
 
-    --muted: 220 14% 96%;
-    --muted-foreground: 220 10% 50%;
+    --muted: 150 20% 96%;
+    --muted-foreground: 220 10% 45%;
 
-    --accent: 283 55% 55%; /* #AB4FCB */
+    --accent: 160 70% 45%; /* Lighter teal accent */
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 220 13% 91%;
-    --input: 220 13% 91%;
-    --ring: 238 86% 67%;
+    --border: 150 20% 90%;
+    --input: 150 20% 90%;
+    --ring: 160 84% 39%;
 
     --radius: 0.75rem;
 
-    /* Custom colors - Indigo/Purple theme (#6366F1, #383DA0, #AB4FCB) */
-    --indigo-primary: 238 86% 67%; /* #6366F1 */
-    --indigo-dark: 237 48% 42%; /* #383DA0 */
-    --purple-accent: 283 55% 55%; /* #AB4FCB */
-    --soft-indigo: 238 50% 96%;
+    /* Custom colors - Mint/Teal theme */
+    --mint-primary: 160 84% 39%; /* #10B981 */
+    --mint-light: 160 70% 85%; /* Light mint */
+    --mint-dark: 160 84% 30%; /* Dark teal */
+    --soft-mint: 150 50% 96%;
     
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-primary: 160 84% 39%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 150 30% 95%;
     --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-border: 150 20% 90%;
+    --sidebar-ring: 160 84% 39%;
   }
 
   .dark {
@@ -153,19 +153,19 @@
 @layer utilities {
   .text-gradient {
     @apply bg-clip-text text-transparent;
-    background-image: linear-gradient(77.82deg, #6366F1 26.36%, #6366F1 40.12%, #383DA0 53.89%, #AB4FCB 68.38%, #AB4FCB 82.88%);
+    background-image: linear-gradient(77.82deg, #10B981 26.36%, #10B981 40.12%, #059669 53.89%, #34D399 68.38%, #34D399 82.88%);
   }
 
-  /* .bg-gradient-primary {
-    background: linear-gradient(77.82deg, #6366F1 26.36%, #6366F1 40.12%, #383DA0 53.89%, #AB4FCB 68.38%, #AB4FCB 82.88%);
-  } */
+  .bg-gradient-primary {
+    background: linear-gradient(180deg, hsl(150 60% 97%) 0%, hsl(160 50% 90%) 100%);
+  }
 
   .bg-gradient-iridescent {
-    background: linear-gradient(77.82deg, #6366F1 26.36%, #6366F1 40.12%, #383DA0 53.89%, #AB4FCB 68.38%, #AB4FCB 82.88%);
+    background: linear-gradient(77.82deg, #10B981 26.36%, #10B981 40.12%, #059669 53.89%, #34D399 68.38%, #34D399 82.88%);
   }
 
   .bg-soft-gradient {
-    background: linear-gradient(180deg, hsl(var(--soft-indigo)) 0%, hsl(var(--soft-indigo)) 50%, hsl(var(--background)) 100%);
+    background: linear-gradient(180deg, hsl(var(--soft-mint)) 0%, hsl(var(--soft-mint)) 50%, hsl(var(--background)) 100%);
   }
 
   .shadow-glow {
