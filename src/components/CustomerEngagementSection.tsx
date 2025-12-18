@@ -33,7 +33,7 @@ const CustomerEngagementSection = () => {
   };
 
   return (
-    <section className="py-16 md:py-24 font-zoho-puvi" style={{ backgroundColor: '#FFF2E0' }}>
+    <section className=" font-zoho-puvi" style={{ backgroundColor: '#FFF2E0', paddingBottom: '50px' }}>
       <div className="container mx-auto px-4">
         {/* Hero Content Block */}
         <div className="text-center mb-16">
@@ -43,7 +43,7 @@ const CustomerEngagementSection = () => {
           <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-4">
             Supercharge your business with{" "}
             <span className="bg-gradient-to-r from-primary via-purple-500 to-pink-500 bg-clip-text text-transparent">
-              Silo AI
+              Silo ERP
             </span>
           </h2>
           <p className="text-muted-foreground text-lg md:text-xl max-w-2xl mx-auto mb-6">
