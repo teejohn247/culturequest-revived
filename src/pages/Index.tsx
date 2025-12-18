@@ -29,14 +29,15 @@ const Index = () => {
           {/* <DashboardShowcase /> */}
         </div>
         <LogoMarquee />
+        <TeamCollaborationSection />
+        <CustomerEngagementSection />
+
         <BentoFeaturesSection />
 
         <SkillsSection />
 
         <ValueSection />
-        <CustomerEngagementSection />
         <IntelligentFeaturesSection /> 
-        <TeamCollaborationSection />
         <SolutionSection />
         <TestimonialsSection />
         {/* <LogoMarquee/> */}
