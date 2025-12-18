@@ -16,6 +16,8 @@ import SkillsSection from "@/components/SkillsSection";
 import BentoFeaturesSection from "@/components/BentoFeaturesSection";
 import FAQSection from "@/components/FAQSection";
 import MobileAppSection from "@/components/MobileAppSection";
+import CustomerEngagementSection from "@/components/CustomerEngagementSection";
+import TeamCollaborationSection from "@/components/TeamCollaborationSection";
 
 const Index = () => {
   return (
@@ -32,10 +34,11 @@ const Index = () => {
         <SkillsSection />
 
         <ValueSection />
+        <CustomerEngagementSection />
         <IntelligentFeaturesSection /> 
+        <TeamCollaborationSection />
         <SolutionSection />
         <TestimonialsSection />
-        {/* <SuccessStoriesSection /> */}
         {/* <LogoMarquee/> */}
         <FAQSection />
         <MobileAppSection />
