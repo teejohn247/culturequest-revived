@@ -33,7 +33,7 @@ const CustomerEngagementSection = () => {
   };
 
   return (
-    <section className="py-16 md:py-24 bg-amber-50/50">
+    <section className="py-16 md:py-24" style={{ backgroundColor: '#FFF2E0' }}>
       <div className="container mx-auto px-4">
         <div className="flex items-center gap-4 md:gap-8">
           {/* Left Arrow */}
