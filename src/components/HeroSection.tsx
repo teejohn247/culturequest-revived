@@ -43,7 +43,7 @@ const HeroSection = () => {
         >
           <span className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl" style={{fontSize: 'clamp(32px, 8vw, 88px)', lineHeight: 'clamp(36px, 8vw, 88px)', fontWeight: '600', background: 'linear-gradient(135deg, #57D6D3, #7CF5CD)', backgroundClip: 'text', color: 'transparent'}}>One Platform</span>
           <br />
-          <span className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl" style={{fontSize: 'clamp(32px, 8vw, 78px)', lineHeight: 'clamp(36px, 8vw, 88px)', fontWeight: '600', color: '#1A1A2E'}}>Limitless Possibilities.</span>
+          <span className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl" style={{fontSize: 'clamp(32px, 8vw, 78px)', lineHeight: 'clamp(36px, 8vw, 88px)', fontWeight: '600', color: '#1f3c6b'}}>Limitless Possibilities.</span>
         </motion.h1>
 
         {/* Subtitle */}
