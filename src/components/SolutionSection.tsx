@@ -26,7 +26,7 @@ const SolutionSection = () => {
     <section className="relative py-24 overflow-hidden" style={{backgroundColor: '#1A1A2E'}}>
       {/* Decorative arc in top right corner */}
       <div className="absolute top-0 right-0" style={{width: '500px', height: '200px', zIndex: 1}}>
-        <img src="/arc.png" alt="" className="w-full h-full" style={{objectFit: 'contain', objectPosition: 'top right', opacity: 0.3}} />
+        {/* <img src="/arc.png" alt="" className="w-full h-full" style={{objectFit: 'contain', objectPosition: 'top right', opacity: 0.3}} /> */}
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">

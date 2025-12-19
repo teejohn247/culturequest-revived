@@ -37,7 +37,7 @@ const LogoMarquee = () => {
                 src={logo.image}
                 alt={logo.name}
                 className="h-12 w-auto object-contain"
-                style={{ maxHeight: '60px' }}
+                style={{ maxHeight: '30px', width: '100%' }}
               />
             </div>
           ))}

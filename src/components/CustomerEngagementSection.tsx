@@ -33,16 +33,16 @@ const CustomerEngagementSection = () => {
   };
 
   return (
-    <section className=" font-zoho-puvi" style={{ backgroundColor: '#FFF2E0', paddingBottom: '50px' }}>
+    <section className=" font-zoho-puvi" style={{ backgroundColor: '#fcf8f2'}}>
       <div className="container mx-auto px-4">
         {/* Hero Content Block */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-primary/20 via-purple-200 to-pink-200 mb-6">
+          <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl  mb-6" style={{background: '#1F3C6B'}}>
             <Sparkles className="w-8 h-8 text-primary" />
           </div>
-          <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-4">
+          <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-4" style={{color: '#1F3C6B'}}>
             Supercharge your business with{" "}
-            <span className="bg-gradient-to-r from-primary via-purple-500 to-pink-500 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-primary via-purple-500 to-pink-500 bg-clip-text text-transparent" style={{color: '#1F3C6B'}}>
               Silo ERP
             </span>
           </h2>
@@ -186,7 +186,7 @@ const CustomerEngagementSection = () => {
         </div>
 
         {/* Dots indicator */}
-        <div className="flex justify-center gap-2 mt-6">
+        {/* <div className="flex justify-center gap-2 mt-6">
           {slides.map((_, index) => (
             <button
               key={index}
@@ -197,7 +197,7 @@ const CustomerEngagementSection = () => {
               aria-label={`Go to slide ${index + 1}`}
             />
           ))}
-        </div>
+        </div> */}
       </div>
     </section>
   );

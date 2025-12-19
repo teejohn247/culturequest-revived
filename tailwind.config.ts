@@ -14,8 +14,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ['Avenir', 'Inter', 'system-ui', 'sans-serif'],
-        'zoho-puvi': ['zoho puvi', 'Avenir', 'sans-serif'],
+        sans: ['Zoho Puvi', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif'],
+        'zoho-puvi': ['Zoho Puvi', 'system-ui', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",

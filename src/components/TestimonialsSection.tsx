@@ -55,7 +55,7 @@ const testimonials: Testimonial[] = [
 ];
 
 const TestimonialCard = ({ testimonial }: { testimonial: Testimonial }) => (
-  <div className=" rounded-2xl p-6 shadow-sm border border-border min-w-[320px] max-w-[380px] flex-shrink-0" style={{background: 'linear-gradient(135deg, #57D6D3, #7CF5CD)'}}>
+  <div className=" rounded-2xl p-6 shadow-sm border border-border min-w-[320px] max-w-[380px] flex-shrink-0">
     <p className="text-foreground text-sm leading-relaxed mb-6">
       "{testimonial.quote}"
     </p>

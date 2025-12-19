@@ -19,7 +19,7 @@ const mainFeatures = [
       "Payroll processing automation",
       "Employee data management"
     ],
-    image: "/HR 2.jpg"
+    image: "/Homepage/Hr Management.jpg"
   },
   {
     id: "crm",
@@ -32,7 +32,7 @@ const mainFeatures = [
       "Marketing campaign automation",
       "Customer interaction logging"
     ],
-    image: "/CRM.jpg"
+    image: "/Homepage/CRM.jpg"
   },
   {
     id: "ai",
@@ -45,7 +45,7 @@ const mainFeatures = [
       "Automated reporting",
       "Intelligent recommendations"
     ],
-    image: "/Ai Analytics.jpg"
+    image: "/Homepage/Ai Analytics.jpg"
   },
   {
     id: "accounting",
@@ -176,7 +176,7 @@ const Features = () => {
                 transition={{ duration: 0.6 }}
                 className="text-center md:text-left"
               >
-                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight" style={{fontSize:'clamp(32px, 8vw, 68px)', lineHeight:'clamp(36px, 8vw, 78px)', fontWeight:'600'}}>
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight" style={{fontSize:'clamp(32px, 8vw, 68px)', lineHeight:'65px', fontWeight:'600'}}>
                   Unite Teams Through the Power of{" "}
                   <span className="text-primary">
                     Data Intelligence

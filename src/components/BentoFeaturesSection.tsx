@@ -1,10 +1,32 @@
 import { motion } from "framer-motion";
-import { Zap, Users, MessageSquare, Database, BarChart3, RefreshCw, FolderSync } from "lucide-react";
+import { Zap, Users, MessageSquare, Database, BarChart3, RefreshCw, FolderSync, Link, ChevronRight, Sparkles } from "lucide-react";
 
 const BentoFeaturesSection = () => {
   return (
-    <section className="py-20 bg-background relative overflow-hidden">
+    <section className="py-20 relative overflow-hidden" style={{backgroundColor: '#fcf8f2'}}>
       {/* Dotted background pattern */}
+      <div className="text-center mb-16">
+          <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl  mb-6" style={{background: '#1F3C6B'}}>
+            <Sparkles className="w-8 h-8 text-primary" />
+          </div>
+          <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-4" style={{color: '#1F3C6B'}}>
+            Supercharge your business with{" "}
+            <span className="bg-gradient-to-r from-primary via-purple-500 to-pink-500 bg-clip-text text-transparent" style={{color: '#1F3C6B'}}>
+              Silo ERP
+            </span>
+          </h2>
+          <p className="text-muted-foreground text-lg md:text-xl max-w-2xl mx-auto mb-6">
+            Harness the power of intelligent automation that delivers the best of 
+            artificial intelligence and human experience.
+          </p>
+          {/* <Link 
+            to="/features" 
+            className="inline-flex items-center text-primary font-semibold hover:underline text-lg"
+          >
+            Read more
+            <ChevronRight className="w-5 h-5 ml-1" />
+          </Link> */}
+        </div>
       <div 
         className="absolute inset-0 opacity-30"
         style={{
@@ -16,7 +38,7 @@ const BentoFeaturesSection = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Bento Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
-          
+   
           {/* AI Automation Card */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
