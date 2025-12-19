@@ -8,7 +8,7 @@ const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
       {/* Background gradient */}
-      <div className="absolute inset-0" style={{backgroundColor: '#FFFFFF'}} />
+      <div className="absolute inset-0" style={{background: 'linear-gradient(180deg, #E0FFF4 0%, #FFFFFF 100%)'}} />
       
       {/* Floating decorative shapes */}
       <FloatingShapes />
@@ -43,7 +43,7 @@ const HeroSection = () => {
         >
           <span className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl" style={{fontSize: 'clamp(32px, 8vw, 88px)', lineHeight: 'clamp(36px, 8vw, 88px)', fontWeight: '600', background: 'linear-gradient(135deg, #57D6D3, #7CF5CD)', backgroundClip: 'text', color: 'transparent'}}>One Platform</span>
           <br />
-          <span className="text-foreground text-3xl sm:text-4xl md:text-5xl lg:text-7xl" style={{fontSize: 'clamp(32px, 8vw, 78px)', lineHeight: 'clamp(36px, 8vw, 88px)', fontWeight: '600'}}>Limitless Possibilities.</span>
+          <span className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl" style={{fontSize: 'clamp(32px, 8vw, 78px)', lineHeight: 'clamp(36px, 8vw, 88px)', fontWeight: '600', color: '#1A1A2E'}}>Limitless Possibilities.</span>
         </motion.h1>
 
         {/* Subtitle */}

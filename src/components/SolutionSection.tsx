@@ -23,7 +23,7 @@ const SolutionSection = () => {
   const [activeStep, setActiveStep] = useState(0);
 
   return (
-    <section className="relative py-24 overflow-hidden" style={{backgroundImage: 'linear-gradient(270deg,#0000,#6bf4c7 48%,#0000)'}}>
+    <section className="relative py-24 overflow-hidden" style={{backgroundColor: '#E0FFF4'}}>
       {/* Decorative arc in top right corner */}
       <div className="absolute top-0 right-0" style={{width: '500px', height: '200px', zIndex: 1}}>
         <img src="/arc.png" alt="" className="w-full h-full" style={{objectFit: 'contain', objectPosition: 'top right', opacity: 1}} />
