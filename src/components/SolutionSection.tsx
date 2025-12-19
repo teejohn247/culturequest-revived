@@ -23,10 +23,10 @@ const SolutionSection = () => {
   const [activeStep, setActiveStep] = useState(0);
 
   return (
-    <section className="relative py-24 overflow-hidden" style={{backgroundColor: '#E0FFF4'}}>
+    <section className="relative py-24 overflow-hidden" style={{backgroundColor: '#1A1A2E'}}>
       {/* Decorative arc in top right corner */}
       <div className="absolute top-0 right-0" style={{width: '500px', height: '200px', zIndex: 1}}>
-        <img src="/arc.png" alt="" className="w-full h-full" style={{objectFit: 'contain', objectPosition: 'top right', opacity: 1}} />
+        <img src="/arc.png" alt="" className="w-full h-full" style={{objectFit: 'contain', objectPosition: 'top right', opacity: 0.3}} />
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -38,11 +38,11 @@ const SolutionSection = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <span className="text-sm font-medium text-black/80 mb-4 block" style={{fontSize:'16px'}}>Our solution</span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black" style={{fontSize:'clamp(32px, 8vw, 68px)', lineHeight:'clamp(36px, 8vw, 58px)', fontWeight:'600'}}>
+          <span className="text-sm font-medium mb-4 block" style={{fontSize:'16px', color: '#7CF5CD'}}>Our solution</span>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white" style={{fontSize:'clamp(32px, 8vw, 68px)', lineHeight:'clamp(36px, 8vw, 58px)', fontWeight:'600'}}>
             Measure what matters.<br />Act where it counts.
           </h2>
-          <p className="text-black/80 mt-4 max-w-2xl mx-auto text-base sm:text-lg" style={{lineHeight:'28px'}}>
+          <p className="mt-4 max-w-2xl mx-auto text-base sm:text-lg" style={{lineHeight:'28px', color: 'rgba(255,255,255,0.7)'}}>
             Our platform helps you understand your people through surveys, personality insights, and data-driven tools—so you can build a healthier culture, one decision at a time.
           </p>
         </motion.div>
@@ -61,25 +61,25 @@ const SolutionSection = () => {
               <motion.button
                 key={index}
                 onClick={() => setActiveStep(index)}
-                className={`w-full  text-left p-6 rounded-2xl border transition-all duration-300 ${
+                className={`w-full text-left p-6 rounded-2xl border transition-all duration-300 ${
                   activeStep === index
-                    ? 'bg-white border-black/15 shadow-lg'
-                    : 'bg-black/10 border-black/10 hover:bg-black/10'
+                    ? 'bg-white/10 border-[#57D6D3]/30 shadow-lg'
+                    : 'bg-white/5 border-white/10 hover:bg-white/10'
                 }`}
                 whileHover={{ scale: 1.01 }}
                 whileTap={{ scale: 0.99 }}
               >
-                <div className="flex items-start gap-4 ">
+                <div className="flex items-start gap-4">
                   <span className={`flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center text-sm font-semibold ${
                     activeStep === index
-                      ? 'bg-black text-white'
-                      : 'bg-black/20 text-black'
-                  }`}>
+                      ? 'text-[#1A1A2E]'
+                      : 'bg-white/20 text-white'
+                  }`} style={activeStep === index ? {background: 'linear-gradient(135deg, #57D6D3, #7CF5CD)'} : {}}>
                     {step.step}
                   </span>
                   <div>
                     <h3 className={`font-semibold text-lg mb-2 ${
-                      activeStep === index ? 'text-black' : 'text-black/80'
+                      activeStep === index ? 'text-[#7CF5CD]' : 'text-white/80'
                     }`}>
                       {step.title}
                     </h3>
@@ -89,7 +89,7 @@ const SolutionSection = () => {
                           initial={{ opacity: 0, height: 0 }}
                           animate={{ opacity: 1, height: "auto" }}
                           exit={{ opacity: 0, height: 0 }}
-                          // className="text-white/70"
+                          className="text-white/70"
                         >
                           {step.description}
                         </motion.p>
