@@ -51,10 +51,10 @@ const Navbar = () => {
               </Link>
             </div>
             <div className="flex items-center gap-3">
-              <Button  size="lg"  style={{border: '1px solid #5FD4AC', borderRadius: '.4rem', color: '#5FD4AC', boxShadow: '0 0 10px 0 rgba(0, 0, 0, 0.1)'}}>
+              <Button variant="outline" size="lg">
                 Login
               </Button>
-              <Button size="lg" style={{backgroundColor: '#000000', borderRadius: '.4rem', color: '#FFFFFF', boxShadow: '0 0 10px 0 rgba(0, 0, 0, 0.1)'}}>
+              <Button variant="default" size="lg">
                 Try for free
               </Button>
             </div>
@@ -93,7 +93,7 @@ const Navbar = () => {
             </Link>
             <div className="pt-4 flex flex-col gap-3">
               <Button variant="outline" className="w-full">Login</Button>
-              <Button variant="default" className="w-full" style={{backgroundColor: '#000000', borderRadius: '.4rem', color: '#FFFFFF'}}>Try for free</Button>
+              <Button variant="default" className="w-full">Try for free</Button>
             </div>
           </div>
         </motion.div>
