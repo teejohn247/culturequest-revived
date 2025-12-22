@@ -16,6 +16,11 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const handleLinkClick = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    setIsOpen(false);
+  };
+
   return (
     <motion.nav
       initial={{ y: -20, opacity: 0 }}
@@ -28,7 +33,7 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 md:h-20" >
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2" >
+          <Link to="/" onClick={handleLinkClick} className="flex items-center gap-2" >
             <img 
               src="/silo-logo.svg" 
               alt="SILO Logo" 
@@ -40,13 +45,13 @@ const Navbar = () => {
           {/* Desktop Navigation + CTA Buttons */}
           <div className="hidden md:flex items-center gap-12">
             <div className="flex items-center gap-12">
-              <Link to="/features" className="text-lg text-foreground hover:text-foreground/80 transition-colors">
+              <Link to="/features" onClick={handleLinkClick} className="text-lg text-foreground hover:text-foreground/80 transition-colors">
                 Features
               </Link>
-              <Link to="/pricing" className="text-lg text-foreground hover:text-foreground/80 transition-colors">
+              <Link to="/pricing" onClick={handleLinkClick} className="text-lg text-foreground hover:text-foreground/80 transition-colors">
                 Pricing
               </Link>
-              <Link to="/about" className="text-lg text-foreground hover:text-foreground/80 transition-colors">
+              <Link to="/about" onClick={handleLinkClick} className="text-lg text-foreground hover:text-foreground/80 transition-colors">
                 About us
               </Link>
             </div>
@@ -79,16 +84,16 @@ const Navbar = () => {
           className="md:hidden border-t border-border bg-background"
         >
           <div className="px-4 py-6 space-y-4">
-            <Link to="/features" className="block text-muted-foreground hover:text-foreground" onClick={() => setIsOpen(false)}>
+            <Link to="/features" className="block text-muted-foreground hover:text-foreground" onClick={handleLinkClick}>
               Features
             </Link>
-            <Link to="/pricing" className="block text-muted-foreground hover:text-foreground" onClick={() => setIsOpen(false)}>
+            <Link to="/pricing" className="block text-muted-foreground hover:text-foreground" onClick={handleLinkClick}>
               Pricing
             </Link>
             {/* <a href="#resources" className="block text-muted-foreground hover:text-foreground">
               Resources
             </a> */}
-            <Link to="/about" className="block text-muted-foreground hover:text-foreground" onClick={() => setIsOpen(false)}>
+            <Link to="/about" className="block text-muted-foreground hover:text-foreground" onClick={handleLinkClick}>
               About us
             </Link>
             <div className="pt-4 flex flex-col gap-3">

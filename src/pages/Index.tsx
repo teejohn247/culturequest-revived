@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import LogoMarquee from "@/components/LogoMarquee";
@@ -20,6 +21,9 @@ import CustomerEngagementSection from "@/components/CustomerEngagementSection";
 import TeamCollaborationSection from "@/components/TeamCollaborationSection";
 
 const Index = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
