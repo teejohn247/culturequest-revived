@@ -93,7 +93,7 @@ const TestimonialsSection = () => {
           className="text-center mb-12"
         >
           <span className="inline-flex items-center gap-2 text-muted-foreground font-medium text-sm mb-4">
-            <Star className="w-4 h-4" /> Testimonials
+            Testimonials
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground">
             What Our Clients Are Saying
@@ -139,7 +139,8 @@ const TestimonialsSection = () => {
           transition={{ delay: 0.3 }}
           className="text-center mt-8"
         >
-          <button className="inline-flex items-center gap-2 px-6 py-3 border border-foreground rounded-full text-foreground font-medium hover:bg-foreground hover:text-background transition-colors">
+          <button className="inline-flex items-center gap-2 px-6 py-3 border border-foreground rounded-full text-foreground font-medium hover:bg-foreground hover:text-background transition-colors"
+          style={{borderRadius: '.4rem'}}>
             See all Reviews
             <ChevronRight className="w-4 h-4" />
           </button>

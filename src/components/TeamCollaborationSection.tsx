@@ -27,29 +27,29 @@ const TeamCollaborationSection = () => {
   const activeTabData = tabs.find((tab) => tab.id === activeTab);
 
   return (
-    <section className="py-16 md:py-24" style={{ backgroundColor: '#fcf8f2' }}>
+    <section className="py-16 md:py-24"  style={{background: 'linear-gradient(180deg, #FFFFFF 0%, #E0FFF4  100%)'}}>
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-12">
           <h2 className="text-3xl md:text-5xl font-bold mb-4">
-            <span className="text-foreground">Teams that work together,</span>
+            <span className="text-foreground" style={{color: '#1F3C6B'}}>Teams that work together,</span>
             <br />
-            <span className="text-primary">win together</span>
+            <span className="text-primary" style={{color: '#57D6D3'}}>win together</span>
           </h2>
           <p className="text-muted-foreground text-lg mb-6">
             Multiple teams come together with sales to close deals. With Silo ERP for Everyone, you can build unique, collaborative spaces for each team — all with some AI assistance, of course. Start winning more, together.
           </p>
-          <Link
+          {/* <Link
             to="/features"
             className="inline-flex items-center text-primary font-medium hover:underline"
           >
             Learn more
             <ArrowRight className="w-4 h-4 ml-1" />
-          </Link>
+          </Link> */}
         </div>
 
         {/* Tabs */}
-        <div className="flex justify-center gap-2 mb-8">
+        {/* <div className="flex justify-center gap-2 mb-8">
           {tabs.map((tab) => (
             <button
               key={tab.id}
@@ -63,7 +63,7 @@ const TeamCollaborationSection = () => {
               {tab.label}
             </button>
           ))}
-        </div>
+        </div> */}
 
         {/* Tab description */}
         <AnimatePresence mode="wait">
@@ -74,7 +74,7 @@ const TeamCollaborationSection = () => {
             exit={{ opacity: 0, y: -10 }}
             className="text-center text-muted-foreground max-w-2xl mx-auto mb-8"
           >
-            {activeTabData?.description}
+            {/* {activeTabData?.description} */}
           </motion.p>
         </AnimatePresence>
 
@@ -88,7 +88,7 @@ const TeamCollaborationSection = () => {
             className="bg-white rounded-2xl shadow-xl overflow-hidden"
           >
             <video
-              src="/Homepage/vid.mp4"
+              src="/Homepage/vid2.mp4"
               autoPlay
               loop
               muted

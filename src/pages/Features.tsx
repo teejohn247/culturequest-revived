@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Users, Briefcase, Brain, BarChart3, Globe, Target, Star, Puzzle } from "lucide-react";
 import { openCalendly } from "@/lib/calendly";
 import ConsultingSection from "@/components/ConsultingSection";
+import BentoFeaturesSection from "@/components/BentoFeaturesSection";
 
 const mainFeatures = [
   {
@@ -45,7 +46,7 @@ const mainFeatures = [
       "Automated reporting",
       "Intelligent recommendations"
     ],
-    image: "/Homepage/Ai Analytics.jpg"
+    image: "/Homepage/Ai Analytics2.jpg"
   },
   {
     id: "accounting",
@@ -58,7 +59,7 @@ const mainFeatures = [
       "Expense management",
       "Financial statement generation"
     ],
-    image: "/Accounting.jpg"
+    image: "/Homepage/Accounting.jpg"
   },
 ];
 
@@ -180,9 +181,9 @@ const Features = () => {
                 transition={{ duration: 0.6 }}
                 className="text-center md:text-left"
               >
-                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight" style={{fontSize:'clamp(32px, 8vw, 68px)', lineHeight:'65px', fontWeight:'600'}}>
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight" style={{fontSize:'clamp(32px, 8vw, 68px)', color: '#1F3C6B', lineHeight:'65px', fontWeight:'600'}}>
                   Unite Teams Through the Power of{" "}
-                  <span className="text-primary">
+                  <span style={{color: '#57D6D3'}}>
                     Data Intelligence
                   </span>
                 </h1>
@@ -191,7 +192,7 @@ const Features = () => {
                   collaboration, and data-driven decision-making across all business functions.
                 </p>
                 <div className="flex justify-center md:justify-start">
-                  <Button size="lg" style={{height:'clamp(48px, 8vw, 60px)'}} className="bg-primary text-primary-foreground hover:bg-primary/90" onClick={() => openCalendly()}>
+                  <Button className="bg-primary text-primary-foreground" style={{background: '#57D6D3'}} onClick={() => openCalendly()}>
                     <span style={{fontSize:'clamp(14px, 3vw, 18px)', display:'flex', alignItems:'center', justifyContent:'center', fontWeight:'600'}}>Book a Demo</span>
                   </Button>
                 </div>
@@ -208,8 +209,8 @@ const Features = () => {
                     src="/mockup 3.png"
                     alt="SILO Platform Mockup"
                     className="w-full h-auto rounded-3xl shadow-2xl object-contain md:scale-125"
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    animate={{ opacity: 1, scale: 1 }}
+                    initial={{ opacity: 0, scale: 0.925 }}
+                    animate={{ opacity: 1, scale: 1.45 }}
                     transition={{ duration: 0.6, delay: 0.3 }}
                   />
                 </div>
@@ -217,9 +218,11 @@ const Features = () => {
             </div>
           </div>
         </section>
+        <BentoFeaturesSection />
+
 
         {/* Feature Showcase - Scroll Stacking Cards */}
-        <section className="py-16 md:py-24 bg-primary/10" style={{background: 'linear-gradient(270deg, rgba(0, 0, 0, 0), rgb(107, 244, 199) 48%, rgba(0, 0, 0, 0))'}}>
+        <section className="py-16 md:py-24 bg-primary/10" style={{background: '#E3F8F3'}}>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -246,7 +249,7 @@ const Features = () => {
         </section>
 
         {/* Why Teams Love SILO Section */}
-        <section className="py-24 bg-secondary/30">
+        <section className="py-24 " style={{backgroundColor: '#fff'}}>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
               initial={{ opacity: 0, y: 20 }}

@@ -36,7 +36,7 @@ const Index = () => {
         <TeamCollaborationSection />
         <CustomerEngagementSection />
 
-        <BentoFeaturesSection />
+        {/* <BentoFeaturesSection /> */}
 
         <SkillsSection />
 
@@ -45,7 +45,7 @@ const Index = () => {
         <SolutionSection />
         <TestimonialsSection />
         {/* <LogoMarquee/> */}
-        <FAQSection />
+        {/* <FAQSection /> */}
         <MobileAppSection />
         {/* <ConsultingSection /> */}
       </main>

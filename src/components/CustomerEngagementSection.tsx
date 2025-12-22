@@ -33,7 +33,7 @@ const CustomerEngagementSection = () => {
   };
 
   return (
-    <section className=" font-zoho-puvi" style={{ backgroundColor: '#fcf8f2'}}>
+    <section className=" font-zoho-puvi" style={{ backgroundColor: '#E1FFF4'}}>
       <div className="container mx-auto px-4">
         {/* Hero Content Block */}
         <div className="text-center mb-16">
@@ -50,16 +50,10 @@ const CustomerEngagementSection = () => {
             Harness the power of intelligent automation that delivers the best of 
             artificial intelligence and human experience.
           </p>
-          <Link 
-            to="/features" 
-            className="inline-flex items-center text-primary font-semibold hover:underline text-lg"
-          >
-            Read more
-            <ChevronRight className="w-5 h-5 ml-1" />
-          </Link>
+       
         </div>
 
-        <div className="flex items-center gap-4 md:gap-8">
+        <div className="flex items-center gap-4 md:gap-8" style={{marginBottom: '100px'}}>
           {/* Left Arrow */}
           <button
             onClick={prevSlide}
@@ -82,19 +76,19 @@ const CustomerEngagementSection = () => {
                     exit={{ opacity: 0, y: -20 }}
                     transition={{ duration: 0.3 }}
                   >
-                    <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
+                    <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4" style={{color: '#57D6D3'}}>
                       {slides[currentSlide].title}
                     </h2>
                     <p className="text-muted-foreground text-lg mb-6">
                       {slides[currentSlide].description}
                     </p>
-                    <Link
+                    {/* <Link
                       to={slides[currentSlide].link}
                       className="inline-flex items-center text-primary font-medium hover:underline"
                     >
                       Learn more
                       <ChevronRight className="w-4 h-4 ml-1" />
-                    </Link>
+                    </Link> */}
                   </motion.div>
                 </AnimatePresence>
               </div>

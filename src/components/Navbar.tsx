@@ -56,10 +56,10 @@ const Navbar = () => {
               </Link>
             </div>
             <div className="flex items-center gap-3">
-              <Button variant="outline" size="lg">
+              <Button variant="outline">
                 Login
               </Button>
-              <Button variant="default" size="lg">
+              <Button variant="default">
                 Try for free
               </Button>
             </div>

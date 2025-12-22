@@ -65,9 +65,8 @@ const HeroSection = () => {
         >
           <Button
             variant="hero"
-            size="xl"
             style={{
-              borderRadius: ".4rem",
+              padding: ' 25px',
               background: "linear-gradient(135deg, #57D6D3, #7CF5CD)",
               color: "#03312F",
               boxShadow: "0 12px 30px rgba(87, 214, 211, 0.35)",

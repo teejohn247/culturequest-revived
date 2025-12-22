@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import { Mail, Linkedin } from "lucide-react";
 import ConsultingSection from "@/components/ConsultingSection";
 import LogoMarquee from "@/components/LogoMarquee";
+import FAQSection from "@/components/FAQSection";
 
 const storySections = [
   {
@@ -24,7 +25,7 @@ const storySections = [
       "Once upon a time, a digital enthusiast had this crazy idea: let's change the way businesses manage their operations! And so, SILO was born!",
       "As our crew grew, we kept the idea of a platform that's easy to use, effective, and full of useful features. Fast forward, and here we are, helping tons of businesses and agencies to crush it on operational efficiency."
     ],
-    bgColor: "bg-[#FFF5E0]",
+    bgColor: "bg-[#FFFFFF]",
     image: "/story.png"
   },
   {
@@ -44,8 +45,9 @@ const storySections = [
       "We're all about simplifying your work life by providing you with the best solution for effective teamwork.",
       "With our platform, we transform scattered chaos into streamlined productivity, ensuring every team member stays connected, informed, and empowered to deliver their best work."
     ],
-    bgColor: "bg-[#E0F7FA]",
-    image: "/mission.png"
+    bgColor: "bg-[#1F3C6B]",
+    image: "/mission.png",
+    color: "bg-white"
   },
   {
     id: "vision",
@@ -65,7 +67,7 @@ const storySections = [
       "At SILO, we believe that teamwork makes the dream work. Our mission is to help businesses and marketers elevate their operational presence with the help of our platform.",
       "We envision a world where every business has access to enterprise-grade tools, enabling them to compete effectively and achieve sustainable growth."
     ],
-    bgColor: "bg-[#FCE4EC]",
+    bgColor: "bg-[#57D6D3]",
     image: "/vision.jpg"
   }
 ];
@@ -118,14 +120,14 @@ const StoryCard = ({ section, index }: { section: typeof storySections[0]; index
       <div className={`relative ${section.bgColor} rounded-3xl p-8 md:p-12 overflow-hidden flex flex-col md:flex-row items-center gap-8`}>
         {/* Content */}
         <div className="flex-1 space-y-4 text-center md:text-left">
-          <div className="text-foreground/80 flex justify-center md:justify-start">
+          <div className={`flex justify-center md:justify-start ${section.color ? `text-white` : 'text-foreground/80'}`}>
             {section.icon}
           </div>
-          <h3 className="text-2xl md:text-4xl font-bold text-foreground" style={{ lineHeight: '1.2' }}>
+          <h3 className={`text-2xl md:text-4xl font-bold ${section.color ? `text-white` : 'text-foreground/80'}`} style={{ lineHeight: '1.2' }}>
             {section.title}
           </h3>
           {section.content.map((paragraph, i) => (
-            <p key={i} className="text-foreground/80 text-base sm:text-lg max-w-md">
+            <p key={i} className={`text-base sm:text-lg max-w-md ${section.color ? `text-white` : 'text-foreground/80'}`}>
               {paragraph}
             </p>
           ))}
@@ -249,7 +251,7 @@ const About = () => {
         </section>
 
             {/* Vision Statement */}
-            <section className="py-32 bg-[#1a1a2e] text-white">
+            <section className="py-32  text-white" style={{backgroundColor: '#1F3C6B', marginTop: '100px'}}>
           <div className="max-w-4xl mx-auto px-4 text-center">
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
@@ -257,14 +259,14 @@ const About = () => {
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <div className="w-16 h-16 mx-auto mb-8 rounded-lg border-2 border-primary flex items-center justify-center">
-                <svg viewBox="0 0 24 24" className="w-8 h-8 text-primary" fill="none" stroke="currentColor" strokeWidth="2">
+              <div className="w-16 h-16 mx-auto mb-8 rounded-lg border-2 flex items-center justify-center" style={{borderColor: '#57D6D3'}}>
+                <svg viewBox="0 0 24 24" className="w-8 h-8 text-primary" fill="none" stroke="#57D6D3" strokeWidth="2">
                   <rect x="3" y="3" width="18" height="18" rx="2"/>
                   <path d="M9 12l2 2 4-4"/>
                 </svg>
               </div>
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6">
-                We are <span className="text-primary">SILO</span>, and the vision is to make business operations work for everyone.
+                We are <span className="" style={{color: '#57D6D3'}}>SILO</span>, and the vision is to make business operations work for everyone.
               </h2>
             </motion.div>
           </div>
@@ -280,8 +282,8 @@ const About = () => {
               viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4">
-                We are <span className="inline-block px-4 py-2 bg-primary text-primary-foreground rounded-lg">#SILO</span>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4 style={{color: '#57D6D3'}}">
+                We are <span className="inline-block px-4 py-2 bg-primary text-primary-foreground rounded-lg"  style={{backgroundColor: '#57D6D3'}}>#SILO</span>
               </h2>
               <p className="text-muted-foreground max-w-2xl mx-auto text-base md:text-lg">
                 The team is currently composed of passionate people from various backgrounds.
@@ -320,6 +322,8 @@ const About = () => {
             </div>
           </div>
         </section>
+
+        <FAQSection />
 
     
 

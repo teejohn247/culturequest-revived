@@ -43,10 +43,9 @@ const ConsultingSection = () => {
                 viewport={{ once: true }}
               >
                 <Button 
-                  size="lg" 
-                  className="bg-[#6366F1] text-white hover:bg-[#6366F1]/90 rounded-lg"
+                  className="bg-[#6366F1] text-white hover:bg-[#6366F1]/90"
                   onClick={() => openCalendly()}
-                  style={{fontSize: '18px', fontWeight: '600', height: '65px', borderRadius: '.4rem'}}
+                  style={{fontSize: '18px', fontWeight: '600'}}
                 >
                   Book a Demo
                 </Button>

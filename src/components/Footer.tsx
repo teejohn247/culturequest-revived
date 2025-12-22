@@ -26,7 +26,7 @@ const Footer = () => {
             <div className="flex justify-end md:justify-end ml-auto">
               <Button
                 onClick={() => openCalendly()}
-                className="px-8 py-3 rounded-full font-semibold"
+                className="px-8 py-3 font-semibold"
                 style={{
                   background: "linear-gradient(135deg, #57D6D3, #7CF5CD)",
                   color: "#03312F"

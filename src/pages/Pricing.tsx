@@ -90,7 +90,7 @@ const Pricing = () => {
       <Navbar />
       <main>
         {/* Hero Section */}
-        <section className="relative py-20 lg:py-32 overflow-hidden">
+        <section className="relative overflow-hidden" style={{marginTop: '100px'}}>
           <div className="absolute inset-0 bg-soft-gradient" />
           <div className="container mx-auto px-4 relative z-10">
             <motion.div
@@ -135,7 +135,7 @@ const Pricing = () => {
         </section>
 
         {/* Pricing Cards */}
-        <section className="py-16 bg-background">
+        <section className=" bg-background">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid md:grid-cols-3 gap-6 md:gap-8">
               {pricingPlans.map((plan, index) => (
@@ -186,7 +186,6 @@ const Pricing = () => {
                         ? 'bg-background text-primary hover:bg-background/90'
                         : 'bg-primary text-primary-foreground hover:bg-primary/90'
                     }`}
-                    size="lg"
                   >
                     {plan.buttonText}
                   </Button>
@@ -252,7 +251,7 @@ const Pricing = () => {
               <p className="text-white/90 text-base sm:text-lg mb-8 px-4">
                 Book a short meeting and see how SILO can streamline your business processes.
               </p>
-              <Button size="lg" variant="secondary" className="bg-background text-foreground hover:bg-background/90" onClick={() => openCalendly()}>
+              <Button variant="secondary" className="bg-background text-foreground hover:bg-background/90" onClick={() => openCalendly()}>
                 Book a Demo
               </Button>
             </motion.div>
