@@ -4,7 +4,7 @@ import { openCalendly } from "@/lib/calendly";
 
 const Footer = () => {
   return (
-    <footer className="bg-foreground text-background" style={{backgroundColor: '#1A1A2E'}}>
+    <footer className="bg-foreground text-background" style={{backgroundColor: '#1A1A2E', zIndex:10}}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Curious Section */}
         <motion.div

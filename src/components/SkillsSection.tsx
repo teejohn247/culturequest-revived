@@ -38,9 +38,9 @@ const SkillsSection = () => {
             transition={{ duration: 0.6 }}
           >
             {/* Headline */}
-            <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-foreground mb-12 leading-tight">
+            <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-foreground mb-12 leading-tight" style={{fontSize:'clamp(32px, 8vw, 60px)',  fontWeight:'600'}}>
             Access everything you need on one unified interface
-              <span className="inline-block w-3 h-3 rounded-full bg-[#6366F1] ml-2" />
+              <span className="inline-block w-3 h-3 rounded-full bg-[#58d4d2] ml-2" />
             </h2>
 
             {/* Skills List with Dashed Line */}

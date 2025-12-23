@@ -139,10 +139,10 @@ const ValueSection = () => {
         >
            <span className="inline-block px-4 py-1.5 rounded-full bg-foreground text-white text-xs font-semibold uppercase tracking-wider mb-6"
           style={{backgroundColor: '#58d4d2', color: '#000000', padding: '10px 20px'}}>How SILO creates value</span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground" style={{fontSize:'clamp(32px, 8vw, 78px)', lineHeight:'clamp(36px, 8vw, 73px)', fontWeight:'600'}}>
-            From setup to<br /> success with
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground" style={{fontSize:'clamp(32px, 8vw, 60px)', lineHeight:'clamp(36px, 8vw, 60px)', fontWeight:'600'}}>
+            From setup to success 
             <br />
-            <span className="" style={{color: '#57D6D3', backgroundClip: 'text'}}>Streamlined returns.</span>
+            <span className="" style={{color: '#57D6D3', backgroundClip: 'text'}}> with Streamlined returns.</span>
           </h2>
           <p className="text-muted-foreground mt-4 max-w-xl mx-auto">
             SILO combines powerful software with expert consulting to help SMEs transform their operations.

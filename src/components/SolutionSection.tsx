@@ -40,7 +40,7 @@ const SolutionSection = () => {
         >
           <span className="inline-block px-4 py-1.5 rounded-full bg-foreground text-white text-xs font-semibold uppercase tracking-wider mb-6"
           style={{backgroundColor: '#58d4d2', color: '#000000', padding: '10px 20px'}}>Our solution</span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white" style={{fontSize:'clamp(32px, 8vw, 68px)', lineHeight:'clamp(36px, 8vw, 58px)', fontWeight:'600'}}>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white" style={{fontSize:'clamp(32px, 8vw, 60px)', lineHeight:'clamp(36px, 8vw, 60px)', fontWeight:'600'}}>
             Measure what matters.<br />Act where it counts.
           </h2>
           <p className="mt-4 max-w-2xl mx-auto text-base sm:text-lg" style={{lineHeight:'28px', color: 'rgba(255,255,255,0.7)'}}>

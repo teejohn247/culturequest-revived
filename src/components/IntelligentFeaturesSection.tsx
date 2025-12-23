@@ -70,7 +70,7 @@ const IntelligentFeaturesSection = () => {
           </span>
 
           {/* Main Heading */}
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4" style={{fontSize:'clamp(32px, 8vw, 60px)', lineHeight:'clamp(36px, 8vw, 60px)', fontWeight:'600'}}>
             Intelligent Features. Real Results.
           </h2>
 

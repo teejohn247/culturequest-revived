@@ -96,7 +96,7 @@ const TestimonialsSection = () => {
           style={{backgroundColor: '#58d4d2', color: '#000000', padding: '10px 20px'}}>
             Testimonials
           </span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground" style={{fontSize:'clamp(32px, 8vw, 60px)', lineHeight:'clamp(36px, 8vw, 60px)', fontWeight:'600'}}>
             What Our Clients Are Saying
           </h2>
           <p className="text-muted-foreground mt-4 max-w-xl mx-auto">
