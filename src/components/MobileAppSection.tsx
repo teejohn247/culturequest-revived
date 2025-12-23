@@ -3,7 +3,7 @@ import { Smartphone, Download, PlayCircle } from "lucide-react";
 
 const MobileAppSection = () => {
   return (
-    <section className="py-24" style={{ backgroundColor: "#fff" }}>
+    <section className="py-24" style={{}}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12 items-center">
         {/* Left content */}
         <motion.div
