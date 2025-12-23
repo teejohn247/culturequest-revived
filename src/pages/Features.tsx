@@ -113,9 +113,9 @@ const FeatureCard = ({ feature, index }: { feature: typeof mainFeatures[0]; inde
     <motion.div
       ref={cardRef}
       style={{ y, opacity }}
-      className="sticky top-32"
+      className="sticky top-10"
     >
-      <div className="relative bg-card rounded-3xl p-8 md:p-12 overflow-hidden flex flex-col md:flex-row items-center gap-8">
+      <div className="relative rounded-3xl p-8 md:p-12 overflow-hidden flex flex-col md:flex-row items-center gap-8" style={{backgroundColor: '#fff'}}>
         {/* Content */}
         <div className="flex-1 space-y-4">
           <span className={`inline-flex items-center gap-2 text-sm font-medium px-4 py-1.5 rounded-full ${bgColors[index % bgColors.length]}`}>
@@ -240,7 +240,7 @@ const Features = () => {
             </motion.div>
 
             {/* Stacking feature cards */}
-            <div className="space-y-8">
+            <div className="" style={{marginTop: '0px'}}>
               {mainFeatures.map((feature, index) => (
                 <FeatureCard key={feature.id} feature={feature} index={index} />
               ))}
@@ -249,7 +249,7 @@ const Features = () => {
         </section>
 
         {/* Why Teams Love SILO Section */}
-        <section className="py-24 " style={{backgroundColor: '#fff'}}>
+        <section className="py-10 " style={{backgroundColor: '#fff'}}>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
               initial={{ opacity: 0, y: 20 }}

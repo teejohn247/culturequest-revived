@@ -46,7 +46,7 @@ const CustomerEngagementSection = () => {
               Silo ERP
             </span>
           </h2>
-          <p className="text-muted-foreground text-lg md:text-xl max-w-2xl mx-auto mb-6">
+          <p className="text-muted-foreground text-lg md:text-xl max-w-2xl mx-auto mb-6" style={{fontSize: '18px', lineHeight: '28px'}}>
             Harness the power of intelligent automation that delivers the best of 
             artificial intelligence and human experience.
           </p>
@@ -95,7 +95,7 @@ const CustomerEngagementSection = () => {
 
               {/* Visual Cards */}
               <div className="relative h-[300px] md:h-[350px] overflow-hidden">
-               <video src="/Homepage/silo vid 1.mp4" autoPlay loop muted className="w-full h-full object-cover rounded-2xl" style={{height: '350px',}} />
+               <video src="/Homepage/silo vid 1_1.mp4" autoPlay loop muted className="w-full h-full object-cover rounded-2xl" style={{height: '350px',}} />
                 {/* <AnimatePresence mode="wait">
                   <motion.div
                     key={currentSlide}

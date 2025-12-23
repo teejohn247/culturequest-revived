@@ -1,11 +1,12 @@
 import { motion } from "framer-motion";
 
 const logos = [
-  { name: "Meta", image: "/sponsors/Meta-Logo.png" },
-  { name: "UNICEF", image: "/sponsors/UNICEF_Logo.png" },
-  { name: "Google Play", image: "/sponsors/Google-Play-Logo.png" },
+  { name: "Meta", image: "/sponsors/aquitane.jpg" },
+  // { name: "UNICEF", image: "/sponsors/UNICEF_Logo.png" },
+  { name: "Google Play", image: "/sponsors/Calvados.png" },
+  { name: "Google Play", image: "/sponsors/image.png" },
   // { name: "App Store", image: "/sponsors/google-play-and-apple-app-store-logos-22.png" },
-  { name: "Canada", image: "/sponsors/Flag_of_Canada.png" },
+  // { name: "Canada", image: "/sponsors/Flag_of_Canada.png" },
 ];
 
 const LogoMarquee = () => {
@@ -14,7 +15,7 @@ const LogoMarquee = () => {
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
-        transition={{ duration: 0.5 }}
+        transition={{ duration: 1.5 }}
         viewport={{ once: true }}
         className="text-center mb-10"
       >
@@ -31,13 +32,13 @@ const LogoMarquee = () => {
           {[...logos, ...logos].map((logo, index) => (
             <div
               key={index}
-              className="flex-shrink-0 mx-12 flex items-center justify-center  transition-opacity"
+              className="flex-shrink-0 mx-16 flex items-center justify-center transition-opacity"
             >
               <img
                 src={logo.image}
                 alt={logo.name}
-                className="h-12 w-auto object-contain"
-                style={{ maxHeight: '30px', width: '100%' }}
+                className="h-8 md:h-10 lg:h-12 w-auto object-contain"
+                style={{ maxHeight: '100px', width: '100%' }}
               />
             </div>
           ))}

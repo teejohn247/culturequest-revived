@@ -47,7 +47,7 @@ const storySections = [
     ],
     bgColor: "bg-[#1F3C6B]",
     image: "/mission.png",
-    color: "bg-white"
+    color: "text-white"
   },
   {
     id: "vision",
@@ -68,6 +68,7 @@ const storySections = [
       "We envision a world where every business has access to enterprise-grade tools, enabling them to compete effectively and achieve sustainable growth."
     ],
     bgColor: "bg-[#57D6D3]",
+    color: "text-silo-blue",
     image: "/vision.jpg"
   }
 ];
@@ -120,14 +121,14 @@ const StoryCard = ({ section, index }: { section: typeof storySections[0]; index
       <div className={`relative ${section.bgColor} rounded-3xl p-8 md:p-12 overflow-hidden flex flex-col md:flex-row items-center gap-8`}>
         {/* Content */}
         <div className="flex-1 space-y-4 text-center md:text-left">
-          <div className={`flex justify-center md:justify-start ${section.color ? `text-white` : 'text-foreground/80'}`}>
+          <div className={`flex justify-center md:justify-start ${section.color ? section.color : 'text-foreground/80'}`}>
             {section.icon}
           </div>
-          <h3 className={`text-2xl md:text-4xl font-bold ${section.color ? `text-white` : 'text-foreground/80'}`} style={{ lineHeight: '1.2' }}>
+          <h3 className={`text-2xl md:text-4xl font-bold ${section.color ? section.color : 'text-foreground/80'}`} style={{ lineHeight: '1.2' }}>
             {section.title}
           </h3>
           {section.content.map((paragraph, i) => (
-            <p key={i} className={`text-base sm:text-lg max-w-md ${section.color ? `text-white` : 'text-foreground/80'}`}>
+            <p key={i} className={`text-base sm:text-lg max-w-md ${section.color ? section.color : 'text-foreground/80'}`}>
               {paragraph}
             </p>
           ))}

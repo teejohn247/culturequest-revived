@@ -56,10 +56,10 @@ const Navbar = () => {
               </Link>
             </div>
             <div className="flex items-center gap-3">
-              <Button variant="outline">
+              <Button variant="outline" style={{border: '1px solid #57d6d3', borderRadius: '.4rem', color: '#57d6d3', boxShadow: '0 0 10px 0 rgba(0, 0, 0, 0.1)'}}>
                 Login
               </Button>
-              <Button variant="default">
+              <Button variant="default" style={{backgroundColor: '#1F3C6B'}}>
                 Try for free
               </Button>
             </div>
@@ -97,7 +97,7 @@ const Navbar = () => {
               About us
             </Link>
             <div className="pt-4 flex flex-col gap-3">
-              <Button variant="outline" className="w-full">Login</Button>
+              <Button variant="outline" className="w-full" style={{border: '1px solid #57d6d3', borderRadius: '.4rem', color: '#57d6d3', boxShadow: '0 0 10px 0 rgba(0, 0, 0, 0.1)'}}>Login</Button>
               <Button variant="default" className="w-full">Try for free</Button>
             </div>
           </div>

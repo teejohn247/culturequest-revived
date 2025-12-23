@@ -27,7 +27,7 @@ const TeamCollaborationSection = () => {
   const activeTabData = tabs.find((tab) => tab.id === activeTab);
 
   return (
-    <section className="py-16 md:py-24"  style={{background: 'linear-gradient(180deg, #FFFFFF 0%, #E0FFF4  100%)'}}>
+    <section className="py-16 md:py-24"  style={{background: 'linear-gradient(180deg, #FFFFFF 0%, #E0FFF4  100%)', marginTop: '-100px'}}>
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-12">
@@ -37,7 +37,7 @@ const TeamCollaborationSection = () => {
             <span className="text-primary" style={{color: '#57D6D3'}}>win together</span>
           </h2>
           <p className="text-muted-foreground text-lg mb-6">
-            Multiple teams come together with sales to close deals. With Silo ERP for Everyone, you can build unique, collaborative spaces for each team — all with some AI assistance, of course. Start winning more, together.
+            Multiple teams come together with sales to close deals. With Silo ERP for Everyone, you can build unique, collaborative spaces for each team — all with some AI assistance.
           </p>
           {/* <Link
             to="/features"
