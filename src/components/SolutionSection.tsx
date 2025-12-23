@@ -38,7 +38,8 @@ const SolutionSection = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <span className="text-sm font-medium mb-4 block" style={{fontSize:'16px', color: '#7CF5CD'}}>Our solution</span>
+          <span className="inline-block px-4 py-1.5 rounded-full bg-foreground text-white text-xs font-semibold uppercase tracking-wider mb-6"
+          style={{backgroundColor: '#58d4d2', color: '#000000', padding: '10px 20px'}}>Our solution</span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white" style={{fontSize:'clamp(32px, 8vw, 68px)', lineHeight:'clamp(36px, 8vw, 58px)', fontWeight:'600'}}>
             Measure what matters.<br />Act where it counts.
           </h2>
@@ -79,7 +80,7 @@ const SolutionSection = () => {
                   </span>
                   <div>
                     <h3 className={`font-semibold text-lg mb-2 ${
-                      activeStep === index ? 'text-[#7CF5CD]' : 'text-white/80'
+                      activeStep === index ? 'text-[#58d4d2]' : 'text-white/80'
                     }`}>
                       {step.title}
                     </h3>
@@ -145,15 +146,15 @@ const SolutionSection = () => {
                   {activeStep === 0 && (
                     <div className="space-y-3">
                       <div className="h-10 bg-secondary rounded-lg flex items-center px-3 gap-2">
-                        <div className="w-4 h-4 rounded border-2 border-[#57D6D3]" />
+                        <div className="w-4 h-4 rounded border-2 border-[#58d4d2]" />
                         <span className="text-sm text-muted-foreground">HR Management System</span>
                       </div>
                       <div className="h-10 bg-secondary rounded-lg flex items-center px-3 gap-2">
-                        <div className="w-4 h-4 rounded border-2 border-[#7CF5CD] bg-[#7CF5CD]" />
+                        <div className="w-4 h-4 rounded border-2 border-[#58d4d2] bg-[#58d4d2]" />
                         <span className="text-sm text-muted-foreground">CRM Integration</span>
                       </div>
                       <div className="h-10 bg-secondary rounded-lg flex items-center px-3 gap-2">
-                        <div className="w-4 h-4 rounded border-2 border-[#57D6D3] bg-[#57D6D3]" />
+                        <div className="w-4 h-4 rounded border-2 border-[#58d4d2] bg-[#58d4d2]" />
                         <span className="text-sm text-muted-foreground">AI Analytics Setup</span>
                       </div>
                       <div className="h-10 bg-secondary rounded-lg flex items-center px-3 gap-2">

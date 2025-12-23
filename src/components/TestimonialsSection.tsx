@@ -92,7 +92,8 @@ const TestimonialsSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <span className="inline-flex items-center gap-2 text-muted-foreground font-medium text-sm mb-4">
+ <span className="inline-block px-4 py-1.5 rounded-full bg-foreground text-white text-xs font-semibold uppercase tracking-wider mb-6"
+          style={{backgroundColor: '#58d4d2', color: '#000000', padding: '10px 20px'}}>
             Testimonials
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground">

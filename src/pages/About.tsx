@@ -234,10 +234,11 @@ const About = () => {
               viewport={{ once: true }}
               className="text-center"
             >
-              <span className="inline-block px-4 py-2 bg-primary text-primary-foreground rounded-lg font-bold" style={{fontSize: '16px'}}>#AboutSilo</span>
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground" style={{fontSize:'clamp(32px, 8vw, 58px)', lineHeight:'clamp(36px, 8vw, 63px)', fontWeight:'600'}}>
+               <span className="inline-block px-4 py-1.5 rounded-full bg-foreground text-white text-xs font-semibold uppercase tracking-wider mb-6"
+          style={{backgroundColor: '#58d4d2', color: '#000000', padding: '10px 20px'}}>About Silo</span>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground" style={{fontSize:'clamp(32px, 8vw, 58px)', lineHeight:'clamp(36px, 8vw, 63px)', fontWeight:'600', color:'#1F3C6B'}}>
                 Learn more about<br />
-                <span className="text-primary">who we are</span>
+                <span className="text-primary" style={{color: '#57D6D3'}}>who we are</span>
               </h2>
             </motion.div>
 

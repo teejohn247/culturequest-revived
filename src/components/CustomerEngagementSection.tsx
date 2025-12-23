@@ -33,11 +33,11 @@ const CustomerEngagementSection = () => {
   };
 
   return (
-    <section className=" font-zoho-puvi" style={{ backgroundColor: '#E1FFF4'}}>
+    <section className=" font-zoho-puvi" style={{backgroundColor: '#E1FFF4', paddingBottom: '100px'}}>
       <div className="container mx-auto px-4">
         {/* Hero Content Block */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl  mb-6" style={{background: '#1F3C6B'}}>
+          <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl  mb-6"  style={{background: '#1F3C6B'}}>
             <Sparkles className="w-8 h-8 text-primary" />
           </div>
           <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-4" style={{color: '#1F3C6B'}}>
@@ -53,7 +53,7 @@ const CustomerEngagementSection = () => {
        
         </div>
 
-        <div className="flex items-center gap-4 md:gap-8" style={{marginBottom: '100px'}}>
+        <div className="flex items-center gap-4 md:gap-8" >
           {/* Left Arrow */}
           <button
             onClick={prevSlide}
@@ -64,7 +64,7 @@ const CustomerEngagementSection = () => {
           </button>
 
           {/* Content */}
-          <div className="flex-1 bg-white rounded-3xl overflow-hidden shadow-sm">
+          <div className="flex-1 bg-white rounded-3xl overflow-hidden shadow-sm" >
             <div className="grid md:grid-cols-2 gap-8 p-8 md:p-12">
               {/* Text Content */}
               <div className="flex flex-col justify-center">
@@ -94,8 +94,9 @@ const CustomerEngagementSection = () => {
               </div>
 
               {/* Visual Cards */}
-              <div className="relative h-[300px] md:h-[350px] bg-gradient-to-br from-sky-100 via-blue-50 to-purple-100 rounded-2xl overflow-hidden">
-                <AnimatePresence mode="wait">
+              <div className="relative h-[300px] md:h-[350px] overflow-hidden">
+               <video src="/Homepage/silo vid 1.mp4" autoPlay loop muted className="w-full h-full object-cover rounded-2xl" style={{height: '350px',}} />
+                {/* <AnimatePresence mode="wait">
                   <motion.div
                     key={currentSlide}
                     initial={{ opacity: 0, scale: 0.95 }}
@@ -104,7 +105,6 @@ const CustomerEngagementSection = () => {
                     transition={{ duration: 0.3 }}
                     className="absolute inset-0 p-6"
                   >
-                    {/* Best time to contact card */}
                     <div className="absolute top-4 right-4 bg-white rounded-xl p-3 shadow-lg">
                       <p className="text-xs text-muted-foreground">Best time to Contact - Today</p>
                       <div className="flex items-center gap-2 mt-1">
@@ -114,7 +114,6 @@ const CustomerEngagementSection = () => {
                       </div>
                     </div>
 
-                    {/* Caller card */}
                     <div className="absolute top-20 left-6 bg-white rounded-xl p-4 shadow-lg w-48">
                       <div className="w-16 h-16 mx-auto rounded-full bg-gradient-to-br from-amber-200 to-amber-300 mb-3 flex items-center justify-center">
                         <span className="text-2xl">👩</span>
@@ -127,7 +126,6 @@ const CustomerEngagementSection = () => {
                       </div>
                     </div>
 
-                    {/* Customer Segmentation card */}
                     <div className="absolute top-32 right-4 bg-white rounded-xl p-3 shadow-lg">
                       <div className="flex items-center justify-between mb-2">
                         <span className="font-medium text-sm">Customer Segmentation</span>
@@ -145,7 +143,6 @@ const CustomerEngagementSection = () => {
                       </div>
                     </div>
 
-                    {/* Social card */}
                     <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-white rounded-xl p-3 shadow-lg w-64">
                       <div className="flex items-center gap-3">
                         <div className="w-10 h-10 rounded-full bg-gradient-to-br from-blue-200 to-blue-300 flex items-center justify-center">
@@ -164,7 +161,7 @@ const CustomerEngagementSection = () => {
                       <p className="text-sm mt-2">Just ordered a new laptop from <span className="text-primary">@ZylkerInc</span> :)</p>
                     </div>
                   </motion.div>
-                </AnimatePresence>
+                </AnimatePresence> */}
               </div>
             </div>
           </div>

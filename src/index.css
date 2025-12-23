@@ -322,3 +322,19 @@
 .h-1\.5 {
   height: 0.175rem;
 }
+
+.bg-silo-green {
+  background-color: #57d6d3;
+}
+
+.text-silo-green {
+  color: #57d6d3;
+}
+
+.bg-silo-blue {
+  background-color: #1F3C6B;
+}
+
+.bg-silo-gray {
+  background-color: #F5F5F5;
+}

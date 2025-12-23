@@ -88,7 +88,7 @@ const TeamCollaborationSection = () => {
             className="bg-white rounded-2xl shadow-xl overflow-hidden"
           >
             <video
-              src="/Homepage/vid2.mp4"
+              src="/Homepage/vid3.mp4"
               autoPlay
               loop
               muted

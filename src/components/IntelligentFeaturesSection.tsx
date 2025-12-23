@@ -65,7 +65,7 @@ const IntelligentFeaturesSection = () => {
         >
           {/* Tag/Badge */}
           <span className="inline-block px-4 py-1.5 rounded-full bg-foreground text-white text-xs font-semibold uppercase tracking-wider mb-6"
-          style={{backgroundColor: '#9DF8DA', color: '#000000', padding: '10px 20px'}}>
+          style={{backgroundColor: '#58d4d2', color: '#000000', padding: '10px 20px'}}>
             Best SaaS Features
           </span>
 
@@ -94,12 +94,12 @@ const IntelligentFeaturesSection = () => {
             >
               <div className="h-full bg-card border border-border rounded-2xl p-6 hover:shadow-lg transition-all duration-300">
                 {/* Icon */}
-                <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4 border-2 border-[#2cca96] group-hover:bg-gradient-to-br group-hover:from-[#2cca96] group-hover:via-[#2cca96] group-hover:to-[#2cca96] group-hover:border-transparent transition-all duration-300">
-                  <feature.icon className="w-6 h-6 text-[#2cca96] group-hover:text-white transition-colors duration-300" />
+                <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4 border-2 border-[#58d4d2] group-hover:bg-gradient-to-br group-hover:from-[#58d4d2] group-hover:via-[#58d4d2] group-hover:to-[#58d4d2] group-hover:border-transparent transition-all duration-300">
+                  <feature.icon className="w-6 h-6 text-[#58d4d2] group-hover:text-white transition-colors duration-300" />
                 </div>
 
                 {/* Title */}
-                <h3 className="font-semibold text-lg text-foreground mb-2 group-hover:bg-gradient-to-r group-hover:from-[#2cca96] group-hover:via-[#2cca96] group-hover:to-[#b5edda] group-hover:bg-clip-text group-hover:text-transparent transition-all">
+                <h3 className="font-semibold text-lg text-foreground mb-2 group-hover:bg-gradient-to-r group-hover:from-[#58d4d2] group-hover:via-[#58d4d2] group-hover:to-[#58d4d2] group-hover:bg-clip-text group-hover:text-transparent transition-all">
                   {feature.title}
                 </h3>
 

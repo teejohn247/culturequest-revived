@@ -99,7 +99,7 @@ const Pricing = () => {
               transition={{ duration: 0.6 }}
               className="text-center max-w-3xl mx-auto"
             >
-              <span className="text-primary font-medium text-sm uppercase tracking-wider mb-4 block">
+              <span className="text-silo-green font-medium text-sm uppercase tracking-wider mb-4 block" style={{color: '#57D6D3'}}>
                 Pricing
               </span>
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
@@ -117,7 +117,7 @@ const Pricing = () => {
                 <button
                   onClick={() => setIsAnnual(!isAnnual)}
                   className={`relative inline-flex h-8 w-14 items-center rounded-full transition-colors ${
-                    isAnnual ? 'bg-primary' : 'bg-muted'
+                    isAnnual ? 'bg-silo-green' : 'bg-muted'
                   }`}
                 >
                   <span
@@ -127,7 +127,7 @@ const Pricing = () => {
                   />
                 </button>
                 <span className={`text-sm font-medium ${isAnnual ? 'text-foreground' : 'text-muted-foreground'}`}>
-                  Annual <span className="text-primary">(15% OFF)</span>
+                  Annual <span className="text-silo-green">(15% OFF)</span>
                 </span>
               </div>
             </motion.div>
@@ -147,12 +147,12 @@ const Pricing = () => {
                   viewport={{ once: true }}
                   className={`relative rounded-3xl p-6 md:p-8 ${
                     plan.popular
-                      ? 'bg-primary text-primary-foreground border-2 border-transparent'
+                      ? 'bg-silo-green text-white border-2 border-transparent'
                       : 'bg-card border border-border'
                   }`}
                 >
                   {plan.popular && (
-                    <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-background text-primary px-4 py-1 rounded-full text-sm font-semibold">
+                    <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-background text-silo-green px-4 py-1 rounded-full text-sm font-semibold">
                       Most Popular
                     </div>
                   )}
@@ -172,7 +172,7 @@ const Pricing = () => {
                     {plan.features.map((feature, i) => (
                       <li key={i} className="flex items-start gap-2">
                         <Check className={`w-5 h-5 mt-0.5 flex-shrink-0 ${
-                          plan.popular ? 'text-white' : 'text-primary'
+                          plan.popular ? 'text-white' : 'text-silo-green'
                         }`} />
                         <span className={`text-sm ${plan.popular ? 'text-white/90' : 'text-foreground'}`}>
                           {feature}
@@ -183,8 +183,8 @@ const Pricing = () => {
                   <Button
                     className={`w-full ${
                       plan.popular
-                        ? 'bg-background text-primary hover:bg-background/90'
-                        : 'bg-primary text-primary-foreground hover:bg-primary/90'
+                        ? 'bg-background text-silo-green hover:bg-background/90'
+                        : 'bg-silo-green text-primary-foreground hover:bg-silo-green/90'
                     }`}
                   >
                     {plan.buttonText}
@@ -237,7 +237,7 @@ const Pricing = () => {
         </section>
 
         {/* CTA Section */}
-        <section className="py-24 bg-primary">
+        {/* <section className="py-24 bg-primary">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -256,7 +256,7 @@ const Pricing = () => {
               </Button>
             </motion.div>
           </div>
-        </section>
+        </section> */}
       </main>
       <Footer />
     </div>

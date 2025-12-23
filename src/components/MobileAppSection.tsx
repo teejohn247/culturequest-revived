@@ -15,7 +15,7 @@ const MobileAppSection = () => {
         >
           <span
             className="inline-block px-4 py-1.5 rounded-full text-xs font-semibold tracking-wide text-[#03312F]"
-            style={{ backgroundColor: "#CFF6F3" }}
+            style={{ backgroundColor: "#58d4d2" }}
           >
             #MobileApp
           </span>
@@ -53,7 +53,8 @@ const MobileAppSection = () => {
           className="flex justify-center"
         >
           <div className="relative w-full max-w-md">
-            <div className="absolute -top-8 -left-6 w-24 h-24 rounded-3xl bg-white shadow-md flex items-center justify-center text-xs text-muted-foreground border border-border">
+            <video src="/Homepage/All Scenes.mp4" autoPlay loop muted className="w-full h-full object-cover rounded-3xl" style={{height: '500px'}} />
+            {/* <div className="absolute -top-8 -left-6 w-24 h-24 rounded-3xl bg-white shadow-md flex items-center justify-center text-xs text-muted-foreground border border-border">
               <span>
                 Scan to
                 <br /> download
@@ -74,7 +75,7 @@ const MobileAppSection = () => {
                   <div className="h-20 rounded-xl" style={{ backgroundColor: "#A7F3D0" }} />
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
         </motion.div>
       </div>
