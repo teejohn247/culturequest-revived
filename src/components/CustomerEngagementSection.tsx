@@ -40,10 +40,10 @@ const CustomerEngagementSection = () => {
           <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl  mb-6"  style={{background: '#1F3C6B'}}>
             <Sparkles className="w-8 h-8 text-primary" />
           </div>
-          <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-4" style={{color: '#1F3C6B'}}>
-            Supercharge your business with{" "}
-            <span className="bg-gradient-to-r from-primary via-purple-500 to-pink-500 bg-clip-text text-transparent" style={{color: '#1F3C6B'}}>
-              Silo ERP
+          <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-4" style={{color: '#1F3C6B', fontSize: '60px', lineHeight: '60px'}}>
+            Supercharge your business  <br/> 
+            <span className="bg-gradient-to-r from-primary via-purple-500 to-pink-500 bg-clip-text text-transparent text-silo-green" style={{ fontSize: '60px', lineHeight: '60px', fontWeight: '600', color: '#1f3c6b'}}>
+            with{" "} Silo ERP
             </span>
           </h2>
           <p className="text-muted-foreground text-lg md:text-xl max-w-2xl mx-auto mb-6" style={{fontSize: '18px', lineHeight: '28px'}}>
@@ -76,7 +76,7 @@ const CustomerEngagementSection = () => {
                     exit={{ opacity: 0, y: -20 }}
                     transition={{ duration: 0.3 }}
                   >
-                    <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4" style={{color: '#57D6D3'}}>
+                    <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4" style={{color: '#1f3c6b'}}>
                       {slides[currentSlide].title}
                     </h2>
                     <p className="text-muted-foreground text-lg mb-6">

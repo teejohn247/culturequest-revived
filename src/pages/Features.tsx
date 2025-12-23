@@ -187,7 +187,7 @@ const Features = () => {
                     Data Intelligence
                   </span>
                 </h1>
-                <p className="text-base sm:text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed">
+                <p className="text-base sm:text-lg sm:text-xl text-muted-foreground mb-8 leading-relaxed" style={{fontSize: '18px', lineHeight: '28px'}}>
                   Empower your workforce with intelligent, automated solutions designed to foster efficiency, 
                   collaboration, and data-driven decision-making across all business functions.
                 </p>
@@ -198,23 +198,16 @@ const Features = () => {
                 </div>
               </motion.div>
 
-              <motion.div
-                initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                className="relative hidden md:block"
-              >
-                <div className="relative rounded-3xl overflow-hidden">
-                  <motion.img
-                    src="/mockup 3.png"
+              <div className="relative hidden md:block">
+                <div className="relative rounded-3xl">
+                  <img
+                    src="/Mockup 2.png"
                     alt="SILO Platform Mockup"
-                    className="w-full h-auto rounded-3xl shadow-2xl object-contain md:scale-125"
-                    initial={{ opacity: 0, scale: 0.925 }}
-                    animate={{ opacity: 1, scale: 1.45 }}
-                    transition={{ duration: 0.6, delay: 0.3 }}
+                    className="w-full rounded-3xl object-cover"
+                    style={{height: '560px'}}
                   />
                 </div>
-              </motion.div>
+              </div>
             </div>
           </div>
         </section>
@@ -276,8 +269,8 @@ const Features = () => {
                   viewport={{ once: true }}
                   className="bg-card border border-border rounded-2xl p-6 md:p-8 text-center md:text-left"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center mb-4 mx-auto md:mx-0">
-                    <item.icon className="w-6 h-6 text-primary" />
+                  <div className="w-12 h-12 rounded-xl bg-silo-blue flex items-center justify-center mb-4 mx-auto md:mx-0">
+                    <item.icon className="w-6 h-6 text-silo-green" />
                   </div>
                   <h3 className="font-semibold text-lg md:text-xl text-foreground mb-3">
                     {item.title}

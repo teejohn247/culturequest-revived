@@ -55,7 +55,7 @@ const testimonials: Testimonial[] = [
 ];
 
 const TestimonialCard = ({ testimonial }: { testimonial: Testimonial }) => (
-  <div className=" rounded-2xl p-6 shadow-sm border border-border min-w-[320px] max-w-[380px] flex-shrink-0">
+  <div className=" rounded-2xl p-6 shadow-sm border border-border min-w-[320px] max-w-[380px] flex-shrink-0" style={{backgroundColor: '#fff'}}>
     <p className="text-foreground text-sm leading-relaxed mb-6">
       "{testimonial.quote}"
     </p>
@@ -82,7 +82,7 @@ const TestimonialCard = ({ testimonial }: { testimonial: Testimonial }) => (
 
 const TestimonialsSection = () => {
   return (
-    <section className="py-20 lg:py-32 bg-[#FFF] relative overflow-hidden">
+    <section className=" relative overflow-hidden" style={{background: 'linear-gradient(to bottom, #FFFFFF 0%, #E0EAE6 100%)'}}>
       <div className="container mx-auto px-4">
         {/* Header */}
         <motion.div
@@ -93,7 +93,7 @@ const TestimonialsSection = () => {
           className="text-center mb-12"
         >
  <span className="inline-block px-4 py-1.5 rounded-full bg-foreground text-white text-xs font-semibold uppercase tracking-wider mb-6"
-          style={{backgroundColor: '#58d4d2', color: '#000000', padding: '10px 20px'}}>
+          style={{backgroundColor: '#58d4d2', color: '#000000', padding: '10px 20px', marginTop: '100px'}}>
             Testimonials
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground" style={{fontSize:'clamp(32px, 8vw, 60px)', lineHeight:'clamp(36px, 8vw, 60px)', fontWeight:'600'}}>

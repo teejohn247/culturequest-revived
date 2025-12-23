@@ -3,7 +3,7 @@ import { Smartphone, Download, PlayCircle } from "lucide-react";
 
 const MobileAppSection = () => {
   return (
-    <section className="py-24" style={{paddingBottom: '0px'}}>
+    <section className="" style={{paddingBottom: '0px', backgroundColor: '#E0EAE6'}}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12 items-center">
         {/* Left content */}
         <motion.div
@@ -46,14 +46,14 @@ const MobileAppSection = () => {
 
         {/* Right visual */}
         <motion.div
-          initial={{ opacity: 0, x: 20 }}
+          initial={{ opacity: 0, x: 200 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.1 }}
           className="flex justify-center"
         >
-          <div className="relative w-full max-w-md" style={{zIndex:999}}>
-            <video src="/Homepage/All Scenes_1.mp4" autoPlay loop muted className="w-full h-full object-cover rounded-3xl" style={{height: '500px', borderEndEndRadius:'0px', borderEndStartRadius:'0px'}} />
+          <div className="relative w-full max-w-md" >
+            <video src="/Homepage/All Scenes_1.mp4" autoPlay loop muted className="w-full h-full object-cover rounded-3xl" style={{height: '600px', width: '100%', borderEndEndRadius:'0px', borderEndStartRadius:'0px'}} />
             {/* <div className="absolute -top-8 -left-6 w-24 h-24 rounded-3xl bg-white shadow-md flex items-center justify-center text-xs text-muted-foreground border border-border">
               <span>
                 Scan to

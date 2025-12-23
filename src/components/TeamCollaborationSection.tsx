@@ -32,9 +32,9 @@ const TeamCollaborationSection = () => {
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-12">
           <h2 className="text-3xl md:text-5xl font-bold mb-4">
-            <span className="text-foreground" style={{color: '#1F3C6B'}}>Teams that work together,</span>
+            <span className="text-foreground" style={{color: '#1F3C6B', fontSize: '60px', lineHeight: '60px'}}>Teams that work together,</span>
             <br />
-            <span className="text-primary" style={{color: '#57D6D3'}}>win together</span>
+            <span className="text-primary" style={{color: '#57D6D3', fontSize: '60px', lineHeight: '60px'}}>win together</span>
           </h2>
           <p className="text-muted-foreground text-lg mb-6">
             Multiple teams come together with sales to close deals. With Silo ERP for Everyone, you can build unique, collaborative spaces for each team — all with some AI assistance.
@@ -88,7 +88,7 @@ const TeamCollaborationSection = () => {
             className="bg-white rounded-2xl shadow-xl overflow-hidden"
           >
             <video
-              src="/Homepage/vid3.mp4"
+              src="/Homepage/SILO VID 3 JD.mp4"
               autoPlay
               loop
               muted

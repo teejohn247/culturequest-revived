@@ -38,7 +38,7 @@ const SkillsSection = () => {
             transition={{ duration: 0.6 }}
           >
             {/* Headline */}
-            <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-foreground mb-12 leading-tight" style={{fontSize:'clamp(32px, 8vw, 60px)',  fontWeight:'600'}}>
+            <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-foreground mb-12 leading-tight" style={{fontSize:'clamp(32px, 8vw, 60px)', color: '#1F3C6B',   fontWeight:'600'}}>
             Access everything you need on one unified interface
               <span className="inline-block w-3 h-3 rounded-full bg-[#58d4d2] ml-2" />
             </h2>
@@ -107,29 +107,12 @@ const SkillsSection = () => {
             </p> */}
 
             {/* Statistics Banner */}
-            <div
-              className="rounded-lg p-6 flex items-center gap-6"
-              style={{
-                background: "linear-gradient(270deg,#0000,#6bf4c7 48%,#0000)",
-              }}
-            >
-              {/* Left Stat */}
-              <div className="flex-1 text-center border-r border-white/30 pr-6">
-                <div className="text-4xl md:text-5xl font-bold text-black mb-1">90%</div>
-                <div className="text-sm text-black/90 uppercase tracking-wider">PRODUCTIVITY INCREASE</div>
-              </div>
-
-              {/* Right Stat */}
-              <div className="flex-1 text-center pl-6">
-                <div className="text-4xl md:text-5xl font-bold text-black mb-1">9</div>
-                <div className="text-sm text-black/90 uppercase tracking-wider">INTEGRATED MODULES</div>
-              </div>
-            </div>
+       
 
             {/* Video Player */}
             <div className="relative rounded-2xl overflow-hidden shadow-xl bg-card border border-border">
               <video
-                src="https://softy-solutions.cmsmasters.studio//dark-demo//wp-content//uploads//sites//2//2025//09//71-home-2-video.mp4"
+                src="/Homepage/laptop silo.mp4"
                 className="w-full h-auto"
                 autoPlay
                 loop
@@ -139,6 +122,22 @@ const SkillsSection = () => {
               >
                 Your browser does not support the video tag.
               </video>
+            </div>
+            <div
+              className="rounded-lg p-6 flex items-center gap-6"
+              style={{
+                background: "linear-gradient(270deg,#0000,#6bf4c7 48%,#0000)",
+              }}
+            >
+              <div className="flex-1 text-center border-r border-white/30 pr-6">
+                <div className="text-4xl md:text-5xl font-bold text-black mb-1">90%</div>
+                <div className="text-sm text-black/90 uppercase tracking-wider">PRODUCTIVITY INCREASE</div>
+              </div>
+
+              <div className="flex-1 text-center pl-6">
+                <div className="text-4xl md:text-5xl font-bold text-black mb-1">9</div>
+                <div className="text-sm text-black/90 uppercase tracking-wider">INTEGRATED MODULES</div>
+              </div>
             </div>
           </motion.div>
         </div>
