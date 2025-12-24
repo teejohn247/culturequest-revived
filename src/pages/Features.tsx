@@ -171,7 +171,7 @@ const Features = () => {
 
       <main>
         {/* Hero Section - blends into next section */}
-        <section className="relative pt-16 lg:pt-24 pb-0 overflow-visible" style={{ background: 'linear-gradient(to bottom, #E8F6F4 0%, #E3F8F3 100%)' }}>
+        <section className="relative pt-16 lg:pt-24 pb-0 overflow-visible" style={{ background: 'linear-gradient(to bottom, #fff 0%, #E3F8F3 100%)' }}>
           <div className="container mx-auto px-4 relative z-10" style={{marginTop: 'clamp(40px, 10vw, 100px)'}}>
             <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-start">
               <motion.div
@@ -187,8 +187,8 @@ const Features = () => {
                   </span>
                 </h1>
                 <p className="text-base sm:text-lg sm:text-xl text-muted-foreground mb-8 leading-relaxed" style={{fontSize: '18px', lineHeight: '28px'}}>
-                  Empower your workforce with intelligent, automated solutions designed to foster efficiency, 
-                  collaboration, and data-driven decision-making across all business functions.
+                  Empower your workforce with intelligent,  automated <br/> solutions designed to foster efficiency,  
+                  collaboration, <br/> and data-driven decision-making across all business <br/> functions.
                 </p>
                 <div className="flex justify-center md:justify-start">
                   <Button className="bg-primary text-primary-foreground" style={{background: '#1F3C6B'}} onClick={() => openCalendly()}>
@@ -204,12 +204,12 @@ const Features = () => {
                 className="relative hidden md:block"
               >
                 {/* Large mockup image extending beyond section */}
-                <div className="relative" style={{ marginBottom: '-120px' }}>
+                <div className="relative">
                   <img
-                    src="/Mockup 2.png"
+                    src="/Mockup 2 (3).png"
                     alt="SILO Platform Mockup"
-                    className="w-full object-contain relative z-10"
-                    style={{ maxHeight: '700px', transform: 'scale(1.1)', transformOrigin: 'top right' }}
+                    className="w-full object-cover relative z-10"
+                    style={{  transform: 'scale(1.5)' , marginTop: '150px'}}
                   />
                 </div>
               </motion.div>

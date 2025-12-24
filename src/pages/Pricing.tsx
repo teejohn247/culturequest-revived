@@ -147,7 +147,7 @@ const Pricing = () => {
                   viewport={{ once: true }}
                   className={`relative rounded-3xl p-6 md:p-8 ${
                     plan.popular
-                      ? 'bg-silo-green text-silo-blue border-2 border-transparent'
+                      ? 'bg-silo-green text-black border-2 border-transparent'
                       : 'bg-card border border-border'
                   }`}
                 >
@@ -158,12 +158,12 @@ const Pricing = () => {
                   )}
                   <div className="mb-6">
                     <h3 className="text-xl md:text-2xl font-bold mb-2">{plan.name}</h3>
-                    <p className={`text-xs md:text-sm mb-4 ${plan.popular ? 'text-silo-blue' : 'text-muted-foreground'}`}>
+                    <p className={`text-xs md:text-sm mb-4 ${plan.popular ? 'text-black' : 'text-muted-foreground'}`}>
                       {plan.description}
                     </p>
                     <div className="flex items-baseline gap-1">
                       <span className="text-3xl md:text-4xl font-bold">{plan.price}</span>
-                      <span className={`text-xs md:text-sm ${plan.popular ? 'text-silo-blue' : 'text-muted-foreground'}`}>
+                      <span className={`text-xs md:text-sm ${plan.popular ? 'text-black' : 'text-muted-foreground'}`}>
                         {plan.period}
                       </span>
                     </div>
@@ -172,9 +172,9 @@ const Pricing = () => {
                     {plan.features.map((feature, i) => (
                       <li key={i} className="flex items-start gap-2">
                         <Check className={`w-5 h-5 mt-0.5 flex-shrink-0 ${
-                          plan.popular ? 'text-silo-blue' : 'text-silo-green'
+                          plan.popular ? 'text-black' : 'text-silo-green'
                         }`} />
-                        <span className={`text-sm ${plan.popular ? 'text-silo-blue' : 'text-foreground'}`}>
+                        <span className={`text-sm ${plan.popular ? 'text-black' : 'text-foreground'}`}>
                           {feature}
                         </span>
                       </li>
@@ -183,8 +183,8 @@ const Pricing = () => {
                   <Button
                     className={`w-full ${
                       plan.popular
-                        ? 'bg-background text-silo-green text-silo-blue hover:bg-background/90'
-                        : 'bg-silo-green text-silo-blue hover:bg-silo-green/90'
+                        ? 'bg-background text-silo-green text-black hover:bg-background/90'
+                        : 'bg-silo-green text-black hover:bg-silo-green/90'
                     }`}
                   >
                     {plan.buttonText}
