@@ -34,11 +34,11 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <Link to="/" onClick={handleLinkClick} className="flex items-center gap-2">
-            <svg width="140" height="32" viewBox="0 0 140 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M8 8L16 16L8 24" stroke="#FFC800" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
-              <path d="M16 8L24 16L16 24" stroke="#40E0D0" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
-              <text x="32" y="22" fontFamily="Poppins, sans-serif" fontSize="18" fontWeight="600" fill="currentColor">zoomsphere</text>
-            </svg>
+            <img 
+              src="/silo-logo.svg" 
+              alt="SILO Logo" 
+              className="h-8 w-auto md:h-10"
+            />
           </Link>
 
           {/* Desktop Navigation + CTA Buttons */}

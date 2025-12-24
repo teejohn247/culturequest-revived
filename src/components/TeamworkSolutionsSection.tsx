@@ -7,33 +7,37 @@ const solutions = [
     icon: Workflow,
     title: "Workflow Manager",
     description:
-      "Coordinate and assign tasks within your team or departments. The Workflow Manager is suitable for any project, such as content planning, blog posts, email newsletters, roadmaps, bug tracking, and client ideas.",
+      "Coordinate and assign tasks within your team or departments. The Workflow Manager is suitable for any project, such as content planning, roadmaps, bug tracking, and client ideas.",
     color: "#FF7B6B",
     link: "/features",
+    images: ["/Homepage/Hr Management.jpg"],
   },
   {
     icon: MessageCircle,
-    title: "Chat",
+    title: "Team Chat",
     description:
       "Get ready for lightning-fast approvals and outstanding teamwork with your own team and client chat. Whether it's group discussions or direct messages, stay connected at all times!",
     color: "#40E0D0",
     link: "/features",
+    images: ["/Homepage/CRM.jpg"],
   },
   {
     icon: FolderOpen,
-    title: "Files",
+    title: "Files & Storage",
     description:
-      "Effortlessly organize all your work materials in one centralized cloud storage system with Files! From content and brand guidelines to reports and presentations, Files keeps everything accessible in one place.",
+      "Effortlessly organize all your work materials in one centralized cloud storage system! From content and brand guidelines to reports and presentations, Files keeps everything accessible.",
     color: "#FFC800",
     link: "/features",
+    images: ["/Homepage/Accounting.jpg"],
   },
   {
     icon: FileText,
-    title: "Notes",
+    title: "Notes & Docs",
     description:
       "Explore endless possibilities: layouts, formats, images, and to-do lists. Collaborate effortlessly and share notes with your team, all without the need for any external tools.",
     color: "#9B59B6",
     link: "/features",
+    images: ["/Homepage/Ai Analytics.jpg"],
   },
 ];
 
@@ -61,8 +65,8 @@ const TeamworkSolutionsSection = () => {
             Explore our solutions
           </h2>
           <p className="text-muted-foreground text-lg">
-            With ZoomSphere, teamwork isn't just a concept. It's the key to a happier team, 
-            high-quality content, outstanding results, satisfied clients, and a thriving business.
+            With SILO, teamwork is not just a concept. It is the key to a happier team, 
+            high-quality work, outstanding results, satisfied clients, and a thriving business.
           </p>
         </motion.div>
 
@@ -90,6 +94,15 @@ const TeamworkSolutionsSection = () => {
                     {solution.description}
                   </p>
                 </div>
+              </div>
+
+              {/* Preview Image */}
+              <div className="rounded-2xl overflow-hidden mb-6">
+                <img
+                  src={solution.images[0]}
+                  alt={solution.title}
+                  className="w-full h-48 object-cover"
+                />
               </div>
 
               <Link

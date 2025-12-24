@@ -8,53 +8,68 @@ const tabs = ["Blog posts", "Tips & Tricks", "Video Tutorials"];
 const resources = {
   "Blog posts": [
     {
-      title: "Performance Reporting for Busy Teams: What Your Clients Actually Want to See",
+      title: "How to Streamline HR Operations with AI-Powered Analytics",
       category: "Blog",
       image: "/Homepage/Hr Management.jpg",
     },
     {
-      title: "Weekly Social Media Scoop: TikTok, IGTV, Threads & More Go All-In on Engagement",
+      title: "5 Ways to Boost Team Productivity with SILO ERP",
       category: "Blog",
       image: "/Homepage/CRM.jpg",
     },
     {
-      title: "How to Create Snackable Content for Social Media: Trends, Tactics, and Tools",
+      title: "The Future of Enterprise Resource Planning for SMBs",
       category: "Blog",
       image: "/Homepage/Accounting.jpg",
+    },
+    {
+      title: "How to Use AI for Workflow Management Across Global Teams",
+      category: "Blog",
+      image: "/Homepage/Ai Analytics.jpg",
     },
   ],
   "Tips & Tricks": [
     {
-      title: "Worst Brand Collabs in Marketing History | Pepsi, McDonald's & More",
+      title: "Quick Setup Guide for New SILO Users",
       category: "Tips & Tricks",
       image: "/Homepage/Ai Analytics.jpg",
     },
     {
-      title: "How to Handle a TikTok Crisis | Watch This Before You Get Cancelled",
+      title: "Maximizing Your Dashboard Efficiency in 5 Minutes",
       category: "Tips & Tricks",
       image: "/Homepage/Hr Management.jpg",
     },
     {
-      title: "5 Influencer Marketing Strategies That Work | Even If Your Brand Isn't Cool Enough",
+      title: "Advanced Workflow Automation Tips for Power Users",
       category: "Tips & Tricks",
       image: "/Homepage/CRM.jpg",
+    },
+    {
+      title: "How to Handle Data Migration Like a Pro",
+      category: "Tips & Tricks",
+      image: "/Homepage/Accounting.jpg",
     },
   ],
   "Video Tutorials": [
     {
-      title: "Save Hours with ZoomSphere's Overall Dashboard - Step by Step Guide",
+      title: "Getting Started with SILO ERP - Complete Walkthrough",
       category: "Video Tutorials",
       image: "/Homepage/Accounting.jpg",
     },
     {
-      title: "Complete Guide to Scheduler Features",
+      title: "Complete Guide to HR Module Setup",
       category: "Video Tutorials",
       image: "/Homepage/Ai Analytics.jpg",
     },
     {
-      title: "Mastering Team Collaboration in ZoomSphere",
+      title: "Mastering the Analytics Dashboard in 10 Minutes",
       category: "Video Tutorials",
       image: "/Homepage/Hr Management.jpg",
+    },
+    {
+      title: "Save Hours with SILO Overall Dashboard - Step by Step",
+      category: "Video Tutorials",
+      image: "/Homepage/CRM.jpg",
     },
   ],
 };
@@ -63,7 +78,7 @@ const ResourcesSection = () => {
   const [activeTab, setActiveTab] = useState("Blog posts");
 
   return (
-    <section className="py-24 overflow-hidden bg-background">
+    <section className="py-24 overflow-hidden bg-card">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
@@ -94,7 +109,7 @@ const ResourcesSection = () => {
               className={`px-6 py-3 rounded-full text-sm font-medium transition-all ${
                 activeTab === tab
                   ? "bg-foreground text-background"
-                  : "bg-muted text-foreground hover:bg-muted/80"
+                  : "bg-background text-foreground hover:bg-muted"
               }`}
             >
               {tab}
@@ -110,7 +125,7 @@ const ResourcesSection = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3 }}
-            className="grid md:grid-cols-3 gap-8"
+            className="grid md:grid-cols-2 lg:grid-cols-4 gap-6"
           >
             {resources[activeTab as keyof typeof resources].map((resource, index) => (
               <motion.div
@@ -132,7 +147,7 @@ const ResourcesSection = () => {
                 >
                   {resource.category}
                 </span>
-                <h3 className="font-semibold text-foreground text-lg group-hover:text-primary transition-colors leading-snug">
+                <h3 className="font-semibold text-foreground text-sm leading-snug group-hover:text-primary transition-colors">
                   {resource.title}
                 </h3>
               </motion.div>

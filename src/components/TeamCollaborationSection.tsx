@@ -17,7 +17,7 @@ const TeamCollaborationSection = () => {
             <div className="rounded-3xl overflow-hidden shadow-xl">
               <img
                 src="/Homepage/CRM.jpg"
-                alt="ZoomSphere Team Collaboration"
+                alt="SILO Team Collaboration"
                 className="w-full h-auto"
               />
             </div>
@@ -59,7 +59,7 @@ const TeamCollaborationSection = () => {
               Teamwork made easy
             </h2>
             <p className="text-muted-foreground text-lg">
-              Bring your team together and crush those goals! Discuss ideas, jot down notes, share comments, and assign tasks with ease.
+              Bring your team together and crush those goals! Discuss ideas, jot down notes, share comments, and assign tasks with ease across all departments.
             </p>
             <button className="inline-flex items-center gap-2 px-6 py-3 bg-foreground text-background rounded-full font-medium hover:bg-foreground/90 transition-colors">
               Discover all of our teamwork features
