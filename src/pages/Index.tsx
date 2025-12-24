@@ -13,6 +13,8 @@ import CTABannerSection from "@/components/CTABannerSection";
 import ResourcesSection from "@/components/ResourcesSection";
 import ShowreelSection from "@/components/ShowreelSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
+import CaseStudiesSection from "@/components/CaseStudiesSection";
+import MobileAppSection from "@/components/MobileAppSection";
 
 const Index = () => {
   useEffect(() => {
@@ -32,9 +34,11 @@ const Index = () => {
         <FeatureLinksSection />
         <TeamworkSolutionsSection />
         <ShowreelSection />
+        <CaseStudiesSection />
         <TestimonialsSection />
         <CTABannerSection />
         <ResourcesSection />
+        <MobileAppSection />
       </main>
       <Footer />
     </div>

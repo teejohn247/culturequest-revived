@@ -17,7 +17,7 @@ const WorkspacesSection = () => {
             <div className="rounded-3xl overflow-hidden shadow-xl">
               <img
                 src="/Mockup 2 (3).png"
-                alt="ZoomSphere Workspaces Interface"
+                alt="SILO Workspaces Interface"
                 className="w-full h-auto"
               />
             </div>
@@ -39,10 +39,10 @@ const WorkspacesSection = () => {
             <h2
               className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-tight"
             >
-              Get your clients or brands organized in Workspaces!
+              Get your departments organized in Workspaces!
             </h2>
             <p className="text-muted-foreground text-lg">
-              With just a click, you've got everything you need in one place. Piece of cake!
+              With just a click, you've got everything you need in one place. Organize HR, Sales, Finance, and Operations in dedicated workspaces. Piece of cake!
             </p>
             <button className="inline-flex items-center gap-2 px-6 py-3 bg-foreground text-background rounded-full font-medium hover:bg-foreground/90 transition-colors">
               Try it now

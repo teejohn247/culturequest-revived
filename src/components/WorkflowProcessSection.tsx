@@ -92,10 +92,10 @@ const WorkflowProcessSection = () => {
               Smooth Workflow
             </h2>
             <p className="text-muted-foreground text-lg">
-              Start your post with an idea, polish it up, and schedule or publish it directly from the Scheduler App. Use different statuses to update the post's progress!
+              Start your task with an idea, polish it up, and execute it directly from the dashboard. Use different statuses to track progress and keep everyone aligned throughout the process!
             </p>
             <button className="inline-flex items-center gap-2 px-6 py-3 bg-foreground text-background rounded-full font-medium hover:bg-foreground/90 transition-colors">
-              Dive into the Scheduler
+              Dive into Workflows
               <ArrowRight className="w-4 h-4" />
             </button>
           </motion.div>

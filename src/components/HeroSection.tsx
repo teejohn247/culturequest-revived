@@ -95,7 +95,7 @@ const FloatingShape = ({
 const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 bg-background">
-      {/* Floating decorative shapes with characters - Zoomsphere style */}
+      {/* Floating decorative shapes with characters */}
       <FloatingShape 
         color="#FF7B6B" 
         shape="circle" 
@@ -130,7 +130,7 @@ const HeroSection = () => {
       />
 
       <div className="relative z-10 max-w-4xl mx-auto px-4 text-center" style={{marginTop: 'clamp(40px, 8vw, 80px)'}}>
-        {/* Main heading with yellow highlight box like Zoomsphere */}
+        {/* Main heading with yellow highlight box */}
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -141,7 +141,7 @@ const HeroSection = () => {
             className="block text-foreground"
             style={{ fontSize: 'clamp(32px, 7vw, 64px)', lineHeight: '1.15' }}
           >
-            The Social Media Scheduler
+            The All-In-One ERP
           </span>
           <span 
             className="block mt-2"
@@ -165,7 +165,7 @@ const HeroSection = () => {
           className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 px-4"
           style={{ fontWeight: '400' }}
         >
-          Easily plan, schedule, analyze, and work together – all on one easy-to-use platform.
+          Easily plan, manage, analyze, and work together – all on one easy-to-use platform designed for small & medium businesses.
         </motion.p>
 
         {/* CTA Button */}
@@ -209,7 +209,7 @@ const HeroSection = () => {
             <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-border/50 bg-card">
               <img 
                 src="/Mockup 2 (3).png" 
-                alt="ZoomSphere Scheduler Interface" 
+                alt="SILO Dashboard Interface" 
                 className="w-full h-auto"
               />
             </div>
@@ -236,11 +236,11 @@ const HeroSection = () => {
               transition={{ duration: 0.5, delay: 1.1 }}
               className="absolute -right-4 top-1/3 bg-card rounded-xl p-3 shadow-lg border border-border hidden xl:block"
             >
-              <div className="text-xs font-medium text-foreground mb-1">Instagram feed</div>
+              <div className="text-xs font-medium text-foreground mb-1">Analytics Dashboard</div>
               <div className="flex gap-1">
-                <div className="w-8 h-8 rounded bg-pink-100"></div>
+                <div className="w-8 h-8 rounded bg-cyan-100"></div>
                 <div className="w-8 h-8 rounded bg-purple-100"></div>
-                <div className="w-8 h-8 rounded bg-blue-100"></div>
+                <div className="w-8 h-8 rounded bg-yellow-100"></div>
               </div>
             </motion.div>
           </div>

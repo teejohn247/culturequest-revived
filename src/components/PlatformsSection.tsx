@@ -2,12 +2,12 @@ import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 
 const platforms = [
-  { name: "Facebook", icon: "📘", color: "#1877F2" },
-  { name: "Instagram", icon: "📷", color: "#E4405F" },
-  { name: "TikTok", icon: "🎵", color: "#000000" },
-  { name: "LinkedIn", icon: "💼", color: "#0A66C2" },
-  { name: "X", icon: "𝕏", color: "#000000" },
-  { name: "YouTube", icon: "▶️", color: "#FF0000" },
+  { name: "HR Management", icon: "👥", color: "#FF7B6B" },
+  { name: "CRM", icon: "📊", color: "#40E0D0" },
+  { name: "Accounting", icon: "💰", color: "#FFC800" },
+  { name: "Inventory", icon: "📦", color: "#9B59B6" },
+  { name: "Projects", icon: "📋", color: "#3B82F6" },
+  { name: "Analytics", icon: "📈", color: "#10B981" },
 ];
 
 const PlatformsSection = () => {
@@ -27,7 +27,7 @@ const PlatformsSection = () => {
               className="inline-block px-4 py-2 rounded-full text-sm font-semibold"
               style={{ backgroundColor: "#40E0D0", color: "#000" }}
             >
-              #Platforms&Formats
+              #Modules&Integrations
             </span>
             <h2
               className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-tight"
@@ -35,10 +35,10 @@ const PlatformsSection = () => {
               Works with all popular platforms and formats
             </h2>
             <p className="text-muted-foreground text-lg">
-              Easily juggle your pages, profiles, and accounts across various platforms, like Facebook, Instagram, TikTok, LinkedIn, X and YouTube. With ZoomSphere, you can schedule and publish different content types, from short videos to stories.
+              Easily manage your departments across various modules, from HR and CRM to Accounting and Inventory. With SILO, you can handle different business operations seamlessly from one unified platform.
             </p>
             <button className="inline-flex items-center gap-2 px-6 py-3 bg-foreground text-background rounded-full font-medium hover:bg-foreground/90 transition-colors">
-              Learn more about short video formats
+              Learn more about modules
               <ArrowRight className="w-4 h-4" />
             </button>
           </motion.div>

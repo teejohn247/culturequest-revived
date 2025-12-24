@@ -35,10 +35,11 @@ const CTABannerSection = () => {
           transition={{ duration: 0.5 }}
           className="mb-8"
         >
-          <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg" className="mx-auto">
-            <path d="M15 15L30 30L15 45" stroke="#FFC800" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round"/>
-            <path d="M30 15L45 30L30 45" stroke="#40E0D0" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round"/>
-          </svg>
+          <img 
+            src="/Silo-White-logo.png" 
+            alt="SILO Logo" 
+            className="h-12 mx-auto"
+          />
         </motion.div>
 
         {/* Badge */}
@@ -49,7 +50,7 @@ const CTABannerSection = () => {
           transition={{ duration: 0.5, delay: 0.1 }}
           className="inline-block px-4 py-2 rounded-full text-sm font-semibold mb-6 bg-primary text-foreground"
         >
-          #Collaborative
+          #AllInOne
         </motion.span>
 
         {/* Heading */}
@@ -60,7 +61,7 @@ const CTABannerSection = () => {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="text-3xl md:text-4xl lg:text-5xl font-bold text-background mb-8"
         >
-          Social Media Management
+          Enterprise Resource Management
         </motion.h2>
 
         {/* CTA Button */}

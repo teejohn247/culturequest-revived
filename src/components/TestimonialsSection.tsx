@@ -10,31 +10,31 @@ interface Testimonial {
 
 const testimonials: Testimonial[] = [
   {
-    quote: "ZoomSphere is a great tool that works well in our day-to-day teamwork and with our clients. The intuitive interface, efficient support, and the possibilities provided have definitely improved our agency work and workflow with clients.",
-    author: "Filip Kulisz",
-    role: "Social Media Business Owner",
-    company: "Whites Agency",
+    quote: "SILO is a great tool that works well in our day-to-day teamwork and with our clients. The intuitive interface, efficient support, and the possibilities provided have definitely improved our agency work and workflow.",
+    author: "William Ashford",
+    role: "Product Manager",
+    company: "TechStart Inc",
     avatar: "/testi-1.png",
   },
   {
-    quote: "Since working with ZoomSphere, we have found a partner who is flexible enough to personalize their services to our unique needs. I can attest that they play a significant role in the success of our social department.",
-    author: "Gábor Kéri",
-    role: "Digital Managing Partner",
-    company: "Positive Adamsky",
+    quote: "Since working with SILO, we have found a partner who is flexible enough to personalize their services to our unique needs. They play a significant role in the success of our operations department.",
+    author: "Scarlett Palmer",
+    role: "Operations Director",
+    company: "ManuCorp",
     avatar: "/testi-2.png",
   },
   {
-    quote: "For many years, ZoomSphere has been our greatest asset in managing the content of our 50+ social profiles for our clients. Their support team is world-class!",
-    author: "Peter Lukacsi",
-    role: "Marketing Strategy Advisor",
-    company: "Kraftwork",
+    quote: "For many years, SILO has been our greatest asset in managing business operations. From HR to Finance, everything is in one place. Their support team is world-class!",
+    author: "Ruby Hayes",
+    role: "IT Director",
+    company: "Global Services",
     avatar: "/testi-3.png",
   },
   {
-    quote: "ZoomSphere is essential for managing our social media. I love the clarity, intuitive interface, and the ability to schedule one post across platforms, customize it, and use the AI copywriter. It's also great for team collaboration.",
-    author: "Andrea Janovcová",
-    role: "Senior Marketing Manager",
-    company: "CineStar",
+    quote: "SILO is essential for managing our business. I love the clarity, intuitive interface, and the ability to manage multiple departments from one dashboard. The AI analytics are a game changer.",
+    author: "Leila Smith",
+    role: "Senior Manager",
+    company: "RetailPro",
     avatar: "/testi-4.png",
   },
 ];
@@ -42,7 +42,7 @@ const testimonials: Testimonial[] = [
 const TestimonialCard = ({ testimonial }: { testimonial: Testimonial }) => (
   <div className="bg-card rounded-2xl p-6 shadow-sm border border-border min-w-[340px] max-w-[400px] flex-shrink-0">
     <p className="text-foreground text-sm leading-relaxed mb-6">
-      "{testimonial.quote}"
+      &ldquo;{testimonial.quote}&rdquo;
     </p>
     <div className="flex items-center gap-3">
       <div className="w-12 h-12 rounded-full bg-muted flex items-center justify-center overflow-hidden">
@@ -64,7 +64,7 @@ const TestimonialCard = ({ testimonial }: { testimonial: Testimonial }) => (
 
 const TestimonialsSection = () => {
   return (
-    <section className="py-24 relative overflow-hidden bg-card">
+    <section className="py-24 relative overflow-hidden bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div

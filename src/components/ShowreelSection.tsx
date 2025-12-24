@@ -4,7 +4,7 @@ import { Play } from "lucide-react";
 
 const ShowreelSection = () => {
   return (
-    <section className="py-24 relative overflow-hidden bg-background">
+    <section className="py-24 relative overflow-hidden" style={{ backgroundColor: "#E8D5FF" }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Content */}
@@ -23,11 +23,12 @@ const ShowreelSection = () => {
             <h2
               className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-tight"
             >
-              Want to see ZoomSphere in action?
+              Want to see SILO in action?
             </h2>
             <p className="text-muted-foreground text-lg">
-              Try ZoomSphere on your own, or pick a date, and we'll walk you through 
-              our tool step by step!
+              Try SILO on your own, or pick a date, and we will walk you through 
+              our platform step by step! See how easy it is to transform your 
+              business operations.
             </p>
             <div className="flex flex-wrap gap-4">
               <Button
@@ -63,6 +64,22 @@ const ShowreelSection = () => {
                 className="w-full h-auto"
               />
             </div>
+            
+            {/* Badge overlay */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8, rotate: -5 }}
+              whileInView={{ opacity: 1, scale: 1, rotate: 5 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className="absolute -top-4 left-1/4 z-20 px-5 py-2.5 rounded-full text-sm font-semibold shadow-lg"
+              style={{ 
+                backgroundColor: '#4ADE80',
+                color: '#1a1a1a',
+                border: '2px solid #1a1a1a',
+              }}
+            >
+              Meet SILO ERP
+            </motion.div>
           </motion.div>
         </div>
       </div>

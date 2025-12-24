@@ -1,9 +1,8 @@
 import { motion } from "framer-motion";
-import { Smartphone, Download, PlayCircle } from "lucide-react";
 
 const MobileAppSection = () => {
   return (
-    <section className="" style={{paddingBottom: '0px', backgroundColor: '#E0EAE6'}}>
+    <section className="py-24 overflow-hidden" style={{ backgroundColor: "#FFF5E6" }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12 items-center">
         {/* Left content */}
         <motion.div
@@ -14,8 +13,7 @@ const MobileAppSection = () => {
           className="space-y-6 max-w-xl"
         >
           <span
-            className="inline-block px-4 py-1.5 rounded-full text-xs font-semibold tracking-wide text-[#03312F]"
-            style={{ backgroundColor: "#58d4d2" }}
+            className="inline-block px-4 py-2 rounded-full text-sm font-semibold bg-primary text-foreground"
           >
             #MobileApp
           </span>
@@ -31,51 +29,34 @@ const MobileAppSection = () => {
           </p>
 
           <div className="flex flex-wrap items-center gap-4">
-          <img style={{width: '50%', height: 'auto'}} src="/Homepage/google-play-and-apple-app-store-logos-22.png" alt="App Store" className="w-4 h-4" />
-{/* 
-            <button className="inline-flex items-center gap-3 px-5 py-3 rounded-full bg-black text-white text-sm font-medium">
-              <Download className="w-4 h-4" />
-              <span>Get it on App Store</span>
-            </button>
-            <button className="inline-flex items-center gap-3 px-5 py-3 rounded-full bg-white text-foreground border border-border text-sm font-medium">
-              <PlayCircle className="w-4 h-4" />
-              <span>Get it on Google Play</span>
-            </button> */}
+            <img 
+              style={{width: '50%', height: 'auto', maxWidth: '250px'}} 
+              src="/Homepage/google-play-and-apple-app-store-logos-22.png" 
+              alt="Download on App Store and Google Play" 
+            />
           </div>
         </motion.div>
 
         {/* Right visual */}
         <motion.div
-          initial={{ opacity: 0, x: 200 }}
+          initial={{ opacity: 0, x: 30 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.1 }}
           className="flex justify-center"
         >
-          <div className="relative w-full max-w-md" >
-            <video src="/Homepage/All Scenes_1.mp4" autoPlay loop muted className="w-full h-full object-cover rounded-3xl" style={{height: '600px', width: '100%', borderEndEndRadius:'0px', borderEndStartRadius:'0px'}} />
-            {/* <div className="absolute -top-8 -left-6 w-24 h-24 rounded-3xl bg-white shadow-md flex items-center justify-center text-xs text-muted-foreground border border-border">
-              <span>
-                Scan to
-                <br /> download
-              </span>
+          <div className="relative w-full max-w-md">
+            <div className="rounded-3xl overflow-hidden shadow-xl">
+              <video 
+                src="/Homepage/All Scenes_1.mp4" 
+                autoPlay 
+                loop 
+                muted 
+                playsInline
+                className="w-full h-auto object-cover" 
+                style={{maxHeight: '500px'}} 
+              />
             </div>
-
-            <div className="rounded-[2.5rem] bg-white shadow-2xl border border-border p-5 relative overflow-hidden">
-              <div className="flex items-center justify-between mb-4">
-                <span className="text-xs font-medium text-muted-foreground">Overall Dashboard</span>
-                <Smartphone className="w-4 h-4 text-muted-foreground" />
-              </div>
-
-              <div className="space-y-4">
-                <div className="h-16 rounded-xl" style={{ backgroundColor: "#FDE68A" }} />
-                <div className="h-16 rounded-xl" style={{ backgroundColor: "#BFDBFE" }} />
-                <div className="grid grid-cols-2 gap-3">
-                  <div className="h-20 rounded-xl" style={{ backgroundColor: "#FDBA74" }} />
-                  <div className="h-20 rounded-xl" style={{ backgroundColor: "#A7F3D0" }} />
-                </div>
-              </div>
-            </div> */}
           </div>
         </motion.div>
       </div>
