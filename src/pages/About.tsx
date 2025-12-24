@@ -3,7 +3,6 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Mail, Linkedin } from "lucide-react";
-import ConsultingSection from "@/components/ConsultingSection";
 import LogoMarquee from "@/components/LogoMarquee";
 import FAQSection from "@/components/FAQSection";
 
@@ -11,64 +10,34 @@ const storySections = [
   {
     id: "story",
     title: "Our Story",
-    icon: (
-      <svg viewBox="0 0 100 100" className="w-24 h-24 md:w-32 md:h-32">
-        <circle cx="50" cy="35" r="20" fill="none" stroke="currentColor" strokeWidth="2"/>
-        <ellipse cx="50" cy="30" rx="12" ry="8" fill="none" stroke="currentColor" strokeWidth="2"/>
-        <circle cx="35" cy="50" r="4" fill="hsl(var(--primary))"/>
-        <path d="M30 60 L50 85 L70 60" fill="none" stroke="currentColor" strokeWidth="2"/>
-        <circle cx="50" cy="85" r="3" fill="currentColor"/>
-        <path d="M75 45 L85 35 M75 50 L90 50" stroke="currentColor" strokeWidth="2"/>
-      </svg>
-    ),
     content: [
       "Once upon a time, a digital enthusiast had this crazy idea: let's change the way businesses manage their operations! And so, SILO was born!",
       "As our crew grew, we kept the idea of a platform that's easy to use, effective, and full of useful features. Fast forward, and here we are, helping tons of businesses and agencies to crush it on operational efficiency."
     ],
-    bgColor: "bg-[#FFFFFF]",
+    bgColor: "#FFFFFF",
+    textColor: "#171717",
     image: "/story.png"
   },
   {
     id: "mission",
     title: "Mission",
-    icon: (
-      <svg viewBox="0 0 100 100" className="w-24 h-24 md:w-32 md:h-32">
-        <ellipse cx="50" cy="60" rx="35" ry="20" fill="none" stroke="currentColor" strokeWidth="2"/>
-        <ellipse cx="50" cy="60" rx="25" ry="14" fill="none" stroke="currentColor" strokeWidth="2"/>
-        <path d="M35 25 L35 45 M65 25 L65 45" stroke="currentColor" strokeWidth="3"/>
-        <circle cx="35" cy="20" r="8" fill="none" stroke="currentColor" strokeWidth="2"/>
-        <circle cx="65" cy="20" r="8" fill="none" stroke="currentColor" strokeWidth="2"/>
-        <rect x="42" y="50" width="16" height="20" rx="2" fill="none" stroke="hsl(var(--primary))" strokeWidth="2"/>
-      </svg>
-    ),
     content: [
       "We're all about simplifying your work life by providing you with the best solution for effective teamwork.",
       "With our platform, we transform scattered chaos into streamlined productivity, ensuring every team member stays connected, informed, and empowered to deliver their best work."
     ],
-    bgColor: "bg-[#1F3C6B]",
-    image: "/mission.png",
-    color: "text-white"
+    bgColor: "#171717",
+    textColor: "#FFFFFF",
+    image: "/mission.png"
   },
   {
     id: "vision",
     title: "Vision",
-    icon: (
-      <svg viewBox="0 0 100 100" className="w-24 h-24 md:w-32 md:h-32">
-        <circle cx="50" cy="40" r="25" fill="none" stroke="currentColor" strokeWidth="2"/>
-        <path d="M25 55 C25 75, 50 90, 50 90 C50 90, 75 75, 75 55" fill="none" stroke="currentColor" strokeWidth="2"/>
-        <circle cx="50" cy="40" r="10" fill="none" stroke="currentColor" strokeWidth="2"/>
-        <circle cx="50" cy="40" r="4" fill="hsl(var(--primary))"/>
-        <path d="M30 30 L20 20 M70 30 L80 20" stroke="currentColor" strokeWidth="2"/>
-        <ellipse cx="35" cy="70" rx="8" ry="5" fill="none" stroke="currentColor" strokeWidth="1.5"/>
-        <ellipse cx="65" cy="70" rx="8" ry="5" fill="none" stroke="currentColor" strokeWidth="1.5"/>
-      </svg>
-    ),
     content: [
       "At SILO, we believe that teamwork makes the dream work. Our mission is to help businesses and marketers elevate their operational presence with the help of our platform.",
       "We envision a world where every business has access to enterprise-grade tools, enabling them to compete effectively and achieve sustainable growth."
     ],
-    bgColor: "bg-[#57D6D3]",
-    color: "text-silo-blue",
+    bgColor: "#FFD700",
+    textColor: "#171717",
     image: "/vision.jpg"
   }
 ];
@@ -99,7 +68,6 @@ const StoryCard = ({ section, index }: { section: typeof storySections[0]; index
     offset: ["start end", "end start"]
   });
 
-  // Each card slides up from below and covers the previous one
   const y = useTransform(
     scrollYProgress,
     [0, 0.3, 0.5, 0.7, 1],
@@ -118,17 +86,24 @@ const StoryCard = ({ section, index }: { section: typeof storySections[0]; index
       style={{ y, opacity }}
       className="sticky top-8"
     >
-      <div className={`relative ${section.bgColor} rounded-3xl p-8 md:p-12 overflow-hidden flex flex-col md:flex-row items-center gap-8`}>
+      <div 
+        className="relative rounded-3xl p-8 md:p-12 overflow-hidden flex flex-col md:flex-row items-center gap-8 border-2 border-foreground/10"
+        style={{ backgroundColor: section.bgColor, color: section.textColor }}
+      >
         {/* Content */}
         <div className="flex-1 space-y-4 text-center md:text-left">
-          <div className={`flex justify-center md:justify-start ${section.color ? section.color : 'text-foreground/80'}`}>
-            {section.icon}
-          </div>
-          <h3 className={`text-2xl md:text-4xl font-bold ${section.color ? section.color : 'text-foreground/80'}`} style={{ lineHeight: '1.2' }}>
+          <h3 
+            className="text-2xl md:text-4xl font-bold"
+            style={{ lineHeight: '1.2', color: section.textColor }}
+          >
             {section.title}
           </h3>
           {section.content.map((paragraph, i) => (
-            <p key={i} className={`text-base sm:text-lg max-w-md ${section.color ? section.color : 'text-foreground/80'}`}>
+            <p 
+              key={i} 
+              className="text-base sm:text-lg max-w-md"
+              style={{ color: section.textColor, opacity: 0.85 }}
+            >
               {paragraph}
             </p>
           ))}
@@ -167,8 +142,8 @@ const About = () => {
       <Navbar />
       <main>
         {/* Hero Section */}
-        <section className="relative pt-32 pb-20 bg-gradient-to-b from-primary/30 to-background overflow-hidden"
-        style={{background: 'linear-gradient(270deg, rgba(0, 0, 0, 0), rgb(107, 244, 199) 48%, rgba(0, 0, 0, 0))'}}
+        <section 
+          className="relative pt-32 pb-20 overflow-hidden bg-background"
         >
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
@@ -177,10 +152,16 @@ const About = () => {
               transition={{ duration: 0.6 }}
               className="text-center mb-12"
             >
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6" style={{ lineHeight: '1.2' }}>
-                Streamline your business<br />operations with SILO
+              <h1 
+                className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6"
+                style={{ lineHeight: '1.2' }}
+              >
+                Streamline your business<br />operations with{" "}
+                <span className="inline-block px-3 py-1 rounded-lg bg-primary border-2 border-foreground">
+                  SILO
+                </span>
               </h1>
-              <p className="text-muted-foreground text-lg max-w-2xl mx-auto" style={{color: '#000'}}>
+              <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
                 We specialize in building scalable, user-centric SaaS solutions that help startups and businesses transform ideas
               </p>
             </motion.div>
@@ -192,7 +173,7 @@ const About = () => {
               transition={{ duration: 0.7, delay: 0.2 }}
               className="relative max-w-4xl mx-auto"
             >
-              <div className="relative rounded-2xl overflow-hidden">
+              <div className="relative rounded-2xl overflow-hidden border-2 border-foreground/10">
                 <img
                   src="/image.png"
                   alt="Team collaboration"
@@ -200,7 +181,7 @@ const About = () => {
                 />
                 
                 {/* Quote Card Overlay */}
-                <div className="absolute bottom-8 right-4 md:right-8 bg-foreground text-background p-6 rounded-2xl max-w-sm shadow-xl">
+                <div className="absolute bottom-8 right-4 md:right-8 bg-foreground text-background p-6 rounded-2xl max-w-sm shadow-xl border-2 border-foreground">
                   <p className="text-sm md:text-base mb-4 leading-relaxed">
                     "We don't build products, we build partnerships. Our mission is to empower businesses with solutions that are agile and ambitious as they are."
                   </p>
@@ -225,7 +206,7 @@ const About = () => {
 
         {/* Stacking Story Cards Section */}
         <LogoMarquee />
-        <section className=" bg-background" style={{paddingTop: '100px'}}>
+        <section className="bg-background" style={{ paddingTop: '100px' }}>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             {/* Section header */}
             <motion.div
@@ -235,16 +216,24 @@ const About = () => {
               viewport={{ once: true }}
               className="text-center"
             >
-               <span className="inline-block px-4 py-1.5 rounded-full bg-foreground text-white text-xs font-semibold uppercase tracking-wider mb-6"
-          style={{backgroundColor: '#58d4d2', color: '#000000', padding: '10px 20px'}}>About Silo</span>
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground" style={{fontSize:'clamp(32px, 8vw, 58px)', lineHeight:'clamp(36px, 8vw, 63px)', fontWeight:'600', color:'#1F3C6B'}}>
+              <span 
+                className="inline-block px-4 py-2 rounded-full bg-primary text-foreground text-sm font-semibold uppercase tracking-wider mb-6 border-2 border-foreground"
+              >
+                About Silo
+              </span>
+              <h2 
+                className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground"
+                style={{ fontSize: 'clamp(32px, 8vw, 58px)', lineHeight: '1.1' }}
+              >
                 Learn more about<br />
-                <span className="text-primary" style={{color: '#57D6D3'}}>who we are</span>
+                <span className="inline-block px-3 py-1 rounded-lg bg-primary border-2 border-foreground mt-2">
+                  who we are
+                </span>
               </h2>
             </motion.div>
 
             {/* Stacking cards */}
-            <div className="">
+            <div className="mt-12">
               {storySections.map((section, index) => (
                 <StoryCard key={section.id} section={section} index={index} />
               ))}
@@ -252,8 +241,8 @@ const About = () => {
           </div>
         </section>
 
-            {/* Vision Statement */}
-            <section className="py-32  text-white" style={{backgroundColor: '#1F3C6B', marginTop: '100px'}}>
+        {/* Vision Statement */}
+        <section className="py-32 text-background" style={{ backgroundColor: '#171717', marginTop: '100px' }}>
           <div className="max-w-4xl mx-auto px-4 text-center">
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
@@ -261,75 +250,30 @@ const About = () => {
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <div className="w-16 h-16 mx-auto mb-8 rounded-lg border-2 flex items-center justify-center" style={{borderColor: '#57D6D3'}}>
-                <svg viewBox="0 0 24 24" className="w-8 h-8 text-primary" fill="none" stroke="#57D6D3" strokeWidth="2">
+              <div 
+                className="w-16 h-16 mx-auto mb-8 rounded-lg border-2 flex items-center justify-center"
+                style={{ borderColor: '#FFD700', backgroundColor: '#FFD700' }}
+              >
+                <svg viewBox="0 0 24 24" className="w-8 h-8 text-foreground" fill="none" stroke="#171717" strokeWidth="2">
                   <rect x="3" y="3" width="18" height="18" rx="2"/>
                   <path d="M9 12l2 2 4-4"/>
                 </svg>
               </div>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6">
-                We are <span className="" style={{color: '#57D6D3'}}>SILO</span>, and the vision is to make business operations work for everyone.
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 text-white">
+                We are{" "}
+                <span 
+                  className="inline-block px-3 py-1 rounded-lg border-2 border-white"
+                  style={{ backgroundColor: '#FFD700', color: '#171717' }}
+                >
+                  SILO
+                </span>
+                , and the vision is to make business operations work for everyone.
               </h2>
             </motion.div>
           </div>
         </section>
 
-        {/* Team Section */}
-        {/* <section className="py-24 bg-background">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              viewport={{ once: true }}
-              className="text-center mb-16"
-            >
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4 style={{color: '#57D6D3'}}">
-                We are <span className="inline-block px-4 py-2 bg-primary text-primary-foreground rounded-lg"  style={{backgroundColor: '#57D6D3'}}>#SILO</span>
-              </h2>
-              <p className="text-muted-foreground max-w-2xl mx-auto text-base md:text-lg">
-                The team is currently composed of passionate people from various backgrounds.
-              </p>
-            </motion.div>
-
-            <div className="grid md:grid-cols-3 gap-8">
-              {teamMembers.map((member, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className="text-center"
-                >
-                  <div className="aspect-[3/4] rounded-2xl overflow-hidden mb-6 grayscale hover:grayscale-0 transition-all duration-500">
-                    <img
-                      src={member.image}
-                      alt={member.name}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <h3 className="text-xl font-bold text-foreground mb-1">{member.name}</h3>
-                  <p className="text-muted-foreground mb-4">{member.role}</p>
-                  <div className="flex items-center justify-center gap-3">
-                    <button className="w-10 h-10 rounded-full border border-border flex items-center justify-center hover:bg-secondary transition-colors">
-                      <Mail className="w-4 h-4" />
-                    </button>
-                    <button className="w-10 h-10 rounded-full border border-border flex items-center justify-center hover:bg-secondary transition-colors">
-                      <Linkedin className="w-4 h-4" />
-                    </button>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section> */}
-
         <FAQSection />
-
-    
-
-        {/* <ConsultingSection /> */}
       </main>
       <Footer />
     </div>

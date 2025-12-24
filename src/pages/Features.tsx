@@ -5,7 +5,6 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Users, Briefcase, Brain, BarChart3, Globe, Target, Star, Puzzle } from "lucide-react";
 import { openCalendly } from "@/lib/calendly";
-import ConsultingSection from "@/components/ConsultingSection";
 import BentoFeaturesSection from "@/components/BentoFeaturesSection";
 
 const mainFeatures = [
@@ -20,7 +19,8 @@ const mainFeatures = [
       "Payroll processing automation",
       "Employee data management"
     ],
-    image: "/Homepage/Hr Management.jpg"
+    image: "/Homepage/Hr Management.jpg",
+    color: "#FF7B6B"
   },
   {
     id: "crm",
@@ -33,7 +33,8 @@ const mainFeatures = [
       "Marketing campaign automation",
       "Customer interaction logging"
     ],
-    image: "/Homepage/CRM.jpg"
+    image: "/Homepage/CRM.jpg",
+    color: "#40E0D0"
   },
   {
     id: "ai",
@@ -46,7 +47,8 @@ const mainFeatures = [
       "Automated reporting",
       "Intelligent recommendations"
     ],
-    image: "/Homepage/Ai Analytics2.jpg"
+    image: "/Homepage/Ai Analytics2.jpg",
+    color: "#FFD700"
   },
   {
     id: "accounting",
@@ -59,7 +61,8 @@ const mainFeatures = [
       "Expense management",
       "Financial statement generation"
     ],
-    image: "/Homepage/Accounting.jpg"
+    image: "/Homepage/Accounting.jpg",
+    color: "#9B59B6"
   },
 ];
 
@@ -107,18 +110,21 @@ const FeatureCard = ({ feature, index }: { feature: typeof mainFeatures[0]; inde
     [0, 1, 1, 1, 0]
   );
 
-  const bgColors = ['bg-primary/10', 'bg-[#BFDBFE]', 'bg-[#D1FAE5]', 'bg-[#eaeaea]'];
-
   return (
     <motion.div
       ref={cardRef}
       style={{ y, opacity }}
       className="sticky top-10"
     >
-      <div className="relative rounded-3xl p-8 md:p-12 overflow-hidden flex flex-col md:flex-row items-center gap-8" style={{backgroundColor: '#fff'}}>
+      <div 
+        className="relative rounded-3xl p-8 md:p-12 overflow-hidden flex flex-col md:flex-row items-center gap-8 bg-card border-2 border-foreground/10"
+      >
         {/* Content */}
         <div className="flex-1 space-y-4">
-          <span className={`inline-flex items-center gap-2 text-sm font-medium px-4 py-1.5 rounded-full ${bgColors[index % bgColors.length]}`}>
+          <span 
+            className="inline-flex items-center gap-2 text-sm font-semibold px-4 py-1.5 rounded-full border-2 border-foreground"
+            style={{ backgroundColor: feature.color }}
+          >
             <Icon className="w-4 h-4" />
             {feature.title}
           </span>
@@ -131,7 +137,10 @@ const FeatureCard = ({ feature, index }: { feature: typeof mainFeatures[0]; inde
           <ul className="space-y-2 pt-2">
             {feature.bullets.map((bullet, i) => (
               <li key={i} className="flex items-center gap-3">
-                <span className="w-2 h-2 rounded-full bg-primary flex-shrink-0" />
+                <span 
+                  className="w-2 h-2 rounded-full flex-shrink-0" 
+                  style={{ backgroundColor: feature.color }}
+                />
                 <span className="text-foreground text-sm md:text-base">{bullet}</span>
               </li>
             ))}
@@ -147,11 +156,14 @@ const FeatureCard = ({ feature, index }: { feature: typeof mainFeatures[0]; inde
             viewport={{ once: true }}
             className="w-full max-w-lg relative"
           >
-            <div className={`absolute -inset-4 rounded-3xl ${bgColors[index % bgColors.length]}`} />
+            <div 
+              className="absolute -inset-4 rounded-3xl"
+              style={{ backgroundColor: `${feature.color}30` }}
+            />
             <img 
               src={feature.image} 
               alt={feature.title}
-              className="w-full h-auto object-cover relative z-10 rounded-2xl"
+              className="w-full h-auto object-cover relative z-10 rounded-2xl border-2 border-foreground/10"
             />
           </motion.div>
         </div>
@@ -170,8 +182,8 @@ const Features = () => {
       <Navbar />
 
       <main>
-        {/* Hero Section - blends into next section */}
-        <section className="relative pt-16 lg:pt-24 pb-0 overflow-visible" style={{ background: 'linear-gradient(to bottom, #fff 0%, #E3F8F3 100%)' }}>
+        {/* Hero Section */}
+        <section className="relative pt-16 lg:pt-24 pb-0 overflow-visible bg-background">
           <div className="container mx-auto px-4 relative z-10" style={{marginTop: 'clamp(40px, 10vw, 100px)'}}>
             <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-start">
               <motion.div
@@ -180,19 +192,27 @@ const Features = () => {
                 transition={{ duration: 0.6 }}
                 className="text-center md:text-left pt-8 lg:pt-16"
               >
-                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight" style={{fontSize:'clamp(32px, 8vw, 68px)', color: '#1F3C6B', lineHeight:'1.1', fontWeight:'600'}}>
+                <h1 
+                  className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight"
+                  style={{ fontSize: 'clamp(32px, 8vw, 68px)', lineHeight: '1.1' }}
+                >
                   Unite Teams Through the Power of{" "}
-                  <span style={{color: '#57D6D3'}}>
-                    Data Intelligence
+                  <span 
+                    className="inline-block px-3 py-1 rounded-lg bg-primary border-2 border-foreground"
+                    style={{ transform: 'rotate(-1deg)', display: 'inline-block' }}
+                  >
+                    #DataIntelligence
                   </span>
                 </h1>
-                <p className="text-base sm:text-lg sm:text-xl text-muted-foreground mb-8 leading-relaxed" style={{fontSize: '18px', lineHeight: '28px'}}>
-                  Empower your workforce with intelligent,  automated <br/> solutions designed to foster efficiency,  
-                  collaboration, <br/> and data-driven decision-making across all business <br/> functions.
+                <p 
+                  className="text-base sm:text-lg sm:text-xl text-muted-foreground mb-8 leading-relaxed"
+                  style={{ fontSize: '18px', lineHeight: '28px' }}
+                >
+                  Empower your workforce with intelligent, automated solutions designed to foster efficiency, collaboration, and data-driven decision-making across all business functions.
                 </p>
                 <div className="flex justify-center md:justify-start">
-                  <Button className="bg-primary text-primary-foreground" style={{background: '#1F3C6B'}} onClick={() => openCalendly()}>
-                    <span style={{fontSize:'clamp(14px, 3vw, 18px)', display:'flex', alignItems:'center', justifyContent:'center', fontWeight:'600'}}>Book a Demo</span>
+                  <Button variant="default" size="lg" onClick={() => openCalendly()}>
+                    Book a Demo
                   </Button>
                 </div>
               </motion.div>
@@ -203,13 +223,12 @@ const Features = () => {
                 transition={{ duration: 0.8, delay: 0.2 }}
                 className="relative hidden md:block"
               >
-                {/* Large mockup image extending beyond section */}
                 <div className="relative">
                   <img
                     src="/Mockup 2 (3).png"
                     alt="SILO Platform Mockup"
                     className="w-full object-cover relative z-10"
-                    style={{  transform: 'scale(1.5)' , marginTop: '150px'}}
+                    style={{ transform: 'scale(1.3)', marginTop: '100px' }}
                   />
                 </div>
               </motion.div>
@@ -217,12 +236,10 @@ const Features = () => {
           </div>
         </section>
         
-        {/* Next section with matching background for seamless blend */}
         <BentoFeaturesSection />
 
-
         {/* Feature Showcase - Scroll Stacking Cards */}
-        <section className="py-16 md:py-24 bg-primary/10" style={{background: '#E3F8F3'}}>
+        <section className="py-16 md:py-24 bg-secondary">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -231,16 +248,21 @@ const Features = () => {
               viewport={{ once: true }}
               className="text-center mb-12"
             >
-              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4" style={{fontSize:'clamp(28px, 6vw, 48px)', fontWeight:'600'}}>
-                Everything You Need to Scale
+              <h2 
+                className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4"
+                style={{ fontSize: 'clamp(28px, 6vw, 48px)' }}
+              >
+                Everything You Need to{" "}
+                <span className="inline-block px-3 py-1 rounded-lg bg-primary border-2 border-foreground">
+                  Scale
+                </span>
               </h2>
               <p className="text-muted-foreground max-w-2xl mx-auto text-base md:text-lg">
                 Powerful modules designed to work together seamlessly
               </p>
             </motion.div>
 
-            {/* Stacking feature cards */}
-            <div className="" style={{marginTop: '0px'}}>
+            <div className="mt-8">
               {mainFeatures.map((feature, index) => (
                 <FeatureCard key={feature.id} feature={feature} index={index} />
               ))}
@@ -249,7 +271,7 @@ const Features = () => {
         </section>
 
         {/* Why Teams Love SILO Section */}
-        <section className="py-10 " style={{backgroundColor: '#fff'}}>
+        <section className="py-16 bg-background">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -259,14 +281,17 @@ const Features = () => {
               className="text-center"
             >
               <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 px-4">
-                Why Teams Love SILO
+                Why Teams Love{" "}
+                <span className="inline-block px-3 py-1 rounded-lg bg-primary border-2 border-foreground">
+                  SILO
+                </span>
               </h2>
               <p className="text-muted-foreground max-w-2xl mx-auto text-sm sm:text-base px-4">
                 Built for modern teams who value efficiency, data-driven decisions, and operational excellence.
               </p>
             </motion.div>
 
-            <div className="grid md:grid-cols-2 gap-6 md:gap-8 max-w-5xl mx-auto" style={{marginTop: '50px'}}> 
+            <div className="grid md:grid-cols-2 gap-6 md:gap-8 max-w-5xl mx-auto mt-12"> 
               {whyLoveSilo.map((item, index) => (
                 <motion.div
                   key={index}
@@ -274,12 +299,15 @@ const Features = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="bg-card border border-border rounded-2xl p-6 md:p-8 text-center md:text-left"
+                  className="bg-card border-2 border-foreground/10 rounded-2xl p-6 md:p-8 text-center md:text-left hover:border-foreground/30 transition-colors"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-silo-blue flex items-center justify-center mb-4 mx-auto md:mx-0">
-                    <item.icon className="w-6 h-6 text-silo-green" />
+                  <div 
+                    className="w-12 h-12 rounded-xl flex items-center justify-center mb-4 mx-auto md:mx-0 border-2 border-foreground"
+                    style={{ backgroundColor: '#FFD700' }}
+                  >
+                    <item.icon className="w-6 h-6 text-foreground" />
                   </div>
-                  <h3 className="font-semibold text-lg md:text-xl text-foreground mb-3">
+                  <h3 className="font-bold text-lg md:text-xl text-foreground mb-3">
                     {item.title}
                   </h3>
                   <p className="text-muted-foreground text-sm md:text-base">
@@ -290,12 +318,10 @@ const Features = () => {
             </div>
           </div>
         </section>
-
-        {/* <ConsultingSection /> */}
-
       </main>
       <Footer />
     </div>
   );
 };
+
 export default Features;

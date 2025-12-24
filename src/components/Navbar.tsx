@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ChevronDown, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -27,13 +27,13 @@ const Navbar = () => {
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-white shadow-sm' : 'bg-transparent'
+        isScrolled ? 'bg-background shadow-sm' : 'bg-transparent'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 md:h-20" >
+        <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <Link to="/" onClick={handleLinkClick} className="flex items-center gap-2" >
+          <Link to="/" onClick={handleLinkClick} className="flex items-center gap-2">
             <img 
               src="/silo-logo.svg" 
               alt="SILO Logo" 
@@ -44,23 +44,23 @@ const Navbar = () => {
 
           {/* Desktop Navigation + CTA Buttons */}
           <div className="hidden md:flex items-center gap-12">
-            <div className="flex items-center gap-12">
-              <Link to="/features" onClick={handleLinkClick} className="text-lg text-foreground hover:text-foreground/80 transition-colors">
+            <div className="flex items-center gap-10">
+              <Link to="/features" onClick={handleLinkClick} className="text-base font-medium text-foreground hover:text-foreground/70 transition-colors">
                 Features
               </Link>
-              <Link to="/pricing" onClick={handleLinkClick} className="text-lg text-foreground hover:text-foreground/80 transition-colors">
+              <Link to="/pricing" onClick={handleLinkClick} className="text-base font-medium text-foreground hover:text-foreground/70 transition-colors">
                 Pricing
               </Link>
-              <Link to="/about" onClick={handleLinkClick} className="text-lg text-foreground hover:text-foreground/80 transition-colors">
+              <Link to="/about" onClick={handleLinkClick} className="text-base font-medium text-foreground hover:text-foreground/70 transition-colors">
                 About us
               </Link>
             </div>
             <div className="flex items-center gap-3">
-              <Button variant="outline" style={{border: '1px solid #57d6d3', borderRadius: '.4rem', color: '#57d6d3', boxShadow: '0 0 10px 0 rgba(0, 0, 0, 0.1)'}}>
+              <Button variant="ghost" className="text-foreground font-medium">
                 Login
               </Button>
-              <Button variant="default" style={{backgroundColor: '#1F3C6B'}}>
-                Try for free
+              <Button variant="default">
+                Start a free trial
               </Button>
             </div>
           </div>
@@ -84,21 +84,18 @@ const Navbar = () => {
           className="md:hidden border-t border-border bg-background"
         >
           <div className="px-4 py-6 space-y-4">
-            <Link to="/features" className="block text-muted-foreground hover:text-foreground" onClick={handleLinkClick}>
+            <Link to="/features" className="block text-foreground font-medium hover:text-foreground/70" onClick={handleLinkClick}>
               Features
             </Link>
-            <Link to="/pricing" className="block text-muted-foreground hover:text-foreground" onClick={handleLinkClick}>
+            <Link to="/pricing" className="block text-foreground font-medium hover:text-foreground/70" onClick={handleLinkClick}>
               Pricing
             </Link>
-            {/* <a href="#resources" className="block text-muted-foreground hover:text-foreground">
-              Resources
-            </a> */}
-            <Link to="/about" className="block text-muted-foreground hover:text-foreground" onClick={handleLinkClick}>
+            <Link to="/about" className="block text-foreground font-medium hover:text-foreground/70" onClick={handleLinkClick}>
               About us
             </Link>
             <div className="pt-4 flex flex-col gap-3">
-              <Button variant="outline" className="w-full" style={{border: '1px solid #57d6d3', borderRadius: '.4rem', color: '#57d6d3', boxShadow: '0 0 10px 0 rgba(0, 0, 0, 0.1)'}}>Login</Button>
-              <Button variant="default" className="w-full">Try for free</Button>
+              <Button variant="outline" className="w-full">Login</Button>
+              <Button variant="default" className="w-full">Start a free trial</Button>
             </div>
           </div>
         </motion.div>

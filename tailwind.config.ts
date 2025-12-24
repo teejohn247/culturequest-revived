@@ -52,8 +52,12 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        teal: "hsl(var(--teal))",
+        // Zoomsphere-inspired shape colors
         coral: "hsl(var(--coral))",
+        cyan: "hsl(var(--cyan))",
+        purple: "hsl(var(--purple))",
+        yellow: "hsl(var(--yellow))",
+        green: "hsl(var(--green))",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
