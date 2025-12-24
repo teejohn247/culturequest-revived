@@ -4,7 +4,7 @@ import { openCalendly } from "@/lib/calendly";
 
 const Footer = () => {
   return (
-    <footer className="bg-foreground text-background" style={{backgroundColor: '#1f3c6b', zIndex:10}}>
+    <footer className="bg-foreground text-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Curious Section */}
         <motion.div
@@ -26,11 +26,8 @@ const Footer = () => {
             <div className="flex justify-end md:justify-end ml-auto">
               <Button
                 onClick={() => openCalendly()}
-                className="px-8 py-3 font-semibold"
-                style={{
-                  background: "linear-gradient(135deg, #57D6D3, #7CF5CD)",
-                  color: "#03312F"
-                }}
+                variant="accent"
+                size="lg"
               >
                 Book a Demo
               </Button>
@@ -70,8 +67,8 @@ const Footer = () => {
           >
             <h4 className="font-semibold mb-4 text-background">Product</h4>
             <ul className="space-y-3">
-              <li><a href="#" className="text-background/70 hover:text-background transition-colors">Features</a></li>
-              <li><a href="#" className="text-background/70 hover:text-background transition-colors">Pricing</a></li>
+              <li><a href="/features" className="text-background/70 hover:text-background transition-colors">Features</a></li>
+              <li><a href="/pricing" className="text-background/70 hover:text-background transition-colors">Pricing</a></li>
               <li><a href="#" className="text-background/70 hover:text-background transition-colors">Security</a></li>
               <li><a href="#" className="text-background/70 hover:text-background transition-colors">Integrations</a></li>
             </ul>
@@ -85,17 +82,13 @@ const Footer = () => {
           >
             <h4 className="font-semibold mb-4 text-background">Company</h4>
             <ul className="space-y-3">
-              <li><a href="#" className="text-background/70 hover:text-background transition-colors">About us</a></li>
+              <li><a href="/about" className="text-background/70 hover:text-background transition-colors">About us</a></li>
               <li><a href="#" className="text-background/70 hover:text-background transition-colors">Blog</a></li>
               <li><a href="#" className="text-background/70 hover:text-background transition-colors">Careers</a></li>
               <li><a href="#" className="text-background/70 hover:text-background transition-colors">Contact</a></li>
             </ul>
           </motion.div>
-
-          
         </div>
-
-        
 
         {/* Bottom bar */}
         <motion.div

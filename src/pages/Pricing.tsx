@@ -23,7 +23,8 @@ const pricingPlans = [
       "Basic support"
     ],
     buttonText: "Select This Plan",
-    popular: false
+    popular: false,
+    color: "#FF7B6B"
   },
   {
     name: "Pro",
@@ -41,7 +42,8 @@ const pricingPlans = [
       "Dedicated account manager"
     ],
     buttonText: "Select This Plan",
-    popular: true
+    popular: true,
+    color: "#FFD700"
   },
   {
     name: "Enterprise",
@@ -59,7 +61,8 @@ const pricingPlans = [
       "Multi-region support"
     ],
     buttonText: "Contact Us",
-    popular: false
+    popular: false,
+    color: "#9B59B6"
   },
 ];
 
@@ -90,8 +93,7 @@ const Pricing = () => {
       <Navbar />
       <main>
         {/* Hero Section */}
-        <section className="relative overflow-hidden" style={{marginTop: '100px'}}>
-          <div className="absolute inset-0 bg-soft-gradient" />
+        <section className="relative overflow-hidden pt-32 pb-8">
           <div className="container mx-auto px-4 relative z-10">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -99,11 +101,17 @@ const Pricing = () => {
               transition={{ duration: 0.6 }}
               className="text-center max-w-3xl mx-auto"
             >
-              <span className="text-silo-green font-medium text-sm uppercase tracking-wider mb-4 block" style={{color: '#57D6D3'}}>
+              <span 
+                className="inline-block px-4 py-2 rounded-full bg-primary text-foreground text-sm font-semibold uppercase tracking-wider mb-6 border-2 border-foreground"
+              >
                 Pricing
               </span>
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
-                Simple and Transparent Pricing
+                Simple and{" "}
+                <span className="inline-block px-3 py-1 rounded-lg bg-primary border-2 border-foreground">
+                  Transparent
+                </span>{" "}
+                Pricing
               </h1>
               <p className="text-base sm:text-lg md:text-xl text-muted-foreground mb-8 px-4">
                 Select the best plan for you, ensuring a perfect match for your business needs.
@@ -116,18 +124,24 @@ const Pricing = () => {
                 </span>
                 <button
                   onClick={() => setIsAnnual(!isAnnual)}
-                  className={`relative inline-flex h-8 w-14 items-center rounded-full transition-colors ${
-                    isAnnual ? 'bg-silo-green' : 'bg-muted'
+                  className={`relative inline-flex h-8 w-14 items-center rounded-full transition-colors border-2 border-foreground ${
+                    isAnnual ? 'bg-primary' : 'bg-muted'
                   }`}
                 >
                   <span
-                    className={`inline-block h-6 w-6 transform rounded-full bg-white transition-transform ${
+                    className={`inline-block h-5 w-5 transform rounded-full bg-foreground transition-transform ${
                       isAnnual ? 'translate-x-7' : 'translate-x-1'
                     }`}
                   />
                 </button>
                 <span className={`text-sm font-medium ${isAnnual ? 'text-foreground' : 'text-muted-foreground'}`}>
-                  Annual <span className="text-silo-green">(15% OFF)</span>
+                  Annual{" "}
+                  <span 
+                    className="inline-block px-2 py-0.5 rounded-full text-xs font-bold border border-foreground"
+                    style={{ backgroundColor: '#40E0D0' }}
+                  >
+                    15% OFF
+                  </span>
                 </span>
               </div>
             </motion.div>
@@ -135,7 +149,7 @@ const Pricing = () => {
         </section>
 
         {/* Pricing Cards */}
-        <section className=" bg-background">
+        <section className="pb-16 bg-background">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid md:grid-cols-3 gap-6 md:gap-8">
               {pricingPlans.map((plan, index) => (
@@ -145,25 +159,30 @@ const Pricing = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className={`relative rounded-3xl p-6 md:p-8 ${
+                  className={`relative rounded-3xl p-6 md:p-8 border-2 ${
                     plan.popular
-                      ? 'bg-silo-green text-black border-2 border-transparent'
-                      : 'bg-card border border-border'
+                      ? 'border-foreground'
+                      : 'border-foreground/20'
                   }`}
+                  style={{ 
+                    backgroundColor: plan.popular ? plan.color : 'hsl(var(--card))'
+                  }}
                 >
                   {plan.popular && (
-                    <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-background text-silo-green px-4 py-1 rounded-full text-sm font-semibold">
+                    <div 
+                      className="absolute -top-4 left-1/2 -translate-x-1/2 bg-foreground text-background px-4 py-1 rounded-full text-sm font-semibold border-2 border-foreground"
+                    >
                       Most Popular
                     </div>
                   )}
                   <div className="mb-6">
-                    <h3 className="text-xl md:text-2xl font-bold mb-2">{plan.name}</h3>
-                    <p className={`text-xs md:text-sm mb-4 ${plan.popular ? 'text-black' : 'text-muted-foreground'}`}>
+                    <h3 className="text-xl md:text-2xl font-bold mb-2 text-foreground">{plan.name}</h3>
+                    <p className="text-sm mb-4 text-muted-foreground">
                       {plan.description}
                     </p>
                     <div className="flex items-baseline gap-1">
-                      <span className="text-3xl md:text-4xl font-bold">{plan.price}</span>
-                      <span className={`text-xs md:text-sm ${plan.popular ? 'text-black' : 'text-muted-foreground'}`}>
+                      <span className="text-3xl md:text-4xl font-bold text-foreground">{plan.price}</span>
+                      <span className="text-sm text-muted-foreground">
                         {plan.period}
                       </span>
                     </div>
@@ -171,21 +190,19 @@ const Pricing = () => {
                   <ul className="space-y-3 mb-8">
                     {plan.features.map((feature, i) => (
                       <li key={i} className="flex items-start gap-2">
-                        <Check className={`w-5 h-5 mt-0.5 flex-shrink-0 ${
-                          plan.popular ? 'text-black' : 'text-silo-green'
-                        }`} />
-                        <span className={`text-sm ${plan.popular ? 'text-black' : 'text-foreground'}`}>
+                        <Check 
+                          className="w-5 h-5 mt-0.5 flex-shrink-0 text-foreground"
+                        />
+                        <span className="text-sm text-foreground">
                           {feature}
                         </span>
                       </li>
                     ))}
                   </ul>
                   <Button
-                    className={`w-full ${
-                      plan.popular
-                        ? 'bg-background text-silo-green text-black hover:bg-background/90'
-                        : 'bg-silo-green text-black hover:bg-silo-green/90'
-                    }`}
+                    variant={plan.popular ? "default" : "outline"}
+                    className="w-full"
+                    onClick={() => openCalendly()}
                   >
                     {plan.buttonText}
                   </Button>
@@ -196,29 +213,29 @@ const Pricing = () => {
         </section>
 
         {/* Feature Comparison Table */}
-        <section className="py-16 bg-secondary/30">
+        <section className="py-16 bg-secondary">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
               viewport={{ once: true }}
-              className="bg-card rounded-2xl border border-border overflow-hidden"
+              className="bg-card rounded-2xl border-2 border-foreground/10 overflow-hidden"
             >
               <div className="overflow-x-auto">
                 <table className="w-full">
                   <thead>
-                    <tr className="border-b border-border">
-                      <th className="text-left p-3 md:p-4 font-semibold text-foreground text-sm md:text-base">Features</th>
-                      <th className="text-center p-3 md:p-4 font-semibold text-foreground text-sm md:text-base">Basic</th>
-                      <th className="text-center p-3 md:p-4 font-semibold text-foreground text-sm md:text-base">Pro</th>
-                      <th className="text-center p-3 md:p-4 font-semibold text-foreground text-sm md:text-base">Enterprise</th>
+                    <tr className="border-b-2 border-foreground/10">
+                      <th className="text-left p-3 md:p-4 font-bold text-foreground text-sm md:text-base">Features</th>
+                      <th className="text-center p-3 md:p-4 font-bold text-foreground text-sm md:text-base">Basic</th>
+                      <th className="text-center p-3 md:p-4 font-bold text-foreground text-sm md:text-base">Pro</th>
+                      <th className="text-center p-3 md:p-4 font-bold text-foreground text-sm md:text-base">Enterprise</th>
                     </tr>
                   </thead>
                   <tbody>
                     {featureComparison.map((row, index) => (
-                      <tr key={index} className="border-b border-border last:border-0">
-                        <td className="p-3 md:p-4 text-foreground text-sm md:text-base">{row.feature}</td>
+                      <tr key={index} className="border-b border-foreground/10 last:border-0">
+                        <td className="p-3 md:p-4 text-foreground text-sm md:text-base font-medium">{row.feature}</td>
                         <td className="p-3 md:p-4 text-center text-muted-foreground text-sm md:text-base">{row.basic}</td>
                         <td className="p-3 md:p-4 text-center text-muted-foreground text-sm md:text-base">{row.pro}</td>
                         <td className="p-3 md:p-4 text-center text-muted-foreground text-sm md:text-base">{row.enterprise}</td>
@@ -227,7 +244,7 @@ const Pricing = () => {
                   </tbody>
                 </table>
               </div>
-              <div className="p-4 border-t border-border text-center">
+              <div className="p-4 border-t-2 border-foreground/10 text-center">
                 <p className="text-sm text-muted-foreground">
                   All prices are excl. VAT. Implementation services available at $5,000-$15,000.
                 </p>
@@ -235,28 +252,6 @@ const Pricing = () => {
             </motion.div>
           </div>
         </section>
-
-        {/* CTA Section */}
-        {/* <section className="py-24 bg-primary">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              viewport={{ once: true }}
-            >
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4 px-4">
-                Ready to Transform Your Operations?
-              </h2>
-              <p className="text-white/90 text-base sm:text-lg mb-8 px-4">
-                Book a short meeting and see how SILO can streamline your business processes.
-              </p>
-              <Button variant="secondary" className="bg-background text-foreground hover:bg-background/90" onClick={() => openCalendly()}>
-                Book a Demo
-              </Button>
-            </motion.div>
-          </div>
-        </section> */}
       </main>
       <Footer />
     </div>
@@ -264,4 +259,3 @@ const Pricing = () => {
 };
 
 export default Pricing;
-
