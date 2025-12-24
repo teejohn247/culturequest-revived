@@ -170,18 +170,17 @@ const Features = () => {
       <Navbar />
 
       <main>
-        {/* Hero Section */}
-        <section className="relative py-16 lg:py-24 overflow-hidden">
-          <div className="absolute inset-0 bg-soft-gradient" />
+        {/* Hero Section - blends into next section */}
+        <section className="relative pt-16 lg:pt-24 pb-0 overflow-visible" style={{ background: 'linear-gradient(to bottom, #E8F6F4 0%, #E3F8F3 100%)' }}>
           <div className="container mx-auto px-4 relative z-10" style={{marginTop: 'clamp(40px, 10vw, 100px)'}}>
-            <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
+            <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-start">
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6 }}
-                className="text-center md:text-left"
+                className="text-center md:text-left pt-8 lg:pt-16"
               >
-                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight" style={{fontSize:'clamp(32px, 8vw, 68px)', color: '#1F3C6B', lineHeight:'65px', fontWeight:'600'}}>
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight" style={{fontSize:'clamp(32px, 8vw, 68px)', color: '#1F3C6B', lineHeight:'1.1', fontWeight:'600'}}>
                   Unite Teams Through the Power of{" "}
                   <span style={{color: '#57D6D3'}}>
                     Data Intelligence
@@ -192,25 +191,33 @@ const Features = () => {
                   collaboration, and data-driven decision-making across all business functions.
                 </p>
                 <div className="flex justify-center md:justify-start">
-                  <Button className="bg-primary text-primary-foreground" style={{background: '#57D6D3'}} onClick={() => openCalendly()}>
+                  <Button className="bg-primary text-primary-foreground" style={{background: '#1F3C6B'}} onClick={() => openCalendly()}>
                     <span style={{fontSize:'clamp(14px, 3vw, 18px)', display:'flex', alignItems:'center', justifyContent:'center', fontWeight:'600'}}>Book a Demo</span>
                   </Button>
                 </div>
               </motion.div>
 
-              <div className="relative hidden md:block">
-                <div className="relative rounded-3xl">
+              <motion.div 
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                className="relative hidden md:block"
+              >
+                {/* Large mockup image extending beyond section */}
+                <div className="relative" style={{ marginBottom: '-120px' }}>
                   <img
                     src="/Mockup 2.png"
                     alt="SILO Platform Mockup"
-                    className="w-full rounded-3xl object-cover"
-                    style={{height: '560px'}}
+                    className="w-full object-contain relative z-10"
+                    style={{ maxHeight: '700px', transform: 'scale(1.1)', transformOrigin: 'top right' }}
                   />
                 </div>
-              </div>
+              </motion.div>
             </div>
           </div>
         </section>
+        
+        {/* Next section with matching background for seamless blend */}
         <BentoFeaturesSection />
 
 
