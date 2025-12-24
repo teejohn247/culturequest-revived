@@ -2,23 +2,22 @@ import { useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import LogoMarquee from "@/components/LogoMarquee";
-import ValueSection from "@/components/ValueSection";
 import SolutionSection from "@/components/SolutionSection";
-import DashboardShowcase from "@/components/DashboardShowcase";
-import FeaturesSection from "@/components/FeaturesSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
-import ConsultingSection from "@/components/ConsultingSection";
 import Footer from "@/components/Footer";
-import SuccessStoriesSection from "@/components/SuccessStoriesSection";
-import FeatureCardsSection from "@/components/FeatureCardsSection";
-import AnimatedBannerSection from "@/components/AnimatedBannerSection";
 import IntelligentFeaturesSection from "@/components/IntelligentFeaturesSection";
 import SkillsSection from "@/components/SkillsSection";
-import BentoFeaturesSection from "@/components/BentoFeaturesSection";
-import FAQSection from "@/components/FAQSection";
 import MobileAppSection from "@/components/MobileAppSection";
 import CustomerEngagementSection from "@/components/CustomerEngagementSection";
 import TeamCollaborationSection from "@/components/TeamCollaborationSection";
+import WorkspacesSection from "@/components/WorkspacesSection";
+import PlatformsSection from "@/components/PlatformsSection";
+import WorkflowProcessSection from "@/components/WorkflowProcessSection";
+import FeatureLinksSection from "@/components/FeatureLinksSection";
+import TeamworkSolutionsSection from "@/components/TeamworkSolutionsSection";
+import CTABannerSection from "@/components/CTABannerSection";
+import ResourcesSection from "@/components/ResourcesSection";
+import ShowreelSection from "@/components/ShowreelSection";
 
 const Index = () => {
   useEffect(() => {
@@ -29,25 +28,22 @@ const Index = () => {
       <Navbar />
       <main>
         <HeroSection />
-        <div className="hidden md:block">
-          {/* <DashboardShowcase /> */}
-        </div>
         <LogoMarquee />
+        <WorkspacesSection />
+        <PlatformsSection />
         <TeamCollaborationSection />
+        <WorkflowProcessSection />
         <CustomerEngagementSection />
-
-        {/* <BentoFeaturesSection /> */}
-
+        <FeatureLinksSection />
         <SkillsSection />
-
-        {/* <ValueSection /> */}
-        <IntelligentFeaturesSection /> 
+        <IntelligentFeaturesSection />
+        <TeamworkSolutionsSection />
         <SolutionSection />
+        <ShowreelSection />
         <TestimonialsSection />
-        {/* <LogoMarquee/> */}
-        {/* <FAQSection /> */}
+        <CTABannerSection />
+        <ResourcesSection />
         <MobileAppSection />
-        {/* <ConsultingSection /> */}
       </main>
       <Footer />
     </div>
