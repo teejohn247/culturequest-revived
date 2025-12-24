@@ -1,193 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Zoho Puvi Font */
-@font-face {
-  font-family: 'Zoho Puvi';
-  src: url('/fonts/Zoho Puvi/OpenType-TT/Zoho Puvi Thin.ttf') format('truetype');
-  font-weight: 100;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Zoho Puvi';
-  src: url('/fonts/Zoho Puvi/OpenType-TT/Zoho Puvi Extralight.ttf') format('truetype');
-  font-weight: 200;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Zoho Puvi';
-  src: url('/fonts/Zoho Puvi/OpenType-TT/Zoho Puvi Light.ttf') format('truetype');
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Zoho Puvi';
-  src: url('/fonts/Zoho Puvi/OpenType-TT/Zoho Puvi Regular.ttf') format('truetype');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Zoho Puvi';
-  src: url('/fonts/Zoho Puvi/OpenType-TT/Zoho Puvi Regular Italic.ttf') format('truetype');
-  font-weight: 400;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Zoho Puvi';
-  src: url('/fonts/Zoho Puvi/OpenType-TT/Zoho Puvi Medium.ttf') format('truetype');
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Zoho Puvi';
-  src: url('/fonts/Zoho Puvi/OpenType-TT/Zoho Puvi Semibold.ttf') format('truetype');
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Zoho Puvi';
-  src: url('/fonts/Zoho Puvi/OpenType-TT/Zoho Puvi Semibold Italic.ttf') format('truetype');
-  font-weight: 600;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Zoho Puvi';
-  src: url('/fonts/Zoho Puvi/OpenType-TT/Zoho Puvi Bold.ttf') format('truetype');
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Zoho Puvi';
-  src: url('/fonts/Zoho Puvi/OpenType-TT/Zoho Puvi Bold Italic.ttf') format('truetype');
-  font-weight: 700;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Zoho Puvi';
-  src: url('/fonts/Zoho Puvi/OpenType-TT/Zoho Puvi Extrabold.ttf') format('truetype');
-  font-weight: 800;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Zoho Puvi';
-  src: url('/fonts/Zoho Puvi/OpenType-TT/Zoho Puvi Black.ttf') format('truetype');
-  font-weight: 900;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Zoho Puvi';
-  src: url('/fonts/Zoho Puvi/OpenType-TT/Zoho Puvi Extrablack.ttf') format('truetype');
-  font-weight: 950;
-  font-style: normal;
-  font-display: swap;
-}
-
 @layer base {
   :root {
-    /* Zoomsphere-inspired cream/beige background */
+    /* Zoomsphere cream/beige background */
     --background: 40 33% 97%; /* #FBF8F3 cream */
-    --foreground: 0 0% 9%; /* Near black text */
+    --foreground: 0 0% 7%; /* Near black text */
 
     --card: 0 0% 100%;
-    --card-foreground: 0 0% 9%;
+    --card-foreground: 0 0% 7%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 9%;
+    --popover-foreground: 0 0% 7%;
 
     /* Yellow accent like Zoomsphere's #Teamwork highlight */
-    --primary: 45 100% 51%; /* Golden yellow #FFD700 */
-    --primary-foreground: 0 0% 9%;
-    --primary-light: 45 100% 90%;
+    --primary: 48 100% 50%; /* Golden yellow #FFC800 */
+    --primary-foreground: 0 0% 7%;
+    --primary-light: 48 100% 90%;
 
     --secondary: 40 20% 94%;
-    --secondary-foreground: 0 0% 9%;
+    --secondary-foreground: 0 0% 7%;
 
     --muted: 40 15% 92%;
-    --muted-foreground: 0 0% 40%;
+    --muted-foreground: 0 0% 45%;
 
-    /* Colorful accents inspired by Zoomsphere's shapes */
-    --accent: 45 100% 51%; /* Yellow */
-    --accent-foreground: 0 0% 9%;
+    /* Yellow accent */
+    --accent: 48 100% 50%;
+    --accent-foreground: 0 0% 7%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
     --border: 40 15% 88%;
     --input: 40 15% 88%;
-    --ring: 0 0% 9%;
+    --ring: 0 0% 7%;
 
     --radius: 0.75rem;
 
-    /* Custom Zoomsphere-inspired colors */
-    --coral: 12 100% 70%; /* Coral/Red for shapes */
-    --cyan: 190 100% 60%; /* Cyan/Blue for shapes */
-    --purple: 280 60% 65%; /* Purple for shapes */
-    --yellow: 45 100% 51%; /* Yellow highlight */
-    --green: 155 80% 45%; /* Green accent */
+    /* Zoomsphere shape colors */
+    --coral: 12 90% 65%; /* Coral/Red for shapes #FF7B6B */
+    --cyan: 180 70% 55%; /* Cyan for shapes #40E0D0 */
+    --purple: 280 55% 60%; /* Purple for shapes #9B59B6 */
+    --yellow: 48 100% 50%; /* Yellow highlight #FFC800 */
+    --green: 155 75% 45%; /* Green accent */
     
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 0 0% 9%;
+    --sidebar-primary: 0 0% 7%;
     --sidebar-primary-foreground: 0 0% 100%;
     --sidebar-accent: 40 20% 95%;
     --sidebar-accent-foreground: 240 5.9% 10%;
     --sidebar-border: 40 15% 90%;
-    --sidebar-ring: 0 0% 9%;
+    --sidebar-ring: 0 0% 7%;
   }
 
   .dark {
-    --background: 0 0% 7%;
+    --background: 0 0% 5%;
     --foreground: 0 0% 95%;
 
-    --card: 0 0% 10%;
+    --card: 0 0% 8%;
     --card-foreground: 0 0% 95%;
 
-    --popover: 0 0% 10%;
+    --popover: 0 0% 8%;
     --popover-foreground: 0 0% 95%;
 
-    --primary: 45 100% 51%;
-    --primary-foreground: 0 0% 9%;
+    --primary: 48 100% 50%;
+    --primary-foreground: 0 0% 7%;
 
-    --secondary: 0 0% 15%;
+    --secondary: 0 0% 12%;
     --secondary-foreground: 0 0% 95%;
 
-    --muted: 0 0% 15%;
+    --muted: 0 0% 12%;
     --muted-foreground: 0 0% 60%;
 
-    --accent: 45 100% 51%;
-    --accent-foreground: 0 0% 9%;
+    --accent: 48 100% 50%;
+    --accent-foreground: 0 0% 7%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 0 0% 20%;
-    --input: 0 0% 20%;
-    --ring: 45 100% 51%;
+    --border: 0 0% 18%;
+    --input: 0 0% 18%;
+    --ring: 48 100% 50%;
     
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
@@ -207,12 +104,12 @@
 
   html {
     scroll-behavior: smooth;
-    font-family: 'Zoho Puvi', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-family: 'Poppins', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   }
 
   body {
     @apply bg-background text-foreground font-sans antialiased;
-    font-family: 'Zoho Puvi', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-family: 'Poppins', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   }
 }
 
@@ -221,7 +118,7 @@
   .highlight-box {
     @apply inline-block px-4 py-1 rounded-lg;
     background-color: hsl(var(--primary));
-    border: 2px solid hsl(0 0% 9%);
+    border: 2px solid hsl(0 0% 7%);
   }
 
   .text-gradient {
@@ -231,18 +128,6 @@
 
   .bg-gradient-primary {
     background: linear-gradient(180deg, hsl(40 33% 97%) 0%, hsl(0 0% 100%) 100%);
-  }
-
-  .bg-green-gradient {
-    background: linear-gradient(135deg, #57D6D3, #7CF5CD);
-  }
-
-  .backdrop-brightness-300 {
-    background: #fff;
-  }
-
-  .bg-gradient-iridescent {
-    background: linear-gradient(77.82deg, #10B981 26.36%, #10B981 40.12%, #059669 53.89%, #34D399 68.38%, #34D399 82.88%);
   }
 
   .bg-soft-gradient {
@@ -323,36 +208,6 @@
 
 .animate-pulse-glow {
   animation: pulse-glow 3s ease-in-out infinite;
-}
-
-/* Utility override for feature showcase visuals */
-.w-full.max-w-sm.aspect-square.rounded-xl.p-6.flex.items-center.justify-center{
-  max-width: 100% !important;
-}
-
-.h-1\.5 {
-  height: 0.175rem;
-}
-
-/* SILO brand colors - keeping for backward compatibility */
-.bg-silo-green {
-  background-color: #57d6d3;
-}
-
-.text-silo-green {
-  color: #57d6d3;
-}
-
-.text-silo-blue {
-  color: #1F3C6B;
-}
-
-.bg-silo-blue {
-  background-color: #1F3C6B;
-}
-
-.bg-silo-gray {
-  background-color: #F5F5F5;
 }
 
 /* Zoomsphere-inspired shape colors */

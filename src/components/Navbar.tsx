@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -34,32 +34,42 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <Link to="/" onClick={handleLinkClick} className="flex items-center gap-2">
-            <img 
-              src="/silo-logo.svg" 
-              alt="SILO Logo" 
-              className="h-8 w-auto md:h-12 lg:h-16"
-              style={{maxWidth: 'clamp(80px, 15vw, 180px)', maxHeight: 'clamp(80px, 15vw, 180px)'}}
-            />
+            <svg width="140" height="32" viewBox="0 0 140 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M8 8L16 16L8 24" stroke="#FFC800" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
+              <path d="M16 8L24 16L16 24" stroke="#40E0D0" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
+              <text x="32" y="22" fontFamily="Poppins, sans-serif" fontSize="18" fontWeight="600" fill="currentColor">zoomsphere</text>
+            </svg>
           </Link>
 
           {/* Desktop Navigation + CTA Buttons */}
-          <div className="hidden md:flex items-center gap-12">
-            <div className="flex items-center gap-10">
-              <Link to="/features" onClick={handleLinkClick} className="text-base font-medium text-foreground hover:text-foreground/70 transition-colors">
-                Features
-              </Link>
-              <Link to="/pricing" onClick={handleLinkClick} className="text-base font-medium text-foreground hover:text-foreground/70 transition-colors">
+          <div className="hidden md:flex items-center gap-10">
+            <div className="flex items-center gap-8">
+              <button className="flex items-center gap-1 text-sm font-medium text-foreground hover:text-foreground/70 transition-colors">
+                Solutions
+                <ChevronDown className="w-4 h-4" />
+              </button>
+              <Link to="/pricing" onClick={handleLinkClick} className="text-sm font-medium text-foreground hover:text-foreground/70 transition-colors">
                 Pricing
               </Link>
-              <Link to="/about" onClick={handleLinkClick} className="text-base font-medium text-foreground hover:text-foreground/70 transition-colors">
+              <Link to="/about" onClick={handleLinkClick} className="text-sm font-medium text-foreground hover:text-foreground/70 transition-colors">
+                Blog
+              </Link>
+              <button className="flex items-center gap-1 text-sm font-medium text-foreground hover:text-foreground/70 transition-colors">
+                Resources
+                <ChevronDown className="w-4 h-4" />
+              </button>
+              <Link to="/about" onClick={handleLinkClick} className="text-sm font-medium text-foreground hover:text-foreground/70 transition-colors">
                 About us
+              </Link>
+              <Link to="/about" onClick={handleLinkClick} className="text-sm font-medium text-foreground hover:text-foreground/70 transition-colors">
+                Contact
               </Link>
             </div>
             <div className="flex items-center gap-3">
               <Button variant="ghost" className="text-foreground font-medium">
-                Login
+                Log In
               </Button>
-              <Button variant="default">
+              <Button variant="outline">
                 Start a free trial
               </Button>
             </div>
@@ -85,17 +95,26 @@ const Navbar = () => {
         >
           <div className="px-4 py-6 space-y-4">
             <Link to="/features" className="block text-foreground font-medium hover:text-foreground/70" onClick={handleLinkClick}>
-              Features
+              Solutions
             </Link>
             <Link to="/pricing" className="block text-foreground font-medium hover:text-foreground/70" onClick={handleLinkClick}>
               Pricing
             </Link>
             <Link to="/about" className="block text-foreground font-medium hover:text-foreground/70" onClick={handleLinkClick}>
+              Blog
+            </Link>
+            <Link to="/about" className="block text-foreground font-medium hover:text-foreground/70" onClick={handleLinkClick}>
+              Resources
+            </Link>
+            <Link to="/about" className="block text-foreground font-medium hover:text-foreground/70" onClick={handleLinkClick}>
               About us
             </Link>
+            <Link to="/about" className="block text-foreground font-medium hover:text-foreground/70" onClick={handleLinkClick}>
+              Contact
+            </Link>
             <div className="pt-4 flex flex-col gap-3">
-              <Button variant="outline" className="w-full">Login</Button>
-              <Button variant="default" className="w-full">Start a free trial</Button>
+              <Button variant="ghost" className="w-full">Log In</Button>
+              <Button variant="outline" className="w-full">Start a free trial</Button>
             </div>
           </div>
         </motion.div>

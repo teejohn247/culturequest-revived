@@ -6,18 +6,18 @@ const featureLinks = [
   {
     icon: Sparkles,
     title: "Our Top 10 Features",
-    color: "#FFD700",
+    color: "#FFC800",
     link: "/features",
   },
   {
     icon: Video,
-    title: "Best for AI Analytics",
+    title: "Best for Short Videos",
     color: "#40E0D0",
     link: "/features",
   },
   {
     icon: Users,
-    title: "Best for Growing Teams",
+    title: "Best for Social Media Agencies",
     color: "#9B59B6",
     link: "/features",
   },
@@ -31,7 +31,7 @@ const featureLinks = [
 
 const FeatureLinksSection = () => {
   return (
-    <section className="py-16 overflow-hidden" style={{ backgroundColor: "#FFFFFF" }}>
+    <section className="py-20 overflow-hidden bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
@@ -42,14 +42,12 @@ const FeatureLinksSection = () => {
           className="text-center mb-12"
         >
           <span
-            className="inline-block px-4 py-2 rounded-full text-sm font-semibold mb-6"
-            style={{ backgroundColor: "#58d4d2", color: "#000" }}
+            className="inline-block px-4 py-2 rounded-full text-sm font-semibold mb-6 bg-primary text-foreground"
           >
             #Features
           </span>
           <h2
             className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground"
-            style={{ fontSize: "clamp(32px, 6vw, 48px)" }}
           >
             Our features
           </h2>
@@ -67,7 +65,7 @@ const FeatureLinksSection = () => {
             >
               <Link
                 to={feature.link}
-                className="group block bg-white rounded-2xl p-6 shadow-lg border border-border hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+                className="group block bg-card rounded-2xl p-6 shadow-sm border border-border hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
               >
                 <div
                   className="w-12 h-12 rounded-xl flex items-center justify-center mb-4"
