@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { Star, ChevronRight } from "lucide-react";
 
 interface Testimonial {
   quote: string;
@@ -11,70 +10,53 @@ interface Testimonial {
 
 const testimonials: Testimonial[] = [
   {
-    quote: "Switching to SILO was a game-changer for us. Their platform streamlined our financial processes, saving us countless hours each month.",
-    author: "William Ashford",
-    role: "Product Manager",
-    company: "Google",
+    quote: "ZoomSphere is a great tool that works well in our day-to-day teamwork and with our clients. The intuitive interface, efficient support, and the possibilities provided have definitely improved our agency work and workflow with clients.",
+    author: "Filip Kulisz",
+    role: "Social Media Business Owner",
+    company: "Whites Agency",
     avatar: "/testi-1.png",
   },
   {
-    quote: "The security features offered give us peace of mind knowing that our customer data is protected.",
-    author: "Scarlett Palmer",
-    role: "Marketing Director",
-    company: "Adobe",
+    quote: "Since working with ZoomSphere, we have found a partner who is flexible enough to personalize their services to our unique needs. I can attest that they play a significant role in the success of our social department.",
+    author: "Gábor Kéri",
+    role: "Digital Managing Partner",
+    company: "Positive Adamsky",
     avatar: "/testi-2.png",
   },
   {
-    quote: "The integration process was seamless and we were up and running in no time.",
-    author: "Ruby Hayes",
-    role: "IT Director",
-    company: "Mailchimp",
+    quote: "For many years, ZoomSphere has been our greatest asset in managing the content of our 50+ social profiles for our clients. Their support team is world-class!",
+    author: "Peter Lukacsi",
+    role: "Marketing Strategy Advisor",
+    company: "Kraftwork",
     avatar: "/testi-3.png",
   },
   {
-    quote: "The customer support has been outstanding. Whenever we have questions or need assistance, their team is quick to respond and incredibly helpful.",
-    author: "Leila Smith",
-    role: "Account Executive",
-    company: "Notion",
+    quote: "ZoomSphere is essential for managing our social media. I love the clarity, intuitive interface, and the ability to schedule one post across platforms, customize it, and use the AI copywriter. It's also great for team collaboration.",
+    author: "Andrea Janovcová",
+    role: "Senior Marketing Manager",
+    company: "CineStar",
     avatar: "/testi-4.png",
-  },
-  {
-    quote: "We've seen a significant improvement in our compliance management since the switch.",
-    author: "Marlon Wright",
-    role: "Product Manager",
-    company: "Slack",
-    avatar: "/testi-5.png",
-  },
-  {
-    quote: "I can't recommend SILO enough! Their lending solutions have made it easier for us to manage customer applications and approvals, resulting in faster turnaround times and happier clients.",
-    author: "Samuel Kingsley",
-    role: "Financial Analyst",
-    company: "Squarespace",
-    avatar: "/testi-6.png",
   },
 ];
 
 const TestimonialCard = ({ testimonial }: { testimonial: Testimonial }) => (
-  <div className=" rounded-2xl p-6 shadow-sm border border-border min-w-[320px] max-w-[380px] flex-shrink-0" style={{backgroundColor: '#fff'}}>
+  <div className="bg-card rounded-2xl p-6 shadow-sm border border-border min-w-[340px] max-w-[400px] flex-shrink-0">
     <p className="text-foreground text-sm leading-relaxed mb-6">
       "{testimonial.quote}"
     </p>
     <div className="flex items-center gap-3">
-      <div className="w-10 h-10 rounded-full bg-muted flex items-center justify-center overflow-hidden">
+      <div className="w-12 h-12 rounded-full bg-muted flex items-center justify-center overflow-hidden">
         {testimonial.avatar ? (
           <img src={testimonial.avatar} alt={testimonial.author} className="w-full h-full object-cover" />
         ) : (
-          <span className="text-muted-foreground text-xs font-medium">
+          <span className="text-muted-foreground text-sm font-medium">
             {testimonial.author.split(" ").map(n => n[0]).join("")}
           </span>
         )}
       </div>
       <div className="flex-1">
-        <p className="font-medium text-foreground text-sm">{testimonial.author}</p>
-        <p className="text-muted-foreground text-xs">{testimonial.role}, {testimonial.company}</p>
-      </div>
-      <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
-        <Star className="w-4 h-4 text-primary" />
+        <p className="font-semibold text-foreground text-sm">{testimonial.author}</p>
+        <p className="text-muted-foreground text-xs">{testimonial.company}, {testimonial.role}</p>
       </div>
     </div>
   </div>
@@ -82,8 +64,8 @@ const TestimonialCard = ({ testimonial }: { testimonial: Testimonial }) => (
 
 const TestimonialsSection = () => {
   return (
-    <section className=" relative overflow-hidden" style={{background: 'linear-gradient(to bottom, #FFFFFF 0%, #E0EAE6 100%)'}}>
-      <div className="container mx-auto px-4">
+    <section className="py-24 relative overflow-hidden bg-card">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -92,59 +74,26 @@ const TestimonialsSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
- <span className="inline-block px-4 py-1.5 rounded-full bg-foreground text-white text-xs font-semibold uppercase tracking-wider mb-6"
-          style={{backgroundColor: '#58d4d2', color: '#000000', padding: '10px 20px', marginTop: '100px'}}>
-            Testimonials
+          <span className="inline-block px-4 py-2 rounded-full text-sm font-semibold mb-6 bg-primary text-foreground">
+            #Testimonials
           </span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground" style={{fontSize:'clamp(32px, 8vw, 60px)', lineHeight:'clamp(36px, 8vw, 60px)', fontWeight:'600'}}>
-            What Our Clients Are Saying
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground">
+            Leading companies have trusted us
           </h2>
-          <p className="text-muted-foreground mt-4 max-w-xl mx-auto">
-            We take pride in delivering exceptional solutions that deliver great results. But don't just take our word for it.
-          </p>
         </motion.div>
 
-        {/* Single Row Testimonials - Row 1 */}
+        {/* Testimonials Row */}
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="flex gap-4 overflow-x-auto pb-4 scrollbar-hide mb-4"
+          className="flex gap-6 overflow-x-auto pb-4 scrollbar-hide"
           style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
         >
-          {testimonials.slice(0, 4).map((testimonial, index) => (
+          {testimonials.map((testimonial, index) => (
             <TestimonialCard key={index} testimonial={testimonial} />
           ))}
-        </motion.div>
-
-        {/* Single Row Testimonials - Row 2 */}
-        {/* <motion.div
-          initial={{ opacity: 0, x: 50 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-          className="flex gap-4 overflow-x-auto pb-4 scrollbar-hide justify-center"
-          style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
-        >
-          {testimonials.slice(2, 6).map((testimonial, index) => (
-            <TestimonialCard key={index} testimonial={testimonial} />
-          ))}
-        </motion.div> */}
-
-        {/* CTA Button */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.3 }}
-          className="text-center mt-8"
-        >
-          <button className="inline-flex items-center gap-2 px-6 py-3 border border-foreground rounded-full text-foreground font-medium hover:bg-foreground hover:text-background transition-colors"
-          style={{borderRadius: '.4rem'}}>
-            See all Reviews
-            <ChevronRight className="w-4 h-4" />
-          </button>
         </motion.div>
       </div>
     </section>

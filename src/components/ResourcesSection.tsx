@@ -8,51 +8,51 @@ const tabs = ["Blog posts", "Tips & Tricks", "Video Tutorials"];
 const resources = {
   "Blog posts": [
     {
-      title: "How to Streamline HR Operations with AI",
+      title: "Performance Reporting for Busy Teams: What Your Clients Actually Want to See",
       category: "Blog",
       image: "/Homepage/Hr Management.jpg",
     },
     {
-      title: "5 Ways to Boost Team Productivity",
+      title: "Weekly Social Media Scoop: TikTok, IGTV, Threads & More Go All-In on Engagement",
       category: "Blog",
       image: "/Homepage/CRM.jpg",
     },
     {
-      title: "The Future of Enterprise Resource Planning",
+      title: "How to Create Snackable Content for Social Media: Trends, Tactics, and Tools",
       category: "Blog",
       image: "/Homepage/Accounting.jpg",
     },
   ],
   "Tips & Tricks": [
     {
-      title: "Quick Setup Guide for New Users",
+      title: "Worst Brand Collabs in Marketing History | Pepsi, McDonald's & More",
       category: "Tips & Tricks",
       image: "/Homepage/Ai Analytics.jpg",
     },
     {
-      title: "Maximizing Your Dashboard Efficiency",
+      title: "How to Handle a TikTok Crisis | Watch This Before You Get Cancelled",
       category: "Tips & Tricks",
       image: "/Homepage/Hr Management.jpg",
     },
     {
-      title: "Advanced Workflow Automation Tips",
+      title: "5 Influencer Marketing Strategies That Work | Even If Your Brand Isn't Cool Enough",
       category: "Tips & Tricks",
       image: "/Homepage/CRM.jpg",
     },
   ],
   "Video Tutorials": [
     {
-      title: "Getting Started with SILO ERP",
+      title: "Save Hours with ZoomSphere's Overall Dashboard - Step by Step Guide",
       category: "Video Tutorials",
       image: "/Homepage/Accounting.jpg",
     },
     {
-      title: "Complete Guide to HR Module",
+      title: "Complete Guide to Scheduler Features",
       category: "Video Tutorials",
       image: "/Homepage/Ai Analytics.jpg",
     },
     {
-      title: "Mastering the Analytics Dashboard",
+      title: "Mastering Team Collaboration in ZoomSphere",
       category: "Video Tutorials",
       image: "/Homepage/Hr Management.jpg",
     },
@@ -63,7 +63,7 @@ const ResourcesSection = () => {
   const [activeTab, setActiveTab] = useState("Blog posts");
 
   return (
-    <section className="py-24 overflow-hidden" style={{ backgroundColor: "#FFFFFF" }}>
+    <section className="py-24 overflow-hidden bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
@@ -74,14 +74,12 @@ const ResourcesSection = () => {
           className="text-center mb-12"
         >
           <span
-            className="inline-block px-4 py-2 rounded-full text-sm font-semibold mb-6"
-            style={{ backgroundColor: "#FFD700", color: "#000" }}
+            className="inline-block px-4 py-2 rounded-full text-sm font-semibold mb-6 bg-primary text-foreground"
           >
             #Resources
           </span>
           <h2
             className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground"
-            style={{ fontSize: "clamp(32px, 6vw, 48px)" }}
           >
             Discover our latest news
           </h2>
@@ -96,7 +94,7 @@ const ResourcesSection = () => {
               className={`px-6 py-3 rounded-full text-sm font-medium transition-all ${
                 activeTab === tab
                   ? "bg-foreground text-background"
-                  : "bg-gray-100 text-foreground hover:bg-gray-200"
+                  : "bg-muted text-foreground hover:bg-muted/80"
               }`}
             >
               {tab}
@@ -122,7 +120,7 @@ const ResourcesSection = () => {
                 transition={{ duration: 0.4, delay: index * 0.1 }}
                 className="group cursor-pointer"
               >
-                <div className="rounded-2xl overflow-hidden mb-4 aspect-video">
+                <div className="rounded-2xl overflow-hidden mb-4 aspect-video bg-muted">
                   <img
                     src={resource.image}
                     alt={resource.title}
@@ -130,12 +128,11 @@ const ResourcesSection = () => {
                   />
                 </div>
                 <span
-                  className="inline-block px-3 py-1 rounded-full text-xs font-medium mb-2"
-                  style={{ backgroundColor: "#E5E7EB" }}
+                  className="inline-block px-3 py-1 rounded-full text-xs font-medium mb-2 bg-muted text-muted-foreground"
                 >
                   {resource.category}
                 </span>
-                <h3 className="font-semibold text-foreground text-lg group-hover:text-primary transition-colors">
+                <h3 className="font-semibold text-foreground text-lg group-hover:text-primary transition-colors leading-snug">
                   {resource.title}
                 </h3>
               </motion.div>

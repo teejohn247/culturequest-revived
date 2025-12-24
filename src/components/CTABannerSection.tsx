@@ -1,24 +1,29 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { openCalendly } from "@/lib/calendly";
 
 const CTABannerSection = () => {
   return (
-    <section className="py-24 relative overflow-hidden" style={{ backgroundColor: "#1F3C6B" }}>
+    <section className="py-24 relative overflow-hidden bg-foreground">
       {/* Decorative elements */}
-      <div className="absolute inset-0 pointer-events-none">
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <motion.div
           animate={{ rotate: 360 }}
           transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
-          className="absolute top-10 left-10 w-20 h-20 border-2 border-white/10 rounded-full"
+          className="absolute top-10 left-10 w-20 h-20 border-2 border-background/10 rounded-full"
         />
         <motion.div
           animate={{ rotate: -360 }}
           transition={{ duration: 45, repeat: Infinity, ease: "linear" }}
-          className="absolute bottom-10 right-10 w-32 h-32 border-2 border-white/10 rounded-full"
+          className="absolute bottom-10 right-10 w-32 h-32 border-2 border-background/10 rounded-full"
         />
-        <div className="absolute top-1/2 left-1/4 w-2 h-2 bg-primary rounded-full opacity-50" />
-        <div className="absolute top-1/3 right-1/3 w-3 h-3 bg-primary rounded-full opacity-30" />
+        
+        {/* Decorative curves */}
+        <svg className="absolute bottom-0 left-0 w-1/3 h-auto opacity-10" viewBox="0 0 200 200" fill="none">
+          <path d="M0 200 Q100 100 200 200" stroke="currentColor" strokeWidth="2" fill="none" className="text-background"/>
+        </svg>
+        <svg className="absolute top-0 right-0 w-1/3 h-auto opacity-10" viewBox="0 0 200 200" fill="none">
+          <path d="M0 0 Q100 100 200 0" stroke="currentColor" strokeWidth="2" fill="none" className="text-background"/>
+        </svg>
       </div>
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
@@ -30,11 +35,10 @@ const CTABannerSection = () => {
           transition={{ duration: 0.5 }}
           className="mb-8"
         >
-          <img
-            src="/Silo-White-logo.png"
-            alt="SILO Logo"
-            className="h-12 mx-auto"
-          />
+          <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg" className="mx-auto">
+            <path d="M15 15L30 30L15 45" stroke="#FFC800" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round"/>
+            <path d="M30 15L45 30L30 45" stroke="#40E0D0" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
         </motion.div>
 
         {/* Badge */}
@@ -43,10 +47,9 @@ const CTABannerSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="inline-block px-4 py-2 rounded-full text-sm font-semibold mb-6"
-          style={{ backgroundColor: "#58d4d2", color: "#000" }}
+          className="inline-block px-4 py-2 rounded-full text-sm font-semibold mb-6 bg-primary text-foreground"
         >
-          #AllInOne
+          #Collaborative
         </motion.span>
 
         {/* Heading */}
@@ -55,12 +58,9 @@ const CTABannerSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6"
-          style={{ fontSize: "clamp(32px, 6vw, 56px)", lineHeight: "1.2" }}
+          className="text-3xl md:text-4xl lg:text-5xl font-bold text-background mb-8"
         >
-          Enterprise Resource
-          <br />
-          <span style={{ color: "#58d4d2" }}>Management Made Simple</span>
+          Social Media Management
         </motion.h2>
 
         {/* CTA Button */}
@@ -71,9 +71,8 @@ const CTABannerSection = () => {
           transition={{ duration: 0.5, delay: 0.3 }}
         >
           <Button
-            onClick={() => openCalendly()}
             size="lg"
-            className="bg-white text-foreground hover:bg-gray-100 rounded-full px-8 py-6 text-lg font-medium"
+            className="bg-background text-foreground hover:bg-background/90"
           >
             Start a free trial
           </Button>

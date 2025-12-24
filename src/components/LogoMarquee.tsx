@@ -1,45 +1,38 @@
 import { motion } from "framer-motion";
 
 const logos = [
-  { name: "Meta", image: "/sponsors/aquitane.jpg" },
-  // { name: "UNICEF", image: "/sponsors/UNICEF_Logo.png" },
-  { name: "Google Play", image: "/sponsors/Calvados.png" },
-  { name: "Google Play", image: "/sponsors/image.png" },
-  // { name: "App Store", image: "/sponsors/google-play-and-apple-app-store-logos-22.png" },
-  // { name: "Canada", image: "/sponsors/Flag_of_Canada.png" },
+  { name: "Deloitte", text: "deloitte" },
+  { name: "E.ON", text: "E.ON" },
+  { name: "ESET", text: "ESET" },
+  { name: "IKEA", text: "IKEA" },
+  { name: "O2", text: "O2" },
+  { name: "Ogilvy", text: "Ogilvy" },
+  { name: "Orange", text: "Orange" },
+  { name: "Sony", text: "SONY" },
+  { name: "Tesco", text: "TESCO" },
 ];
 
 const LogoMarquee = () => {
   return (
-    <section className="py-16 overflow-hidden " style={{backgroundColor: '#fff'}}>
-      <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 1.5 }}
-        viewport={{ once: true }}
-        className="text-center mb-10"
-      >
-        <p className="text-sm text-muted-foreground font-medium" style={{color: '#000000', fontSize: '16px'}}>Trusted by</p>
-      </motion.div>
-
+    <section className="py-12 overflow-hidden bg-card">
       <div className="relative">
         {/* Gradient masks */}
-        <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-background to-transparent z-10" />
-        <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-background to-transparent z-10" />
+        <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-card to-transparent z-10" />
+        <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-card to-transparent z-10" />
 
         {/* Scrolling logos */}
         <div className="flex animate-marquee">
-          {[...logos, ...logos].map((logo, index) => (
+          {[...logos, ...logos, ...logos].map((logo, index) => (
             <div
               key={index}
-              className="flex-shrink-0 mx-16 flex items-center justify-center transition-opacity"
+              className="flex-shrink-0 mx-12 flex items-center justify-center"
             >
-              <img
-                src={logo.image}
-                alt={logo.name}
-                className="h-8 md:h-10 lg:h-12 w-auto object-contain"
-                style={{ maxHeight: '100px', width: '100%' }}
-              />
+              <span 
+                className="text-xl md:text-2xl font-semibold text-muted-foreground/60 hover:text-muted-foreground transition-colors"
+                style={{ letterSpacing: '0.05em' }}
+              >
+                {logo.text}
+              </span>
             </div>
           ))}
         </div>
